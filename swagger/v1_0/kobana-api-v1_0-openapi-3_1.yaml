@@ -47,14 +47,14 @@ paths:
             application/json:
               example:
                 id: 2
-                uid: 019e61fb-d478-7084-8bf7-0201e153b23e
+                uid: 019e622c-e94e-741a-8788-b4920bef3585
                 bank_contract_slug: bb-bs-18-19-7
                 financial_account:
-                  uid: 019e61fb-d3df-79fe-91d2-7c3137a20a64
+                  uid: 019e622c-e8c1-7f3e-ad9b-6186550e9ac1
                 next_our_number: 1
-                agency_number: '5031'
-                agency_digit: '8'
-                account_number: '59840980'
+                agency_number: '1336'
+                agency_digit: '6'
+                account_number: '20088420'
                 account_digit: '3'
                 extra1: 0229385
                 extra1_digit: null
@@ -67,7 +67,7 @@ paths:
                 beneficiary_name: Kobana Tecnologia Ltda.
                 beneficiary_cnpj_cpf: 05.813.794/0001-26
                 beneficiary_address: 'Av. Presidente Vargas, 633, sala 1716, Centro, Rio de Janeiro, RJ, 20071004'
-                name: 'Banco do Brasil 18-19  CC: 59840980-3 229385'
+                name: 'Banco do Brasil 18-19  CC: 20088420-3 229385'
                 status: pending
                 bank_contract:
                   bank:
@@ -88,7 +88,7 @@ paths:
                 custom_name: 'Sicoob 01  CC: 00003666-8 0229385'
                 kind: cnab400
                 beneficiary_address_street: Av. Presidente Vargas
-                remittance_disabled_at: '2026-05-26T08:52:34+07:00'
+                remittance_disabled_at: '2026-05-26T12:16:11+09:30'
                 beneficiary_address_street_number: '633'
                 beneficiary_address_complement: sala 1716
                 beneficiary_address_city: Rio de Janeiro
@@ -101,10 +101,10 @@ paths:
                   pix_account_id: null
                   pix_account:
                     id: 1
-                    uid: 019e61fb-d09b-7137-9de6-8aead49fc73f
+                    uid: 019e622c-e6d4-7ad3-b8a0-b28a85e80ee2
                     custom_name: 'Bancoob/BB 01  CC: 00003666-8 0229385'
                     validated_at: null
-                    enabled_at: '2026-05-26T08:52:33+07:00'
+                    enabled_at: '2026-05-26T12:16:10+09:30'
                     financial_provider_slug: bb
                     key: pix_key@email.com
                     status: pending
@@ -121,14 +121,14 @@ paths:
                         city_name: Rio de Janeiro
                         state: RJ
                     configuration: null
-                    created_at: '2026-05-26T08:52:33+07:00'
-                    updated_at: '2026-05-26T08:52:33+07:00'
+                    created_at: '2026-05-26T12:16:10+09:30'
+                    updated_at: '2026-05-26T12:16:10+09:30'
                   pix_billing_options: null
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-05-26T08:52:34+07:00'
-                updated_at: '2026-05-26T08:52:34+07:00'
+                created_at: '2026-05-26T12:16:11+09:30'
+                updated_at: '2026-05-26T12:16:11+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '401':
@@ -230,7 +230,7 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 019e61fb-d619-7c6b-8c4e-0e76f19e1b30
+                  uid: 019e622c-eb7d-77e7-acc0-38308d616e74
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -286,10 +286,10 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-05-26T08:52:34+07:00'
-                  updated_at: '2026-05-26T08:52:34+07:00'
+                  created_at: '2026-05-26T12:16:11+09:30'
+                  updated_at: '2026-05-26T12:16:11+09:30'
                 - id: 4
-                  uid: 019e61fb-d639-7a8e-8e8b-78ae1eca243f
+                  uid: 019e622c-eba1-71f0-9834-a16b4f1369a6
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -345,10 +345,10 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-05-26T08:52:34+07:00'
-                  updated_at: '2026-05-26T08:52:34+07:00'
+                  created_at: '2026-05-26T12:16:11+09:30'
+                  updated_at: '2026-05-26T12:16:11+09:30'
                 - id: 5
-                  uid: 019e61fb-d64f-7240-b3d6-67812a8c035b
+                  uid: 019e622c-ebb9-74ee-a8c5-bf5a77d89353
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -404,8 +404,8 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-05-26T08:52:34+07:00'
-                  updated_at: '2026-05-26T08:52:34+07:00'
+                  created_at: '2026-05-26T12:16:11+09:30'
+                  updated_at: '2026-05-26T12:16:11+09:30'
               schema:
                 type: array
                 items:
@@ -470,7 +470,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 019e61fb-d744-75a9-b4c4-8fdd6a209517
+                uid: 019e622c-ecac-794f-8e40-1b4811a065f2
                 bank_contract_slug: sicoob-01
                 financial_account: null
                 next_our_number: 1
@@ -517,7 +517,7 @@ paths:
                 beneficiary_address_neighborhood: Centro
                 beneficiary_address_state: RJ
                 beneficiary_address_zipcode: '20071004'
-                bolepix_enabled_at: '2026-05-26T08:52:35+07:00'
+                bolepix_enabled_at: '2026-05-26T12:16:11+09:30'
                 bolepix:
                   pix_mode: 1
                   pix_account_id: null
@@ -526,8 +526,8 @@ paths:
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-05-26T08:52:35+07:00'
-                updated_at: '2026-05-26T08:52:35+07:00'
+                created_at: '2026-05-26T12:16:11+09:30'
+                updated_at: '2026-05-26T12:16:11+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '401':
@@ -787,7 +787,7 @@ paths:
             application/json:
               example:
                 id: 16
-                uid: 019e61fb-dfff-7f74-b63b-2e7b03aeb13c
+                uid: 019e622c-f5b7-7f58-868b-97523f5e4d30
                 bank_contract_slug: sicoob-01
                 financial_account: null
                 next_our_number: 2
@@ -834,7 +834,7 @@ paths:
                 beneficiary_address_neighborhood: Centro
                 beneficiary_address_state: RJ
                 beneficiary_address_zipcode: '20071004'
-                bolepix_enabled_at: '2026-05-26T08:52:37+07:00'
+                bolepix_enabled_at: '2026-05-26T12:16:14+09:30'
                 bolepix:
                   pix_mode: 1
                   pix_account_id: null
@@ -843,8 +843,8 @@ paths:
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-05-26T08:52:37+07:00'
-                updated_at: '2026-05-26T08:52:37+07:00'
+                created_at: '2026-05-26T12:16:14+09:30'
+                updated_at: '2026-05-26T12:16:14+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '404':
@@ -1036,7 +1036,7 @@ paths:
             application/json:
               example:
                 id: 2
-                uid: 019e61fb-e426-7af2-8ded-0e01876b49b4
+                uid: 019e622c-fbca-7408-9ccd-8e8a6d06eab8
                 expire_at: '2026-06-05'
                 paid_at: null
                 description: Serviços prestados
@@ -1127,8 +1127,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-05-26T08:52:38+07:00'
-                updated_at: '2026-05-26T08:52:38+07:00'
+                created_at: '2026-05-26T12:16:15+09:30'
+                updated_at: '2026-05-26T12:16:15+09:30'
                 tags:
                   - tag1
                   - tag2
@@ -1183,7 +1183,7 @@ paths:
                 charge_type: 1
                 custom_data:
                   bank_billet_number: '123_456'
-                issued_at: '2026-05-26T08:52:38+07:00'
+                issued_at: '2026-05-26T12:16:15+09:30'
                 shorten_url: 'http://dev.bole.to:5001/2/mq'
                 pix_enabled: false
                 pix_qrcode: null
@@ -1414,7 +1414,7 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: 019e61fb-e6e8-7f08-8af1-e1e55e2f1e27
+                  uid: 019e622c-ff4d-74a4-ac43-aabd396f192f
                   expire_at: '2026-05-29'
                   paid_at: null
                   description: 'Serviço de criação de site\r\nExpira em: 29/05/2026'
@@ -1505,8 +1505,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-05-26T08:52:39+07:00'
-                  updated_at: '2026-05-26T08:52:39+07:00'
+                  created_at: '2026-05-26T12:16:16+09:30'
+                  updated_at: '2026-05-26T12:16:16+09:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1560,7 +1560,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-05-26T08:52:39+07:00'
+                  issued_at: '2026-05-26T12:16:16+09:30'
                   shorten_url: 'http://dev.bole.to:5001/2/qb'
                   pix_enabled: false
                   pix_qrcode: null
@@ -1591,7 +1591,7 @@ paths:
                   pix: []
                   payments: []
                 - id: 4
-                  uid: 019e61fb-e6d4-7bbe-9386-9193412ede0c
+                  uid: 019e622c-ff22-7395-9334-6a7e16b986ac
                   expire_at: '2026-05-29'
                   paid_at: null
                   description: 'Serviço de criação de site\r\nExpira em: 29/05/2026'
@@ -1682,8 +1682,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-05-26T08:52:39+07:00'
-                  updated_at: '2026-05-26T08:52:39+07:00'
+                  created_at: '2026-05-26T12:16:16+09:30'
+                  updated_at: '2026-05-26T12:16:16+09:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1737,7 +1737,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-05-26T08:52:39+07:00'
+                  issued_at: '2026-05-26T12:16:16+09:30'
                   shorten_url: 'http://dev.bole.to:5001/2/zq'
                   pix_enabled: false
                   pix_qrcode: null
@@ -1768,7 +1768,7 @@ paths:
                   pix: []
                   payments: []
                 - id: 3
-                  uid: 019e61fb-e663-7588-b50a-57a025fcc114
+                  uid: 019e622c-fef2-75fb-9d8c-75e044cb0366
                   expire_at: '2026-05-29'
                   paid_at: null
                   description: 'Serviço de criação de site\r\nExpira em: 29/05/2026'
@@ -1859,8 +1859,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-05-26T08:52:39+07:00'
-                  updated_at: '2026-05-26T08:52:39+07:00'
+                  created_at: '2026-05-26T12:16:16+09:30'
+                  updated_at: '2026-05-26T12:16:16+09:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1914,7 +1914,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-05-26T08:52:39+07:00'
+                  issued_at: '2026-05-26T12:16:16+09:30'
                   shorten_url: 'http://dev.bole.to:5001/2/bl'
                   pix_enabled: false
                   pix_qrcode: null
@@ -2008,7 +2008,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 019e61fb-e7e3-77ab-8917-9698be5b5e59
+                uid: 019e622d-018d-751a-a982-fb81014987f5
                 expire_at: '2026-05-29'
                 paid_at: null
                 description: 'Serviço de criação de site\r\nExpira em: 29/05/2026'
@@ -2099,8 +2099,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-05-26T08:52:39+07:00'
-                updated_at: '2026-05-26T08:52:39+07:00'
+                created_at: '2026-05-26T12:16:17+09:30'
+                updated_at: '2026-05-26T12:16:17+09:30'
                 tags:
                   - tag 1
                   - tag2
@@ -2154,7 +2154,7 @@ paths:
                 dispatch_type: 1
                 charge_type: 1
                 custom_data: null
-                issued_at: '2026-05-26T08:52:39+07:00'
+                issued_at: '2026-05-26T12:16:17+09:30'
                 shorten_url: 'http://dev.bole.to:5001/2/xr'
                 pix_enabled: false
                 pix_qrcode: null
@@ -2415,7 +2415,7 @@ paths:
             application/json:
               example:
                 id: 12
-                uid: 019e61fb-ec01-7179-a287-f7e6f4c930fd
+                uid: 019e622d-0657-78d9-a4bc-eb59efd50328
                 expire_at: '2026-06-02'
                 paid_at: null
                 description: 'Serviço de criação de site\r\nExpira em: 02/06/2026'
@@ -2506,8 +2506,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-05-26T08:52:40+07:00'
-                updated_at: '2026-05-26T08:52:40+07:00'
+                created_at: '2026-05-26T12:16:18+09:30'
+                updated_at: '2026-05-26T12:16:18+09:30'
                 tags:
                   - tag 1
                   - tag2
@@ -2561,7 +2561,7 @@ paths:
                 dispatch_type: 1
                 charge_type: 1
                 custom_data: null
-                issued_at: '2026-05-26T08:52:40+07:00'
+                issued_at: '2026-05-26T12:16:18+09:30'
                 shorten_url: 'http://dev.bole.to:5001/2/gr'
                 pix_enabled: false
                 pix_qrcode: null
@@ -2903,7 +2903,7 @@ paths:
             application/json:
               example:
                 id: 1
-                uid: 019e61fb-f328-7124-85b1-cfd1bb0e5760
+                uid: 019e622d-0df3-7f8c-945f-0338611aeb17
                 amount: 34.56
                 cycle: monthly
                 next_billing: '2026-06-26'
@@ -2929,8 +2929,8 @@ paths:
                 customer_nickname: Zezin La da Rua
                 customer_notes: Informação sobre o cliente
                 description: Serviços prestados
-                created_at: '2026-05-26T08:52:42+07:00'
-                updated_at: '2026-05-26T08:52:42+07:00'
+                created_at: '2026-05-26T12:16:20+09:30'
+                updated_at: '2026-05-26T12:16:20+09:30'
                 created_via_api: true
                 days_in_advance: 7
                 bank_billet_account_id: 47
@@ -3114,7 +3114,7 @@ paths:
             application/json:
               example:
                 - id: 2
-                  uid: 019e61fb-f484-7a86-b2cf-b3107fd45e2f
+                  uid: 019e622d-0f6d-7688-93da-066f30e06cb4
                   amount: 150
                   cycle: monthly
                   next_billing: '2026-06-26'
@@ -3122,7 +3122,7 @@ paths:
                   instructions: Não receber após o vencimento
                   customer_id: 28
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 593.408.933-10
+                  customer_cnpj_cpf: 699.307.575-03
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3130,7 +3130,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: hildegard@hamill.test
+                  customer_email: chris@mcdermott-klein.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3140,8 +3140,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:42+07:00'
-                  updated_at: '2026-05-26T08:52:42+07:00'
+                  created_at: '2026-05-26T12:16:20+09:30'
+                  updated_at: '2026-05-26T12:16:20+09:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3206,7 +3206,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 3
-                  uid: 019e61fb-f497-71d6-b3e8-037f5f7bfe26
+                  uid: 019e622d-0f83-7d0e-a914-46d2363a81d4
                   amount: 150
                   cycle: monthly
                   next_billing: '2026-06-26'
@@ -3214,7 +3214,7 @@ paths:
                   instructions: Não receber após o vencimento
                   customer_id: 29
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 809.722.434-88
+                  customer_cnpj_cpf: 448.823.209-40
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3222,7 +3222,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: mel.wuckert@jones.example
+                  customer_email: terry_wolf@pouros.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3232,8 +3232,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:42+07:00'
-                  updated_at: '2026-05-26T08:52:42+07:00'
+                  created_at: '2026-05-26T12:16:20+09:30'
+                  updated_at: '2026-05-26T12:16:20+09:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3298,7 +3298,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 4
-                  uid: 019e61fb-f4ad-7372-b496-33eb4d5ffae6
+                  uid: 019e622d-0f9c-736a-ba6f-abb144f035e0
                   amount: 150
                   cycle: monthly
                   next_billing: '2026-06-26'
@@ -3306,7 +3306,7 @@ paths:
                   instructions: Não receber após o vencimento
                   customer_id: 30
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 076.928.355-19
+                  customer_cnpj_cpf: 650.107.691-90
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3314,7 +3314,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: yetta_armstrong@bashirian.test
+                  customer_email: beatris@mcglynn-runolfsson.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3324,8 +3324,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:42+07:00'
-                  updated_at: '2026-05-26T08:52:42+07:00'
+                  created_at: '2026-05-26T12:16:20+09:30'
+                  updated_at: '2026-05-26T12:16:20+09:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3453,7 +3453,7 @@ paths:
             application/json:
               example:
                 id: 5
-                uid: 019e61fb-f549-7a48-a27d-387bf7bd168d
+                uid: 019e622d-104c-7472-b470-4a36c29bfaf3
                 amount: 150
                 cycle: monthly
                 next_billing: '2026-06-26'
@@ -3461,7 +3461,7 @@ paths:
                 instructions: Não receber após o vencimento
                 customer_id: 31
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 949.060.706-12
+                customer_cnpj_cpf: 983.988.470-00
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -3469,7 +3469,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: marva_nienow@schamberger.test
+                customer_email: felipe@swift.test
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -3479,8 +3479,8 @@ paths:
                 customer_nickname: null
                 customer_notes: null
                 description: Cliente especial
-                created_at: '2026-05-26T08:52:42+07:00'
-                updated_at: '2026-05-26T08:52:42+07:00'
+                created_at: '2026-05-26T12:16:21+09:30'
+                updated_at: '2026-05-26T12:16:21+09:30'
                 created_via_api: false
                 days_in_advance: 7
                 bank_billet_account_id: 50
@@ -3759,7 +3759,7 @@ paths:
             application/json:
               example:
                 id: 8
-                uid: 019e61fb-f7bb-7260-8699-aa0e493285e8
+                uid: 019e622d-1349-74a9-a03f-56a46870c038
                 amount: 150
                 cycle: monthly
                 next_billing: '2026-07-26'
@@ -3767,7 +3767,7 @@ paths:
                 instructions: Não receber após o vencimento
                 customer_id: 34
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 634.780.064-06
+                customer_cnpj_cpf: 532.085.286-04
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -3775,7 +3775,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: rigoberto.botsford@collins-kovacek.example
+                customer_email: milton@willms.example
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -3785,8 +3785,8 @@ paths:
                 customer_nickname: null
                 customer_notes: null
                 description: Cliente especial
-                created_at: '2026-05-26T08:52:43+07:00'
-                updated_at: '2026-05-26T08:52:43+07:00'
+                created_at: '2026-05-26T12:16:21+09:30'
+                updated_at: '2026-05-26T12:16:21+09:30'
                 created_via_api: false
                 days_in_advance: 7
                 bank_billet_account_id: 53
@@ -3918,7 +3918,7 @@ paths:
             application/json:
               example:
                 id: 35
-                uid: 019e61fb-f898-7156-87cd-9e47de72fa4f
+                uid: 019e622d-1435-721b-a828-29895ff5b0f9
                 city_name: Minas Gerais
                 person_name: Jonh Doe
                 nickname: null
@@ -3935,8 +3935,8 @@ paths:
                 notes: Observações
                 state: MG
                 created_via_api: true
-                created_at: '2026-05-26T08:52:43+07:00'
-                updated_at: '2026-05-26T08:52:43+07:00'
+                created_at: '2026-05-26T12:16:22+09:30'
+                updated_at: '2026-05-26T12:16:22+09:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -3947,7 +3947,7 @@ paths:
                 tags: []
                 tag_list: null
                 custom_data: null
-                portal_password: GSaFKpVe
+                portal_password: yIuqzc74
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4031,7 +4031,7 @@ paths:
             application/json:
               example:
                 - id: 37
-                  uid: 019e61fb-f97d-72ab-863e-c2cc832c5b24
+                  uid: 019e622d-152f-7986-abd6-c7f118c5e1c7
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4039,8 +4039,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 549.030.170-87
-                  email: cary@stoltenberg.test
+                  cnpj_cpf: 951.358.759-21
+                  email: roosevelt.murazik@schroeder.test
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4048,8 +4048,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-05-26T08:52:43+07:00'
-                  updated_at: '2026-05-26T08:52:43+07:00'
+                  created_at: '2026-05-26T12:16:22+09:30'
+                  updated_at: '2026-05-26T12:16:22+09:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4058,13 +4058,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - sunt
-                    - et
-                    - voluptatum
-                  tag_list: 'sunt,et,voluptatum'
+                    - dolore
+                    - quia
+                    - fuga
+                  tag_list: 'dolore,quia,fuga'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: UPiHTBg6
+                  portal_password: S9tTYVV0
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4073,7 +4073,7 @@ paths:
                   credit_restriction_responsable_email: null
                   ignore_credit_restriction_included_at: null
                 - id: 38
-                  uid: 019e61fb-f981-74aa-a43a-31924f60b8fd
+                  uid: 019e622d-1533-7fdb-aaa1-6a503f1cd936
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4081,8 +4081,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 217.702.756-06
-                  email: khalilah@kirlin.example
+                  cnpj_cpf: 870.812.336-51
+                  email: joel_hessel@koch.test
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4090,8 +4090,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-05-26T08:52:43+07:00'
-                  updated_at: '2026-05-26T08:52:43+07:00'
+                  created_at: '2026-05-26T12:16:22+09:30'
+                  updated_at: '2026-05-26T12:16:22+09:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4100,12 +4100,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - id
-                    - nostrum
-                  tag_list: 'id,nostrum'
+                    - rerum
+                    - dicta
+                    - delectus
+                  tag_list: 'rerum,dicta,delectus'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: ZJtYXaxt
+                  portal_password: sVJHSMUf
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4114,7 +4115,7 @@ paths:
                   credit_restriction_responsable_email: null
                   ignore_credit_restriction_included_at: null
                 - id: 39
-                  uid: 019e61fb-f985-7d55-9f95-e4b7b8ca03c4
+                  uid: 019e622d-1538-7d04-8fe5-964612b0e1b5
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4122,8 +4123,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 198.968.004-64
-                  email: willie@batz-vonrueden.example
+                  cnpj_cpf: 215.399.330-08
+                  email: jamel@rau.example
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4131,8 +4132,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-05-26T08:52:43+07:00'
-                  updated_at: '2026-05-26T08:52:43+07:00'
+                  created_at: '2026-05-26T12:16:22+09:30'
+                  updated_at: '2026-05-26T12:16:22+09:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4141,13 +4142,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - et
-                    - incidunt
-                    - id
-                  tag_list: 'et,incidunt,id'
+                    - aperiam
+                    - commodi
+                    - doloribus
+                  tag_list: 'aperiam,commodi,doloribus'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: m8gng119
+                  portal_password: fTNdP6Wm
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4212,7 +4213,7 @@ paths:
             application/json:
               example:
                 id: 40
-                uid: 019e61fb-fa34-703b-ad8b-737d5ca428e1
+                uid: 019e622d-15bd-7473-bc01-e18c26f74df9
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4220,8 +4221,8 @@ paths:
                 address_complement: '709'
                 address_number: '120'
                 mobile_number: null
-                cnpj_cpf: 219.061.659-04
-                email: alexa@bahringer.test
+                cnpj_cpf: 037.709.964-37
+                email: yvonne@dibbert.test
                 neighborhood: São Francisco
                 phone_number: '2199999999'
                 zipcode: '24360440'
@@ -4229,8 +4230,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-05-26T08:52:44+07:00'
-                updated_at: '2026-05-26T08:52:44+07:00'
+                created_at: '2026-05-26T12:16:22+09:30'
+                updated_at: '2026-05-26T12:16:22+09:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4239,13 +4240,13 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - earum
-                  - quia
-                  - id
-                tag_list: 'earum,quia,id'
+                  - mollitia
+                  - est
+                  - eius
+                tag_list: 'mollitia,est,eius'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: r4aumrdO
+                portal_password: mdCcKGPZ
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4386,7 +4387,7 @@ paths:
             application/json:
               example:
                 id: 42
-                uid: 019e61fb-fb80-7a7f-b02d-635bc3c9b0b1
+                uid: 019e622d-1757-7095-80b9-e01295b802b3
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4395,7 +4396,7 @@ paths:
                 address_number: '120'
                 mobile_number: null
                 cnpj_cpf: 399.881.072-26
-                email: felica_moore@walsh.test
+                email: marlon@miller.test
                 neighborhood: São Francisco
                 phone_number: '2199999999'
                 zipcode: '24360440'
@@ -4403,8 +4404,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-05-26T08:52:44+07:00'
-                updated_at: '2026-05-26T08:52:44+07:00'
+                created_at: '2026-05-26T12:16:22+09:30'
+                updated_at: '2026-05-26T12:16:22+09:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4413,13 +4414,13 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - eos
-                  - vitae
-                  - tenetur
-                tag_list: 'eos,vitae,tenetur'
+                  - magnam
+                  - explicabo
+                  - eaque
+                tag_list: 'magnam,explicabo,eaque'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: tCXjgM3F
+                portal_password: i01qZo5L
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4493,7 +4494,7 @@ paths:
             application/json:
               example:
                 id: 43
-                uid: 019e61fb-fc37-7ea5-9d60-c5397ae55697
+                uid: 019e622d-183f-77c8-a8a5-f4a51ae361e6
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4501,7 +4502,7 @@ paths:
                 address_complement: '709'
                 address_number: '120'
                 mobile_number: null
-                cnpj_cpf: 391.247.681-03
+                cnpj_cpf: 782.613.043-37
                 email: search@example.com
                 neighborhood: São Francisco
                 phone_number: '2199999999'
@@ -4510,8 +4511,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-05-26T08:52:44+07:00'
-                updated_at: '2026-05-26T08:52:44+07:00'
+                created_at: '2026-05-26T12:16:23+09:30'
+                updated_at: '2026-05-26T12:16:23+09:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4520,13 +4521,13 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - alias
-                  - explicabo
-                  - ut
-                tag_list: 'alias,explicabo,ut'
+                  - molestiae
+                  - commodi
+                  - dolor
+                tag_list: 'molestiae,commodi,dolor'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: brg2W5eM
+                portal_password: S0kG9qZW
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4608,7 +4609,7 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: 019e61fb-fe82-722a-b21f-37e50b36f269
+                  uid: 019e622d-1a9f-71a4-8a9f-2f7bdcd496d5
                   amount: 133.54
                   cycle: monthly
                   start_at: '2026-05-26'
@@ -4616,10 +4617,10 @@ paths:
                   instructions: null
                   customer_id: 48
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:45+07:00'
-                  updated_at: '2026-05-26T08:52:45+07:00'
+                  created_at: '2026-05-26T12:16:23+09:30'
+                  updated_at: '2026-05-26T12:16:23+09:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 441.426.508-82
+                  customer_cnpj_cpf: 723.024.904-01
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4627,7 +4628,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: noe.cormier@volkman.test
+                  customer_email: sherman_lowe@rohan.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4705,7 +4706,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 4
-                  uid: 019e61fb-fe6f-7ba3-86f3-43acc0413d8a
+                  uid: 019e622d-1a8b-770c-97a7-cf84f9eec583
                   amount: 133.54
                   cycle: monthly
                   start_at: '2026-05-26'
@@ -4713,10 +4714,10 @@ paths:
                   instructions: null
                   customer_id: 47
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:45+07:00'
-                  updated_at: '2026-05-26T08:52:45+07:00'
+                  created_at: '2026-05-26T12:16:23+09:30'
+                  updated_at: '2026-05-26T12:16:23+09:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 179.051.801-66
+                  customer_cnpj_cpf: 105.698.869-02
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4724,7 +4725,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: deangelo.fisher@price-graham.example
+                  customer_email: chrystal@koss.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4802,7 +4803,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 3
-                  uid: 019e61fb-fe58-7fce-81d9-a786744f71ae
+                  uid: 019e622d-1a76-73d0-b6ee-d7fa8f435d4d
                   amount: 133.54
                   cycle: monthly
                   start_at: '2026-05-26'
@@ -4810,10 +4811,10 @@ paths:
                   instructions: null
                   customer_id: 46
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:45+07:00'
-                  updated_at: '2026-05-26T08:52:45+07:00'
+                  created_at: '2026-05-26T12:16:23+09:30'
+                  updated_at: '2026-05-26T12:16:23+09:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 757.611.874-18
+                  customer_cnpj_cpf: 526.403.916-07
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4821,7 +4822,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: bernita_moore@lueilwitz-beatty.test
+                  customer_email: estrella@wuckert-balistreri.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4899,7 +4900,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 2
-                  uid: 019e61fb-fe3c-7bdc-aa7f-dc7c21bde698
+                  uid: 019e622d-1a62-7f6a-9a5c-a28990f443b6
                   amount: 133.54
                   cycle: monthly
                   start_at: '2026-05-26'
@@ -4907,10 +4908,10 @@ paths:
                   instructions: null
                   customer_id: 45
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:45+07:00'
-                  updated_at: '2026-05-26T08:52:45+07:00'
+                  created_at: '2026-05-26T12:16:23+09:30'
+                  updated_at: '2026-05-26T12:16:23+09:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 388.531.029-50
+                  customer_cnpj_cpf: 759.464.103-50
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4918,7 +4919,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: maris@larson-miller.example
+                  customer_email: scott_larson@anderson-dickinson.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4996,7 +4997,7 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 1
-                  uid: 019e61fb-fe1c-7bf5-8276-19c6a5cbb359
+                  uid: 019e622d-1a4a-7881-aeea-aa7ea8e385f0
                   amount: 133.54
                   cycle: monthly
                   start_at: '2026-05-26'
@@ -5004,10 +5005,10 @@ paths:
                   instructions: null
                   customer_id: 44
                   description: Cliente especial
-                  created_at: '2026-05-26T08:52:45+07:00'
-                  updated_at: '2026-05-26T08:52:45+07:00'
+                  created_at: '2026-05-26T12:16:23+09:30'
+                  updated_at: '2026-05-26T12:16:23+09:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 149.889.819-08
+                  customer_cnpj_cpf: 281.646.950-68
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -5015,7 +5016,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: marcellus@halvorson.test
+                  customer_email: natalie.harvey@bruen.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -5148,7 +5149,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 019e61fb-ff57-7c7a-888f-7d28d51b4fd9
+                uid: 019e622d-1b85-7d39-a2d6-b822e91374c8
                 amount: 133.54
                 cycle: biweekly
                 start_at: '2026-05-30'
@@ -5156,8 +5157,8 @@ paths:
                 instructions: null
                 customer_id: null
                 description: Serviços prestados
-                created_at: '2026-05-26T08:52:45+07:00'
-                updated_at: '2026-05-26T08:52:45+07:00'
+                created_at: '2026-05-26T12:16:23+09:30'
+                updated_at: '2026-05-26T12:16:23+09:30'
                 customer_person_name: Leofutol Bezerra
                 customer_cnpj_cpf: 337.539.339-37
                 customer_address: Av. Presidente Vargas
@@ -5337,7 +5338,7 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 019e61fc-00f6-79c6-9462-bd7479e7ce63
+                uid: 019e622d-1cba-7211-848d-f0e6feb9bf50
                 amount: 133.54
                 cycle: monthly
                 start_at: '2026-05-26'
@@ -5345,10 +5346,10 @@ paths:
                 instructions: null
                 customer_id: 49
                 description: Cliente especial
-                created_at: '2026-05-26T08:52:45+07:00'
-                updated_at: '2026-05-26T08:52:45+07:00'
+                created_at: '2026-05-26T12:16:24+09:30'
+                updated_at: '2026-05-26T12:16:24+09:30'
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 061.579.215-44
+                customer_cnpj_cpf: 206.823.541-20
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -5356,7 +5357,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: nikia.mosciski@dicki.test
+                customer_email: ismael@veum.example
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -6326,7 +6327,7 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 019e61fc-0510-7624-9f2f-e08a0cd7975d
+                  uid: 019e622d-1fa8-7eb8-9393-79a9dcfab048
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6342,7 +6343,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,rocco@runte.test'
+                  to: 'cliente@example.com,tommie_wolf@nolan.example'
                   subject: Assunto de email
                   email_account_id: 7
                   email_template_id: 10
@@ -6353,16 +6354,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:46+07:00'
-                  updated_at: '2026-05-26T08:52:46+07:00'
+                  created_at: '2026-05-26T12:16:25+09:30'
+                  updated_at: '2026-05-26T12:16:25+09:30'
                   resource_owner:
-                    uid: 019e61fc-053b-7d28-b9c3-9d0135b22d5e
+                    uid: 019e622d-1fd4-7bdf-a281-6f2adbdc42dc
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-053b-7d28-b9c3-9d0135b22d5e
+                    uid: 019e622d-1fd4-7bdf-a281-6f2adbdc42dc
                     type: bank_billet
                 - id: 5
-                  uid: 019e61fc-04cc-72c5-a1a3-be63838a462e
+                  uid: 019e622d-1f61-7a0f-addb-cfcc608785a7
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6378,7 +6379,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,judson_torp@kilback-kemmer.example'
+                  to: 'cliente@example.com,andre@bayer.test'
                   subject: Assunto de email
                   email_account_id: 6
                   email_template_id: 8
@@ -6389,16 +6390,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:46+07:00'
-                  updated_at: '2026-05-26T08:52:46+07:00'
+                  created_at: '2026-05-26T12:16:24+09:30'
+                  updated_at: '2026-05-26T12:16:24+09:30'
                   resource_owner:
-                    uid: 019e61fc-04f6-7db3-a3a7-e211fa18539f
+                    uid: 019e622d-1f8c-70f5-86eb-de189a470794
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-04f6-7db3-a3a7-e211fa18539f
+                    uid: 019e622d-1f8c-70f5-86eb-de189a470794
                     type: bank_billet
                 - id: 4
-                  uid: 019e61fc-0483-7032-b884-752217ca9099
+                  uid: 019e622d-1f17-7cbf-b3a9-cfdde1131656
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6414,7 +6415,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,danial@bartoletti.test'
+                  to: 'cliente@example.com,evonne.paucek@veum-paucek.test'
                   subject: Assunto de email
                   email_account_id: 5
                   email_template_id: 6
@@ -6425,16 +6426,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:46+07:00'
-                  updated_at: '2026-05-26T08:52:46+07:00'
+                  created_at: '2026-05-26T12:16:24+09:30'
+                  updated_at: '2026-05-26T12:16:24+09:30'
                   resource_owner:
-                    uid: 019e61fc-04b3-7ae1-b194-2b8515214337
+                    uid: 019e622d-1f46-71f6-af0c-1d198051aeb2
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-04b3-7ae1-b194-2b8515214337
+                    uid: 019e622d-1f46-71f6-af0c-1d198051aeb2
                     type: bank_billet
                 - id: 3
-                  uid: 019e61fc-0436-7fb8-b378-efd562b09f6d
+                  uid: 019e622d-1ecc-7ad9-a928-ca252aa592be
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6450,7 +6451,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,camilla.gottlieb@homenick.test'
+                  to: 'cliente@example.com,sanda_jaskolski@hackett.test'
                   subject: Assunto de email
                   email_account_id: 4
                   email_template_id: 4
@@ -6461,16 +6462,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:46+07:00'
-                  updated_at: '2026-05-26T08:52:46+07:00'
+                  created_at: '2026-05-26T12:16:24+09:30'
+                  updated_at: '2026-05-26T12:16:24+09:30'
                   resource_owner:
-                    uid: 019e61fc-0468-7c75-95ca-3859d5a3fe0d
+                    uid: 019e622d-1efc-7117-abc6-1ce950a94212
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0468-7c75-95ca-3859d5a3fe0d
+                    uid: 019e622d-1efc-7117-abc6-1ce950a94212
                     type: bank_billet
                 - id: 2
-                  uid: 019e61fc-03ca-7c26-95d6-2574a2950779
+                  uid: 019e622d-1e5e-78a7-b6a7-fb8b827feb95
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6486,7 +6487,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,malisa_schamberger@nitzsche.example'
+                  to: 'cliente@example.com,miles@stiedemann.test'
                   subject: Assunto de email
                   email_account_id: 3
                   email_template_id: 2
@@ -6497,13 +6498,13 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:46+07:00'
-                  updated_at: '2026-05-26T08:52:46+07:00'
+                  created_at: '2026-05-26T12:16:24+09:30'
+                  updated_at: '2026-05-26T12:16:24+09:30'
                   resource_owner:
-                    uid: 019e61fc-0415-7f03-aa91-2bdc0b9b8980
+                    uid: 019e622d-1ea8-72f1-954d-6556a13b4401
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0415-7f03-aa91-2bdc0b9b8980
+                    uid: 019e622d-1ea8-72f1-954d-6556a13b4401
                     type: bank_billet
               schema:
                 type: array
@@ -6562,7 +6563,7 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 019e61fc-05ca-78a3-b4a5-e6bcadb9d579
+                uid: 019e622d-2068-7c4f-b5e2-fdb1a6d77291
                 event_code: bank_billet.created
                 sent_error: null
                 delivered_at: null
@@ -6578,7 +6579,7 @@ paths:
                 click_count: 0
                 read_at: null
                 read_count: 0
-                to: 'cliente@example.com,keesha@daugherty-conroy.test'
+                to: 'cliente@example.com,dominique_cartwright@beatty-hammes.test'
                 subject: Assunto de email
                 email_account_id: 8
                 email_template_id: 12
@@ -6589,13 +6590,13 @@ paths:
                 reply_to_address: null
                 customer_id: null
                 customer_external_code: null
-                created_at: '2026-05-26T08:52:47+07:00'
-                updated_at: '2026-05-26T08:52:47+07:00'
+                created_at: '2026-05-26T12:16:25+09:30'
+                updated_at: '2026-05-26T12:16:25+09:30'
                 resource_owner:
-                  uid: 019e61fc-05fc-7bd6-af3d-33114766f952
+                  uid: 019e622d-209c-766d-92cd-69dbc3900b46
                   type: bank_billet
                 resource_base:
-                  uid: 019e61fc-05fc-7bd6-af3d-33114766f952
+                  uid: 019e622d-209c-766d-92cd-69dbc3900b46
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_email_delivery_object'
@@ -7501,18 +7502,18 @@ paths:
             application/json:
               example:
                 - resource_owner:
-                    uid: 019e61fc-083d-7d56-839d-dc54ecb01715
+                    uid: 019e622d-22d8-7944-b9cd-cd8829f32b11
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-083d-7d56-839d-dc54ecb01715
+                    uid: 019e622d-22d8-7944-b9cd-cd8829f32b11
                     type: bank_billet
-                  uid: 019e61fc-084f-7db8-83ca-1f44c744ff6e
+                  uid: 019e622d-22eb-7292-a53c-fe2b4ad30ee5
                   code: ping
                   data:
                     object:
                       id: 37
                       pix: []
-                      uid: 019e61fc-083d-7d56-839d-dc54ecb01715
+                      uid: 019e622d-22d8-7944-b9cd-cd8829f32b11
                       url: 'http://dev.bole.to:5001/2/bwl'
                       line: 75691.43279 01022.938508 04003.310010 9 82900000005000
                       meta: null
@@ -7549,15 +7550,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T21:30:00+09:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T21:30:00+09:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40033'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T21:30:00+09:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -7687,22 +7688,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T21:30:00+09:30'
+                  created_at: '2020-06-15T21:30:00+09:30'
+                  updated_at: '2020-06-15T21:30:00+09:30'
                 - resource_owner:
-                    uid: 019e61fc-0874-758d-b7ac-e51defa9dd58
+                    uid: 019e622d-2313-7a85-aa22-edc3a242744f
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0874-758d-b7ac-e51defa9dd58
+                    uid: 019e622d-2313-7a85-aa22-edc3a242744f
                     type: bank_billet
-                  uid: 019e61fc-0885-7713-b347-b06516005701
+                  uid: 019e622d-2325-7d3c-a5d2-1d6d37de5d4d
                   code: ping
                   data:
                     object:
                       id: 38
                       pix: []
-                      uid: 019e61fc-0874-758d-b7ac-e51defa9dd58
+                      uid: 019e622d-2313-7a85-aa22-edc3a242744f
                       url: 'http://dev.bole.to:5001/2/zkq'
                       line: 75691.43279 01022.938508 04003.490010 7 82900000005000
                       meta: null
@@ -7739,15 +7740,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T21:30:00+09:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T21:30:00+09:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40034'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T21:30:00+09:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -7877,22 +7878,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T21:30:00+09:30'
+                  created_at: '2020-06-15T21:30:00+09:30'
+                  updated_at: '2020-06-15T21:30:00+09:30'
                 - resource_owner:
-                    uid: 019e61fc-08a8-7f5d-a0cf-feca67432021
+                    uid: 019e622d-234b-7fc8-ab1e-a068df7bef74
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-08a8-7f5d-a0cf-feca67432021
+                    uid: 019e622d-234b-7fc8-ab1e-a068df7bef74
                     type: bank_billet
-                  uid: 019e61fc-08bb-7b9c-8019-a8e454c41769
+                  uid: 019e622d-235f-7282-b97e-9734243242a4
                   code: ping
                   data:
                     object:
                       id: 39
                       pix: []
-                      uid: 019e61fc-08a8-7f5d-a0cf-feca67432021
+                      uid: 019e622d-234b-7fc8-ab1e-a068df7bef74
                       url: 'http://dev.bole.to:5001/2/qdb'
                       line: 75691.43279 01022.938508 04003.560010 5 82900000005000
                       meta: null
@@ -7929,15 +7930,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T21:30:00+09:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T21:30:00+09:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40035'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T21:30:00+09:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8067,22 +8068,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T21:30:00+09:30'
+                  created_at: '2020-06-15T21:30:00+09:30'
+                  updated_at: '2020-06-15T21:30:00+09:30'
                 - resource_owner:
-                    uid: 019e61fc-08df-79d1-a66a-ea078fd0510a
+                    uid: 019e622d-2385-78ee-a8c4-fa0828d2ee60
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-08df-79d1-a66a-ea078fd0510a
+                    uid: 019e622d-2385-78ee-a8c4-fa0828d2ee60
                     type: bank_billet
-                  uid: 019e61fc-08f5-7d9b-bd36-6fb3940d671f
+                  uid: 019e622d-239d-7c50-83d0-d9b2f2e63df6
                   code: ping
                   data:
                     object:
                       id: 40
                       pix: []
-                      uid: 019e61fc-08df-79d1-a66a-ea078fd0510a
+                      uid: 019e622d-2385-78ee-a8c4-fa0828d2ee60
                       url: 'http://dev.bole.to:5001/2/xzr'
                       line: 75691.43279 01022.938508 04003.630011 3 82900000005000
                       meta: null
@@ -8119,15 +8120,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T21:30:00+09:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T21:30:00+09:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40036'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T21:30:00+09:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8257,22 +8258,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T21:30:00+09:30'
+                  created_at: '2020-06-15T21:30:00+09:30'
+                  updated_at: '2020-06-15T21:30:00+09:30'
                 - resource_owner:
-                    uid: 019e61fc-0919-702c-a899-0e60ed45a731
+                    uid: 019e622d-23f3-7ad5-950c-b8d94e84d7ba
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0919-702c-a899-0e60ed45a731
+                    uid: 019e622d-23f3-7ad5-950c-b8d94e84d7ba
                     type: bank_billet
-                  uid: 019e61fc-092d-76a3-bbba-2bac09f1f740
+                  uid: 019e622d-240d-7d7e-b2df-e0f96bee0ca4
                   code: ping
                   data:
                     object:
                       id: 41
                       pix: []
-                      uid: 019e61fc-0919-702c-a899-0e60ed45a731
+                      uid: 019e622d-23f3-7ad5-950c-b8d94e84d7ba
                       url: 'http://dev.bole.to:5001/2/rgn'
                       line: 75691.43279 01022.938508 04003.700012 1 82900000005000
                       meta: null
@@ -8309,15 +8310,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T21:30:00+09:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T21:30:00+09:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40037'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T21:30:00+09:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8447,9 +8448,9 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T21:30:00+09:30'
+                  created_at: '2020-06-15T21:30:00+09:30'
+                  updated_at: '2020-06-15T21:30:00+09:30'
               schema:
                 type: array
                 items:
@@ -8519,18 +8520,18 @@ paths:
             application/json:
               example:
                 resource_owner:
-                  uid: 019e61fc-0a01-7481-a839-71cacff6a4a5
+                  uid: 019e622d-251d-7215-a073-5435d55fc61e
                   type: bank_billet
                 resource_base:
-                  uid: 019e61fc-0a01-7481-a839-71cacff6a4a5
+                  uid: 019e622d-251d-7215-a073-5435d55fc61e
                   type: bank_billet
-                uid: 019e61fc-0a11-7963-9f0d-dcbf0986c17e
+                uid: 019e622d-2532-7a20-b7e2-351f28060355
                 code: ping
                 data:
                   object:
                     id: 42
                     pix: []
-                    uid: 019e61fc-0a01-7481-a839-71cacff6a4a5
+                    uid: 019e622d-251d-7215-a073-5435d55fc61e
                     url: 'http://dev.bole.to:5001/2/ejv'
                     line: 75691.43279 01022.938508 04003.880012 1 82900000005000
                     meta: null
@@ -8567,15 +8568,15 @@ paths:
                     expire_at: '2020-06-18'
                     fine_type: 0
                     import_id: null
-                    issued_at: '2020-06-15T19:00:00+07:00'
+                    issued_at: '2020-06-15T21:30:00+09:30'
                     acceptance: 'N'
-                    created_at: '2020-06-15T19:00:00+07:00'
+                    created_at: '2020-06-15T21:30:00+09:30'
                     fine_value: null
                     ignore_sms: false
                     our_number: '40038'
                     pix_qrcode: null
                     revoked_at: null
-                    updated_at: '2020-06-15T19:00:00+07:00'
+                    updated_at: '2020-06-15T21:30:00+09:30'
                     cancel_type: null
                     charge_type: 1
                     custom_data: null
@@ -8705,9 +8706,9 @@ paths:
                     divergent_payment_minimum_value: null
                     divergent_payment_maximum_percentage: null
                     divergent_payment_minimum_percentage: null
-                occurred_at: '2020-06-15T19:00:00+07:00'
-                created_at: '2020-06-15T19:00:00+07:00'
-                updated_at: '2020-06-15T19:00:00+07:00'
+                occurred_at: '2020-06-15T21:30:00+09:30'
+                created_at: '2020-06-15T21:30:00+09:30'
+                updated_at: '2020-06-15T21:30:00+09:30'
               schema:
                 $ref: '#/components/schemas/v1_event_object'
         '401':
@@ -9564,7 +9565,7 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 019e61fc-0bcc-73ee-b1fe-11154ba1290f
+                  uid: 019e622d-272c-7b8b-bea9-0bafc3d9565c
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9577,16 +9578,16 @@ paths:
                   sms_notification_id: 6
                   customer_id: 68
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:48+07:00'
-                  updated_at: '2026-05-26T08:52:48+07:00'
+                  created_at: '2026-05-26T12:16:26+09:30'
+                  updated_at: '2026-05-26T12:16:26+09:30'
                   resource_owner:
-                    uid: 019e61fc-0be4-7f4e-bf51-5fab33ff3b9a
+                    uid: 019e622d-2748-72fd-b0cc-49f4e4ce33b2
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0be4-7f4e-bf51-5fab33ff3b9a
+                    uid: 019e622d-2748-72fd-b0cc-49f4e4ce33b2
                     type: bank_billet
                 - id: 5
-                  uid: 019e61fc-0b93-7a11-941b-b66e692d037c
+                  uid: 019e622d-26ec-796b-82d4-2acfb0936f35
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9599,16 +9600,16 @@ paths:
                   sms_notification_id: 5
                   customer_id: 67
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:48+07:00'
-                  updated_at: '2026-05-26T08:52:48+07:00'
+                  created_at: '2026-05-26T12:16:26+09:30'
+                  updated_at: '2026-05-26T12:16:26+09:30'
                   resource_owner:
-                    uid: 019e61fc-0bad-7df5-8138-3956c65897c5
+                    uid: 019e622d-2709-7c3d-a43b-4cc40e9078d2
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0bad-7df5-8138-3956c65897c5
+                    uid: 019e622d-2709-7c3d-a43b-4cc40e9078d2
                     type: bank_billet
                 - id: 4
-                  uid: 019e61fc-0b5a-7ec1-bdbd-4b97ce7e378d
+                  uid: 019e622d-26ac-7918-999a-3dfafce06302
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9621,16 +9622,16 @@ paths:
                   sms_notification_id: 4
                   customer_id: 66
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:48+07:00'
-                  updated_at: '2026-05-26T08:52:48+07:00'
+                  created_at: '2026-05-26T12:16:26+09:30'
+                  updated_at: '2026-05-26T12:16:26+09:30'
                   resource_owner:
-                    uid: 019e61fc-0b73-720a-8e07-dc51a08f1846
+                    uid: 019e622d-26c8-7fca-939d-9f2105cff10c
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0b73-720a-8e07-dc51a08f1846
+                    uid: 019e622d-26c8-7fca-939d-9f2105cff10c
                     type: bank_billet
                 - id: 3
-                  uid: 019e61fc-0b1f-7f09-8058-9e3f41a11412
+                  uid: 019e622d-266c-7a20-94ed-922f4e74af2d
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9643,16 +9644,16 @@ paths:
                   sms_notification_id: 3
                   customer_id: 65
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:48+07:00'
-                  updated_at: '2026-05-26T08:52:48+07:00'
+                  created_at: '2026-05-26T12:16:26+09:30'
+                  updated_at: '2026-05-26T12:16:26+09:30'
                   resource_owner:
-                    uid: 019e61fc-0b39-7649-88af-46c4820fe04e
+                    uid: 019e622d-2687-7bb7-9e4f-1cf1a2836a80
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0b39-7649-88af-46c4820fe04e
+                    uid: 019e622d-2687-7bb7-9e4f-1cf1a2836a80
                     type: bank_billet
                 - id: 2
-                  uid: 019e61fc-0ade-7e43-9c4f-213880e7f0d2
+                  uid: 019e622d-2622-74d8-abe6-faa27f86026d
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9665,13 +9666,13 @@ paths:
                   sms_notification_id: 2
                   customer_id: 64
                   customer_external_code: null
-                  created_at: '2026-05-26T08:52:48+07:00'
-                  updated_at: '2026-05-26T08:52:48+07:00'
+                  created_at: '2026-05-26T12:16:26+09:30'
+                  updated_at: '2026-05-26T12:16:26+09:30'
                   resource_owner:
-                    uid: 019e61fc-0afc-7365-8bed-5b0ffeed7080
+                    uid: 019e622d-2645-7b90-a4a1-469299bf6258
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0afc-7365-8bed-5b0ffeed7080
+                    uid: 019e622d-2645-7b90-a4a1-469299bf6258
                     type: bank_billet
               schema:
                 type: array
@@ -9730,7 +9731,7 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 019e61fc-0c7b-7195-8b76-b02e113a1378
+                uid: 019e622d-27f2-7aa8-b336-019f0f9c32c7
                 event_code: bank_billet.created
                 message: MyText
                 phone_to: '+5522987654321'
@@ -9743,13 +9744,13 @@ paths:
                 sms_notification_id: 7
                 customer_id: 69
                 customer_external_code: null
-                created_at: '2026-05-26T08:52:48+07:00'
-                updated_at: '2026-05-26T08:52:48+07:00'
+                created_at: '2026-05-26T12:16:27+09:30'
+                updated_at: '2026-05-26T12:16:27+09:30'
                 resource_owner:
-                  uid: 019e61fc-0c99-76d2-bac7-254863e08250
+                  uid: 019e622d-2813-77c9-8f83-4bd3c3743230
                   type: bank_billet
                 resource_base:
-                  uid: 019e61fc-0c99-76d2-bac7-254863e08250
+                  uid: 019e622d-2813-77c9-8f83-4bd3c3743230
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_sms_delivery_object'
@@ -9872,18 +9873,18 @@ paths:
             application/json:
               example:
                 id: 138
-                email: 43e9ed65066ca5b37c8b47d2b26162bc@volkman-jones.example
+                email: 7186463b5c8fc0a9c4949b10bfcdbd15@bosco.example
                 account_type: individual
                 first_name: Margret
                 middle_name: Simões
                 last_name: Gonçalo
                 full_name: Margret Simões Gonçalo
-                cpf: 448.841.461-31
+                cpf: 534.804.749-00
                 date_of_birth: '1970-03-01'
                 mother_name: Lenadra Simões Gonçalo
                 father_name: José Simões Gonçalo
-                created_at: '2026-05-26T08:52:49+07:00'
-                updated_at: '2026-05-26T08:52:49+07:00'
+                created_at: '2026-05-26T12:16:27+09:30'
+                updated_at: '2026-05-26T12:16:27+09:30'
                 address_street_name: Av. Burkhard Hehn Simões
                 address_number: '120'
                 address_complement: '709'
@@ -10749,7 +10750,7 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: c3a32737-0d21-4010-bd7d-d399ad0750e3
+                  uid: 0178c8dc-c06a-45b3-962d-ef07c3f9e06d
                   url: null
                   duration: null
                   request_headers: null
@@ -10758,7 +10759,7 @@ paths:
                     webhook:
                       id: 5
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-05-26T08:52:49+07:00'
+                      first_try: '2026-05-26T12:16:28+09:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -10774,16 +10775,16 @@ paths:
                   webhook_id: 5
                   event_code: bank_billet.created
                   resource_owner_id: 54
-                  created_at: '2026-05-26T08:52:49+07:00'
-                  updated_at: '2026-05-26T08:52:49+07:00'
+                  created_at: '2026-05-26T12:16:28+09:30'
+                  updated_at: '2026-05-26T12:16:28+09:30'
                   resource_owner:
-                    uid: 019e61fc-102d-786d-9f52-b8a1b4af859e
+                    uid: 019e622d-2ba2-7cd3-9601-49ae8cf61af7
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-102d-786d-9f52-b8a1b4af859e
+                    uid: 019e622d-2ba2-7cd3-9601-49ae8cf61af7
                     type: bank_billet
                 - id: 4
-                  uid: f44af00a-0ab4-4a91-81a7-8e57ef1e10b4
+                  uid: be52b2bb-a638-4046-a35b-dc67373a5fc1
                   url: null
                   duration: null
                   request_headers: null
@@ -10792,7 +10793,7 @@ paths:
                     webhook:
                       id: 4
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-05-26T08:52:49+07:00'
+                      first_try: '2026-05-26T12:16:28+09:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -10808,16 +10809,16 @@ paths:
                   webhook_id: 4
                   event_code: bank_billet.created
                   resource_owner_id: 53
-                  created_at: '2026-05-26T08:52:49+07:00'
-                  updated_at: '2026-05-26T08:52:49+07:00'
+                  created_at: '2026-05-26T12:16:27+09:30'
+                  updated_at: '2026-05-26T12:16:27+09:30'
                   resource_owner:
-                    uid: 019e61fc-0ff1-75e4-9b89-68bb4c1cf7eb
+                    uid: 019e622d-2b5e-720f-8a9e-37e3c2d1eb68
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0ff1-75e4-9b89-68bb4c1cf7eb
+                    uid: 019e622d-2b5e-720f-8a9e-37e3c2d1eb68
                     type: bank_billet
                 - id: 3
-                  uid: de9d9b43-dc78-4a90-8c1b-73f5a57f4ed7
+                  uid: 962eb401-3afd-4856-97ec-5546b5ba77c7
                   url: null
                   duration: null
                   request_headers: null
@@ -10826,7 +10827,7 @@ paths:
                     webhook:
                       id: 3
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-05-26T08:52:49+07:00'
+                      first_try: '2026-05-26T12:16:28+09:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -10842,16 +10843,16 @@ paths:
                   webhook_id: 3
                   event_code: bank_billet.created
                   resource_owner_id: 52
-                  created_at: '2026-05-26T08:52:49+07:00'
-                  updated_at: '2026-05-26T08:52:49+07:00'
+                  created_at: '2026-05-26T12:16:27+09:30'
+                  updated_at: '2026-05-26T12:16:27+09:30'
                   resource_owner:
-                    uid: 019e61fc-0fb7-78ec-920c-651e4731deba
+                    uid: 019e622d-2b18-71e5-baff-96bb073dfc47
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0fb7-78ec-920c-651e4731deba
+                    uid: 019e622d-2b18-71e5-baff-96bb073dfc47
                     type: bank_billet
                 - id: 2
-                  uid: 80b1bda7-acc8-4a31-ab0a-cb808146642e
+                  uid: 374b8e6a-c19a-424d-ac2b-33645597aa7b
                   url: null
                   duration: null
                   request_headers: null
@@ -10860,7 +10861,7 @@ paths:
                     webhook:
                       id: 2
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-05-26T08:52:49+07:00'
+                      first_try: '2026-05-26T12:16:28+09:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -10876,16 +10877,16 @@ paths:
                   webhook_id: 2
                   event_code: bank_billet.created
                   resource_owner_id: 51
-                  created_at: '2026-05-26T08:52:49+07:00'
-                  updated_at: '2026-05-26T08:52:49+07:00'
+                  created_at: '2026-05-26T12:16:27+09:30'
+                  updated_at: '2026-05-26T12:16:27+09:30'
                   resource_owner:
-                    uid: 019e61fc-0f7d-7508-9a94-44249ec66919
+                    uid: 019e622d-2ad1-7219-bef4-14a2f41f8d15
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0f7d-7508-9a94-44249ec66919
+                    uid: 019e622d-2ad1-7219-bef4-14a2f41f8d15
                     type: bank_billet
                 - id: 1
-                  uid: 5e8d6999-e2cf-4e3d-96a5-e748be2b144d
+                  uid: 57fb5aeb-37eb-40a5-8051-7c278ed17f1e
                   url: null
                   duration: null
                   request_headers: null
@@ -10894,7 +10895,7 @@ paths:
                     webhook:
                       id: 1
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-05-26T08:52:49+07:00'
+                      first_try: '2026-05-26T12:16:28+09:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -10910,13 +10911,13 @@ paths:
                   webhook_id: 1
                   event_code: bank_billet.created
                   resource_owner_id: 50
-                  created_at: '2026-05-26T08:52:49+07:00'
-                  updated_at: '2026-05-26T08:52:49+07:00'
+                  created_at: '2026-05-26T12:16:27+09:30'
+                  updated_at: '2026-05-26T12:16:27+09:30'
                   resource_owner:
-                    uid: 019e61fc-0f3f-7693-bfba-65b2111fe81c
+                    uid: 019e622d-2a91-723d-b8d2-58ea364b30f5
                     type: bank_billet
                   resource_base:
-                    uid: 019e61fc-0f3f-7693-bfba-65b2111fe81c
+                    uid: 019e622d-2a91-723d-b8d2-58ea364b30f5
                     type: bank_billet
               schema:
                 type: array
@@ -10975,7 +10976,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: e8320376-b08e-40bc-9527-f9d7d024873d
+                uid: 566a8696-218e-4515-a242-b5d963458b92
                 url: null
                 duration: null
                 request_headers: null
@@ -10984,7 +10985,7 @@ paths:
                   webhook:
                     id: 6
                     url: 'http://dev.bole.to:5001'
-                    first_try: '2026-05-26T08:52:49+07:00'
+                    first_try: '2026-05-26T12:16:28+09:30'
                 request_error: null
                 response_body: null
                 response_code: null
@@ -11000,13 +11001,13 @@ paths:
                 webhook_id: 6
                 event_code: bank_billet.created
                 resource_owner_id: 55
-                created_at: '2026-05-26T08:52:49+07:00'
-                updated_at: '2026-05-26T08:52:49+07:00'
+                created_at: '2026-05-26T12:16:28+09:30'
+                updated_at: '2026-05-26T12:16:28+09:30'
                 resource_owner:
-                  uid: 019e61fc-10e5-7bbd-8b70-b287a5294e45
+                  uid: 019e622d-2c66-774e-a9dc-a4e437e46fcd
                   type: bank_billet
                 resource_base:
-                  uid: 019e61fc-10e5-7bbd-8b70-b287a5294e45
+                  uid: 019e622d-2c66-774e-a9dc-a4e437e46fcd
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_webhook_delivery_object'
@@ -11133,7 +11134,7 @@ paths:
             application/json:
               example:
                 id: 13
-                uid: 019e61fc-1374-752e-b138-8a0cbfc7918e
+                uid: 019e622d-2f23-7540-9e4a-6a62ce246a64
                 name: null
                 url: 'http://example.com/new'
                 content_type: application/json
@@ -11144,9 +11145,9 @@ paths:
                 concurrency_limit: 10
                 subaccounts: false
                 auth_kind: basic_auth
-                created_at: '2026-05-26T08:52:50+07:00'
-                updated_at: '2026-05-26T08:52:50+07:00'
-                secret_key: 41ae45bba19a09532779e91a21c64f6338599e2b0318e9e082793a4c603908a3
+                created_at: '2026-05-26T12:16:28+09:30'
+                updated_at: '2026-05-26T12:16:28+09:30'
+                secret_key: 19113fe00705a17399281d8dda74da536579b59ddadd4fb6a5110bea4faab47f
               schema:
                 $ref: '#/components/schemas/v1_webhook_object'
         '401':
@@ -11227,7 +11228,7 @@ paths:
             application/json:
               example:
                 - id: 18
-                  uid: 019e61fc-1444-73b3-a212-1716516688b4
+                  uid: 019e622d-3023-7175-b9db-9bab2eb0aa49
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11238,10 +11239,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-05-26T08:52:50+07:00'
-                  updated_at: '2026-05-26T08:52:50+07:00'
+                  created_at: '2026-05-26T12:16:29+09:30'
+                  updated_at: '2026-05-26T12:16:29+09:30'
                 - id: 17
-                  uid: 019e61fc-143f-73ff-adbe-77d09cdfd150
+                  uid: 019e622d-301e-7e15-b8b8-ce22a3fc0e0a
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11252,10 +11253,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-05-26T08:52:50+07:00'
-                  updated_at: '2026-05-26T08:52:50+07:00'
+                  created_at: '2026-05-26T12:16:29+09:30'
+                  updated_at: '2026-05-26T12:16:29+09:30'
                 - id: 16
-                  uid: 019e61fc-143b-7a4e-a40e-73b1fb6f5cad
+                  uid: 019e622d-3018-7c9f-afd6-f57ca68758f6
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11266,10 +11267,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-05-26T08:52:50+07:00'
-                  updated_at: '2026-05-26T08:52:50+07:00'
+                  created_at: '2026-05-26T12:16:29+09:30'
+                  updated_at: '2026-05-26T12:16:29+09:30'
                 - id: 15
-                  uid: 019e61fc-1436-77ac-bc97-5ef21b2375b6
+                  uid: 019e622d-3012-7c30-813d-fbb6c560ebd8
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11280,10 +11281,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-05-26T08:52:50+07:00'
-                  updated_at: '2026-05-26T08:52:50+07:00'
+                  created_at: '2026-05-26T12:16:29+09:30'
+                  updated_at: '2026-05-26T12:16:29+09:30'
                 - id: 14
-                  uid: 019e61fc-1431-7493-a098-bbc2b3cc10ec
+                  uid: 019e622d-300d-76c5-8b90-d157d3e91b5a
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11294,8 +11295,8 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-05-26T08:52:50+07:00'
-                  updated_at: '2026-05-26T08:52:50+07:00'
+                  created_at: '2026-05-26T12:16:29+09:30'
+                  updated_at: '2026-05-26T12:16:29+09:30'
               schema:
                 type: array
                 items:
@@ -11353,7 +11354,7 @@ paths:
             application/json:
               example:
                 id: 19
-                uid: 019e61fc-149f-7dc2-ad81-5ab92f546733
+                uid: 019e622d-308f-7e8f-b413-b40bd0c6a8f4
                 name: Nome do Webhook
                 url: 'http://dev.bole.to:5001'
                 content_type: application/json
@@ -11364,8 +11365,8 @@ paths:
                 concurrency_limit: 10
                 subaccounts: false
                 auth_kind: none
-                created_at: '2026-05-26T08:52:50+07:00'
-                updated_at: '2026-05-26T08:52:50+07:00'
+                created_at: '2026-05-26T12:16:29+09:30'
+                updated_at: '2026-05-26T12:16:29+09:30'
               schema:
                 $ref: '#/components/schemas/v1_webhook_object'
         '401':
@@ -11624,9 +11625,9 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 019e61fc-180a-7d63-9a5e-fdd890e81965
-                created_at: '2026-05-26T08:52:51+07:00'
-                updated_at: '2026-05-26T08:52:51+07:00'
+                uid: 019e622d-3474-7215-ae44-f82c69c851fc
+                created_at: '2026-05-26T12:16:30+09:30'
+                updated_at: '2026-05-26T12:16:30+09:30'
                 name: Lote de Boletos
                 bank_billet_ids:
                   - 65
@@ -11709,25 +11710,25 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 019e61fc-1937-7fd7-9512-e0d014f3bb4e
-                  created_at: '2026-05-26T08:52:52+07:00'
-                  updated_at: '2026-05-26T08:52:52+07:00'
+                  uid: 019e622d-35cb-792c-a54b-aa8512723ef5
+                  created_at: '2026-05-26T12:16:30+09:30'
+                  updated_at: '2026-05-26T12:16:30+09:30'
                   name: Lote
                   bank_billet_ids:
                     - 71
                     - 72
                 - id: 5
-                  uid: 019e61fc-18f3-73ea-b7f7-2ca0e6ffba55
-                  created_at: '2026-05-26T08:52:51+07:00'
-                  updated_at: '2026-05-26T08:52:51+07:00'
+                  uid: 019e622d-3577-7521-b411-6fafeceafae2
+                  created_at: '2026-05-26T12:16:30+09:30'
+                  updated_at: '2026-05-26T12:16:30+09:30'
                   name: Lote
                   bank_billet_ids:
                     - 69
                     - 70
                 - id: 4
-                  uid: 019e61fc-18a5-723e-9ea3-69ddc3e1618b
-                  created_at: '2026-05-26T08:52:51+07:00'
-                  updated_at: '2026-05-26T08:52:51+07:00'
+                  uid: 019e622d-351e-7486-aa59-f1d015b52cf5
+                  created_at: '2026-05-26T12:16:30+09:30'
+                  updated_at: '2026-05-26T12:16:30+09:30'
                   name: Lote
                   bank_billet_ids:
                     - 67
@@ -11789,9 +11790,9 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 019e61fc-1a21-79f5-b13c-02d19c24ffce
-                created_at: '2026-05-26T08:52:52+07:00'
-                updated_at: '2026-05-26T08:52:52+07:00'
+                uid: 019e622d-3688-75a0-a0c9-4443dbe68114
+                created_at: '2026-05-26T12:16:30+09:30'
+                updated_at: '2026-05-26T12:16:30+09:30'
                 name: Lote
                 bank_billet_ids:
                   - 73
@@ -12110,16 +12111,16 @@ paths:
               example:
                 id: 3
                 account_id: 186
-                account_public_id: 019e61fc-1df8-7471-86c3-906e2538e1cf
+                account_public_id: 019e622d-3ace-753f-9a09-e2874e4ac14a
                 bank_billet_batch_id: 12
-                bank_billet_batch_public_id: 019e61fc-1e46-707a-aa94-0f01b227243a
-                created_at: '2026-05-26T08:52:53+07:00'
+                bank_billet_batch_public_id: 019e622d-3b2f-737c-b65c-9602b39793d6
+                created_at: '2026-05-26T12:16:32+09:30'
                 file_format: zip
                 output_url: null
                 processed_at: null
-                public_id: 019e61fc-1e56-7676-b119-c16161b9f501
+                public_id: 019e622d-3b42-70cf-8cd5-6ea194221c8c
                 status: enqueued
-                updated_at: '2026-05-26T08:52:53+07:00'
+                updated_at: '2026-05-26T12:16:32+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_batch_export_object'
         '401':
@@ -12198,16 +12199,16 @@ paths:
               example:
                 id: 4
                 account_id: 189
-                account_public_id: 019e61fc-1ecd-7d54-b798-d71bb758b81d
+                account_public_id: 019e622d-3bd6-7500-932d-bdd5f6e66901
                 bank_billet_batch_id: 13
-                bank_billet_batch_public_id: 019e61fc-1f24-7eed-ac6b-40c7e381f7e5
-                created_at: '2026-05-26T08:52:53+07:00'
+                bank_billet_batch_public_id: 019e622d-3c39-73ff-a6c9-2a26c1232e94
+                created_at: '2026-05-26T12:16:32+09:30'
                 file_format: pdf
                 output_url: null
                 processed_at: null
-                public_id: 019e61fc-1f33-7da1-876b-d202c6ed5717
+                public_id: 019e622d-3c4b-77fb-9d5a-9c315ee65de8
                 status: enqueued
-                updated_at: '2026-05-26T08:52:53+07:00'
+                updated_at: '2026-05-26T12:16:32+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_batch_export_object'
         '401':
@@ -12823,7 +12824,7 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 019e61fc-20a6-78cf-a636-594bc2d7a5b2
+                  uid: 019e622d-3dec-78b9-8289-c5645ab81286
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 3
@@ -12837,11 +12838,11 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-05-26T08:52:53+07:00'
-                  updated_at: '2026-05-26T08:52:53+07:00'
+                  created_at: '2026-05-26T12:16:32+09:30'
+                  updated_at: '2026-05-26T12:16:32+09:30'
                   kind: '400'
                 - id: 2
-                  uid: 019e61fc-2075-72c9-b440-f8718427df90
+                  uid: 019e622d-3db3-7d6c-875e-aec89298736e
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 2
@@ -12855,11 +12856,11 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-05-26T08:52:53+07:00'
-                  updated_at: '2026-05-26T08:52:53+07:00'
+                  created_at: '2026-05-26T12:16:32+09:30'
+                  updated_at: '2026-05-26T12:16:32+09:30'
                   kind: '400'
                 - id: 1
-                  uid: 019e61fc-2033-7f7f-9c74-416e3b1cf2a9
+                  uid: 019e622d-3d69-7a08-8a03-6b55161499e5
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 1
@@ -12873,8 +12874,8 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-05-26T08:52:53+07:00'
-                  updated_at: '2026-05-26T08:52:53+07:00'
+                  created_at: '2026-05-26T12:16:32+09:30'
+                  updated_at: '2026-05-26T12:16:32+09:30'
                   kind: '400'
               schema:
                 type: array
@@ -12933,7 +12934,7 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 019e61fc-214f-7b1f-ba9c-52f12557312b
+                uid: 019e622d-3ead-7fb7-b73f-ad118690e1c6
                 occurrence: '03'
                 date_of_occurrence: '2014-03-08'
                 discharge_id: 4
@@ -12947,8 +12948,8 @@ paths:
                 our_occurrence: '2001'
                 bank_billet_account_id: null
                 bank_number: '756'
-                created_at: '2026-05-26T08:52:54+07:00'
-                updated_at: '2026-05-26T08:52:54+07:00'
+                created_at: '2026-05-26T12:16:32+09:30'
+                updated_at: '2026-05-26T12:16:32+09:30'
                 kind: '400'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_discharge_object'
@@ -13027,7 +13028,7 @@ paths:
                 paid_agency: '00001'
                 paid_agency_number: '0000'
                 paid_agency_digit: '1'
-                created_at: '2026-05-26T08:52:54+07:00'
+                created_at: '2026-05-26T12:16:33+09:30'
                 credit_at: null
                 direct: false
                 created_via_api: false
@@ -13035,14 +13036,14 @@ paths:
                 paid_by_pix: false
                 kind: 0
                 financial_provider_external_id: null
-                uid: 019e61fc-2214-7fa0-a8e0-e991eafbe126
+                uid: 019e622d-3fa6-7b88-a797-b8d735f2fe47
                 pix_id: null
                 document_number: null
                 our_number: '40086'
                 customer_person_name: José da Silva
                 expire_at: '2026-05-29'
                 amount: 50
-                updated_at: '2026-05-26T08:52:54+07:00'
+                updated_at: '2026-05-26T12:16:33+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_payment_object'
         '401':
@@ -13166,7 +13167,7 @@ paths:
                   paid_agency: '0001'
                   paid_agency_number: '0001'
                   paid_agency_digit: null
-                  created_at: '2026-05-26T08:52:54+07:00'
+                  created_at: '2026-05-26T12:16:33+09:30'
                   credit_at: null
                   direct: null
                   created_via_api: false
@@ -13174,14 +13175,14 @@ paths:
                   paid_by_pix: false
                   kind: 1
                   financial_provider_external_id: null
-                  uid: 019e61fc-230f-7ea8-a627-6ae10fa593e4
+                  uid: 019e622d-40bd-78ca-a27e-625e14ceb472
                   pix_id: null
                   document_number: null
                   our_number: '40087'
                   customer_person_name: José da Silva
                   expire_at: '2026-05-29'
                   amount: 50
-                  updated_at: '2026-05-26T08:52:54+07:00'
+                  updated_at: '2026-05-26T12:16:33+09:30'
               schema:
                 type: array
                 items:
@@ -13249,7 +13250,7 @@ paths:
                 paid_agency: '0001'
                 paid_agency_number: '0001'
                 paid_agency_digit: null
-                created_at: '2026-05-26T08:52:54+07:00'
+                created_at: '2026-05-26T12:16:33+09:30'
                 credit_at: null
                 direct: null
                 created_via_api: false
@@ -13257,14 +13258,14 @@ paths:
                 paid_by_pix: false
                 kind: 1
                 financial_provider_external_id: null
-                uid: 019e61fc-239c-706b-a77b-389649923f54
+                uid: 019e622d-4160-7b63-b161-ea4f9fdd95a6
                 pix_id: null
                 document_number: null
                 our_number: '40088'
                 customer_person_name: José da Silva
                 expire_at: '2026-05-29'
                 amount: 50
-                updated_at: '2026-05-26T08:52:54+07:00'
+                updated_at: '2026-05-26T12:16:33+09:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_payment_object'
         '401':
@@ -13426,40 +13427,40 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 019e61fc-25b9-7508-a029-f42437b19d94
+                  uid: 019e622d-4363-75b3-b34d-735231780bbc
                   bank_billet_id: 95
                   bank_billet_account_id: 120
-                  created_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                   retry_blocked: false
                 - id: 2
-                  uid: 019e61fc-2587-73d6-83cc-b68baae42775
+                  uid: 019e622d-432f-772b-9705-bb16ed51cf6e
                   bank_billet_id: 94
                   bank_billet_account_id: 119
-                  created_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                   retry_blocked: false
                 - id: 1
-                  uid: 019e61fc-252f-7ae1-90a1-cd7df342c12a
+                  uid: 019e622d-42d7-7588-86e9-e775b51bc88f
                   bank_billet_id: 93
                   bank_billet_account_id: 118
-                  created_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:33+09:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  updated_at: '2026-05-26T12:16:33+09:30'
                   retry_blocked: false
               schema:
                 type: array
@@ -13518,16 +13519,16 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 019e61fc-265e-74bb-a2ff-42d215473ed1
+                uid: 019e622d-441f-779d-997a-7f8267646101
                 bank_billet_id: 96
                 bank_billet_account_id: 121
-                created_at: '2026-05-26T08:52:55+07:00'
+                created_at: '2026-05-26T12:16:34+09:30'
                 error_message: null
                 failed_at: null
                 fails_count: 0
                 registered_at: null
                 status: '1'
-                updated_at: '2026-05-26T08:52:55+07:00'
+                updated_at: '2026-05-26T12:16:34+09:30'
                 retry_blocked: false
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_registration_object'
@@ -13646,7 +13647,7 @@ paths:
             application/json:
               example:
                 - id: 4
-                  uid: 019e61fc-2774-7135-978e-3f5ab73c5a7d
+                  uid: 019e622d-453c-72cf-ba5e-820950e816bb
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13654,10 +13655,10 @@ paths:
                   bank_billet_account_id: 124
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                 - id: 3
-                  uid: 019e61fc-273f-72a5-993a-39d88af33398
+                  uid: 019e622d-4509-7d02-861f-c93a6165d6b2
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13665,10 +13666,10 @@ paths:
                   bank_billet_account_id: 123
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                 - id: 2
-                  uid: 019e61fc-2717-71bb-8ae4-e53b1d9fb87e
+                  uid: 019e622d-44df-7575-baf5-1cba5652fd8a
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13676,8 +13677,8 @@ paths:
                   bank_billet_account_id: 122
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
               schema:
                 type: array
                 items:
@@ -13785,7 +13786,7 @@ paths:
             application/json:
               example:
                 - id: 7
-                  uid: 019e61fc-284f-725d-8ad8-12dbc97d8995
+                  uid: 019e622d-4628-7ff2-8d7e-f1291e0109e7
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13793,10 +13794,10 @@ paths:
                   bank_billet_account_id: 127
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                 - id: 6
-                  uid: 019e61fc-282a-7f70-8709-7596dbd9be5c
+                  uid: 019e622d-45ff-7eab-a94b-59292d01f548
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13804,10 +13805,10 @@ paths:
                   bank_billet_account_id: 126
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
                 - id: 5
-                  uid: 019e61fc-2806-7e55-ae63-ad937d2713ec
+                  uid: 019e622d-45d7-7931-aaa3-aa50693b9c9e
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13815,8 +13816,8 @@ paths:
                   bank_billet_account_id: 125
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-05-26T08:52:55+07:00'
-                  updated_at: '2026-05-26T08:52:55+07:00'
+                  created_at: '2026-05-26T12:16:34+09:30'
+                  updated_at: '2026-05-26T12:16:34+09:30'
               schema:
                 type: array
                 items:
@@ -14007,7 +14008,7 @@ paths:
             application/json:
               example:
                 id: 9
-                uid: 019e61fc-2a96-78e3-a31d-2d62ce742cf0
+                uid: 019e622d-48f8-7dca-b05f-5700b6b5c59c
                 our_code: '1001'
                 occurrence: '01'
                 remittance_id: null
@@ -14015,8 +14016,8 @@ paths:
                 bank_billet_account_id: 131
                 processed_at: null
                 occurrence_detail: Entrada de Título
-                created_at: '2026-05-26T08:52:56+07:00'
-                updated_at: '2026-05-26T08:52:56+07:00'
+                created_at: '2026-05-26T12:16:35+09:30'
+                updated_at: '2026-05-26T12:16:35+09:30'
         '401':
           description: Falha de autenticação. Token inválido
           content:
@@ -14082,15 +14083,15 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 019e61fc-2b81-7d25-b629-f314a8c69f73
+                uid: 019e622d-49fc-70f4-bfe1-c60c88d47963
                 filename: null
                 processed_at: null
                 created_via_api: true
                 status: unprocessed
                 bank_billet_account_id: null
                 created_via_integration: null
-                created_at: '2026-05-26T08:52:56+07:00'
-                updated_at: '2026-05-26T08:52:56+07:00'
+                created_at: '2026-05-26T12:16:35+09:30'
+                updated_at: '2026-05-26T12:16:35+09:30'
                 external_id: EXT-DIS-123456
                 custom_data:
                   foo: bar
@@ -14211,15 +14212,15 @@ paths:
             application/json:
               example:
                 - id: 13
-                  uid: 019e61fc-2d2e-7b82-bdf7-1d3a5826c06e
+                  uid: 019e622d-4bfa-702e-83b7-1101b82dfc98
                   filename: null
                   processed_at: null
                   created_via_api: false
                   status: unprocessed
                   bank_billet_account_id: 133
                   created_via_integration: null
-                  created_at: '2026-05-26T08:52:57+07:00'
-                  updated_at: '2026-05-26T08:52:57+07:00'
+                  created_at: '2026-05-26T12:16:36+09:30'
+                  updated_at: '2026-05-26T12:16:36+09:30'
                   external_id: null
                   custom_data: null
                   tags:
@@ -14285,15 +14286,15 @@ paths:
             application/json:
               example:
                 id: 16
-                uid: 019e61fc-2de8-7cb7-ba01-c1c944b7b3fc
+                uid: 019e622d-4ccd-7bdb-bb23-8629e2c45884
                 filename: null
                 processed_at: null
                 created_via_api: false
                 status: unprocessed
                 bank_billet_account_id: 134
                 created_via_integration: null
-                created_at: '2026-05-26T08:52:57+07:00'
-                updated_at: '2026-05-26T08:52:57+07:00'
+                created_at: '2026-05-26T12:16:36+09:30'
+                updated_at: '2026-05-26T12:16:36+09:30'
                 external_id: null
                 custom_data: null
                 tags: []
@@ -14579,7 +14580,7 @@ paths:
             application/json:
               example:
                 - id: 2
-                  uid: 019e61fc-31a3-73db-84c0-d17606789cca
+                  uid: 019e622d-506c-795e-bd9a-2359a737e3b3
                   created_rows: 0
                   enqueued_at: null
                   started_at: null
@@ -14599,10 +14600,10 @@ paths:
                   custom_data: null
                   tags: []
                   tag_list: null
-                  created_at: '2026-05-26T08:52:58+07:00'
-                  updated_at: '2026-05-26T08:52:58+07:00'
+                  created_at: '2026-05-26T12:16:37+09:30'
+                  updated_at: '2026-05-26T12:16:37+09:30'
                 - id: 1
-                  uid: 019e61fc-3171-7ae9-8191-4b6056ef244a
+                  uid: 019e622d-5035-7bb9-8848-5a06a3e938b3
                   created_rows: 0
                   enqueued_at: null
                   started_at: null
@@ -14622,8 +14623,8 @@ paths:
                   custom_data: null
                   tags: []
                   tag_list: null
-                  created_at: '2026-05-26T08:52:58+07:00'
-                  updated_at: '2026-05-26T08:52:58+07:00'
+                  created_at: '2026-05-26T12:16:37+09:30'
+                  updated_at: '2026-05-26T12:16:37+09:30'
               schema:
                 type: array
                 items:
@@ -14688,7 +14689,7 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 019e61fc-31f4-7091-902f-8ee79317448a
+                uid: 019e622d-50c4-739b-adf6-37e7c3006df2
                 created_rows: 0
                 enqueued_at: null
                 started_at: null
@@ -14708,8 +14709,8 @@ paths:
                 custom_data: null
                 tags: []
                 tag_list: null
-                created_at: '2026-05-26T08:52:58+07:00'
-                updated_at: '2026-05-26T08:52:58+07:00'
+                created_at: '2026-05-26T12:16:37+09:30'
+                updated_at: '2026-05-26T12:16:37+09:30'
               schema:
                 $ref: '#/components/schemas/v1_import'
         '401':
@@ -14778,7 +14779,7 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 019e61fc-326c-7138-ae2b-1c70d83d14d0
+                uid: 019e622d-5149-71fd-979c-433685fa0203
                 created_rows: 0
                 enqueued_at: null
                 started_at: null
@@ -14798,8 +14799,8 @@ paths:
                 custom_data: null
                 tags: []
                 tag_list: null
-                created_at: '2026-05-26T08:52:58+07:00'
-                updated_at: '2026-05-26T08:52:58+07:00'
+                created_at: '2026-05-26T12:16:37+09:30'
+                updated_at: '2026-05-26T12:16:37+09:30'
               schema:
                 $ref: '#/components/schemas/v1_import'
         '404':
@@ -14847,13 +14848,13 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 019e61fc-3372-7069-898a-45e25c064010
+                uid: 019e622d-526d-770f-877e-03b4a826b2c7
                 filename: 2605261.REM
                 created_via_api: true
                 status: unprocessed
                 bank_billet_account_id: 136
-                created_at: '2026-05-26T08:52:58+07:00'
-                updated_at: '2026-05-26T08:52:58+07:00'
+                created_at: '2026-05-26T12:16:37+09:30'
+                updated_at: '2026-05-26T12:16:37+09:30'
                 processed_at: null
                 url: null
                 bank_billet_ids:
@@ -14872,7 +14873,7 @@ paths:
                 tag_list: 'tag1, tag2, tag3'
                 bank_billet_remittances:
                   - id: 11
-                    uid: 019e61fc-3358-7e81-aea5-d714f06de244
+                    uid: 019e622d-5251-7bb1-82cf-fd32b7360759
                     our_code: '1001'
                     occurrence: '01'
                     remittance_id: 3
@@ -14880,8 +14881,8 @@ paths:
                     bank_billet_account_id: 136
                     processed_at: null
                     occurrence_detail: Entrada de Título
-                    created_at: '2026-05-26T08:52:58+07:00'
-                    updated_at: '2026-05-26T08:52:58+07:00'
+                    created_at: '2026-05-26T12:16:37+09:30'
+                    updated_at: '2026-05-26T12:16:37+09:30'
               schema:
                 $ref: '#/components/schemas/v1_remittance_object'
         '401':
@@ -15015,13 +15016,13 @@ paths:
             application/json:
               example:
                 - id: 7
-                  uid: 019e61fc-351f-7e88-97a8-1c3fb9dcf61d
+                  uid: 019e622d-5455-7776-93bf-ec5c47850e65
                   filename: 2605261.REM
                   created_via_api: false
                   status: unprocessed
                   bank_billet_account_id: 141
-                  created_at: '2026-05-26T08:52:59+07:00'
-                  updated_at: '2026-05-26T08:52:59+07:00'
+                  created_at: '2026-05-26T12:16:38+09:30'
+                  updated_at: '2026-05-26T12:16:38+09:30'
                   processed_at: null
                   url: null
                   bank_billet_ids:
@@ -15038,7 +15039,7 @@ paths:
                   tag_list: 'tag1, tag2, tag3'
                   bank_billet_remittances:
                     - id: 15
-                      uid: 019e61fc-3520-773a-8730-737a6b6cadb5
+                      uid: 019e622d-5457-717c-9ff3-38de7b7a44bf
                       our_code: '1001'
                       occurrence: '01'
                       remittance_id: 7
@@ -15046,8 +15047,8 @@ paths:
                       bank_billet_account_id: 141
                       processed_at: null
                       occurrence_detail: Entrada de Título
-                      created_at: '2026-05-26T08:52:59+07:00'
-                      updated_at: '2026-05-26T08:52:59+07:00'
+                      created_at: '2026-05-26T12:16:38+09:30'
+                      updated_at: '2026-05-26T12:16:38+09:30'
               schema:
                 type: array
                 items:
@@ -15105,13 +15106,13 @@ paths:
             application/json:
               example:
                 id: 10
-                uid: 019e61fc-3622-7780-bf7c-0eac2fe896e4
+                uid: 019e622d-5661-70d1-bc55-9f3d6ae9d933
                 filename: 2605261.REM
                 created_via_api: false
                 status: unprocessed
                 bank_billet_account_id: 145
-                created_at: '2026-05-26T08:52:59+07:00'
-                updated_at: '2026-05-26T08:52:59+07:00'
+                created_at: '2026-05-26T12:16:38+09:30'
+                updated_at: '2026-05-26T12:16:38+09:30'
                 processed_at: null
                 url: null
                 bank_billet_ids:
@@ -15125,7 +15126,7 @@ paths:
                 tag_list: ''
                 bank_billet_remittances:
                   - id: 18
-                    uid: 019e61fc-3623-7d83-9723-a4753c15a2d6
+                    uid: 019e622d-5664-7c96-83fe-597d9e1fcbdb
                     our_code: '1001'
                     occurrence: '01'
                     remittance_id: 10
@@ -15133,8 +15134,8 @@ paths:
                     bank_billet_account_id: 145
                     processed_at: null
                     occurrence_detail: Entrada de Título
-                    created_at: '2026-05-26T08:52:59+07:00'
-                    updated_at: '2026-05-26T08:52:59+07:00'
+                    created_at: '2026-05-26T12:16:38+09:30'
+                    updated_at: '2026-05-26T12:16:38+09:30'
               schema:
                 $ref: '#/components/schemas/v1_remittance_object'
         '401':
@@ -15337,13 +15338,13 @@ paths:
             application/json:
               example:
                 - id: 14
-                  uid: 019e61fc-3903-7ab9-a48a-ea2a32ddf752
+                  uid: 019e622d-5b53-7e1b-aee3-835d4b44ccef
                   filename: 2605261.REM
                   created_via_api: true
                   status: unprocessed
                   bank_billet_account_id: 152
-                  created_at: '2026-05-26T08:53:00+07:00'
-                  updated_at: '2026-05-26T08:53:00+07:00'
+                  created_at: '2026-05-26T12:16:40+09:30'
+                  updated_at: '2026-05-26T12:16:40+09:30'
                   processed_at: null
                   url: null
                   bank_billet_ids:
@@ -15358,7 +15359,7 @@ paths:
                   tag_list: null
                   bank_billet_remittances:
                     - id: 22
-                      uid: 019e61fc-38e3-77bf-be68-066b1c301ee2
+                      uid: 019e622d-5b2c-746a-a050-c38cb775919d
                       our_code: '1001'
                       occurrence: '01'
                       remittance_id: 14
@@ -15366,10 +15367,10 @@ paths:
                       bank_billet_account_id: 152
                       processed_at: null
                       occurrence_detail: Entrada de Título
-                      created_at: '2026-05-26T08:53:00+07:00'
-                      updated_at: '2026-05-26T08:53:00+07:00'
+                      created_at: '2026-05-26T12:16:40+09:30'
+                      updated_at: '2026-05-26T12:16:40+09:30'
                     - id: 23
-                      uid: 019e61fc-38e5-7179-9c12-28f3ead05186
+                      uid: 019e622d-5b2f-75d8-914d-2bf1f439a633
                       our_code: '1002'
                       occurrence: '02'
                       remittance_id: 14
@@ -15377,8 +15378,8 @@ paths:
                       bank_billet_account_id: 152
                       processed_at: null
                       occurrence_detail: Pedido de Baixa
-                      created_at: '2026-05-26T08:53:00+07:00'
-                      updated_at: '2026-05-26T08:53:00+07:00'
+                      created_at: '2026-05-26T12:16:40+09:30'
+                      updated_at: '2026-05-26T12:16:40+09:30'
               schema:
                 type: array
                 items:
