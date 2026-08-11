@@ -23,8 +23,24 @@ kobana-api-specs/
 ├── swagger/          # Especificações Swagger/OpenAPI
 │   └── v1_0/         # Versão 1.0 da API
 │   └── v2_0/         # Versão 2.0 da API
+├── developers/       # Site da documentação (Docusaurus) — developers.kobana.com.br
 └── README.md         # Este arquivo
 ```
+
+## 📚 Site da documentação
+
+A pasta [`developers/`](./developers) contém o site da documentação em Docusaurus que
+publica `developers.kobana.com.br`: os guias, as páginas conceituais da API e a
+referência de endpoints gerada automaticamente a partir dos arquivos OpenAPI acima.
+
+```bash
+cd developers
+npm install
+npm run gen-api-docs:all   # gera a referência a partir de swagger/
+npm start
+```
+
+Veja [`developers/README.md`](./developers/README.md) para detalhes.
 
 ## 🏦 Bancos Suportados
 
