@@ -1,0 +1,3584 @@
+---
+title: "Payloads"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Payload é o conteúdo que é enviado na notificação. Cada evento possui um payload diferente. Em seguida o que você pode esperar de cada evento.
+
+A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `object`, `changes`.
+
+|  |  |
+| --- | --- |
+| event\_code | Código do evento que originou a notificação. |
+| webhook | Informações do webhook para o qual a notificação foi criada. |
+| object | Informações do recurso relativo ao evento. |
+| changes | Mudanças realizadas no recurdo (no caso de eventos \*.updated) |
+| errors | Informações de erros relativo ao evento. |
+
+### Addon
+
+```json
+{
+  "object": {
+    "id": 17,
+    "name": "Conciliação Bancária Automática",
+    "slug": "conciliacao-bancaria",
+    "description": "Conciliação automática de extratos bancários com lançamentos.",
+    "instructions_url": "https://ajuda.kobana.com.br/addons/conciliacao",
+    "developer_name": "Kobana",
+    "developer_url": "https://www.kobana.com.br",
+    "tos_url": "https://www.kobana.com.br/termos",
+    "privacy_policy_url": "https://www.kobana.com.br/privacidade",
+    "subscription_price": 49.9,
+    "subscription_cycle": "monthly"
+  },
+  "event_code": "addon.activated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Assinatura
+
+```json
+{
+  "object": {
+    "id": 14502,
+    "uid": "CSB7F2A9C1E5B3D8",
+    "amount": 89.9,
+    "cycle": "monthly",
+    "next_billing": "2026-07-05",
+    "end_at": null,
+    "instructions": "Cobrança recorrente mensal.",
+    "customer_id": 778124,
+    "customer_person_name": "Fernanda Lima Rodrigues",
+    "customer_cnpj_cpf": "987.654.321-00",
+    "customer_address": "Avenida Brasil",
+    "customer_state": "RJ",
+    "customer_neighborhood": "Centro",
+    "customer_zipcode": "20040-002",
+    "customer_address_number": "1500",
+    "customer_address_complement": "Sala 302",
+    "customer_phone_number": "2132541987",
+    "customer_email": "fernanda.lima@example.com.br",
+    "customer_city_name": "Rio de Janeiro",
+    "customer_email_cc": null,
+    "customer_ignore_email": false,
+    "customer_ignore_sms": false,
+    "customer_mobile_local_code": "21",
+    "customer_mobile_number": "991234567",
+    "customer_nickname": "Fernanda",
+    "customer_notes": null,
+    "description": "Assinatura Plano Mensal",
+    "created_at": "2026-06-16T11:00:00-03:00",
+    "updated_at": "2026-06-16T11:00:00-03:00",
+    "created_via_api": true,
+    "days_in_advance": 5,
+    "bank_billet_account_id": 50231,
+    "fine_for_delay": 2.0,
+    "fine_type": "percentage",
+    "fine_percentage": 2.0,
+    "fine_value": null,
+    "days_for_fine": 1,
+    "late_payment_interest": 1.0,
+    "interest_type": "monthly_percentage",
+    "interest_monthly_percentage": 1.0,
+    "days_for_interest": 1,
+    "discount_type": "no_discount",
+    "discount_value": null,
+    "discount_percentage": null,
+    "email": "fernanda.lima@example.com.br",
+    "bank_billet_layout_id": null,
+    "bank_billet_ids": [30591850, 30591851],
+    "notes": null,
+    "payment_count": 2,
+    "tags": ["assinatura", "mensal"],
+    "tag_list": "assinatura, mensal",
+    "prevent_registration": false,
+    "divergent_payment_type": "no_divergent_payment",
+    "document_number": null,
+    "document_date": null,
+    "document_type": null,
+    "import_id": null,
+    "ignore_whatsapp": false
+  },
+  "event_code": "customer_subscription.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Boleto
+
+<Tabs>
+<TabItem value="json" label="bank_billet.*">
+
+```json
+{
+  "object": {
+    "id": 84512377,
+    "uid": "BB7F3A2C9D1E4B6A8F05",
+    "expire_at": "2026-06-30",
+    "paid_at": "2026-06-16",
+    "description": "Mensalidade junho/2026 - Plano Premium",
+    "status": "paid",
+    "registration_status": "registered",
+    "customer_person_name": "Maria Aparecida de Souza",
+    "customer_cnpj_cpf": "311.422.058-90",
+    "customer_address": "Rua das Laranjeiras",
+    "customer_state": "SP",
+    "customer_neighborhood": "Vila Mariana",
+    "customer_zipcode": "04015-020",
+    "customer_address_number": "1287",
+    "customer_address_complement": "Apto 52",
+    "customer_phone_number": "1133224455",
+    "customer_email": "maria.souza@example.com.br",
+    "customer_email_cc": "financeiro@example.com.br",
+    "customer_ignore_email": false,
+    "customer_ignore_sms": false,
+    "customer_mobile_local_code": "11",
+    "customer_mobile_number": "987654321",
+    "customer_nickname": "Maria Souza",
+    "customer_notes": "Cliente desde 2019",
+    "created_via_api": true,
+    "customer_city_name": "São Paulo",
+    "paid_amount": 349.9,
+    "amount": 349.9,
+    "url": "https://app.kobana.com.br/boletos/BB7F3A2C9D1E4B6A8F05",
+    "formats": {
+      "pdf": "https://app.kobana.com.br/boletos/BB7F3A2C9D1E4B6A8F05.pdf",
+      "png": "https://app.kobana.com.br/boletos/BB7F3A2C9D1E4B6A8F05.png"
+    },
+    "meta": null,
+    "fine_for_delay": 2.0,
+    "fine_type": 2,
+    "fine_percentage": 2.0,
+    "fine_value": null,
+    "days_for_fine": 1,
+    "late_payment_interest": 1.0,
+    "interest_type": 2,
+    "interest_daily_value": null,
+    "interest_daily_percentage": null,
+    "interest_monthly_percentage": 1.0,
+    "days_for_interest": 1,
+    "discount_type": 0,
+    "discount_limit_date": null,
+    "discount_value": null,
+    "discount_percentage": null,
+    "days_for_revoke": 0,
+    "notes": "Não receber após o vencimento via banco.",
+    "payment_count": 1,
+    "bank_billet_account_id": 73201,
+    "beneficiary_name": "Kobana Tecnologia Ltda",
+    "beneficiary_cnpj_cpf": "05.813.794/0001-26",
+    "beneficiary_address": "Av. Paulista, 1000 - São Paulo/SP",
+    "beneficiary_assignor_code": null,
+    "guarantor_name": null,
+    "guarantor_cnpj_cpf": null,
+    "payment_place": "Pagável em qualquer banco até o vencimento.",
+    "instructions": "Após o vencimento, cobrar multa de 2% e juros de 1% ao mês.",
+    "document_date": "2026-06-16",
+    "document_type": 31,
+    "document_number": "NF-2026-0042",
+    "acceptance": false,
+    "processed_our_number": "000000000123456",
+    "processed_our_number_raw": "123456",
+    "bank_contract_slug": "itau-cobranca-padrao",
+    "agency_number": "1234",
+    "agency_digit": null,
+    "account_number": "56789",
+    "account_digit": "0",
+    "extra1": null,
+    "extra1_digit": null,
+    "extra2": null,
+    "extra2_digit": null,
+    "line": "34191.79001 01234.567890 00012.345678 1 99980000034990",
+    "our_number": "123456",
+    "customer_subscription_id": null,
+    "installment_total": null,
+    "installment_number": null,
+    "installment_id": null,
+    "carne_url": null,
+    "bank_billet_layout_id": null,
+    "created_at": "2026-06-16T09:18:18-03:00",
+    "updated_at": "2026-06-16T14:05:42-03:00",
+    "tags": ["mensalidade", "premium"],
+    "tag_list": "mensalidade, premium",
+    "document_type_label": "DM",
+    "addons": {},
+    "ignore_email": false,
+    "ignore_sms": false,
+    "ignore_whatsapp": false,
+    "sue_code": null,
+    "revoke_code": null,
+    "first_instruction": null,
+    "second_instruction": null,
+    "guarantor_address_number": null,
+    "guarantor_neighborhood": null,
+    "guarantor_phone_number": null,
+    "guarantor_city_name": null,
+    "guarantor_state": null,
+    "guarantor_zipcode": null,
+    "guarantor_address": null,
+    "guarantor_address_complement": null,
+    "barcode": "34191999800000349901790001234567890001234567",
+    "registered_at": "2026-06-16T09:20:05-03:00",
+    "prevent_registration": false,
+    "customer_id": 9981234,
+    "control_number": "PED-558712",
+    "divergent_payment_type": 0,
+    "divergent_payment_value_type": null,
+    "divergent_payment_maximum_value": null,
+    "divergent_payment_minimum_value": null,
+    "divergent_payment_maximum_percentage": null,
+    "divergent_payment_minimum_percentage": null,
+    "divergent_payment_limit": null,
+    "days_for_discount": null,
+    "days_for_second_discount": null,
+    "second_discount_percentage": null,
+    "second_discount_value": null,
+    "days_for_third_discount": null,
+    "third_discount_percentage": null,
+    "third_discount_value": null,
+    "days_for_sue": null,
+    "days_for_negativation": null,
+    "interest_percentage": null,
+    "interest_value": null,
+    "interest_days_type": 0,
+    "customer_contact_person": "Maria Souza",
+    "custom_attachment_name": null,
+    "split_payment": false,
+    "split_payment_type": null,
+    "dispatch_type": 0,
+    "charge_type": 0,
+    "custom_data": { "pedido": "558712", "vendedor": "joao" },
+    "issued_at": "2026-06-16T09:18:18-03:00",
+    "shorten_url": "https://app.kobana.com.br/boletos/BB7F3A2C9D1E4B6A8F05",
+    "pix_enabled": true,
+    "pix_qrcode": "00020101021226850014br.gov.bcb.pix2563pix.example.com.br/qr/v2/cobv/9d1e4b6a8f0552040000530398654043499...",
+    "password_protected_mode": 0,
+    "revoked_at": null,
+    "recipient_account": null,
+    "pix_txid": "9d1e4b6a8f0540ab9c12d3e4f5a6b7c8",
+    "cancel_type": null,
+    "cancellation_reason": null,
+    "prevent_pix": false,
+    "reduction_amount": null,
+    "instructions_mode": 0,
+    "import_id": null,
+    "reduction_type": 0,
+    "reduction_percentage": null,
+    "url_hash": "BB7F3A2C9D1E4B6A8F05",
+    "external_id": "INV-2026-0042",
+    "financial_provider_external_id": "ITAU-998877665544",
+    "days_for_sue_type": null,
+    "credit_bureau": 0,
+    "after_create": null,
+    "sue_history": [],
+    "bank_billet_discharges": [
+      {
+        "id": 4451122,
+        "uid": "BD0A1B2C3D4E5F60718",
+        "occurrence": "06",
+        "date_of_occurrence": "2026-06-16",
+        "discharge_id": 88123,
+        "bank_billet_id": 84512377,
+        "occurrence_error": null,
+        "line_parsed": null,
+        "line_raw": "1...registro CNAB bruto...",
+        "processed_at": "2026-06-16T14:05:40-03:00",
+        "occurrence_detail": "Liquidação",
+        "occurrence_error_detail": null,
+        "our_occurrence": "06",
+        "bank_billet_account_id": 73201,
+        "bank_number": "237",
+        "created_at": "2026-06-16T14:05:42-03:00",
+        "updated_at": "2026-06-16T14:05:42-03:00",
+        "kind": "payment"
+      }
+    ],
+    "bank_billet_remittances": [
+      {
+        "id": 7781001,
+        "uid": "BR9F8E7D6C5B4A30291",
+        "our_code": "01",
+        "occurrence": "01",
+        "remittance_id": 55301,
+        "bank_billet_id": 84512377,
+        "bank_billet_account_id": 73201,
+        "processed_at": "2026-06-16T09:19:55-03:00",
+        "occurrence_detail": "Entrada de Títulos",
+        "created_at": "2026-06-16T09:19:55-03:00",
+        "updated_at": "2026-06-16T09:19:55-03:00"
+      }
+    ],
+    "bank_billet_payments": [
+      {
+        "id": 6620044,
+        "bank_billet_id": 84512377,
+        "bank_billet_account_id": 73201,
+        "discharge_id": 88123,
+        "paid_at": "2026-06-16",
+        "paid_amount": 349.9,
+        "bank_rate": 2.5,
+        "paid_bank": "341",
+        "paid_agency": "0987",
+        "paid_agency_number": "0987",
+        "paid_agency_digit": "6",
+        "created_at": "2026-06-16T14:05:42-03:00",
+        "credit_at": "2026-06-17",
+        "direct": false,
+        "created_via_api": false,
+        "line_parsed": null,
+        "paid_by_pix": false,
+        "kind": 0,
+        "financial_provider_external_id": "ITAU-998877665544"
+      }
+    ],
+    "bank_billet_registrations": [
+      {
+        "id": 3310055,
+        "uid": "BG1A2B3C4D5E6F70819",
+        "bank_billet_id": 84512377,
+        "bank_billet_account_id": 73201,
+        "created_at": "2026-06-16T09:18:20-03:00",
+        "error_message": null,
+        "failed_at": null,
+        "fails_count": 0,
+        "registered_at": "2026-06-16T09:20:05-03:00",
+        "status": "registered",
+        "updated_at": "2026-06-16T09:20:05-03:00",
+        "retry_blocked": false
+      }
+    ],
+    "bank_billet_split_accounts": [],
+    "pix": [],
+    "payments": ["CP1A2B3C4D5E6F7081920"]
+  },
+  "changes": {
+    "status": ["opened", "paid"],
+    "paid_at": [null, "2026-06-16"],
+    "paid_amount_cents": [null, 34990]
+  },
+  "event_code": "bank_billet.paid",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2017-04-18 09:18:18 -0300"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="bank_billet.register.*, bank_billet.cancel.*, bank_billet.update.*, bank_billet.sync.*, ...">
+
+```json
+{
+  "object": {
+    "id": 551200,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-16T09:18:20-03:00",
+    "updated_at": "2026-06-16T09:20:05-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "bank_billet": {
+      "id": 84512377,
+      "uid": "BB7F3A2C9D1E4B6A8F05",
+      "status": "opened",
+      "registration_status": "registered",
+      "amount": 349.9,
+      "expire_at": "2026-06-30",
+      "line": "34191.79001 01234.567890 00012.345678 1 99980000034990",
+      "barcode": "34191999800000349901790001234567890001234567",
+      "our_number": "123456",
+      "beneficiary_name": "Kobana Tecnologia Ltda",
+      "beneficiary_cnpj_cpf": "05.813.794/0001-26",
+      "customer_person_name": "Maria Aparecida de Souza",
+      "customer_cnpj_cpf": "311.422.058-90",
+      "registered_at": "2026-06-16T09:20:05-03:00",
+      "bank_billet_registrations": [
+        { "id": 3310055, "uid": "BG1A2B3C4D5E6F70819", "status": "registered", "registered_at": "2026-06-16T09:20:05-03:00", "fails_count": 0, "error_message": null, "retry_blocked": false }
+      ]
+    }
+  },
+  "event_code": "bank_billet.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2017-04-18 09:18:18 -0300"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Caixa Postal — Arquivo (File)
+
+```json
+{
+  "object": {
+    "uid": "0190a1c0-d4e5-7f80-9b1c-2d3e4f5a6b7c",
+    "mailbox_entry_id": "0190a1b2-c3d4-7e8f-9a0b-1c2d3e4f5a6b",
+    "kind": "received",
+    "name": "nfe-35260612345678000190.xml",
+    "size": 18432,
+    "mime_type": "application/xml",
+    "external_id": null,
+    "custom_data": {},
+    "tags": ["fiscal"],
+    "created_via_api": false,
+    "uploaded_at": "2026-06-16T11:20:01-03:00",
+    "processed_at": null,
+    "created_at": "2026-06-16T11:20:01-03:00",
+    "updated_at": "2026-06-16T11:20:01-03:00"
+  },
+  "event_code": "mailbox.file.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:20:02-03:00"
+  }
+}
+```
+
+### Caixa Postal — Canal (Channel)
+
+<Tabs>
+<TabItem value="json" label="mailbox.channel.{tipo}.db.*">
+
+```json
+{
+  "object": {
+    "id": 4521,
+    "public_id": "0190a1d3-e5f6-7081-9c2d-3e4f5a6b7c8d",
+    "status": "active",
+    "mailbox_entry_id": 8830,
+    "account_id": 1207,
+    "channel_type": "sftp",
+    "created_at": "2026-06-16T09:14:22-03:00",
+    "updated_at": "2026-06-16T09:14:22-03:00"
+  },
+  "event_code": "mailbox.channel.sftp.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T09:14:23-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="mailbox.channel.{s3,sftp}.fetch_all">
+
+```json
+{
+  "object": {
+    "uid": "0190a1d3-e5f6-7081-9c2d-3e4f5a6b7c8d",
+    "mailbox_entry": {
+      "uid": "0190a1b2-c3d4-7e8f-9a0b-1c2d3e4f5a6b",
+      "slug": "notas-fiscais-recebidas",
+      "name": "Notas Fiscais Recebidas",
+      "kind": "inbox",
+      "send_encrypted": false,
+      "send_encryption_public_key": null,
+      "receive_encrypted": false,
+      "receive_encryption_keypair_id": null,
+      "active_channels": ["sftp", "api"],
+      "channels": {
+        "sftp": { "host": "sftp.kobana.com.br", "port": 22, "username": "kobana_notas", "has_password": true, "has_key": false, "inbox_path": "/entrada", "outbox_path": "/saida" }
+      },
+      "processed": false,
+      "external_id": "ERP-CX-00123",
+      "custom_data": { "centro_custo": "fiscal" },
+      "tags": ["fiscal", "matriz"],
+      "created_via_api": true,
+      "created_at": "2026-06-16T09:14:22-03:00",
+      "updated_at": "2026-06-16T09:14:22-03:00"
+    },
+    "status": "active",
+    "external_id": null,
+    "custom_data": {},
+    "tags": [],
+    "created_via_api": true,
+    "created_at": "2026-06-16T09:14:22-03:00",
+    "updated_at": "2026-06-16T09:14:22-03:00"
+  },
+  "event_code": "mailbox.channel.sftp.fetch_all",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T12:00:00-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Caixa Postal — Entrada (Entry)
+
+<Tabs>
+<TabItem value="json" label="mailbox.entry.db.*">
+
+```json
+{
+  "object": {
+    "uid": "0190a1b2-c3d4-7e8f-9a0b-1c2d3e4f5a6b",
+    "slug": "notas-fiscais-recebidas",
+    "name": "Notas Fiscais Recebidas",
+    "kind": "inbox",
+    "send_encrypted": false,
+    "send_encryption_public_key": null,
+    "receive_encrypted": false,
+    "receive_encryption_keypair_id": null,
+    "active_channels": ["email", "sftp", "api"],
+    "channels": {
+      "email": { "inbox_emails": ["notas@malote.kobana.com.br"], "outbox_emails": [] },
+      "sftp": { "host": "sftp.kobana.com.br", "port": 22, "username": "kobana_notas", "has_password": true, "has_key": false, "inbox_path": "/entrada", "outbox_path": "/saida" }
+    },
+    "processed": false,
+    "external_id": "ERP-CX-00123",
+    "custom_data": { "centro_custo": "fiscal" },
+    "tags": ["fiscal", "matriz"],
+    "created_via_api": true,
+    "created_at": "2026-06-16T09:14:22-03:00",
+    "updated_at": "2026-06-16T09:14:22-03:00"
+  },
+  "event_code": "mailbox.entry.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T09:14:23-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="mailbox.entry.file.received / mailbox.entry.file.sent">
+
+```json
+{
+  "object": {
+    "file": {
+      "uid": "0190a1c0-d4e5-7f80-9b1c-2d3e4f5a6b7c",
+      "mailbox_entry_id": "0190a1b2-c3d4-7e8f-9a0b-1c2d3e4f5a6b",
+      "kind": "received",
+      "name": "nfe-35260612345678000190.xml",
+      "size": 18432,
+      "mime_type": "application/xml",
+      "external_id": null,
+      "custom_data": {},
+      "tags": [],
+      "created_via_api": false,
+      "uploaded_at": "2026-06-16T11:20:01-03:00",
+      "processed_at": null,
+      "created_at": "2026-06-16T11:20:01-03:00",
+      "updated_at": "2026-06-16T11:20:01-03:00"
+    },
+    "entry": {
+      "uid": "0190a1b2-c3d4-7e8f-9a0b-1c2d3e4f5a6b",
+      "slug": "notas-fiscais-recebidas",
+      "name": "Notas Fiscais Recebidas",
+      "kind": "inbox",
+      "send_encrypted": false,
+      "send_encryption_public_key": null,
+      "receive_encrypted": false,
+      "receive_encryption_keypair_id": null,
+      "active_channels": ["email", "api"],
+      "channels": {
+        "email": { "inbox_emails": ["notas@malote.kobana.com.br"], "outbox_emails": [] }
+      },
+      "processed": false,
+      "external_id": "ERP-CX-00123",
+      "custom_data": { "centro_custo": "fiscal" },
+      "tags": ["fiscal", "matriz"],
+      "created_via_api": true,
+      "created_at": "2026-06-16T09:14:22-03:00",
+      "updated_at": "2026-06-16T09:14:22-03:00"
+    }
+  },
+  "event_code": "mailbox.entry.file.received",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:20:02-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Carnê
+
+```json
+{
+  "object": {
+    "id": 25890,
+    "uid": "INS8C4A2E6F0B1D3",
+    "amount": 199.9,
+    "cycle": "monthly",
+    "start_at": "2026-07-10",
+    "end_at": null,
+    "instructions": "Não receber após o vencimento.",
+    "customer_id": 778123,
+    "description": "Carnê Plano Anual 2026",
+    "created_at": "2026-06-16T10:00:00-03:00",
+    "updated_at": "2026-06-16T10:00:00-03:00",
+    "customer_person_name": "João Carlos Pereira",
+    "customer_cnpj_cpf": "123.456.789-09",
+    "customer_email": "joao.pereira@example.com.br",
+    "customer_city_name": "São Paulo",
+    "customer_state": "SP",
+    "created_via_api": true,
+    "total": 12,
+    "bank_billet_account_id": 50231,
+    "status": "generated",
+    "fine_for_delay": 2.0,
+    "fine_type": "percentage",
+    "fine_percentage": 2.0,
+    "late_payment_interest": 1.0,
+    "interest_type": "monthly_percentage",
+    "interest_monthly_percentage": 1.0,
+    "discount_type": "no_discount",
+    "url": "https://api.kobana.com.br/carne/8c4a2e6f0b1d3a5c7e9f1b3d5a7c9e1f",
+    "bank_billet_ids": [30700101, 30700102],
+    "bank_billets": [
+      {
+        "id": 30700101,
+        "uid": "BBT1A2B3C4D5E6F7",
+        "expire_at": "2026-07-10T00:00:00-03:00",
+        "status": "opened",
+        "registration_status": "registered",
+        "amount": 199.9,
+        "our_number": "00000054321",
+        "installment_id": 25890,
+        "installment_total": 12,
+        "installment_number": 1,
+        "carne_url": "https://api.kobana.com.br/carne/8c4a2e6f0b1d3a5c7e9f1b3d5a7c9e1f",
+        "bank_billet_account_id": 50231,
+        "created_at": "2026-06-16T10:00:05-03:00",
+        "updated_at": "2026-06-16T10:04:58-03:00",
+        "bank_billet_discharges": [],
+        "bank_billet_remittances": [],
+        "bank_billet_payments": [],
+        "bank_billet_registrations": [],
+        "bank_billet_split_accounts": [],
+        "pix": [],
+        "payments": []
+      }
+    ],
+    "payment_count": 0,
+    "tags": ["carne", "anual"],
+    "tag_list": "carne, anual",
+    "document_number": "CARNE-2026-0042",
+    "document_date": "2026-06-16",
+    "document_type": "31",
+    "ignore_whatsapp": false
+  },
+  "changes": {
+    "status": ["processed", "generated"]
+  },
+  "event_code": "installment.generated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Carteira
+
+<Tabs>
+<TabItem value="json" label="bank_billet_account.*">
+
+```json
+{
+  "object": {
+    "id": 73201,
+    "uid": "PA1122334455667788990",
+    "bank_contract_slug": "itau-cobranca-padrao",
+    "financial_account": { "uid": "FA9988776655443322110" },
+    "next_our_number": 123457,
+    "agency_number": "1234",
+    "agency_digit": null,
+    "account_number": "56789",
+    "account_digit": "0",
+    "extra1": null,
+    "extra1_digit": null,
+    "extra2": null,
+    "extra2_digit": null,
+    "extra3": null,
+    "payment_place": "Pagável em qualquer banco até o vencimento.",
+    "contract": "987654",
+    "contract_type": "cobranca",
+    "beneficiary_name": "Kobana Tecnologia Ltda",
+    "beneficiary_cnpj_cpf": "05.813.794/0001-26",
+    "beneficiary_address": "Av. Paulista, 1000",
+    "name": "Itaú - Cobrança Padrão",
+    "status": "active",
+    "bank_contract": {
+      "bank": { "code": "341", "name": "Itaú Unibanco S.A.", "number": "341" },
+      "slug": "itau-cobranca-padrao",
+      "code": "109",
+      "sufix": null,
+      "variation": null,
+      "name": "Cobrança Registrada Itaú 109"
+    },
+    "integration": false,
+    "created_via_api": true,
+    "homologated_at": "2026-06-10T11:32:00-03:00",
+    "next_remittance_number": 42,
+    "configuration": {},
+    "default": true,
+    "custom_name": "Carteira Principal Itaú",
+    "kind": "registered",
+    "beneficiary_address_street": "Avenida Paulista",
+    "remittance_disabled_at": null,
+    "beneficiary_address_street_number": "1000",
+    "beneficiary_address_complement": "Conj. 51",
+    "beneficiary_address_city": "São Paulo",
+    "beneficiary_address_neighborhood": "Bela Vista",
+    "beneficiary_address_state": "SP",
+    "beneficiary_address_zipcode": "01310-100",
+    "bolepix_enabled_at": "2026-06-10T11:35:00-03:00",
+    "bolepix": {
+      "pix_mode": 1,
+      "pix_account_id": 4401,
+      "pix_account": {
+        "id": 4401,
+        "uid": "PA0011223344556677889",
+        "custom_name": "Pix Itaú Principal",
+        "validated_at": "2026-06-09T10:00:00-03:00",
+        "enabled_at": "2026-06-09T10:05:00-03:00",
+        "financial_provider_slug": "itau",
+        "key": "05.813.794/0001-26",
+        "status": "active",
+        "default": true,
+        "beneficiary": {
+          "document_number": "05813794000126",
+          "name": "Kobana Tecnologia Ltda",
+          "address": { "zip_code": "01310-100", "street": "Avenida Paulista", "number": "1000", "complement": "Conj. 51", "neighborhood": "Bela Vista", "city_name": "São Paulo", "state": "SP" }
+        },
+        "configuration": {},
+        "created_at": "2026-06-09T09:55:00-03:00",
+        "updated_at": "2026-06-09T10:05:00-03:00"
+      },
+      "pix_billing_options": {}
+    },
+    "bolepix_key": "05.813.794/0001-26",
+    "allow_expiration_on_weekends": false,
+    "allow_duplicate_charge_payments": false,
+    "created_at": "2026-06-08T15:42:10-03:00",
+    "updated_at": "2026-06-10T11:35:00-03:00"
+  },
+  "changes": {
+    "status": ["homologating", "active"]
+  },
+  "event_code": "bank_billet_account.activated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2017-04-18 09:18:18 -0300"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="bank_billet_account.homologation_failed">
+
+```json
+{
+  "errors": {
+    "agency_number": ["não confere com o cadastro do banco"],
+    "contract": ["inválido para o contrato informado"]
+  },
+  "object": { "id": 73201, "uid": "PA1122334455667788990", "status": "homologating", "...": "demais campos da carteira" },
+  "changes": { "status": ["pending", "homologating"] },
+  "event_code": "bank_billet_account.homologation_failed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2017-04-18 09:18:18 -0300"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Cliente
+
+```json
+{
+  "object": {
+    "id": 9981234,
+    "uid": "CU1A2B3C4D5E6F7081920",
+    "city_name": "São Paulo",
+    "person_name": "Maria Aparecida de Souza",
+    "nickname": "Maria Souza",
+    "address": "Rua das Laranjeiras",
+    "address_complement": "Apto 52",
+    "address_number": "1287",
+    "mobile_number": "987654321",
+    "cnpj_cpf": "311.422.058-90",
+    "email": "maria.souza@example.com.br",
+    "neighborhood": "Vila Mariana",
+    "phone_number": "1133224455",
+    "zipcode": "04015-020",
+    "mobile_local_code": "11",
+    "notes": "Cliente desde 2019",
+    "state": "SP",
+    "created_via_api": true,
+    "created_at": "2026-06-08T16:00:00-03:00",
+    "updated_at": "2026-06-16T14:10:00-03:00",
+    "ignore_email": false,
+    "ignore_sms": false,
+    "ignore_whatsapp": false,
+    "email_cc": "financeiro@example.com.br",
+    "contact_person": "Maria Souza",
+    "truncated_address": "Rua das Laranjeiras, 1287 - Vila Mariana",
+    "external_code": "CLI-558712",
+    "tags": ["premium", "ativo"],
+    "tag_list": "premium, ativo",
+    "custom_data": { "segmento": "varejo" },
+    "portal_password": "$2a$12$abcdef...",
+    "birthday": "1985-03-21",
+    "ignore_credit_restriction": false,
+    "credit_restriction_status": 0,
+    "ignore_credit_restriction_limit_at": null,
+    "ignore_credit_restriction_reason": null,
+    "credit_restriction_responsable_email": null,
+    "ignore_credit_restriction_included_at": null
+  },
+  "changes": {
+    "email": ["maria@old.com.br", "maria.souza@example.com.br"],
+    "mobile_number": ["999999999", "987654321"]
+  },
+  "event_code": "customer.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2017-04-18 09:18:18 -0300"
+  }
+}
+```
+
+### Cobrança — Pagamento
+
+```json
+{
+  "object": {
+    "uid": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+    "payable": { "id": 123456, "uid": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e", "type": "BankBillet" },
+    "debtor": { "is_payer": false, "name": "Padaria do Bairro LTDA", "document_number": "05.813.794/0001-26" },
+    "payer": { "name": "João da Silva", "document_number": "111.222.444-55" },
+    "amount": 149.9,
+    "paid_at": "2026-06-16T00:00:00-03:00",
+    "credit_at": "2026-06-17T00:00:00-03:00",
+    "kind": "bank_billet",
+    "bank": { "rate": 2.5 },
+    "receiving": { "bank": "341", "agency": "Itaú Centro SP", "agency_number": "0001", "agency_digit": "9" },
+    "created_via_api": true,
+    "transaction_identifier": "TXN-2026-0616-0042",
+    "status": "confirmed",
+    "duplicated": null,
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00"
+  },
+  "event_code": "charge.payment.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+### Comando
+
+<Tabs>
+<TabItem value="json" label="bank_billet.*">
+
+```json
+{
+  "object": {
+    "id": 123,
+    "uid": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "BankBillet",
+    "resource_uid": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+    "financial_provider_slug": "sicoob",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "bank_billet": {
+      "uid": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "our_number": "40001",
+      "status": "registered",
+      "amount": 149.9,
+      "line": "34191.74001 00000.148050 08882.500009 3 49790000015000"
+    }
+  },
+  "event_code": "bank_billet.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="pix.*">
+
+```json
+{
+  "object": {
+    "id": 124,
+    "uid": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Pix",
+    "resource_uid": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+    "financial_provider_slug": "itau",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "pix": {
+      "uid": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+      "txid": "kob8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e",
+      "status": "opened",
+      "kind": "instant",
+      "amount": 25.0
+    }
+  },
+  "event_code": "pix.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-2" label="financial.account.*">
+
+```json
+{
+  "object": {
+    "id": 125,
+    "uid": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+    "status": "confirmed",
+    "operation": "statement_sync",
+    "resource_type": "Financial::Account",
+    "resource_uid": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f40",
+    "financial_provider_slug": "sicoob",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "financial_account": {
+      "uid": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f40",
+      "status": "complete",
+      "account_number": "09917637",
+      "account_digit": "3",
+      "agency_number": "6311"
+    }
+  },
+  "event_code": "financial.account.statement_sync.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-3" label="payment.dda.account.*">
+
+```json
+{
+  "object": {
+    "id": 126,
+    "uid": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f40",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Payment::Dda::Account",
+    "resource_uid": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+    "financial_provider_slug": "iupay",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "payment_dda_account": {
+      "uid": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+      "cnpj": "05.813.794/0001-26",
+      "name": "Padaria do Bairro LTDA",
+      "status": "pending",
+      "letter_status": "not_created"
+    }
+  },
+  "event_code": "payment.dda.account.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-4" label="payment.dda.bank_billet.*">
+
+```json
+{
+  "object": {
+    "id": 127,
+    "uid": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Payment::Dda::BankBillet",
+    "resource_uid": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+    "financial_provider_slug": "iupay",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "payment_dda_bank_billet": {
+      "uid": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+      "status": "temporary",
+      "line": "34191.74001 00000.148050 08882.500009 3 49790000015000",
+      "amount": 7.6,
+      "expire_at": "2026-07-12"
+    }
+  },
+  "event_code": "payment.dda.bank_billet.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-5" label="transfer.ted.*">
+
+```json
+{
+  "object": {
+    "id": 128,
+    "uid": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Financial::Transfer",
+    "resource_uid": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+    "financial_provider_slug": "itau",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "financial_transfer": {
+      "uid": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+      "kind": "ted",
+      "amount": 1500.0,
+      "status": "transferred"
+    }
+  },
+  "event_code": "transfer.ted.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-6" label="transfer.pix.*">
+
+```json
+{
+  "object": {
+    "id": 129,
+    "uid": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Financial::Transfer",
+    "resource_uid": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "financial_provider_slug": "itau",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "financial_transfer": {
+      "uid": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+      "kind": "pix",
+      "amount": 250.0,
+      "status": "transferred"
+    }
+  },
+  "event_code": "transfer.pix.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-7" label="payment.&lt;subtipo&gt;.*">
+
+```json
+{
+  "object": {
+    "id": 130,
+    "uid": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "status": "confirmed",
+    "operation": "register",
+    "resource_type": "Payment",
+    "resource_uid": "4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+    "financial_provider_slug": "bb",
+    "params": {},
+    "payload": {},
+    "created_at": "2026-06-16T18:30:00-03:00",
+    "updated_at": "2026-06-16T18:31:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "confirmation_via": "api",
+    "payment": {
+      "uid": "4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+      "kind": "bank_billet",
+      "amount": 149.9,
+      "status": "confirmed",
+      "paid_at": "2026-06-16T00:00:00-03:00"
+    }
+  },
+  "event_code": "payment.bank_billet.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T18:31:15-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Conexão
+
+```json
+{
+  "object": {
+    "uid": "con-5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "certificate_uid": "cert-9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "keypair_uid": null,
+    "label": "Conexão Banco do Brasil - Produção",
+    "apis": ["bank_billets", "pix_cashin", "statements"],
+    "provider_slug": "banco_do_brasil",
+    "environment": "production",
+    "created_at": "2024-06-01T09:00:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00",
+    "enabled_at": "2024-06-15T14:30:46-03:00",
+    "validated_at": "2024-06-15T14:30:46-03:00",
+    "associations": [
+      { "resource": { "slug": "bank_billet_account", "uid": "bba-7c1e9f02-4d3a-4b88-9f10-aa22bb33cc44" } }
+    ]
+  },
+  "changes": {
+    "validated_at": [null, "2024-06-15T14:30:46-03:00"]
+  },
+  "event_code": "integration.connection.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Consulta de Boleto (Data Query)
+
+```json
+{
+  "object": {
+    "uid": "0190a3f1-aaaa-7bbb-8ccc-d0e1f2a3b4c5",
+    "line": "23793380296000000005002001012345678901234567890",
+    "barcode": "23791234500000150000338029600000000100200101",
+    "expire_at": "2026-06-25T00:00:00-03:00",
+    "amount": 150.0,
+    "minimum_amount": 150.0,
+    "maximum_amount": 150.0,
+    "original_amount": 150.0,
+    "beneficiary": { "name": "Comércio de Materiais Silva Ltda", "document_number": "12.345.678/0001-90" },
+    "guarantor": null,
+    "guarantor_drawer": null,
+    "payer": { "name": "João da Silva", "document_number": "123.456.789-09" },
+    "fine": { "value": 2.0, "kind": "percentage" },
+    "interest": { "value": 1.0, "kind": "monthly_percentage" },
+    "discount": null,
+    "status": "success",
+    "tags": ["cobranca"],
+    "custom_data": {},
+    "created_via_api": true,
+    "external_id": "ERP-QRY-555",
+    "error_message": null,
+    "processed_at": "2026-06-16T13:05:42-03:00",
+    "created_at": "2026-06-16T13:05:40-03:00",
+    "updated_at": "2026-06-16T13:05:42-03:00"
+  },
+  "event_code": "data.bank_billet_query.success",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T13:05:43-03:00"
+  }
+}
+```
+
+### Consulta de QR Code Pix (Data Query)
+
+```json
+{
+  "object": {
+    "uid": "0190a4a2-bbbb-7ccc-8ddd-e0f1a2b3c4d5",
+    "qrcode": "00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865406150.005802BR5913Loja Exemplo6009SAO PAULO62070503***6304ABCD",
+    "pix_key": "12345678000190",
+    "expires_at": "2026-06-16T23:59:59-03:00",
+    "finality": "instant_payment",
+    "amount": 150.0,
+    "amount_change": 0.0,
+    "interest": 0.0,
+    "fine": 0.0,
+    "discount": 0.0,
+    "total_amount": 150.0,
+    "beneficiary": { "name": "Loja Exemplo Ltda", "document_number": "12.345.678/0001-90" },
+    "debtor": { "name": "Maria Oliveira", "document_number": "987.654.321-00" },
+    "description": "Pagamento pedido 4821",
+    "can_be_paid": true,
+    "can_be_paid_with_different_value": false,
+    "cannot_be_paid_reason": null,
+    "external_id": "ERP-PIX-777",
+    "custom_data": {},
+    "tags": ["pix", "loja"]
+  },
+  "event_code": "data.pix_qrcode_query.success",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T14:10:00-03:00"
+  }
+}
+```
+
+### Conta (Account)
+
+```json
+{
+  "object": {
+    "id": 7781,
+    "uid": "acc-2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "email": "financeiro@aurora.com.br",
+    "account_type": "business",
+    "gender": null,
+    "cpf": null,
+    "address_street_name": "Avenida Paulista",
+    "address_state": "SP",
+    "address_neighborhood": "Bela Vista",
+    "address_postal_code": "01310-200",
+    "address_number": "1578",
+    "address_complement": "Conjunto 1204",
+    "phone_number": "1133224455",
+    "first_name": null,
+    "middle_name": null,
+    "last_name": null,
+    "date_of_birth": null,
+    "business_category": "Comércio varejista",
+    "business_subcategory": "Materiais de construção",
+    "business_website": "https://www.aurora.com.br",
+    "business_name": "Aurora Materiais",
+    "business_legal_name": "Comércio de Materiais Aurora Ltda",
+    "business_type": "ltda",
+    "business_cnpj": "05.813.794/0001-26",
+    "address_city_name": "São Paulo",
+    "full_name": "Comércio de Materiais Aurora Ltda",
+    "mother_name": null,
+    "father_name": null,
+    "billing_email": "contas@aurora.com.br",
+    "configuration": { "default_charge_type": "boleto" },
+    "simple_opting": false,
+    "rate_limits": { "api": 1000 },
+    "parent_id": null,
+    "parent_uid": null,
+    "nickname": "Aurora Matriz",
+    "feature_flags": ["pix_cobranca", "transfer_v2"],
+    "subscription": {
+      "id": 33120,
+      "amount": 299.9,
+      "cycle": "monthly",
+      "canceled_at": null,
+      "next_billing": "2024-07-15T00:00:00-03:00",
+      "contract": "PLAN-PRO-2024",
+      "number_of_billets": 5000,
+      "exceeded_price": 0.18,
+      "number_of_users": 10,
+      "number_of_bank_billet_accounts": 5,
+      "integration_price": 0.0,
+      "user_price": 19.9,
+      "sms_price": 0.25,
+      "number_of_operations": 1000,
+      "operation_price": 0.45,
+      "email_price": 0.05,
+      "conditions": {
+        "products_included": "- Boletos\r\n- Pix\r\n- Transferências",
+        "products_excluded": "- DDA",
+        "setup_price": 0.0,
+        "cycles": {
+          "monthly": { "price": 299.9, "setup_price": 0.0, "first_payment": 299.9, "price_per_month": 299.9, "discount_percentage": 0.0, "discount": 0.0 },
+          "annual": { "price": 2879.04, "setup_price": 0.0, "first_payment": 2879.04, "price_per_month": 239.92, "discount_percentage": 20.0, "discount": 719.76 }
+        }
+      },
+      "created_at": "2024-01-15T10:00:00-03:00",
+      "updated_at": "2024-06-15T14:30:46-03:00"
+    }
+  },
+  "changes": {
+    "blocked_at": [null, "2024-06-15T14:30:46-03:00"]
+  },
+  "event_code": "account.blocked",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Conta de E-mail
+
+```json
+{
+  "object": {
+    "uid": "0190a2e0-1234-7abc-8def-001122334455",
+    "name": "Cobrança Matriz",
+    "sender_name": "Financeiro Kobana",
+    "reply_to_address": "financeiro@empresa.com.br",
+    "from_address": "cobranca@empresa.com.br",
+    "domain": "empresa.com.br",
+    "enabled": true,
+    "activated": true,
+    "dns": {
+      "identity_status": "success",
+      "dns_status": "success",
+      "dns_records": [{ "type": "CNAME", "name": "abc123._domainkey.empresa.com.br", "value": "abc123.dkim.amazonses.com" }]
+    },
+    "tags": ["matriz"],
+    "custom_data": { "departamento": "financeiro" },
+    "external_id": "ERP-EMAIL-01",
+    "created_at": "2026-06-16T08:00:00-03:00",
+    "updated_at": "2026-06-16T08:45:10-03:00"
+  },
+  "event_code": "email_account.identity.success",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T08:45:11-03:00"
+  }
+}
+```
+
+### Conta Financeira
+
+```json
+{
+  "object": {
+    "uid": "9f8b2c1d-4a3e-4f6b-8c2d-1e2f3a4b5c6d",
+    "status": "active",
+    "bank": { "name": "Banco do Brasil S.A.", "bcb_name": "BCO DO BRASIL S.A.", "number": "001" },
+    "account_number": "12345",
+    "account_digit": "6",
+    "agency_number": "1234",
+    "agency_digit": "0",
+    "financial_provider_slug": "banco_do_brasil",
+    "created_at": "2024-07-16T10:00:36-03:00",
+    "updated_at": "2024-07-16T10:00:36-03:00",
+    "kind": "checking",
+    "custom_name": "Conta Movimento BB",
+    "payment_agreement_code": "1234567",
+    "person_info": {
+      "id": 4821,
+      "uid": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Comércio de Alimentos Ltda",
+      "nickname": "Mercado Central",
+      "kind": "company",
+      "document_type": "cnpj",
+      "document_number": "12.345.678/0001-90",
+      "birthday": null,
+      "addresses": [{ "id": 901, "street": "Avenida Paulista", "number": "1000", "complement": "Conjunto 51", "neighborhood": "Bela Vista", "city": "São Paulo", "state": "SP", "zipcode": "01310-100", "country": "BR" }],
+      "emails": [{ "id": 401, "email": "financeiro@mercadocentral.com.br" }],
+      "phones": [{ "id": 301, "ddd": "11", "number": "987654321", "kind": "mobile" }],
+      "notes": "Cliente desde 2019",
+      "created_via_api": true,
+      "external_code": "ERP-4821",
+      "tags": ["matriz", "varejo"],
+      "tag_list": "matriz, varejo",
+      "custom_data": { "centro_custo": "SP-01" }
+    },
+    "tags": ["principal"],
+    "tag_list": "principal",
+    "custom_data": { "filial": "matriz" },
+    "external_id": "ERP-CONTA-001",
+    "balance": {
+      "uid": "7d6c5b4a-3e2f-4d1c-9b8a-7c6d5e4f3a2b",
+      "capture_date": "2024-07-16",
+      "amount": 15890.45,
+      "blocked_amount": 0.0,
+      "automatically_invested_amount": 5000.0,
+      "created_at": "2024-07-16T10:00:36-03:00",
+      "external_id": null,
+      "custom_data": {},
+      "tags": []
+    },
+    "service_accounts": [
+      { "slug": "statement.account", "uid": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e" },
+      { "slug": "payment.account", "uid": "3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f" }
+    ]
+  },
+  "event_code": "financial.account.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T10:00:36-03:00"
+  }
+}
+```
+
+### Extrato
+
+<Tabs>
+<TabItem value="json" label="financial.account.statement.updated">
+
+```json
+{
+  "object": {
+    "uid": "9f8b2c1d-4a3e-4f6b-8c2d-1e2f3a4b5c6d",
+    "status": "active",
+    "bank": { "name": "Banco do Brasil S.A.", "bcb_name": "BCO DO BRASIL S.A.", "number": "001" },
+    "account_number": "12345",
+    "account_digit": "6",
+    "agency_number": "1234",
+    "agency_digit": "0",
+    "financial_provider_slug": "banco_do_brasil",
+    "created_at": "2024-07-16T10:00:36-03:00",
+    "updated_at": "2024-07-16T18:30:12-03:00",
+    "kind": "checking",
+    "custom_name": "Conta Movimento BB",
+    "payment_agreement_code": "1234567",
+    "person_info": {
+      "id": 4821,
+      "uid": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Comércio de Alimentos Ltda",
+      "nickname": "Mercado Central",
+      "kind": "company",
+      "document_type": "cnpj",
+      "document_number": "12.345.678/0001-90",
+      "birthday": null,
+      "addresses": [{ "id": 901, "street": "Avenida Paulista", "number": "1000", "complement": "Conjunto 51", "neighborhood": "Bela Vista", "city": "São Paulo", "state": "SP", "zipcode": "01310-100", "country": "BR" }],
+      "emails": [{ "id": 401, "email": "financeiro@mercadocentral.com.br" }],
+      "phones": [{ "id": 301, "ddd": "11", "number": "987654321", "kind": "mobile" }],
+      "notes": "Cliente desde 2019",
+      "created_via_api": true,
+      "external_code": "ERP-4821",
+      "tags": ["matriz", "varejo"],
+      "tag_list": "matriz, varejo",
+      "custom_data": { "centro_custo": "SP-01" }
+    },
+    "tags": ["principal"],
+    "tag_list": "principal",
+    "custom_data": { "filial": "matriz" },
+    "external_id": "ERP-CONTA-001",
+    "balance": {
+      "uid": "7d6c5b4a-3e2f-4d1c-9b8a-7c6d5e4f3a2b",
+      "capture_date": "2024-07-16",
+      "amount": 15890.45,
+      "blocked_amount": 0.0,
+      "automatically_invested_amount": 5000.0,
+      "created_at": "2024-07-16T10:00:36-03:00",
+      "external_id": null,
+      "custom_data": {},
+      "tags": []
+    },
+    "service_accounts": [
+      { "slug": "statement.account", "uid": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e" }
+    ]
+  },
+  "event_code": "financial.account.statement.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T18:30:12-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="financial.account.statement_sync.* / .balance_sync.*">
+
+```json
+{
+  "object": {
+    "id": 407,
+    "status": "pending",
+    "operation": "statement_sync",
+    "params": { "month": 7, "year": 2024 },
+    "payload": null,
+    "created_at": "2024-07-16T10:00:36-03:00",
+    "updated_at": "2024-07-16T10:00:36-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "financial_account": {
+      "uid": "9f8b2c1d-4a3e-4f6b-8c2d-1e2f3a4b5c6d",
+      "status": "active",
+      "bank": { "name": "Banco do Brasil S.A.", "bcb_name": "BCO DO BRASIL S.A.", "number": "001" },
+      "account_number": "12345",
+      "account_digit": "6",
+      "agency_number": "1234",
+      "agency_digit": "0",
+      "financial_provider_slug": "banco_do_brasil",
+      "kind": "checking",
+      "custom_name": "Conta Movimento BB",
+      "created_at": "2024-07-16T10:00:36-03:00",
+      "updated_at": "2024-07-16T10:00:36-03:00"
+    }
+  },
+  "event_code": "financial.account.statement_sync.requested",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T10:00:36-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### DDA — Boleto
+
+```json
+{
+  "object": {
+    "uid": "a7d3c2b1-8e4f-49a0-b6c5-1d2e3f4a5b6c",
+    "status": "released",
+    "external_status": "open",
+    "barcode": "23793381286000782713957000063304587260000015000",
+    "line": "23793.38128 60007.827135 95700.006330 4 58726000001500",
+    "our_number": "00000000012345678",
+    "description": "Fornecimento de materiais - NF 4821",
+    "nominal_amount": 1500.0,
+    "amount": 1500.0,
+    "min_payment_amount": 1500.0,
+    "max_payment_amount": 1500.0,
+    "expire_at": "2026-06-30T00:00:00-03:00",
+    "issue_date": "2026-06-10T00:00:00-03:00",
+    "reference_month": "2026-06",
+    "beneficiary_name": "Distribuidora Santa Clara S.A.",
+    "beneficiary_cnpj_cpf": "98765432000110",
+    "beneficiary_bank_name": "Banco do Brasil S.A.",
+    "beneficiary_bank_number": "001",
+    "owner_cnpj_cpf": "12345678000195",
+    "owner_person_name": "Comercial Aurora Ltda",
+    "fine_amount": 30.0,
+    "fine_percentage": 2.0,
+    "fine_date": "2026-07-01T00:00:00-03:00",
+    "interest_amount": 0.5,
+    "interest_percentage": 0.033,
+    "interest_date": "2026-07-01T00:00:00-03:00",
+    "discount_amount": 0.0,
+    "discount_date": null,
+    "reduction_amount": 0.0,
+    "allow_parcial_payment": false,
+    "released_at": "2026-06-16T08:15:22-03:00",
+    "rejected_at": null,
+    "payment_uid": null,
+    "created_at": "2026-06-12T07:00:00-03:00",
+    "updated_at": "2026-06-16T08:15:22-03:00"
+  },
+  "changes": {
+    "status": ["pending", "released"],
+    "released_at": [null, "2026-06-16T08:15:22-03:00"]
+  },
+  "event_code": "payment.dda.bank_billet.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### DDA — Conta
+
+<Tabs>
+<TabItem value="json" label="payment.dda.account.db.* / .letter.* / .confirmed / .rejected / ...">
+
+```json
+{
+  "object": {
+    "uid": "9c1f4e8a-3b2d-47c6-9a1e-2f5b7c8d4e10",
+    "cnpj": "12345678000195",
+    "name": "Comercial Aurora Ltda",
+    "signers": [
+      { "name": "Maria Aparecida de Souza", "document_number": "11144477735", "email": "maria.souza@comercialaurora.com.br", "role": "Sócio" },
+      { "name": "João Carlos Ferreira", "document_number": "22255588846", "email": "joao.ferreira@comercialaurora.com.br", "role": "Financeiro" }
+    ],
+    "editable": false,
+    "status": "approved",
+    "letter_status": "created",
+    "external_letter_status": "signed",
+    "error_message": null,
+    "enabled_at": "2026-06-15T14:30:46-03:00",
+    "disabled_at": null,
+    "validated_at": "2026-06-15T14:28:10-03:00",
+    "rejected_at": null,
+    "rejection_reason": null,
+    "bank_billets_sync_last_updated_at": "2026-06-16T08:15:22-03:00",
+    "created_at": "2026-06-10T09:12:00-03:00",
+    "updated_at": "2026-06-16T08:15:22-03:00"
+  },
+  "changes": {
+    "external_letter_status": ["waiting_signatures", "signed"],
+    "enabled_at": [null, "2026-06-15T14:30:46-03:00"]
+  },
+  "event_code": "payment.dda.account.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="payment.dda.account.register.*, .unregister.*, .bank_billets_sync.*">
+
+```json
+{
+  "object": {
+    "id": 84021,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-15T14:30:00-03:00",
+    "updated_at": "2026-06-15T14:30:46-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "payment_dda_account": {
+      "uid": "9c1f4e8a-3b2d-47c6-9a1e-2f5b7c8d4e10",
+      "cnpj": "12345678000195",
+      "name": "Comercial Aurora Ltda",
+      "status": "approved",
+      "letter_status": "created",
+      "external_letter_status": "signed",
+      "enabled_at": "2026-06-15T14:30:46-03:00",
+      "validated_at": "2026-06-15T14:28:10-03:00",
+      "created_at": "2026-06-10T09:12:00-03:00",
+      "updated_at": "2026-06-15T14:30:46-03:00"
+    }
+  },
+  "event_code": "payment.dda.account.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### EDI — Caixa (EDI Box)
+
+```json
+{
+  "object": {
+    "uid": "edi-box-3f9a2c10-8b4d-4e21-9a77-1c2d3e4f5a6b",
+    "name": "Caixa EDI Cobrança 237",
+    "resource": { "type": "bank_billet_account", "uid": "bba-7c1e9f02-4d3a-4b88-9f10-aa22bb33cc44" },
+    "account_owner": {
+      "id": 7781, "name": "Comércio de Materiais Aurora Ltda", "kind": "company", "document_type": "cnpj", "document_number": "05.813.794/0001-26",
+      "addresses": [{ "street_name": "Avenida Paulista", "number": "1578", "neighborhood": "Bela Vista", "city_name": "São Paulo", "state": "SP", "postal_code": "01310-200" }],
+      "emails": [{ "email": "financeiro@aurora.com.br" }],
+      "phones": [{ "number": "1133224455" }]
+    },
+    "letter_owner": { "id": 7782, "name": "Mariana Oliveira Santos", "kind": "individual", "document_type": "cpf", "document_number": "123.456.789-09" },
+    "bank_manager": { "id": 7783, "name": "Carlos Eduardo Ferreira" },
+    "kind": "bank_billet",
+    "operation": "register",
+    "created_at": "2024-06-10T09:15:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00",
+    "validated_at": "2024-06-15T14:30:46-03:00",
+    "enabled_at": null,
+    "letter_status": "generated",
+    "letter_creation_errors": null,
+    "status": "testing_by_customer",
+    "letter_pdf": "https://storage.kobana.com.br/edi_boxes/letters/3f9a2c10.pdf?expires=1718473846"
+  },
+  "changes": {
+    "external_letter_status": ["waiting_for_validations", "testing_by_customer"]
+  },
+  "event_code": "edi.edi_box.testing_by_customer",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### EDI — Linha de Remessa
+
+```json
+{
+  "object": {
+    "id": 84213,
+    "operation": "register",
+    "remittance_id": 5521,
+    "resource_id": 991023,
+    "resource_type": "BankBillet",
+    "resource_owner_id": 7781,
+    "resource_owner_type": "Account",
+    "processed_at": "2024-06-15T14:30:46-03:00",
+    "created_at": "2024-06-15T14:28:10-03:00"
+  },
+  "changes": {
+    "processed_at": [null, "2024-06-15T14:30:46-03:00"]
+  },
+  "event_code": "remittance.line.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Exportação
+
+```json
+{
+  "object": {
+    "id": 88231,
+    "uid": "exp-4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f90",
+    "file_format": "csv",
+    "options": { "period_start": "2024-06-01", "period_end": "2024-06-15" },
+    "source": {
+      "file_name": "boletos_junho_2024.csv",
+      "file_size": 245678,
+      "content_type": "text/csv",
+      "updated_at": "2024-06-15T14:30:46-03:00"
+    },
+    "status": "processed",
+    "type": "Export::BankBillet",
+    "external_id": "REL-202406-001",
+    "custom_data": { "solicitante": "financeiro" },
+    "tags": ["mensal", "boletos"],
+    "tag_list": "mensal, boletos",
+    "created_via_api": true,
+    "processed_at": "2024-06-15T14:30:46-03:00",
+    "created_at": "2024-06-15T14:28:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00"
+  },
+  "changes": {
+    "status": ["processing", "processed"],
+    "processed_at": [null, "2024-06-15T14:30:46-03:00"]
+  },
+  "event_code": "export.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Importação
+
+```json
+{
+  "object": {
+    "id": 56210,
+    "uid": "imp-7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "created_rows": 480,
+    "enqueued_at": "2024-06-15T14:25:00-03:00",
+    "started_at": "2024-06-15T14:25:05-03:00",
+    "finished_at": "2024-06-15T14:30:40-03:00",
+    "processed_at": "2024-06-15T14:30:46-03:00",
+    "failed_to_create_rows": 2,
+    "failed_to_update_rows": 0,
+    "import_errors": [
+      { "row": 152, "message": "CPF/CNPJ do pagador inválido" },
+      { "row": 308, "message": "Valor do documento ausente" }
+    ],
+    "processed_rows": 500,
+    "total_rows": 500,
+    "updated_rows": 18,
+    "source_file_name": "boletos_lote_junho.csv",
+    "source_file_size": 198432,
+    "status": "done",
+    "created_via_api": true,
+    "external_id": "LOTE-202406-07",
+    "custom_data": { "origem": "erp" },
+    "tags": ["lote", "boletos"],
+    "tag_list": "lote, boletos",
+    "created_at": "2024-06-15T14:24:50-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00"
+  },
+  "changes": {
+    "status": ["processing", "done"]
+  },
+  "event_code": "import.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Lote de Pagamentos
+
+<Tabs>
+<TabItem value="json" label="payment.batch.db.* / payment.batch.awaiting_approval">
+
+```json
+{
+  "object": {
+    "uid": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8091",
+    "status": "awaiting_approval",
+    "registration_status": "pending",
+    "financial_account_uid": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+    "payment_account_uid": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f809102",
+    "created_at": "2024-06-15T14:30:35-03:00",
+    "updated_at": "2024-06-15T14:30:40-03:00",
+    "payments": [
+      {
+        "uid": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f80910213",
+        "status": "awaiting_approval",
+        "amount": 320.45,
+        "scheduled_to": "2024-06-20",
+        "registration_status": "pending",
+        "line_code": "34191790010104351004791020150008291070026000",
+        "created_at": "2024-06-15T14:30:35-03:00",
+        "updated_at": "2024-06-15T14:30:35-03:00"
+      }
+    ]
+  },
+  "event_code": "payment.batch.awaiting_approval",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:40-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="payment.{type}_batch.register.*, .approve.*, .reprove.*, .get.*, .sync.*">
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2024-11-19T15:00:35-03:00",
+    "updated_at": "2024-11-19T15:00:49-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "payment_batch": {
+      "uid": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8091",
+      "status": "confirmed",
+      "registration_status": "confirmed",
+      "financial_account_uid": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "payment_account_uid": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f809102",
+      "created_at": "2024-11-19T15:00:35-03:00",
+      "updated_at": "2024-11-19T15:00:49-03:00",
+      "payments": [
+        { "uid": "6a7b8c9d-0e1f-2a3b-4c5d-6e7f80910213", "status": "confirmed", "amount": 320.45, "scheduled_to": "2024-11-20", "registration_status": "confirmed", "line_code": "34191790010104351004791020150008291070026000", "created_at": "2024-11-19T15:00:35-03:00", "updated_at": "2024-11-19T15:00:49-03:00" }
+      ]
+    }
+  },
+  "event_code": "payment.bank_billet_batch.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-11-19T15:00:49-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Lote de Transferências
+
+<Tabs>
+<TabItem value="json" label="transfer.batch.db.* / transfer.batch.awaiting_approval">
+
+```json
+{
+  "object": {
+    "uid": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f80",
+    "status": "awaiting_approval",
+    "registration_status": "pending",
+    "financial_account_uid": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+    "transfer_account_uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+    "transport_kind": "pix",
+    "transfers": [
+      {
+        "uid": "9a7b3c1d-4e2f-7a8b-9c0d-1e2f3a4b5c6d",
+        "status": "awaiting_approval",
+        "scheduled_to": "2024-06-15T00:00:00-03:00",
+        "registration_status": "pending",
+        "amount": 1500.75,
+        "kind": "pix",
+        "pix": { "txid": "E0036030520240615143000abcdef123", "key": "jose.silva@example.com.br", "key_type": "email", "end_to_end_id": null },
+        "ted": null,
+        "internal": null,
+        "beneficiary": { "document_number": "111.222.444-55", "name": "José da Silva" },
+        "identifier": "PEDIDO-2024-0001",
+        "created_at": "2024-06-15T14:30:35-03:00",
+        "updated_at": "2024-06-15T14:30:35-03:00"
+      }
+    ],
+    "created_at": "2024-06-15T14:30:35-03:00",
+    "updated_at": "2024-06-15T14:30:40-03:00"
+  },
+  "event_code": "transfer.batch.awaiting_approval",
+  "webhook": { "id": 1, "url": "http://hooks.kobana.com.br", "first_try": "2024-06-15T14:30:40-03:00" }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="transfer.{type}_batch.register.*, .approve.*, .reprove.*, .get.*, .sync.*">
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2024-11-19T15:00:35-03:00",
+    "updated_at": "2024-11-19T15:00:49-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "financial_transfer_batch": {
+      "uid": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f80",
+      "status": "confirmed",
+      "registration_status": "confirmed",
+      "transport_kind": "ted",
+      "financial_account_uid": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+      "transfer_account_uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "transfers": [
+        { "uid": "9a7b3c1d-4e2f-7a8b-9c0d-1e2f3a4b5c6d", "status": "confirmed", "registration_status": "confirmed", "amount": 2500.0, "kind": "ted", "beneficiary": { "document_number": "05.813.794/0001-26", "name": "Kobana Instituição de Pagamento Ltda." }, "created_at": "2024-11-19T15:00:35-03:00", "updated_at": "2024-11-19T15:00:49-03:00" }
+      ],
+      "created_at": "2024-11-19T15:00:35-03:00",
+      "updated_at": "2024-11-19T15:00:49-03:00"
+    }
+  },
+  "event_code": "transfer.ted_batch.register.confirmed",
+  "webhook": { "id": 1, "url": "http://hooks.kobana.com.br", "first_try": "2024-11-19T15:00:49-03:00" }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Pagamento
+
+<Tabs>
+<TabItem value="json" label="payment.db.*">
+
+```json
+{
+  "object": {
+    "uid": "5f8d3c2a-1e4b-4a9c-8b7d-2f1e9a6c3d40",
+    "kind": "pix",
+    "amount": 1500.75,
+    "scheduled_to": "2026-06-18T00:00:00-03:00",
+    "status": "settled",
+    "registration_status": "registered",
+    "financial_account_uid": "a1b2c3d4-5e6f-4a8b-9c0d-1e2f3a4b5c6d",
+    "payment_account_uid": "b2c3d4e5-6f7a-4b9c-0d1e-2f3a4b5c6d7e",
+    "batch_uid": null,
+    "confirmed_at": "2026-06-18T10:05:21-03:00",
+    "rejected_error": null,
+    "rejected_at": null,
+    "transaction_code": "E60746948202606181005ABCDE12345",
+    "transaction_date": "2026-06-18T10:05:21-03:00",
+    "source": "api",
+    "identifier": "PAG-2026-0001",
+    "external_id": "ERP-99821",
+    "financial_provider_external_id": "FP-77231",
+    "beneficiary": { "name": "José da Silva", "document_number": "111.222.444-55" },
+    "custom_data": [],
+    "tags": [],
+    "tag_list": [],
+    "formats": {
+      "default": { "html": "http://dev.kdoc.to:5001/45f8d3c2a1e4b4a9c8b7d2f1e9a6c3d40", "png": "http://dev.kdoc.to:5001/45f8d3c2a1e4b4a9c8b7d2f1e9a6c3d40.png", "pdf": "http://dev.kdoc.to:5001/45f8d3c2a1e4b4a9c8b7d2f1e9a6c3d40.pdf" }
+    },
+    "created_at": "2026-06-16T09:12:33-03:00",
+    "updated_at": "2026-06-18T10:05:22-03:00",
+    "pix": {
+      "qrcode": "00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Jose da Silva6009SAO PAULO62070503***6304B13F",
+      "beneficiary": { "name": "José da Silva", "document_number": "111.222.444-55" }
+    }
+  },
+  "changes": {
+    "status": ["scheduled", "settled"],
+    "confirmed_at": [null, "2026-06-18T10:05:21-03:00"],
+    "transaction_code": [null, "E60746948202606181005ABCDE12345"]
+  },
+  "event_code": "payment.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-18T10:05:23-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="payment.bank_billet.* (sub-objeto &quot;bank_billet&quot;)">
+
+```json
+{
+  "bank_billet": {
+    "code": "23793.38128 60082.123456 78901.234560 1 98760000035000",
+    "beneficiary": { "name": "Comércio de Materiais Ltda", "document_number": "05.813.794/0001-26" }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-2" label="payment.darf.* (sub-objeto &quot;darf&quot;)">
+
+```json
+{
+  "darf": {
+    "code": null,
+    "calculation_date": "2026-05-31T00:00:00-03:00",
+    "expire_at": "2026-06-25T00:00:00-03:00",
+    "reference_number": "0001234567890",
+    "taxpayer_number": "05.813.794/0001-26",
+    "taxpayer_name": "Comércio de Materiais Ltda",
+    "tax_code": "0220",
+    "fine_amount": 24.69,
+    "interest_amount": 12.35,
+    "gross_income_amount": 1197.52
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-3" label="payment.tax.* (sub-objeto &quot;tax&quot;; &quot;tax.data&quot; varia por kind: darf/gps/fgts/gru)">
+
+```json
+{
+  "tax": {
+    "format": "format_data",
+    "kind": "gps",
+    "code": null,
+    "data": {
+      "tax_code": "2100",
+      "taxpayer_type": "cnpj",
+      "taxpayer_number": "05.813.794/0001-26",
+      "taxpayer_name": "Comércio de Materiais Ltda",
+      "competence_date": "2026-05-01T00:00:00-03:00",
+      "expire_at": "2026-06-22T00:00:00-03:00",
+      "other_entities_amount": 45.20,
+      "monetary_update_amount": 0.00,
+      "fine_amount": 18.50,
+      "interest_amount": 9.30
+    },
+    "beneficiary": { "name": "Instituto Nacional do Seguro Social", "document_number": "29.979.036/0001-40" }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-4" label="payment.utility.* (sub-objeto &quot;utility&quot;)">
+
+```json
+{
+  "utility": {
+    "code": "83660000002 1 15780000019 2 50620250609 3 12345678901 4",
+    "beneficiary": { "name": "Companhia Energética de São Paulo", "document_number": "61.695.227/0001-93" }
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-5" label="payment.gru.* (sub-objeto &quot;gru&quot;)">
+
+```json
+{
+  "gru": {
+    "code": "85810000004 5 00000259003 8 87654321098 1 23456789012 7",
+    "beneficiary": { "name": "Universidade Federal de São Paulo", "document_number": "60.453.032/0001-74" },
+    "expire_at": "2026-06-24T00:00:00-03:00",
+    "reference_number": "0009876543210",
+    "competency_date": "2026-05-01T00:00:00-03:00",
+    "discount_amount": 0.0,
+    "other_deduction_amount": 0.0,
+    "fine_amount": 15.0,
+    "interest_amount": 7.5,
+    "other_addition_amount": 0.0,
+    "total_amount": 450.0
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Pagamento — operações
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-16T09:12:17-03:00",
+    "updated_at": "2026-06-16T09:12:45-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "payment": {
+      "uid": "5f8d3c2a-1e4b-4a9c-8b7d-2f1e9a6c3d40",
+      "kind": "pix",
+      "amount": 1500.75,
+      "scheduled_to": "2026-06-18T00:00:00-03:00",
+      "status": "scheduled",
+      "registration_status": "registered",
+      "financial_account_uid": "a1b2c3d4-5e6f-4a8b-9c0d-1e2f3a4b5c6d",
+      "payment_account_uid": "b2c3d4e5-6f7a-4b9c-0d1e-2f3a4b5c6d7e",
+      "beneficiary": { "name": "José da Silva", "document_number": "111.222.444-55" },
+      "created_at": "2026-06-16T09:12:33-03:00",
+      "updated_at": "2026-06-16T09:12:33-03:00",
+      "pix": { "qrcode": "00020126580014br.gov.bcb.pix...6304B13F", "beneficiary": { "name": "José da Silva", "document_number": "111.222.444-55" } }
+    }
+  },
+  "event_code": "payment.pix.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T09:12:46-03:00"
+  }
+}
+```
+
+### Pagamento de Boleto
+
+```json
+{
+  "object": {
+    "id": 9102837,
+    "bank_billet_id": 30591847,
+    "bank_billet_account_id": 50231,
+    "discharge_id": 471203,
+    "paid_at": "2026-06-15T00:00:00-03:00",
+    "paid_amount": 1289.9,
+    "bank_rate": 3.49,
+    "paid_bank": "341",
+    "paid_agency": "1234",
+    "paid_agency_number": "1234",
+    "paid_agency_digit": "5",
+    "credit_at": "2026-06-16T00:00:00-03:00",
+    "direct": false,
+    "created_via_api": false,
+    "line_parsed": {
+      "our_number": "00000012345",
+      "paid_amount": 1289.9,
+      "bank_rate": 3.49,
+      "paid_at": "2026-06-15",
+      "credit_at": "2026-06-16",
+      "banco_recebedor": "341",
+      "agencia_recebedora": "1234"
+    },
+    "paid_by_pix": false,
+    "kind": "bank_billet",
+    "financial_provider_external_id": null,
+    "uid": "BPY5C2E8A4F1B7D9",
+    "pix_id": null,
+    "document_number": "NF-2026-0042",
+    "our_number": "00000012345",
+    "customer_person_name": "Maria Aparecida de Souza",
+    "expire_at": "2026-06-20T00:00:00-03:00",
+    "amount": 1250.0,
+    "created_at": "2026-06-15T22:14:09-03:00",
+    "updated_at": "2026-06-15T22:14:09-03:00"
+  },
+  "event_code": "bank_billet_payment.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Ping
+
+```json
+{
+  "ping": "pong",
+  "event_code": "ping",
+  "webhook": {
+    "id": 11,
+    "url": "https://requestb.in"
+  }
+}
+```
+
+### Pix
+
+<Tabs>
+<TabItem value="json" label="pix.db.created">
+
+```json
+{
+  "object": {
+    "id": 84213,
+    "uid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "txid": "kob5f3c2a1b9d84e7f8c0a1b2c3d4e5f6",
+    "status": "opened",
+    "registration_status": "confirmed",
+    "pix_account_id": 312,
+    "pix_account_uid": "f0e1d2c3-b4a5-4968-8778-695a4b3c2d1e",
+    "kind": "billing",
+    "created_at": "2024-06-15T14:30:45-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00",
+    "expire_at": "2024-06-22T23:59:59-03:00",
+    "canceled_at": null,
+    "registered_at": "2024-06-15T14:30:46-03:00",
+    "amount": 150.75,
+    "additional_info": { "Pedido": "PED-2024-00193", "Vendedor": "Loja Centro" },
+    "command_ids": [90871],
+    "message": "Pagamento referente ao pedido PED-2024-00193",
+    "message_payer": "Vencimento em 22/06/2024",
+    "qrcode": {
+      "emv": "00020126580014br.gov.bcb.pix0136a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d5204000053039865406150.755802BR5913LOJA CENTRO LT6008SAO PAULO62290525kob5f3c2a1b9d84e7f8c0a1b6304B13F",
+      "png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAAEZCAYAAACjEFEXAAAA..."
+    },
+    "payer": { "document_number": "123.456.789-09", "name": "Maria Aparecida da Silva" },
+    "url": "https://app.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "formats": {
+      "default": {
+        "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+        "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.png",
+        "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.pdf"
+      },
+      "qrcode": {
+        "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode",
+        "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.png",
+        "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.pdf"
+      }
+    },
+    "paid_amount": null,
+    "paid_at": null,
+    "end_to_end_id": null,
+    "beneficiary": {
+      "document_number": "12.345.678/0001-95",
+      "name": "Comercio de Roupas Centro LTDA",
+      "address": { "zip_code": "01310-100", "street": "Avenida Paulista", "number": "1578", "complement": "Conjunto 142", "neighborhood": "Bela Vista", "city_name": "Sao Paulo", "state": "SP" }
+    },
+    "custom_data": [{ "key": "centro_custo", "value": "vendas-online" }],
+    "external_id": "ERP-99021",
+    "ignore_whatsapp": false,
+    "interest": { "type": "monthly_percentage", "amount": null, "percentage": 1.0 },
+    "discounts": {
+      "type": "fixed_amount",
+      "discount_first": { "amount": 10.0, "percentage": null, "days": 3 },
+      "discount_second": { "amount": 5.0, "percentage": null, "days": 1 },
+      "discount_third": { "amount": null, "percentage": null, "days": null }
+    },
+    "reduction": { "type": null, "amount": null, "percentage": null },
+    "fine": { "type": "percentage", "amount": null, "percentage": 2.0 },
+    "created_via_api": true,
+    "password_protected_mode": false,
+    "financial_provider_external_id": "PIX0000001928374",
+    "tags": ["cobranca", "ecommerce"],
+    "tag_list": ["cobranca", "ecommerce"],
+    "revoke_days": 30,
+    "payments": []
+  },
+  "event_code": "pix.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="pix.paid">
+
+```json
+{
+  "object": {
+    "id": 84500,
+    "uid": "9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2",
+    "txid": "kobaa11bb22cc33dd44ee55ff66001122",
+    "status": "paid",
+    "registration_status": "confirmed",
+    "pix_account_id": 312,
+    "pix_account_uid": "f0e1d2c3-b4a5-4968-8778-695a4b3c2d1e",
+    "kind": "instant",
+    "created_at": "2024-06-15T09:12:03-03:00",
+    "updated_at": "2024-06-15T09:18:41-03:00",
+    "expire_at": "2024-06-15T09:27:03-03:00",
+    "canceled_at": null,
+    "registered_at": "2024-06-15T09:12:04-03:00",
+    "amount": 49.9,
+    "additional_info": {},
+    "command_ids": [90990],
+    "message": "Pagamento avulso",
+    "message_payer": null,
+    "qrcode": {
+      "emv": "00020126360014br.gov.bcb.pix0114+5511999998888520400005303986540549.905802BR5913LOJA CENTRO LT6008SAO PAULO62070503***6304A1B2",
+      "png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAAEZCAYAAACjEFEXAAAA..."
+    },
+    "payer": { "document_number": "987.654.321-00", "name": "Joao Pedro Oliveira" },
+    "url": "https://app.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2",
+    "formats": {
+      "default": { "html": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2", "png": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2.png", "pdf": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2.pdf" },
+      "qrcode": { "html": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2/qrcode", "png": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2/qrcode.png", "pdf": "https://kdoc.kobana.com.br/pix/9f8e7d6c-5b4a-4392-8281-7060f5e4d3c2/qrcode.pdf" }
+    },
+    "paid_amount": 49.9,
+    "paid_at": "2024-06-15T09:18:40-03:00",
+    "end_to_end_id": "E18236120202406150918abcdef12345",
+    "beneficiary": {
+      "document_number": "12.345.678/0001-95",
+      "name": "Comercio de Roupas Centro LTDA",
+      "address": { "zip_code": "01310-100", "street": "Avenida Paulista", "number": "1578", "complement": "Conjunto 142", "neighborhood": "Bela Vista", "city_name": "Sao Paulo", "state": "SP" }
+    },
+    "custom_data": [],
+    "external_id": null,
+    "ignore_whatsapp": false,
+    "interest": { "type": null, "amount": null, "percentage": null },
+    "discounts": {
+      "type": null,
+      "discount_first": { "amount": null, "percentage": null, "days": null },
+      "discount_second": { "amount": null, "percentage": null, "days": null },
+      "discount_third": { "amount": null, "percentage": null, "days": null }
+    },
+    "reduction": { "type": null, "amount": null, "percentage": null },
+    "fine": { "type": null, "amount": null, "percentage": null },
+    "created_via_api": true,
+    "password_protected_mode": false,
+    "financial_provider_external_id": "PIX0000002847561",
+    "tags": [],
+    "tag_list": [],
+    "revoke_days": null,
+    "payments": ["c7b6a5d4-3e2f-41a0-9b8c-7d6e5f4a3b2c"]
+  },
+  "changes": {
+    "status": ["opened", "paid"],
+    "paid_at": [null, "2024-06-15T09:18:40.000-03:00"],
+    "end_to_end_id": [null, "E18236120202406150918abcdef12345"]
+  },
+  "event_code": "pix.paid",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T09:18:41-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-2" label="pix.overdue">
+
+```json
+{
+  "object": {
+    "id": 84213,
+    "uid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "txid": "kob5f3c2a1b9d84e7f8c0a1b2c3d4e5f6",
+    "status": "overdue",
+    "registration_status": "confirmed",
+    "pix_account_id": 312,
+    "pix_account_uid": "f0e1d2c3-b4a5-4968-8778-695a4b3c2d1e",
+    "kind": "billing",
+    "created_at": "2024-06-15T14:30:45-03:00",
+    "updated_at": "2024-06-23T00:00:05-03:00",
+    "expire_at": "2024-06-22T23:59:59-03:00",
+    "canceled_at": null,
+    "registered_at": "2024-06-15T14:30:46-03:00",
+    "amount": 150.75,
+    "additional_info": { "Pedido": "PED-2024-00193" },
+    "command_ids": [90871],
+    "message": "Pagamento referente ao pedido PED-2024-00193",
+    "message_payer": "Vencimento em 22/06/2024",
+    "qrcode": {
+      "emv": "00020126580014br.gov.bcb.pix0136a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d5204000053039865406150.755802BR5913LOJA CENTRO LT6008SAO PAULO62290525kob5f3c2a1b9d84e7f8c0a1b6304B13F",
+      "png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAAEZCAYAAACjEFEXAAAA..."
+    },
+    "payer": { "document_number": "123.456.789-09", "name": "Maria Aparecida da Silva" },
+    "url": "https://app.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "formats": {
+      "default": { "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d", "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.png", "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.pdf" },
+      "qrcode": { "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode", "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.png", "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.pdf" }
+    },
+    "paid_amount": null,
+    "paid_at": null,
+    "end_to_end_id": null,
+    "beneficiary": {
+      "document_number": "12.345.678/0001-95",
+      "name": "Comercio de Roupas Centro LTDA",
+      "address": { "zip_code": "01310-100", "street": "Avenida Paulista", "number": "1578", "complement": "Conjunto 142", "neighborhood": "Bela Vista", "city_name": "Sao Paulo", "state": "SP" }
+    },
+    "custom_data": [],
+    "external_id": "ERP-99021",
+    "ignore_whatsapp": false,
+    "interest": { "type": "monthly_percentage", "amount": null, "percentage": 1.0 },
+    "discounts": {
+      "type": null,
+      "discount_first": { "amount": null, "percentage": null, "days": null },
+      "discount_second": { "amount": null, "percentage": null, "days": null },
+      "discount_third": { "amount": null, "percentage": null, "days": null }
+    },
+    "reduction": { "type": null, "amount": null, "percentage": null },
+    "fine": { "type": "percentage", "amount": null, "percentage": 2.0 },
+    "created_via_api": true,
+    "password_protected_mode": false,
+    "financial_provider_external_id": "PIX0000001928374",
+    "tags": ["cobranca"],
+    "tag_list": ["cobranca"],
+    "revoke_days": 30,
+    "payments": []
+  },
+  "changes": {
+    "status": ["opened", "overdue"]
+  },
+  "event_code": "pix.overdue",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-23T00:00:06-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-3" label="pix.db.deleted">
+
+```json
+{
+  "object": {
+    "id": 84213,
+    "uid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "txid": "kob5f3c2a1b9d84e7f8c0a1b2c3d4e5f6",
+    "status": "canceled",
+    "registration_status": "confirmed",
+    "pix_account_id": 312,
+    "pix_account_uid": "f0e1d2c3-b4a5-4968-8778-695a4b3c2d1e",
+    "kind": "billing",
+    "created_at": "2024-06-15T14:30:45-03:00",
+    "updated_at": "2024-07-16T10:30:00-03:00",
+    "expire_at": "2024-06-22T23:59:59-03:00",
+    "canceled_at": "2024-07-16T10:30:00-03:00",
+    "registered_at": "2024-06-15T14:30:46-03:00",
+    "amount": 150.75,
+    "additional_info": {},
+    "command_ids": [90871, 90991],
+    "message": "Pagamento referente ao pedido PED-2024-00193",
+    "message_payer": null,
+    "qrcode": {
+      "emv": "00020126580014br.gov.bcb.pix0136a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d5204000053039865406150.755802BR5913LOJA CENTRO LT6008SAO PAULO62290525kob5f3c2a1b9d84e7f8c0a1b6304B13F",
+      "png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAAEZCAYAAACjEFEXAAAA..."
+    },
+    "payer": { "document_number": "123.456.789-09", "name": "Maria Aparecida da Silva" },
+    "url": "https://app.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "formats": {
+      "default": { "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d", "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.png", "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.pdf" },
+      "qrcode": { "html": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode", "png": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.png", "pdf": "https://kdoc.kobana.com.br/pix/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/qrcode.pdf" }
+    },
+    "paid_amount": null,
+    "paid_at": null,
+    "end_to_end_id": null,
+    "beneficiary": {
+      "document_number": "12.345.678/0001-95",
+      "name": "Comercio de Roupas Centro LTDA",
+      "address": { "zip_code": "01310-100", "street": "Avenida Paulista", "number": "1578", "complement": "Conjunto 142", "neighborhood": "Bela Vista", "city_name": "Sao Paulo", "state": "SP" }
+    },
+    "custom_data": [],
+    "external_id": "ERP-99021",
+    "ignore_whatsapp": false,
+    "interest": { "type": "monthly_percentage", "amount": null, "percentage": 1.0 },
+    "discounts": {
+      "type": null,
+      "discount_first": { "amount": null, "percentage": null, "days": null },
+      "discount_second": { "amount": null, "percentage": null, "days": null },
+      "discount_third": { "amount": null, "percentage": null, "days": null }
+    },
+    "reduction": { "type": null, "amount": null, "percentage": null },
+    "fine": { "type": "percentage", "amount": null, "percentage": 2.0 },
+    "created_via_api": true,
+    "password_protected_mode": false,
+    "financial_provider_external_id": "PIX0000001928374",
+    "tags": ["cobranca"],
+    "tag_list": ["cobranca"],
+    "revoke_days": 30,
+    "payments": []
+  },
+  "event_code": "pix.db.deleted",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T10:30:01-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Pix — operações
+
+```json
+{
+  "object": {
+    "id": 90991,
+    "status": "confirmed",
+    "operation": "cancel",
+    "params": {},
+    "payload": { "status": "REMOVIDA_PELO_USUARIO_RECEBEDOR" },
+    "created_at": "2024-07-16T10:30:00-03:00",
+    "updated_at": "2024-07-16T10:30:00-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "pix": {
+      "id": 84213,
+      "uid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "txid": "kob5f3c2a1b9d84e7f8c0a1b2c3d4e5f6",
+      "status": "canceled",
+      "registration_status": "confirmed",
+      "kind": "billing",
+      "amount": 150.75,
+      "canceled_at": "2024-07-16T10:30:00-03:00",
+      "qrcode": { "emv": "00020126580014br.gov.bcb.pix...", "png": "data:image/png;base64,iVBORw0KGgo..." },
+      "payer": { "document_number": "123.456.789-09", "name": "Maria Aparecida da Silva" },
+      "beneficiary": { "document_number": "12.345.678/0001-95", "name": "Comercio de Roupas Centro LTDA" },
+      "command_ids": [90871, 90991],
+      "payments": []
+    }
+  },
+  "event_code": "pix.cancel.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T10:30:01-03:00"
+  }
+}
+```
+
+### Pix Automático — Conta
+
+```json
+{
+  "object": {
+    "uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+    "financial_account_uid": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "connection_uid": "0f1e2d3c-4b5a-6978-8796-a5b4c3d2e1f0",
+    "financial_provider_slug": "itau",
+    "custom_name": "Conta Recorrência Itaú",
+    "status": "enabled",
+    "external_id": "ERP-CONTA-001",
+    "custom_data": { "centro_de_custo": "assinaturas" },
+    "tags": ["recorrencia", "premium"],
+    "validated_at": "2026-06-10T09:15:22-03:00",
+    "enabled_at": "2026-06-10T09:20:00-03:00",
+    "created_at": "2026-06-10T09:14:00-03:00",
+    "updated_at": "2026-06-16T11:42:30-03:00"
+  },
+  "changes": {
+    "status": ["validated", "enabled"],
+    "enabled_at": [null, "2026-06-10T09:20:00-03:00"]
+  },
+  "event_code": "charge.automatic_pix.account.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:42:46-03:00"
+  }
+}
+```
+
+### Pix Automático — Localização
+
+<Tabs>
+<TabItem value="json" label="charge.automatic_pix.location.db.*">
+
+```json
+{
+  "object": {
+    "uid": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+    "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+    "location": "qrcode.kobana.com.br/rec/v2/5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
+    "financial_provider_created_at": "2026-06-16T11:38:00-03:00",
+    "financial_provider_external_id": "LOC0011223344556677889900",
+    "external_id": "ERP-LOC-0042",
+    "tags": ["recorrencia"],
+    "tag_list": ["recorrencia"],
+    "custom_data": { "origem": "checkout" },
+    "created_at": "2026-06-16T11:38:00-03:00",
+    "updated_at": "2026-06-16T11:38:00-03:00"
+  },
+  "changes": {
+    "financial_provider_external_id": [null, "LOC0011223344556677889900"]
+  },
+  "event_code": "charge.automatic_pix.location.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:38:12-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="charge.automatic_pix.location.register.*">
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-16T11:38:02-03:00",
+    "updated_at": "2026-06-16T11:38:10-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "charge_automatic_pix_location": {
+      "uid": "5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+      "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+      "location": "qrcode.kobana.com.br/rec/v2/5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
+      "financial_provider_created_at": "2026-06-16T11:38:00-03:00",
+      "financial_provider_external_id": "LOC0011223344556677889900",
+      "external_id": "ERP-LOC-0042",
+      "tags": ["recorrencia"],
+      "tag_list": ["recorrencia"],
+      "custom_data": { "origem": "checkout" },
+      "created_at": "2026-06-16T11:38:00-03:00",
+      "updated_at": "2026-06-16T11:38:10-03:00"
+    }
+  },
+  "event_code": "charge.automatic_pix.location.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:38:25-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Pix Automático — Pix (Cobrança)
+
+```json
+{
+  "object": {
+    "uid": "4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+    "automatic_pix_recurrence_uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+    "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+    "txid": "pix1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c",
+    "additional_info": "Cobrança de julho/2026",
+    "expire_at": "2026-07-05T23:59:59-03:00",
+    "amount": 149.9,
+    "next_business_day": true,
+    "retry_policy": "allow_3r_7d",
+    "financial_provider_created_at": "2026-06-16T11:50:00-03:00",
+    "financial_provider_status": "settled",
+    "financial_provider_status_updates": [
+      { "status": "scheduled", "occurred_at": "2026-06-16T11:50:00-03:00" },
+      { "status": "settled", "occurred_at": "2026-07-01T08:05:00-03:00" }
+    ],
+    "debtor": { "email": "financeiro@padariadobairro.com.br", "address": { "street": "Rua das Flores", "number": "123", "complement": "Loja 2", "neighborhood": "Centro", "state": "SP", "city_name": "São Paulo", "zip_code": "01001-000" } },
+    "recipient_financial_account": { "kind": "checking", "account_number": "98765", "account_digit": "4", "agency_number": "0001" },
+    "retries": [],
+    "cancellation": null,
+    "rejection": null,
+    "received_pix": { "end_to_end_id": "E60701190202607010805ABCDEF12345", "amount": 149.9, "received_at": "2026-07-01T08:05:00-03:00" },
+    "external_id": "ERP-PIX-0042",
+    "custom_data": { "competencia": "2026-07" },
+    "tags": ["assinatura"],
+    "tag_list": ["assinatura"],
+    "created_at": "2026-06-16T11:49:55-03:00",
+    "updated_at": "2026-07-01T08:05:00-03:00"
+  },
+  "changes": {
+    "financial_provider_status": ["scheduled", "settled"]
+  },
+  "event_code": "charge.automatic_pix.pix.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-07-01T08:05:15-03:00"
+  }
+}
+```
+
+### Pix Automático — Recorrência
+
+<Tabs>
+<TabItem value="json" label="charge.automatic_pix.recurrence.db.*">
+
+```json
+{
+  "object": {
+    "uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+    "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+    "financial_account_uid": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "pix_uid": null,
+    "location_uid": "7f6e5d4c-3b2a-1908-8796-a5b4c3d2e1f0",
+    "financial_provider_external_id": "RR1234567890abcdef0123456789",
+    "txid": "rec5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
+    "document": "CTR-2026-0042",
+    "description": "Assinatura mensal plano Premium",
+    "debtor": { "document_type": "cnpj", "document_number": "05.813.794/0001-26", "kind": "company", "name": "Padaria do Bairro LTDA" },
+    "start_at": "2026-07-01T00:00:00-03:00",
+    "finish_at": "2027-06-30T00:00:00-03:00",
+    "recurrence_term": "monthly",
+    "cycle": 12,
+    "amount_term": "fixed",
+    "amount": 149.9,
+    "minimum_amount": null,
+    "agreement_code": "AG-998877",
+    "retry_policy": "allow_3r_7d",
+    "journey": "journey_3",
+    "qrcode": { "emv": "00020101021226930014br.gov.bcb.pix2571qrcode.kobana.com.br/rec/v2/5f4a3b2c...6304ABCD", "image_base64": null },
+    "requests": [],
+    "financial_provider_status": "active",
+    "financial_provider_status_updates": [
+      { "status": "created", "occurred_at": "2026-06-16T11:40:00-03:00" },
+      { "status": "active", "occurred_at": "2026-06-16T11:42:10-03:00" }
+    ],
+    "cancellation": null,
+    "rejection": null,
+    "use_line_of_credit": false,
+    "external_id": "ERP-REC-0042",
+    "custom_data": { "plano": "premium" },
+    "tags": ["assinatura"],
+    "tag_list": ["assinatura"],
+    "created_at": "2026-06-16T11:39:50-03:00",
+    "updated_at": "2026-06-16T11:42:10-03:00"
+  },
+  "changes": {
+    "financial_provider_status": ["created", "active"],
+    "financial_provider_external_id": [null, "RR1234567890abcdef0123456789"]
+  },
+  "event_code": "charge.automatic_pix.recurrence.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:42:46-03:00"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="charge.automatic_pix.recurrence.register.*, .update.*, .cancel.*">
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-16T11:39:55-03:00",
+    "updated_at": "2026-06-16T11:42:10-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "charge_automatic_pix_recurrence": {
+      "uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+      "txid": "rec5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b",
+      "description": "Assinatura mensal plano Premium",
+      "amount": 149.9,
+      "recurrence_term": "monthly",
+      "financial_provider_status": "active",
+      "tags": ["assinatura"],
+      "created_at": "2026-06-16T11:39:50-03:00",
+      "updated_at": "2026-06-16T11:42:10-03:00"
+    }
+  },
+  "event_code": "charge.automatic_pix.recurrence.register.confirmed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:42:46-03:00"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Pix Automático — Solicitação
+
+```json
+{
+  "object": {
+    "uid": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+    "automatic_pix_recurrence_uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+    "charge_automatic_pix_account_uid": "9d8f7e6a-5b4c-3d2e-1f0a-9b8c7d6e5f4a",
+    "addressee_financial_account": {
+      "kind": "checking",
+      "account_number": "12345",
+      "account_digit": "6",
+      "agency_number": "0001",
+      "bank": { "number": "341", "ispb_number": "60701190", "name": "ITAU UNIBANCO S.A." },
+      "person_info": { "document_type": "cnpj", "document_number": "05.813.794/0001-26", "kind": "company", "name": "Padaria do Bairro LTDA" }
+    },
+    "expire_at": "2026-07-01T23:59:59-03:00",
+    "financial_provider_external_id": "SOL0099887766554433221100",
+    "financial_provider_status": "created",
+    "financial_provider_status_updates": [{ "status": "created", "occurred_at": "2026-06-16T11:45:00-03:00" }],
+    "external_id": "ERP-SOL-0042",
+    "custom_data": { "competencia": "2026-07" },
+    "tags": ["solicitacao"],
+    "tag_list": ["solicitacao"],
+    "created_at": "2026-06-16T11:45:00-03:00",
+    "updated_at": "2026-06-16T11:45:00-03:00"
+  },
+  "event_code": "charge.automatic_pix.request.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T11:45:12-03:00"
+  }
+}
+```
+
+### Plano
+
+```json
+{
+  "object": {
+    "id": 33120,
+    "amount": 299.9,
+    "cycle": "monthly",
+    "canceled_at": null,
+    "next_billing": "2024-07-15T00:00:00-03:00",
+    "contract": "PLAN-PRO-2024",
+    "number_of_billets": 5000,
+    "exceeded_price": 0.18,
+    "number_of_users": 10,
+    "number_of_bank_billet_accounts": 5,
+    "integration_price": 0.0,
+    "user_price": 19.9,
+    "sms_price": 0.25,
+    "number_of_operations": 1000,
+    "operation_price": 0.45,
+    "email_price": 0.05,
+    "conditions": {
+      "products_included": "- Boletos\r\n- Pix\r\n- Transferências",
+      "products_excluded": "- DDA",
+      "setup_price": 0.0,
+      "cycles": {
+        "monthly": { "price": 299.9, "setup_price": 0.0, "first_payment": 299.9, "price_per_month": 299.9, "discount_percentage": 0.0, "discount": 0.0 },
+        "quarterly": { "price": 809.73, "setup_price": 0.0, "first_payment": 809.73, "price_per_month": 269.91, "discount_percentage": 10.0, "discount": 89.97 },
+        "semiannual": { "price": 1529.49, "setup_price": 0.0, "first_payment": 1529.49, "price_per_month": 254.91, "discount_percentage": 15.0, "discount": 269.91 },
+        "annual": { "price": 2879.04, "setup_price": 0.0, "first_payment": 2879.04, "price_per_month": 239.92, "discount_percentage": 20.0, "discount": 719.76 }
+      }
+    },
+    "created_at": "2024-01-15T10:00:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00"
+  },
+  "changes": {
+    "status": ["pending", "active"]
+  },
+  "event_code": "plan_subscription.activated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Registro de Boleto (Registration)
+
+```json
+{
+  "object": {
+    "id": 4521098,
+    "uid": "BRG7E3A1C9F5B2D4",
+    "bank_billet_id": 30591847,
+    "bank_billet_account_id": 50231,
+    "created_at": "2026-06-14T09:30:02-03:00",
+    "error_message": null,
+    "failed_at": null,
+    "fails_count": 0,
+    "registered_at": "2026-06-14T09:31:48-03:00",
+    "status": "registered",
+    "updated_at": "2026-06-14T09:31:48-03:00",
+    "retry_blocked": false
+  },
+  "changes": {
+    "status": ["opened", "registered"],
+    "registered_at": [null, "2026-06-14T09:31:48-03:00"]
+  },
+  "event_code": "bank_billet_registration.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Registro de Remessa
+
+```json
+{
+  "object": {
+    "id": 6710238,
+    "uid": "BRM2A8C4E6F9B1D3",
+    "our_code": "01",
+    "occurrence": "01",
+    "remittance_id": 318472,
+    "bank_billet_id": 30591847,
+    "bank_billet_account_id": 50231,
+    "processed_at": "2026-06-14T09:32:11-03:00",
+    "occurrence_detail": "Entrada de Título",
+    "created_at": "2026-06-14T09:32:10-03:00",
+    "updated_at": "2026-06-14T09:32:11-03:00"
+  },
+  "event_code": "bank_billet_remittance.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Registro de Retorno
+
+:::info
+
+Contéudo do `line_parsed` depende das informações que seu banco disponibiliza e do tipo de CNAB(400 ou 240).
+
+:::
+
+```json
+{
+  "object": {
+    "id": 8294017,
+    "uid": "BDX4F9A2C7E1B6D8",
+    "occurrence": "06",
+    "date_of_occurrence": "2026-06-15",
+    "discharge_id": 471203,
+    "bank_billet_id": 30591847,
+    "occurrence_error": null,
+    "line_parsed": {
+      "our_number": "00000012345",
+      "document_number": "NF-2026-0042",
+      "paid_amount": 1289.9,
+      "amount": 1250.0,
+      "bank_rate": 3.49,
+      "paid_at": "2026-06-15",
+      "credit_at": "2026-06-16",
+      "banco_recebedor": "341",
+      "agencia_recebedora": "1234",
+      "occurrence": "06",
+      "occurrence_detail": "00"
+    },
+    "line_raw": "1T3410012345600000123450000000000000000125000341123400000128990000000349",
+    "processed_at": "2026-06-15T22:14:08-03:00",
+    "occurrence_detail": "Liquidação Normal",
+    "occurrence_error_detail": null,
+    "our_occurrence": "liquidado",
+    "bank_billet_account_id": 50231,
+    "bank_number": 341,
+    "created_at": "2026-06-15T22:14:07-03:00",
+    "updated_at": "2026-06-15T22:14:08-03:00",
+    "kind": "discharge"
+  },
+  "event_code": "bank_billet_discharge.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Remessa
+
+```json
+{
+  "object": {
+    "id": 318472,
+    "uid": "RMT9F1A3C5E7B9D2",
+    "filename": "CB231406.REM",
+    "created_via_api": true,
+    "status": "processed",
+    "bank_billet_account_id": 50231,
+    "created_at": "2026-06-14T09:25:00-03:00",
+    "updated_at": "2026-06-14T09:32:11-03:00",
+    "processed_at": "2026-06-14T09:32:11-03:00",
+    "url": "https://api.kobana.com.br/v1/bank_billets/remittances/download/9f1a3c5e7b9d2a4f6c8e0b1d3a5f7c9e",
+    "bank_billet_ids": [30591847, 30591848],
+    "remittance_number": 142,
+    "sent_via_integration": null,
+    "generated_by": "kobana",
+    "external_id": "REM-INT-2026-0142",
+    "custom_data": null,
+    "tags": ["cobranca", "junho"],
+    "tag_list": "cobranca, junho",
+    "bank_billet_remittances": [
+      {
+        "id": 6710238,
+        "uid": "BRM2A8C4E6F9B1D3",
+        "our_code": "01",
+        "occurrence": "01",
+        "remittance_id": 318472,
+        "bank_billet_id": 30591847,
+        "bank_billet_account_id": 50231,
+        "processed_at": "2026-06-14T09:32:11-03:00",
+        "occurrence_detail": "Entrada de Título",
+        "created_at": "2026-06-14T09:25:01-03:00",
+        "updated_at": "2026-06-14T09:32:11-03:00"
+      }
+    ]
+  },
+  "changes": {
+    "status": ["opened", "processed"],
+    "filename": [null, "CB231406.REM"],
+    "processed_at": [null, "2026-06-14T09:32:11-03:00"]
+  },
+  "event_code": "remittance.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Restrição de Crédito
+
+```json
+{
+  "object": {
+    "id": 9001,
+    "status": "confirmed",
+    "operation": "add",
+    "params": null,
+    "payload": null,
+    "created_at": "2026-06-16T15:00:00-03:00",
+    "updated_at": "2026-06-16T15:02:30-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "credit_restriction": {
+      "id": 5501,
+      "resource_id": 88123,
+      "resource_type": "BankBillet",
+      "restriction_account_id": 33,
+      "restriction_rule_id": 12,
+      "document_number": "2026000123",
+      "document_date": "2026-05-10",
+      "amount": 1500.0,
+      "expire_at": "2026-12-31",
+      "kind_debtor": "customer",
+      "consumer": { "name": "João da Silva", "document_number": "123.456.789-09" },
+      "consumer_document_number": "12345678909",
+      "customer_id": 7740,
+      "status": "negativated",
+      "failed_at": null,
+      "failed_error": null,
+      "event_code": "credit.restriction.add.success",
+      "nature_inclusion": "1",
+      "financial_provider_slug": "serasa",
+      "command_ids": [9001],
+      "included_at": "2026-06-16T15:02:30-03:00",
+      "remove_reason": null,
+      "positiveted_at": null
+    }
+  },
+  "event_code": "credit.restriction.add.success",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2026-06-16T15:02:31-03:00"
+  }
+}
+```
+
+### Retorno
+
+```json
+{
+  "object": {
+    "id": 471203,
+    "uid": "DSC3B7D1F9A5C2E8",
+    "filename": "CB150620.RET",
+    "processed_at": "2026-06-15T22:14:08-03:00",
+    "created_via_api": false,
+    "status": "processed",
+    "bank_billet_account_id": 50231,
+    "created_via_integration": "2026-06-15T22:10:00-03:00",
+    "created_at": "2026-06-15T22:10:00-03:00",
+    "updated_at": "2026-06-15T22:14:08-03:00",
+    "external_id": null,
+    "custom_data": null,
+    "tags": ["retorno"],
+    "tag_list": "retorno",
+    "bank_billet_discharges": [
+      {
+        "id": 8294017,
+        "uid": "BDX4F9A2C7E1B6D8",
+        "occurrence": "06",
+        "date_of_occurrence": "2026-06-15",
+        "discharge_id": 471203,
+        "bank_billet_id": 30591847,
+        "occurrence_error": null,
+        "line_parsed": {
+          "our_number": "00000012345",
+          "paid_amount": 1289.9,
+          "bank_rate": 3.49,
+          "paid_at": "2026-06-15",
+          "credit_at": "2026-06-16",
+          "banco_recebedor": "341",
+          "agencia_recebedora": "1234"
+        },
+        "line_raw": "1T3410012345600000123450000000000000000125000341123400000128990000000349",
+        "processed_at": "2026-06-15T22:14:08-03:00",
+        "occurrence_detail": "Liquidação Normal",
+        "occurrence_error_detail": null,
+        "our_occurrence": "liquidado",
+        "bank_billet_account_id": 50231,
+        "bank_number": 341,
+        "created_at": "2026-06-15T22:14:07-03:00",
+        "updated_at": "2026-06-15T22:14:08-03:00",
+        "kind": "discharge"
+      }
+    ]
+  },
+  "changes": {
+    "status": ["opened", "processed"],
+    "processed_at": [null, "2026-06-15T22:14:08-03:00"]
+  },
+  "event_code": "discharge.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2018-04-19T03:03:06-03:00"
+  }
+}
+```
+
+### Saldo (Balance)
+
+```json
+{
+  "object": {
+    "uid": "7d6c5b4a-3e2f-4d1c-9b8a-7c6d5e4f3a2b",
+    "capture_date": "2024-07-16",
+    "amount": 15890.45,
+    "blocked_amount": 1200.0,
+    "automatically_invested_amount": 5000.0,
+    "created_at": "2024-07-16T10:00:36-03:00",
+    "external_id": null,
+    "custom_data": {},
+    "tags": [],
+    "financial_account": {
+      "uid": "9f8b2c1d-4a3e-4f6b-8c2d-1e2f3a4b5c6d",
+      "status": "active",
+      "bank": { "name": "Banco do Brasil S.A.", "bcb_name": "BCO DO BRASIL S.A.", "number": "001" },
+      "account_number": "12345",
+      "account_digit": "6",
+      "agency_number": "1234",
+      "agency_digit": "0",
+      "financial_provider_slug": "banco_do_brasil",
+      "kind": "checking",
+      "custom_name": "Conta Movimento BB",
+      "created_at": "2024-07-16T10:00:36-03:00",
+      "updated_at": "2024-07-16T10:00:36-03:00"
+    }
+  },
+  "event_code": "financial.account.balance.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T10:00:36-03:00"
+  }
+}
+```
+
+### Saque (Withdrawal)
+
+```json
+{
+  "object": {
+    "id": 880200,
+    "uid": "6f7a8b9c-0d1e-4f2a-9b3c-4d5e6f7a8b9c",
+    "amount": -1500.0,
+    "created_at": "2024-07-16T14:00:00-03:00",
+    "description": "Saque solicitado para conta BB ag 1234 cc 12345-6",
+    "kind": "withdrawal",
+    "processed_at": "2024-07-16T14:05:00-03:00",
+    "sent_at": "2024-07-16T14:30:00-03:00",
+    "status": "transferred",
+    "credit_at": null
+  },
+  "changes": {
+    "status": ["processed", "transferred"],
+    "sent_at": [null, "2024-07-16T14:30:00.000-03:00"]
+  },
+  "event_code": "withdrawal.transferred",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T14:30:00-03:00"
+  }
+}
+```
+
+### Token de Acesso
+
+```json
+{
+  "object": {
+    "uid": "tok-9b1c4d2e-5f6a-4b7c-8d9e-0a1b2c3d4e5f",
+    "external_id": "INTEGRACAO-ERP-001",
+    "description": "Token de integração com ERP financeiro",
+    "scopes": ["bank_billets.read", "bank_billets.write", "pix.read"],
+    "source": "api",
+    "purpose": "integration",
+    "expires_in": 7776000,
+    "expires_at": "2024-09-15T14:30:46-03:00",
+    "version": "v2",
+    "tags": ["erp", "producao"],
+    "custom_data": { "centro_custo": "TI-042" },
+    "warning_flags": [],
+    "reminder_emails": ["ti@aurora.com.br"],
+    "created_at": "2024-06-15T14:30:46-03:00",
+    "created_by": {
+      "id": 4412,
+      "uid": "usr-1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "email": "mariana.santos@aurora.com.br",
+      "first_name": "Mariana",
+      "last_name": "Santos",
+      "full_name": "Mariana Oliveira Santos"
+    },
+    "updated_at": "2024-06-15T14:30:46-03:00",
+    "updated_by": null,
+    "enabled_at": "2024-06-15T14:30:46-03:00",
+    "enabled_by": null,
+    "disabled_at": null,
+    "disabled_by": null,
+    "revoked_at": null,
+    "revoked_by": null,
+    "last_used_at": null
+  },
+  "event_code": "access_token.db.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Transação
+
+```json
+{
+  "object": {
+    "id": 880123,
+    "uid": "5e6f7a8b-9c0d-4e1f-8a2b-3c4d5e6f7a8b",
+    "amount": 250.75,
+    "created_at": "2024-07-16T09:15:00-03:00",
+    "description": "Crédito de boleto pago - NF 1042",
+    "kind": "credit",
+    "processed_at": "2024-07-16T09:20:00-03:00",
+    "sent_at": null,
+    "status": "processed",
+    "credit_at": "2024-07-17T00:00:00-03:00"
+  },
+  "changes": {
+    "status": ["unprocessed", "processed"],
+    "processed_at": [null, "2024-07-16T09:20:00.000-03:00"]
+  },
+  "event_code": "transaction.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-07-16T09:20:00-03:00"
+  }
+}
+```
+
+### Transferência
+
+<Tabs>
+<TabItem value="json" label="transfer.db.*">
+
+```json
+{
+  "object": {
+    "uid": "9a7b3c1d-4e2f-7a8b-9c0d-1e2f3a4b5c6d",
+    "status": "confirmed",
+    "scheduled_to": "2024-06-15T00:00:00-03:00",
+    "registration_status": "confirmed",
+    "financial_account_uid": "1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+    "transfer_account_uid": "2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+    "amount": 1500.75,
+    "target": {
+      "transfer_kind": "pix",
+      "beneficiary": { "document_number": "111.222.444-55", "name": "José da Silva" },
+      "bank_account": null,
+      "internal": null,
+      "pix": { "txid": "E0036030520240615143000abcdef123", "key": "jose.silva@example.com.br", "key_type": "email", "end_to_end_id": "E0036030520240615143000abcdef123" }
+    },
+    "kind": "pix",
+    "pix": { "txid": "E0036030520240615143000abcdef123", "key": "jose.silva@example.com.br", "key_type": "email", "end_to_end_id": "E0036030520240615143000abcdef123" },
+    "ted": null,
+    "internal": null,
+    "beneficiary": { "document_number": "111.222.444-55", "name": "José da Silva" },
+    "source": 0,
+    "confirmed_at": "2024-06-15T14:30:46-03:00",
+    "rejected_error": null,
+    "rejected_at": null,
+    "transaction_code": "TRX202406150001",
+    "transaction_date": "2024-06-15T14:30:46-03:00",
+    "transfer_purpose": { "code": "10", "description": "Crédito em Conta" },
+    "identifier": "PEDIDO-2024-0001",
+    "external_id": "ext-0001",
+    "financial_provider_external_id": "fp-998877",
+    "custom_data": { "centro_de_custo": "vendas" },
+    "tags": ["fornecedor", "junho"],
+    "tag_list": "fornecedor,junho",
+    "formats": { "default": { "html": "https://kobana.com.br/transfers/9a7b3c1d.html", "png": "https://kobana.com.br/transfers/9a7b3c1d.png", "pdf": "https://kobana.com.br/transfers/9a7b3c1d.pdf" } },
+    "created_at": "2024-06-15T14:30:35-03:00",
+    "updated_at": "2024-06-15T14:30:49-03:00"
+  },
+  "changes": { "status": ["pending", "confirmed"] },
+  "event_code": "transfer.db.updated",
+  "webhook": { "id": 1, "url": "http://hooks.kobana.com.br", "first_try": "2024-06-15T14:30:49-03:00" }
+}
+```
+
+</TabItem>
+<TabItem value="json-1" label="transfer.ted.register.*, transfer.pix.*, transfer.internal.* (envelope de comando)">
+
+```json
+{
+  "object": {
+    "id": 1,
+    "status": "confirmed",
+    "operation": "register",
+    "params": null,
+    "payload": null,
+    "created_at": "2024-11-19T15:00:35-03:00",
+    "updated_at": "2024-11-19T15:00:49-03:00",
+    "message": null,
+    "error_message": null,
+    "warning_message": null,
+    "financial_transfer": {
+      "uid": "9a7b3c1d-4e2f-7a8b-9c0d-1e2f3a4b5c6d",
+      "status": "confirmed",
+      "scheduled_to": "2024-11-19T00:00:00-03:00",
+      "registration_status": "confirmed",
+      "amount": 2500.0,
+      "kind": "ted",
+      "target": {
+        "transfer_kind": "ted",
+        "beneficiary": { "document_number": "05.813.794/0001-26", "name": "Kobana Instituição de Pagamento Ltda." },
+        "bank_account": { "compe_number": 341, "ispb_number": 60701190, "agency_number": "1234", "agency_digit": "0", "account_number": "56789", "account_digit": "1", "account_type": "checkings", "document_number": "05.813.794/0001-26" },
+        "internal": null,
+        "pix": null
+      },
+      "ted": { "compe_number": 341, "ispb_number": 60701190, "agency_number": "1234", "agency_digit": "0", "account_number": "56789", "account_digit": "1", "account_type": "checkings", "document_number": "05.813.794/0001-26" },
+      "pix": null,
+      "internal": null,
+      "beneficiary": { "document_number": "05.813.794/0001-26", "name": "Kobana Instituição de Pagamento Ltda." },
+      "confirmed_at": "2024-11-19T15:00:49-03:00",
+      "created_at": "2024-11-19T15:00:35-03:00",
+      "updated_at": "2024-11-19T15:00:49-03:00"
+    }
+  },
+  "event_code": "transfer.ted.register.confirmed",
+  "webhook": { "id": 1, "url": "http://hooks.kobana.com.br", "first_try": "2024-11-19T15:00:49-03:00" }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Usuário
+
+```json
+{
+  "object": {
+    "id": 4412,
+    "uid": "usr-1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "email": "mariana.santos@aurora.com.br",
+    "first_name": "Mariana",
+    "middle_name": "Oliveira",
+    "last_name": "Santos",
+    "full_name": "Mariana Oliveira Santos",
+    "created_via_api": false,
+    "permissions": {
+      "bank_billets": ["read", "write"],
+      "pix": ["read"],
+      "transfers": []
+    },
+    "created_at": "2024-03-01T08:30:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00",
+    "enabled_at": "2024-03-01T08:30:00-03:00"
+  },
+  "changes": {
+    "last_name": ["Oliveira", "Santos"],
+    "updated_at": ["2024-06-10T11:00:00-03:00", "2024-06-15T14:30:46-03:00"]
+  },
+  "event_code": "user.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### Webhook
+
+```json
+{
+  "object": {
+    "id": 1,
+    "uid": "whk-3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "Notificações de Boletos",
+    "url": "http://hooks.kobana.com.br",
+    "content_type": "application/json",
+    "events": ["bank_billet.paid", "bank_billet.registered"],
+    "ssl_verification_enabled": true,
+    "active": true,
+    "concurrency_limit": 5,
+    "subaccounts": false,
+    "auth_kind": "basic",
+    "bank_billet_account_id": 4521,
+    "created_at": "2024-05-20T10:00:00-03:00",
+    "updated_at": "2024-06-15T14:30:46-03:00"
+  },
+  "changes": {
+    "active": [false, true],
+    "events": [["bank_billet.paid"], ["bank_billet.paid", "bank_billet.registered"]]
+  },
+  "event_code": "webhook.db.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br",
+    "first_try": "2024-06-15T14:30:46-03:00"
+  }
+}
+```
+
+### \*.updated
+
+```json
+{
+  "object": {
+    "...": "..."
+  },
+  "changes": {
+    "person_name": ["Nome Antigo", "Nome Novo"]
+  },
+  "event_code": "customer.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.kobana.com.br"
+  }
+}
+```

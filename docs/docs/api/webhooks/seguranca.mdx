@@ -1,0 +1,266 @@
+---
+title: "Segurança"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Ao receber uma requisição de notificação de um evento, é muito importante validar se a requisição realmente saiu da Kobana e não foi forjada por um terceiro.
+
+### Cenário de intrusão
+
+Vamos considerar que a integração que você está desenvolvendo seja da Kobana com um sistema de e-commerce. Ao receber o evento `bank_billet.paid`, que ocorre quando um boleto é pago, o sistema de e-commerce libera o pedido para que a entrega da mercadoria seja feita.
+
+Imagina que um hacker descobre qual a URL do sistema de e-commerce que recebe as notificações e envia uma notificação forjada, como se fosse a Kobana enviando. Nesse caso, o evento do boleto sendo pago não aconteceu, mas o seu sistema irá liberar o pedido da mesma forma.
+
+### Como se proteger
+
+Para se proteger deste tipo de ataque, é necessário implementar uma validação antes do processamento de todas as requisições, que certifica que a requisição foi enviada pela Kobana.
+
+Todas as requisições feitas pela Kobana vão com uma assinatura no cabeçalho `X-Kobana-Signature`. A assinatura é um string criptografado que é basedo no conteúdo da requisição e na Chave Secreta do webhook.
+
+Para validar se a requisição é real, é necessário gerar a assinatura e comparar com a assinatura que está no cabeçalho da requisição. Caso as assinatura recebida seja igual a assinatura gerada, a requisição é válida e segura.
+
+Um hacker, sem ter acesso a Chave Secreta, não consegue gerar a assinatura e por consequência não consegue forjar a requisição.
+
+É muito relevante manter a Chave Secreta segura, ou seja, não colocando no código fonte do sistema. É recomendável armazenar como variável de ambiente no servidor de produção ou sistema de configuração que seja seguro e criptografado.
+
+Qualquer pessoa com acesso à Chave Secreta é capaz de forjar requisições como sendo vindas da Kobana. Se você acredita que a Chave Secreta vazou de alguma forma, é aconselhável renovar a chave na página de exibição dos dados do webhook.
+
+### Chave Secreta do webhook
+
+Para pegar a **Chave Secreta** do Webhook, vá até a página de Webhooks no menu Integrações -\> Webhooks -\> Contas e selecione o Webhook em questão.
+
+Clique em copiar no botão azul.
+
+![](/img/guias/api-webhooks-seguranca/Screenshot_2023-03-30_at_16.35.48.png)
+
+### Exemplos de códigos
+
+<Tabs>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+# O exemplo abaixo está usando o framework minimalista em Ruby,
+# chamado [Sinatra](http://www.sinatrarb.com/).
+
+require 'sinatra'
+require 'json'
+
+post '/callbacks/kobana' do
+  verify_signature
+
+  payload = JSON.parse(request_body)
+  "Event Code: #{payload['event_code']}"
+end
+
+def request_body
+  @request_body ||= request.body.read.to_s
+end
+
+def secret_key
+  ENV['WEBHOOK_SECRET_KEY']
+end
+
+def signature_from_request
+  request.env['HTTP_X_KOBANA_SIGNATURE'].split('=').last
+end
+
+def generated_signature
+  OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), secret_key, request_body)
+end
+
+def verify_signature
+  return halt 500, "Signatures didn't match!" unless Rack::Utils.secure_compare(signature_from_request, generated_signature)
+end
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+define('WEBHOOK_SECRET_KEY', 'my_shared_secret');
+
+function verify_webhook($data, $hmac_header)
+{
+  $calculated_hmac = hash_hmac('sha256', $data, WEBHOOK_SECRET_KEY, true);
+  return ($hmac_header == $calculated_hmac);
+}
+
+$hmac_header = explode("=", $_SERVER['HTTP_X_KOBANA_SIGNATURE'])[1];
+$data = file_get_contents('php://input');
+$verified = verify_webhook($data, $hmac_header);
+error_log('Webhook verified: '.var_export($verified, true)); //check error.log to see the result
+```
+
+</TabItem>
+<TabItem value="csharp" label="C#">
+
+```csharp
+// Exemplo C# desenvolvido por Davi Kendy Yorozuya
+private string ObterChave(string key, string message){
+  Encoding encoding = Encoding.UTF8;
+
+  var keyByte = encoding.GetBytes(key);
+  using (var hmacshaSHA256 = new HMACSHA256(keyByte)){
+ hmacshaSHA256.ComputeHash(encoding.GetBytes(message));
+
+  return ByteToString(hmacshaSHA256.Hash);
+  }
+}
+
+public string ByteToString(byte[] buff){
+  string sbinary = "";
+  for (int i = 0; i < buff.Length; i++)
+  sbinary += buff[i].ToString("X2"); /* hex format
+  */
+  return sbinary;
+}
+```
+
+</TabItem>
+<TabItem value="javascript" label="JavaScript">
+
+```javascript
+
+//Desenvolvido por Maria Paula
+//middleware para capturar o rawBody
+app.use(function (req, res, next) {
+    req.rawBody = "";
+    req.on("data", (chunk) => {
+      req.rawBody += chunk;
+    });
+    next();
+  });
+
+//validar assinatura
+const compareSha = (req, webHookSecretKey) => {
+  const requestSignature = req.get("x-kobana-signature").split("=")[1];
+
+  const computedSignature = crypto
+    .createHmac("sha256", webHookSecretKey)
+    .update(req.rawBody)
+    .digest("hex");
+
+  return crypto.timingSafeEqual(
+    Buffer.from(computedSignature, "utf8"),
+    Buffer.from(requestSignature, "utf8")
+  );
+};
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+// Deve ser executado com o comando:
+// javac WebhookServer.java && java WebhookServer <secretKey>
+// onde <secretKey> é a chave secreta do seu webhook, necessária para a validação da assinatura.
+
+// Exemplo de execução:
+// javac WebhookServer.java && java WebhookServer 1234567890abcdef1234567890abcdef
+
+// Para utilizar com o app da Kobana, você pode usar uma ferramenta como ngrok para expor o servidor local para a internet.
+// O mini-servidor implementado abaixo escuta na rota /webhook e valida a assinatura do webhook recebido.
+
+import com.sun.net.httpserver.HttpServer;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpExchange;
+
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+public class WebhookServer {
+    public static void main(String[] args) throws Exception {
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        String secretKey = args[0];
+        server.createContext("/webhook", new WebhookHandler(secretKey));
+        server.setExecutor(null); // default executor
+        server.start();
+        System.out.println("Server started on port 8080");
+    }
+
+    static class WebhookHandler implements HttpHandler {
+        private final String secretKey;
+
+        public WebhookHandler(String secretKey) {
+            this.secretKey = secretKey;
+        }
+
+        @Override
+        public void handle(HttpExchange exchange) {
+            try {
+                if ("POST".equals(exchange.getRequestMethod())) {
+                    byte[] requestBody = exchange.getRequestBody().readAllBytes();
+                    String requestBodyString = new String(requestBody);
+                    System.out.println("Received webhook payload:");
+                    System.out.println(requestBodyString);
+
+                    System.out.println("Received headers:");
+                    exchange.getRequestHeaders().forEach((key, value) -> {
+                        System.out.println(key + ": " + String.join(", ", value));
+                    });
+
+                    String receivedSignature = exchange.getRequestHeaders().getFirst("x-kobana-signature").split("=")[1];
+                    System.out.println("Received signature: " + receivedSignature);
+                    String computedSignature = computeHmacSHA256(secretKey, requestBodyString);
+                    System.out.println("Computed signature: " + computedSignature);
+                    if (receivedSignature != null && receivedSignature.equals(computedSignature)) {
+                        System.out.println("Signature verified successfully.");
+                    } else {
+                        System.out.println("Signature verification failed.");
+                    }
+
+                    String response = "Webhook received";
+                    exchange.sendResponseHeaders(200, response.length());
+                    OutputStream os = exchange.getResponseBody();
+                    os.write(response.getBytes());
+                    os.close();
+                } else {
+                    exchange.sendResponseHeaders(405, -1); // Method Not Allowed
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        private String computeHmacSHA256(String key, String data) throws InvalidKeyException, NoSuchAlgorithmException {
+            String algorithm = "HmacSHA256";
+            Mac mac = Mac.getInstance(algorithm);
+            SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), algorithm);
+            mac.init(secretKeySpec);
+            byte[] hmacBytes = mac.doFinal(data.getBytes());
+            return bytesToHex(hmacBytes);
+        }
+
+        private String bytesToHex(byte[] bytes) {
+            StringBuilder hexString = new StringBuilder(2 * bytes.length);
+            for (byte b : bytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0'); // pad with leading zero if needed
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        }
+
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+Algumas observações são importantes:
+
+- A assinatura é gerada seguindo o padrão `HMAC` com `SHA256`;
+- A assinatura enviada no `X_KOBANA_SIGNATURE` sempre começa com `sha256=` e deve ser usado o valor após o `=` na comparação entre a nossa chave e a chave que será gerada por você;
+- A assinatura deve ser gerada usando a Chave Secreta do Webhook, que é individual e única por Webhook e por ambiente(`Sandbox` ou `Production`), e o conteúdo(`body`) da requisição `POST` enviado em RAW(sem qualquer pré-tratamento por parte do seu servidor ou lib) (`request.body`);
+- A Chave Secreta não deve ser colocada *hard-coded* no código fonte e é recomendável que seja armazenada em uma variável de ambiente;
+- Não é recomendável usar o operador `==` para comparar a assinatura recebida e a assinatura gerada. O método como `Rack::Utils.secure_compare` executa uma comparação segura contra alguns tipos de *[timing attacks](https://en.wikipedia.org/wiki/Timing_attack)*. Investigue como fazer uma comparação segura na linguagem que estiver utilizando.

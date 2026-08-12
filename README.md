@@ -3,7 +3,7 @@
 ## 📖 Sobre este repositório
 
 Este repositório contém os arquivos com as especificações mais recentes da API da Kobana, mantidas e atualizadas para uso no Swagger e Postman.
-Para visualizar a documentação navegável, acesse [developers.kobana.com.br](https://developers.kobana.com.br)
+Para visualizar a documentação navegável, acesse [docs.banking.kobana.com.br](https://docs.banking.kobana.com.br)
 
 ## 🌟 O que é a Kobana?
 
@@ -23,8 +23,24 @@ kobana-api-specs/
 ├── swagger/          # Especificações Swagger/OpenAPI
 │   └── v1_0/         # Versão 1.0 da API
 │   └── v2_0/         # Versão 2.0 da API
+├── docs/             # Site da documentação (Docusaurus) — docs.banking.kobana.com.br
 └── README.md         # Este arquivo
 ```
+
+## 📚 Site da documentação
+
+A pasta [`docs/`](./docs) contém o site da documentação em Docusaurus
+publicado em `docs.banking.kobana.com.br`: os guias, as páginas conceituais da API e a
+referência de endpoints gerada automaticamente a partir dos arquivos OpenAPI acima.
+
+```bash
+cd docs
+npm install
+npm run gen-api-docs:all   # gera a referência a partir de swagger/
+npm start
+```
+
+Veja [`docs/README.md`](./docs/README.md) para detalhes.
 
 ## 🏦 Bancos Suportados
 
@@ -47,7 +63,7 @@ A Kobana está conectada a **34+ bancos e instituições financeiras** brasileir
 2. Configure as variáveis de ambiente necessárias
 3. Comece a testar os endpoints da API
 
-[Mais informações sobre as coleções do postman disponíveis na documentação da API](https://developers.kobana.com.br/reference/postman-collection).
+[Mais informações sobre as coleções do postman disponíveis na documentação da API](https://docs.banking.kobana.com.br/api/postman).
 
 ### Swagger
 1. Acesse as especificações na pasta `swagger/`
