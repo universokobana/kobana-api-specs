@@ -20,7 +20,7 @@ O site tem duas seções:
 ## Instalação
 
 ```bash
-cd developers
+cd docs
 npm install
 ```
 
@@ -72,7 +72,7 @@ build de propósito.
 ## Estrutura
 
 ```
-developers/
+docs/
 ├── docs/
 │   ├── index.md              # home
 │   ├── comecando/            # guias — /docs no readme.com
@@ -86,9 +86,10 @@ developers/
 │       ├── webhooks/
 │       ├── v1/               # gerado do OpenAPI (não versionado)
 │       └── v2/               # gerado do OpenAPI (não versionado)
-├── scripts/                  # sync-specs, fix-info-pages, rewrite-legacy-links
+├── scripts/                  # prepare-specs, fix-info-pages, rewrite-legacy-links
 ├── src/                      # tema e CSS
-├── static/                   # imagens; openapi/ e postman/ são copiados pelo sync-specs
+├── static/                   # imagens; openapi/ e postman/ vêm do prepare-specs
+├── openapi/                  # specs com operationId, entrada do plugin (não versionado)
 ├── docusaurus.config.ts
 └── sidebars.ts
 ```
