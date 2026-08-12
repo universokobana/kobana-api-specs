@@ -94,7 +94,11 @@ developers/
 
 ## URLs antigas
 
-As URLs do readme.com (`/docs/<slug>` e `/reference/<slug>`) continuam funcionando via
-`@docusaurus/plugin-client-redirects`, configurado em `docusaurus.config.ts`. Páginas de
-endpoint antigas (`/reference/get_v1-…`) não têm redirecionamento individual porque os
-ids das páginas geradas acompanham o spec — quem chegar por elas cai no índice da versão.
+O site é publicado em um host próprio, separado do portal do readme.com, então **não há
+redirecionamentos** das URLs antigas (`/docs/<slug>`, `/reference/<slug>`) — as rotas
+aqui são as da árvore de `docs/`.
+
+A única coisa que ainda olha para o readme.com é o `rewrite-legacy-links`: alguns
+`description` dentro dos specs OpenAPI linkam para `/reference/…`, e o script troca
+esses links pelas rotas deste site. Sem isso o build quebraria, já que `onBrokenLinks`
+está em `throw`.

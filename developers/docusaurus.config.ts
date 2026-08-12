@@ -99,48 +99,6 @@ const config: Config = {
 
   plugins: [
     [
-      // developers.kobana.com.br ran on readme.com, which served guides under
-      // `/docs/<slug>` and everything else under `/reference/<slug>`. Those URLs
-      // are indexed and pasted around in support threads, so every one of them
-      // keeps working — the readme slug is the `from`, the Docusaurus route the
-      // `to`. Endpoint pages (`/reference/get_v1-...`) are not listed: their
-      // replacements are generated from the OpenAPI spec and their ids move
-      // with it, so they fall back to the version index instead.
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {from: '/docs', to: '/comecando'},
-          {from: '/docs/comecando', to: '/comecando'},
-          {from: '/docs/sandbox', to: '/comecando/sandbox'},
-          {from: '/docs/bibliotecas', to: '/comecando/bibliotecas'},
-          {from: '/docs/api-e-endpoints', to: '/comecando/api-e-endpoints'},
-          {from: '/docs/magento', to: '/modulos/magento'},
-          {from: '/docs/shopify', to: '/modulos/shopify'},
-          {from: '/docs/totvs-rm', to: '/modulos/totvs-rm'},
-          {from: '/docs/totvs-microsiga-protheus', to: '/modulos/totvs-microsiga-protheus'},
-          {from: '/docs/wordpresswoocommerce', to: '/modulos/wordpress-woocommerce'},
-          {from: '/docs/whmcs', to: '/modulos/whmcs'},
-          {from: '/docs/zapier', to: '/integracoes/zapier'},
-          {from: '/docs/pluga', to: '/integracoes/pluga'},
-          {from: '/reference', to: '/api/visao-geral'},
-          {from: '/reference/visao-geral', to: '/api/visao-geral'},
-          {from: '/reference/endpoints-1', to: '/api/endpoints'},
-          {from: '/reference/user-agent', to: '/api/user-agent'},
-          {from: '/reference/autenticacao', to: '/api/autenticacao'},
-          {from: '/reference/token-de-acesso', to: '/api/autenticacao/token-de-acesso'},
-          {from: '/reference/authorization-flow', to: '/api/autenticacao/authorization-flow'},
-          {from: '/reference/client-credentials-flow', to: '/api/autenticacao/client-credentials-flow'},
-          {from: '/reference/postman-collection', to: '/api/postman'},
-          {from: '/reference/bancos-suportados', to: '/api/bancos'},
-          {from: '/reference/erros', to: '/api/erros'},
-          {from: '/reference/pix', to: '/api/pix'},
-          {from: '/reference/eventos', to: '/api/webhooks/eventos'},
-          {from: '/reference/webhooks', to: '/api/webhooks'},
-          {from: '/reference/payloads', to: '/api/webhooks/payloads'},
-        ],
-      },
-    ],
-    [
       '@signalwire/docusaurus-plugin-llms-txt',
       {
         siteTitle: 'Kobana para Desenvolvedores',
