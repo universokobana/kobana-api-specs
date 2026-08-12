@@ -1,0 +1,233 @@
+name: Regenerar docs (OpenAPI)
+
+# Os specs em swagger/ (e as coleções em postman/) são commitados aqui por
+# automação upstream. Quando isso acontece, este workflow roda o Claude Code
+# CLI chamando a skill `regenerar-docs-openapi`: ela regenera a referência do
+# site Docusaurus em docs/, valida o build e ajusta as páginas versionadas que
+# a mudança de spec tornou obsoletas. O resultado sai como Pull Request.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'swagger/**'
+      - 'postman/**'
+  workflow_dispatch:
+    inputs:
+      base_sha:
+        description: 'Commit base para o diff dos specs (default: commit anterior ao HEAD)'
+        required: false
+        default: ''
+      model:
+        description: 'Modelo a usar no Claude Code CLI (vazio = default do CLI)'
+        required: false
+        default: ''
+
+concurrency:
+  group: regenerate-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # A skill compara o inventário de operações entre o commit base e o
+          # HEAD (git show BASE:swagger/...), e o passo final cria um branch.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+
+      - name: Check Claude credentials
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "${CLAUDE_CODE_OAUTH_TOKEN}" ] && [ -z "${ANTHROPIC_API_KEY}" ]; then
+            echo "::error::defina o secret CLAUDE_CODE_OAUTH_TOKEN (token OAuth da assinatura, gerado com 'claude setup-token') ou ANTHROPIC_API_KEY"
+            exit 1
+          fi
+
+      - name: Install site dependencies
+        working-directory: docs
+        run: npm ci
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Resolve spec diff range
+        id: range
+        env:
+          INPUT_BASE: ${{ inputs.base_sha }}
+          EVENT_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          BASE="$INPUT_BASE"
+          # push em branch novo/force manda before=000…0, que não é commit válido.
+          if [ -z "$BASE" ] && [ -n "${EVENT_BEFORE:-}" ] && [ "$EVENT_BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            BASE="$EVENT_BEFORE"
+          fi
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo "::notice::commit base indisponível — usando HEAD~1"
+            BASE=$(git rev-parse HEAD~1)
+          fi
+          echo "base_sha=$BASE" >> "$GITHUB_OUTPUT"
+          echo "diff dos specs: $BASE..$(git rev-parse HEAD)"
+          git diff --stat "$BASE" HEAD -- swagger postman || true
+
+      - name: Run skill (claude-code, stream-json, live logs)
+        id: run
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Lidos pela skill em §1 para delimitar o diff dos specs.
+          BASE_SHA: ${{ steps.range.outputs.base_sha }}
+          HEAD_SHA: ${{ github.sha }}
+          MODEL: ${{ inputs.model }}
+        run: |
+          set -uo pipefail
+          # Fora do workspace: qualquer arquivo solto no repo apareceria como
+          # mudança não versionada no passo do PR.
+          STREAM_LOG="${RUNNER_TEMP}/claude-stream.jsonl"
+          rm -f "$STREAM_LOG"
+          # Default para que cancelamento/timeout ainda produza um valor.
+          echo "exit_code=1" >> "$GITHUB_OUTPUT"
+
+          MODEL_ARGS=()
+          if [ -n "${MODEL}" ]; then MODEL_ARGS=(--model "$MODEL"); fi
+
+          claude -p "/regenerar-docs-openapi" \
+            "${MODEL_ARGS[@]}" \
+            --max-turns 120 \
+            --output-format stream-json \
+            --verbose \
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,Skill,TodoWrite" \
+            --dangerously-skip-permissions \
+          | tee "$STREAM_LOG" \
+          | jq -r --unbuffered '
+              if .type == "system" then
+                "[system] \(.subtype // "init")"
+              elif .type == "assistant" then
+                (.message.content[]?
+                  | if .type == "text" and (.text | length) > 0 then "[assistant] \(.text)"
+                    elif .type == "tool_use" then "[tool_use] \(.name) \(.input | tostring | .[0:300])"
+                    else empty end)
+              elif .type == "user" then
+                (.message.content[]?
+                  | if .type == "tool_result"
+                    then "[tool_result] \((.content | if type == "string" then . else tostring end)[0:300])"
+                    else empty end)
+              elif .type == "result" then
+                "[result \(.subtype // "")] \(.result // .error // "")"
+              else empty end'
+          CLAUDE_EXIT=${PIPESTATUS[0]}
+          echo "exit_code=$CLAUDE_EXIT" >> "$GITHUB_OUTPUT"
+
+          # O CLI sai 0 mesmo quando a slash command não existe — a skill nunca
+          # rodou, então falhe alto em vez de abrir um PR vazio.
+          if grep -q '^Unknown command:' "$STREAM_LOG" 2>/dev/null; then
+            echo "::error::claude reportou Unknown command — skill regenerar-docs-openapi não encontrada em .claude/skills/"
+            echo "exit_code=1" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          if [ "$CLAUDE_EXIT" != "0" ]; then
+            ERR=$(jq -r 'select(.type=="result") | .error // empty' "$STREAM_LOG" 2>/dev/null | tail -1)
+            [ -n "$ERR" ] && echo "::error::claude reportou erro: $ERR"
+            exit "$CLAUDE_EXIT"
+          fi
+
+          # Relatório final da skill (§5) — vira o corpo do PR.
+          jq -r 'select(.type=="result") | .result // ""' "$STREAM_LOG" 2>/dev/null \
+            > "${RUNNER_TEMP}/claude-report.md" || true
+
+      - name: Usage summary
+        if: always()
+        run: |
+          set -uo pipefail
+          STREAM_LOG="${RUNNER_TEMP}/claude-stream.jsonl"
+          [ -f "$STREAM_LOG" ] || exit 0
+          RESULT=$(jq -c 'select(.type=="result")' "$STREAM_LOG" | tail -1)
+          [ -n "$RESULT" ] || exit 0
+          {
+            echo "## /regenerar-docs-openapi"
+            echo ""
+            echo "| Metric | Value |"
+            echo "|---|---:|"
+            echo "| Status | \`$(jq -r '.subtype // "unknown"' <<<"$RESULT")\` |"
+            echo "| Input tokens | $(jq -r '.usage.input_tokens // 0' <<<"$RESULT") |"
+            echo "| Output tokens | $(jq -r '.usage.output_tokens // 0' <<<"$RESULT") |"
+            echo "| Cache read | $(jq -r '.usage.cache_read_input_tokens // 0' <<<"$RESULT") |"
+            echo "| Cache write | $(jq -r '.usage.cache_creation_input_tokens // 0' <<<"$RESULT") |"
+            echo "| **Cost (USD)** | **\$$(jq -r '.total_cost_usd // 0' <<<"$RESULT")** |"
+            echo "| Duration | $(jq -r '.duration_ms // 0' <<<"$RESULT")ms |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request with the doc updates
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_SHA: ${{ steps.range.outputs.base_sha }}
+        run: |
+          set -euo pipefail
+          # Só docs/ entra no commit: specs e coleções são de automação upstream
+          # e as páginas geradas estão no .gitignore do site.
+          if [ -n "$(git status --porcelain -- . ':(exclude)docs')" ]; then
+            echo "::warning::a skill alterou arquivos fora de docs/ — ignorados neste commit:"
+            git status --porcelain -- . ':(exclude)docs'
+          fi
+          if [ -z "$(git status --porcelain -- docs)" ]; then
+            echo "sem mudanças versionadas em docs/ — nada a commitar"
+            exit 0
+          fi
+
+          BRANCH="docs/openapi-sync-$(git rev-parse --short HEAD)"
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -B "$BRANCH"
+          git add -- docs
+          git commit \
+            -m "docs: sincroniza documentação com os specs OpenAPI" \
+            -m "Regenerado pela skill regenerar-docs-openapi a partir de $(git rev-parse --short "$BASE_SHA")..$(git rev-parse --short HEAD)." \
+            -m "Co-Authored-By: Claude <noreply@anthropic.com>"
+
+          # Re-run no mesmo commit reaproveita o branch: force-with-lease só é
+          # válido com o ref remoto já buscado.
+          PUSH_ARGS=()
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$BRANCH"
+            PUSH_ARGS=(--force-with-lease)
+          fi
+          for attempt in 1 2 3 4; do
+            if git push -u origin "$BRANCH" "${PUSH_ARGS[@]}"; then break; fi
+            [ "$attempt" = 4 ] && { echo "::error::push falhou após 4 tentativas"; exit 1; }
+            sleep $((2 ** attempt))
+          done
+
+          BODY_FILE="${RUNNER_TEMP}/claude-report.md"
+          if [ ! -s "$BODY_FILE" ]; then
+            printf 'Documentação regenerada a partir dos specs OpenAPI.\n' > "$BODY_FILE"
+          fi
+          {
+            echo ""
+            echo "---"
+            echo "_Gerado por [Claude Code](https://claude.ai/code) via \`.github/workflows/regenerate-docs.yml\` — run [${GITHUB_RUN_ID}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})_"
+          } >> "$BODY_FILE"
+
+          existing=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --body-file "$BODY_FILE"
+            echo "PR atualizado: #$existing"
+          else
+            gh pr create \
+              --base "${GITHUB_REF_NAME}" \
+              --head "$BRANCH" \
+              --title "docs: sincroniza documentação com os specs OpenAPI" \
+              --body-file "$BODY_FILE"
+          fi

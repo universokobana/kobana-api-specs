@@ -46,6 +46,29 @@ O comando faz, em ordem:
 4. `rewrite-legacy-links` — reescreve os links `/reference/…` do readme.com que ainda
    existem dentro das descrições dos specs para as rotas novas.
 
+## Regeneração automática
+
+Os specs em `swagger/` (e as coleções em `postman/`) são atualizados aqui por automação
+upstream. Quando isso acontece no `main`, o workflow
+[`.github/workflows/regenerate-docs.yml`](../.github/workflows/regenerate-docs.yml) roda o
+Claude Code CLI chamando a skill
+[`regenerar-docs-openapi`](../.claude/skills/regenerar-docs-openapi/SKILL.md), que:
+
+1. compara o inventário de operações e tags entre o commit anterior e o novo;
+2. roda `npm run gen-api-docs:all` e valida com `npm run build`;
+3. corrige na camada certa o que a mudança de spec quebrou — `scripts/prepare-specs.mjs`
+   (colisão de `operationId`), `scripts/rewrite-legacy-links.mjs` (links `/reference/…`),
+   `sidebars.ts`, ou a página conceitual desatualizada em `docs/`;
+4. abre um Pull Request com o que mudou **dentro de `docs/`** (specs e páginas geradas
+   nunca entram no commit).
+
+Se nada versionado mudar, o workflow termina sem abrir PR. Também é possível disparar
+manualmente em *Actions → Regenerar docs (OpenAPI) → Run workflow*, opcionalmente
+informando o commit base do diff e o modelo.
+
+Requer um destes secrets no repositório: `CLAUDE_CODE_OAUTH_TOKEN` (token OAuth da
+assinatura, gerado com `claude setup-token`) ou `ANTHROPIC_API_KEY`.
+
 ## Desenvolvimento
 
 ```bash

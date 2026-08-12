@@ -40,6 +40,10 @@ npm run gen-api-docs:all   # gera a referência a partir de swagger/
 npm start
 ```
 
+Quando os specs em `swagger/` mudam no `main`, o workflow
+[`.github/workflows/regenerate-docs.yml`](./.github/workflows/regenerate-docs.yml) regenera a
+documentação com o Claude Code CLI e abre um Pull Request com os ajustes.
+
 Veja [`docs/README.md`](./docs/README.md) para detalhes.
 
 ## 🏦 Bancos Suportados
