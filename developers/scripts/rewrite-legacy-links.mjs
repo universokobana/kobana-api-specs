@@ -3,10 +3,12 @@
  * Rewrites readme.com URLs that are baked into the OpenAPI documents.
  *
  * The specs at the repo root were authored while the docs lived on
- * readme.com, so a few operation descriptions link to `/reference/<slug>`.
- * Those paths do not exist here, and Docusaurus fails the build on them.
- * Editing the specs is not an option — they are regenerated upstream — so the
- * fix belongs to the generated pages.
+ * readme.com, so a few operation descriptions link to `/reference/<slug>` —
+ * sometimes bare, sometimes fully qualified as
+ * `https://developers.kobana.com.br/reference/<slug>`. The bare ones do not
+ * exist here and Docusaurus fails the build on them; the qualified ones point
+ * at a portal this site replaces. Editing the specs is not an option — they
+ * are regenerated upstream — so the fix belongs to the generated pages.
  *
  * Two kinds of slug are resolved:
  *
@@ -95,7 +97,7 @@ for (const { version, spec } of VERSIONS) {
   }
 }
 
-const LINK_RE = /\/reference\/([A-Za-z0-9_%À-ɏ-]+)/g;
+const LINK_RE = /(?:https?:\/\/developers\.kobana\.com\.br)?\/reference\/([A-Za-z0-9_%À-ɏ-]+)/g;
 
 function resolveSlug(raw) {
   const slug = decodeURIComponent(raw);
@@ -116,7 +118,9 @@ for (const { version } of VERSIONS) {
   const dir = join(ROOT, 'docs', 'api', version);
   if (!existsSync(dir)) continue;
   for (const file of readdirSync(dir)) {
-    if (!file.endsWith('.mdx')) continue;
+    // `.json` too: the plugin externalises parameter and status-code
+    // descriptions into sidecar files, and some of those carry the links.
+    if (!file.endsWith('.mdx') && !file.endsWith('.json')) continue;
     const path = join(dir, file);
     const src = readFileSync(path, 'utf8');
     if (!src.includes('/reference/')) continue;

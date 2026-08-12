@@ -1,7 +1,8 @@
 # Kobana para Desenvolvedores — documentação
 
-Site da documentação pública da API da Kobana, construído com [Docusaurus 3](https://docusaurus.io/).
-Substitui o portal hospedado no readme.com em `developers.kobana.com.br`.
+Site da documentação pública da API da Kobana, construído com [Docusaurus 3](https://docusaurus.io/)
+e publicado em `docs.banking.kobana.com.br`. Substitui o portal hospedado no readme.com em
+`developers.kobana.com.br`.
 
 O site tem duas seções:
 
@@ -99,6 +100,7 @@ redirecionamentos** das URLs antigas (`/docs/<slug>`, `/reference/<slug>`) — a
 aqui são as da árvore de `docs/`.
 
 A única coisa que ainda olha para o readme.com é o `rewrite-legacy-links`: alguns
-`description` dentro dos specs OpenAPI linkam para `/reference/…`, e o script troca
-esses links pelas rotas deste site. Sem isso o build quebraria, já que `onBrokenLinks`
-está em `throw`.
+`description` dentro dos specs OpenAPI linkam para `/reference/…` — uns como caminho,
+outros como `https://developers.kobana.com.br/reference/…` — e o script troca todos
+pelas rotas deste site. Sem isso os caminhos quebrariam o build (`onBrokenLinks` está em
+`throw`) e as URLs absolutas continuariam apontando para o portal antigo.

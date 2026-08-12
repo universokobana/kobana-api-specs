@@ -21,7 +21,7 @@ const config: Config = {
     },
   },
 
-  url: 'https://developers.kobana.com.br',
+  url: 'https://docs.banking.kobana.com.br',
   baseUrl: '/',
 
   organizationName: 'universokobana',
