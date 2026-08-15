@@ -46942,7 +46942,7 @@
       "get": {
         "summary": "Listar Caixas Postais",
         "tags": [
-          "Caixas Postais"
+          "Caixas Postais - Mailbox"
         ],
         "security": [
           {
@@ -47104,7 +47104,7 @@
       "post": {
         "summary": "Criar Caixa Postal",
         "tags": [
-          "Caixas Postais"
+          "Caixas Postais - Mailbox"
         ],
         "security": [
           {
@@ -47247,7 +47247,7 @@
       "get": {
         "summary": "Visualizar Caixa Postal",
         "tags": [
-          "Caixas Postais"
+          "Caixas Postais - Mailbox"
         ],
         "security": [
           {
@@ -47385,7 +47385,7 @@
       "patch": {
         "summary": "Atualizar Caixa Postal",
         "tags": [
-          "Caixas Postais"
+          "Caixas Postais - Mailbox"
         ],
         "security": [
           {
@@ -47534,7 +47534,7 @@
       "delete": {
         "summary": "Deletar Caixa Postal",
         "tags": [
-          "Caixas Postais"
+          "Caixas Postais - Mailbox"
         ],
         "security": [
           {
@@ -78904,6 +78904,11 @@
       "description": "Gerenciar Caixas Postais"
     },
     {
+      "name": "Caixas Postais - Mailbox",
+      "description": "Gerenciar Caixas Postais (Mailbox)",
+      "x-displayName": "Caixas Postais"
+    },
+    {
       "name": "Arquivos de Mailbox",
       "description": "Gerenciar Arquivos de Mailbox"
     },
@@ -79021,6 +79026,7 @@
     {
       "name": "MAILBOX",
       "tags": [
+        "Caixas Postais - Mailbox",
         "Arquivos de Mailbox",
         "Canal Email",
         "Canal S3",

@@ -10,11 +10,6 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "geral-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
-        {
           type: "category",
           label: "Consulta de Boletos",
           key: "geral-consulta-de-boletos",
@@ -73,11 +68,6 @@ const sidebar: SidebarsConfig = {
       collapsible: true,
       collapsed: true,
       items: [
-        {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "financeiro-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
         {
           type: "category",
           label: "Saldos",
@@ -272,11 +262,6 @@ const sidebar: SidebarsConfig = {
       collapsible: true,
       collapsed: true,
       items: [
-        {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "cobrancas-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
         {
           type: "category",
           label: "Conta Pix",
@@ -670,11 +655,6 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "transferencias-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
-        {
           type: "category",
           label: "Todos",
           key: "transferencias-todos",
@@ -998,11 +978,6 @@ const sidebar: SidebarsConfig = {
       collapsible: true,
       collapsed: true,
       items: [
-        {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "pagamentos-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
         {
           type: "category",
           label: "Boletos",
@@ -1427,11 +1402,6 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "edi-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
-        {
           type: "category",
           label: "Caixas Postais",
           key: "edi-caixas-postais",
@@ -1472,45 +1442,6 @@ const sidebar: SidebarsConfig = {
               className: "api-method put",
               key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-atualizar-caixa-postal",
             },
-            {
-              type: "doc",
-              id: "api/v2/listar-caixas-postais-mailbox-entries",
-              key: "api/v2/listar-caixas-postais-mailbox-entries",
-              label: "List Mailboxes",
-              className: "api-method get",
-              key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-listar-caixas-postais-mailbox-entries",
-            },
-            {
-              type: "doc",
-              id: "api/v2/criar-caixa-postal-mailbox-entries",
-              key: "api/v2/criar-caixa-postal-mailbox-entries",
-              label: "Create Mailbox",
-              className: "api-method post",
-              key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-criar-caixa-postal-mailbox-entries",
-            },
-            {
-              type: "doc",
-              id: "api/v2/visualizar-caixa-postal-mailbox-entries",
-              key: "api/v2/visualizar-caixa-postal-mailbox-entries",
-              label: "View Mailbox",
-              className: "api-method get",
-              key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-caixa-postal-mailbox-entries",
-            },
-            {
-              type: "doc",
-              id: "api/v2/atualizar-caixa-postal-mailbox-entries",
-              key: "api/v2/atualizar-caixa-postal-mailbox-entries",
-              label: "Update Mailbox",
-              className: "api-method patch",
-              key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-atualizar-caixa-postal-mailbox-entries",
-            },
-            {
-              type: "doc",
-              id: "api/v2/deletar-caixa-postal",
-              label: "Delete Mailbox",
-              className: "api-method delete",
-              key: "edi-caixas-postais-en-docusaurus-plugin-content-docs-current-api-v-2-deletar-caixa-postal",
-            },
           ],
         },
       ],
@@ -1523,9 +1454,54 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
+          type: "category",
+          label: "Caixas Postais",
+          key: "mailbox-caixas-postais",
+          link: {
+            type: "doc",
+            id: "api/v2/caixas-postais-mailbox",
+          },
+          items: [
+            {
+              type: "doc",
+              id: "api/v2/listar-caixas-postais-mailbox-entries",
+              key: "api/v2/listar-caixas-postais-mailbox-entries",
+              label: "List Mailboxes",
+              className: "api-method get",
+              key: "mailbox-caixas-postais-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-listar-caixas-postais-mailbox-entries",
+            },
+            {
+              type: "doc",
+              id: "api/v2/criar-caixa-postal-mailbox-entries",
+              key: "api/v2/criar-caixa-postal-mailbox-entries",
+              label: "Create Mailbox",
+              className: "api-method post",
+              key: "mailbox-caixas-postais-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-criar-caixa-postal-mailbox-entries",
+            },
+            {
+              type: "doc",
+              id: "api/v2/visualizar-caixa-postal-mailbox-entries",
+              key: "api/v2/visualizar-caixa-postal-mailbox-entries",
+              label: "View Mailbox",
+              className: "api-method get",
+              key: "mailbox-caixas-postais-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-caixa-postal-mailbox-entries",
+            },
+            {
+              type: "doc",
+              id: "api/v2/atualizar-caixa-postal-mailbox-entries",
+              key: "api/v2/atualizar-caixa-postal-mailbox-entries",
+              label: "Update Mailbox",
+              className: "api-method patch",
+              key: "mailbox-caixas-postais-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-atualizar-caixa-postal-mailbox-entries",
+            },
+            {
+              type: "doc",
+              id: "api/v2/deletar-caixa-postal",
+              label: "Delete Mailbox",
+              className: "api-method delete",
+              key: "mailbox-caixas-postais-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-deletar-caixa-postal",
+            },
+          ],
         },
         {
           type: "category",
@@ -1883,11 +1859,6 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "administracao-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
-        {
           type: "category",
           label: "Usuário",
           key: "administracao-usuario",
@@ -2092,11 +2063,6 @@ const sidebar: SidebarsConfig = {
       collapsed: true,
       items: [
         {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "seguranca-e-autenticacao-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
-        {
           type: "category",
           label: "Tokens de Acesso",
           key: "seguranca-e-autenticacao-tokens-de-acesso",
@@ -2165,11 +2131,6 @@ const sidebar: SidebarsConfig = {
       collapsible: true,
       collapsed: true,
       items: [
-        {
-          type: "doc",
-          id: "api/v2/kobana-api-v-2-0",
-          key: "usuario-en-docusaurus-plugin-content-docs-current-api-v-2-kobana-api-v-2-0",
-        },
         {
           type: "category",
           label: "Informações do Usuário",

@@ -34294,7 +34294,7 @@ paths:
     get:
       summary: Listar Caixas Postais
       tags:
-        - Caixas Postais
+        - Caixas Postais - Mailbox
       security:
         - bearerAuth: []
       description: Lista as Caixas Postais da conta.
@@ -34406,7 +34406,7 @@ paths:
     post:
       summary: Criar Caixa Postal
       tags:
-        - Caixas Postais
+        - Caixas Postais - Mailbox
       security:
         - bearerAuth: []
       description: Cria uma nova Caixa Postal.
@@ -34499,7 +34499,7 @@ paths:
     get:
       summary: Visualizar Caixa Postal
       tags:
-        - Caixas Postais
+        - Caixas Postais - Mailbox
       security:
         - bearerAuth: []
       description: Consulta informações de uma Caixa Postal específica.
@@ -34590,7 +34590,7 @@ paths:
     patch:
       summary: Atualizar Caixa Postal
       tags:
-        - Caixas Postais
+        - Caixas Postais - Mailbox
       security:
         - bearerAuth: []
       description: Atualiza uma Caixa Postal específica.
@@ -34688,7 +34688,7 @@ paths:
     delete:
       summary: Deletar Caixa Postal
       tags:
-        - Caixas Postais
+        - Caixas Postais - Mailbox
       security:
         - bearerAuth: []
       description: Deleta uma Caixa Postal específica. Não é possível deletar uma Caixa Postal que possui arquivos.
@@ -64248,6 +64248,9 @@ tags:
     description: Gerenciar pagamentos
   - name: Caixas Postais
     description: Gerenciar Caixas Postais
+  - name: Caixas Postais - Mailbox
+    description: Gerenciar Caixas Postais (Mailbox)
+    x-displayName: Caixas Postais
   - name: Arquivos de Mailbox
     description: Gerenciar Arquivos de Mailbox
   - name: Canal Email
@@ -64320,6 +64323,7 @@ x-tagGroups:
       - Caixas Postais
   - name: MAILBOX
     tags:
+      - Caixas Postais - Mailbox
       - Arquivos de Mailbox
       - Canal Email
       - Canal S3
