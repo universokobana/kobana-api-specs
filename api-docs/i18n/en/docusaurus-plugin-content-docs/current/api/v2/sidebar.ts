@@ -656,11 +656,11 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "category",
-          label: "Todos",
-          key: "transferencias-todos",
+          label: "Transferências",
+          key: "transferencias-transferencias",
           link: {
             type: "doc",
-            id: "api/v2/todos",
+            id: "api/v2/transferencias",
           },
           items: [
             {
@@ -668,28 +668,28 @@ const sidebar: SidebarsConfig = {
               id: "api/v2/listar-transferencias",
               label: "List Transfers",
               className: "api-method get",
-              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-listar-transferencias",
+              key: "transferencias-transferencias-en-docusaurus-plugin-content-docs-current-api-v-2-listar-transferencias",
             },
             {
               type: "doc",
               id: "api/v2/criar-uma-transferencia",
               label: "Create a Transfer",
               className: "api-method post",
-              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-criar-uma-transferencia",
+              key: "transferencias-transferencias-en-docusaurus-plugin-content-docs-current-api-v-2-criar-uma-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/visualizar-uma-transferencia",
               label: "View a Transfer",
               className: "api-method get",
-              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-uma-transferencia",
+              key: "transferencias-transferencias-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-uma-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/cancelar-uma-transferencia",
               label: "Cancel a Transfer",
               className: "api-method put",
-              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-cancelar-uma-transferencia",
+              key: "transferencias-transferencias-en-docusaurus-plugin-content-docs-current-api-v-2-cancelar-uma-transferencia",
             },
           ],
         },
@@ -886,11 +886,11 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "category",
-          label: "Todos - Transferência",
-          key: "transferencias-todos-transferencia",
+          label: "Todos",
+          key: "transferencias-todos",
           link: {
             type: "doc",
-            id: "api/v2/todos-transferencia",
+            id: "api/v2/todos",
           },
           items: [
             {
@@ -898,35 +898,35 @@ const sidebar: SidebarsConfig = {
               id: "api/v2/listar-lotes-de-transferencia",
               label: "List Transfer Batches",
               className: "api-method get",
-              key: "transferencias-todos-transferencia-en-docusaurus-plugin-content-docs-current-api-v-2-listar-lotes-de-transferencia",
+              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-listar-lotes-de-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/visualizar-um-lote-de-transferencia",
               label: "View a Transfer Batch",
               className: "api-method get",
-              key: "transferencias-todos-transferencia-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-um-lote-de-transferencia",
+              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-visualizar-um-lote-de-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/aprovar-um-lote-de-transferencia",
               label: "Approve a Transfer Batch",
               className: "api-method put",
-              key: "transferencias-todos-transferencia-en-docusaurus-plugin-content-docs-current-api-v-2-aprovar-um-lote-de-transferencia",
+              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-aprovar-um-lote-de-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/reprovar-um-lote-de-transferencia",
               label: "Reprove a Transfer Batch",
               className: "api-method put",
-              key: "transferencias-todos-transferencia-en-docusaurus-plugin-content-docs-current-api-v-2-reprovar-um-lote-de-transferencia",
+              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-reprovar-um-lote-de-transferencia",
             },
             {
               type: "doc",
               id: "api/v2/cancelar-um-lote-de-transferencia",
               label: "Cancel a Transfer Batch",
               className: "api-method put",
-              key: "transferencias-todos-transferencia-en-docusaurus-plugin-content-docs-current-api-v-2-cancelar-um-lote-de-transferencia",
+              key: "transferencias-todos-en-docusaurus-plugin-content-docs-current-api-v-2-cancelar-um-lote-de-transferencia",
             },
           ],
         },

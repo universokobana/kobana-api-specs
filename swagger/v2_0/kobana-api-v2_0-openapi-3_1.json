@@ -27775,7 +27775,7 @@
       "put": {
         "summary": "Liberar (aprovar) uma Transferência Pix",
         "tags": [
-          "Pix - Transferência"
+          "PIX"
         ],
         "security": [
           {
@@ -27987,7 +27987,7 @@
       "put": {
         "summary": "Reagendar (mudar a data) uma Transferência Pix",
         "tags": [
-          "Pix - Transferência"
+          "PIX"
         ],
         "security": [
           {
@@ -32284,7 +32284,7 @@
       "get": {
         "summary": "Listar Lotes de Pagamentos",
         "tags": [
-          "Todos - Pagamento"
+          "Todos"
         ],
         "security": [
           {
@@ -33067,7 +33067,7 @@
       "get": {
         "summary": "Visualizar um Lote de Pagamento",
         "tags": [
-          "Todos - Pagamento"
+          "Todos"
         ],
         "security": [
           {
@@ -33287,7 +33287,7 @@
       "put": {
         "summary": "Aprovar um Lote de Pagamento",
         "tags": [
-          "Todos - Pagamento"
+          "Todos"
         ],
         "security": [
           {
@@ -33534,7 +33534,7 @@
       "put": {
         "summary": "Reprovar um Lote de Pagamento",
         "tags": [
-          "Todos - Pagamento"
+          "Todos"
         ],
         "security": [
           {
@@ -33781,7 +33781,7 @@
       "put": {
         "summary": "Cancelar um Lote de Pagamento",
         "tags": [
-          "Todos - Pagamento"
+          "Todos"
         ],
         "security": [
           {
@@ -46942,7 +46942,7 @@
       "get": {
         "summary": "Listar Caixas Postais",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Caixas Postais"
         ],
         "security": [
           {
@@ -47104,7 +47104,7 @@
       "post": {
         "summary": "Criar Caixa Postal",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Caixas Postais"
         ],
         "security": [
           {
@@ -47247,7 +47247,7 @@
       "get": {
         "summary": "Visualizar Caixa Postal",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Caixas Postais"
         ],
         "security": [
           {
@@ -47385,7 +47385,7 @@
       "patch": {
         "summary": "Atualizar Caixa Postal",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Caixas Postais"
         ],
         "security": [
           {
@@ -47534,7 +47534,7 @@
       "delete": {
         "summary": "Deletar Caixa Postal",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Caixas Postais"
         ],
         "security": [
           {
@@ -78777,36 +78777,60 @@
   },
   "tags": [
     {
-      "name": "Consulta de Boletos",
-      "description": "Consulta de boletos"
+      "name": "Arquivos de Mailbox",
+      "description": "Gerenciar Arquivos de Mailbox"
     },
     {
-      "name": "Consulta de Pix QR Code",
-      "description": "Consulta de Pix QR Code"
+      "name": "Caixas Postais",
+      "description": "Gerenciar Caixas Postais"
     },
     {
-      "name": "Saldos",
-      "description": "Gerenciar saldos"
+      "name": "Canal Email",
+      "description": "Gerenciar Canal de E-mail"
     },
     {
-      "name": "Contas",
-      "description": "Gerenciar contas financeiras"
+      "name": "Canal S3",
+      "description": "Gerenciar Canal S3"
     },
     {
-      "name": "Provedores",
-      "description": "Listar provedores financeiros"
+      "name": "Canal SFTP",
+      "description": "Gerenciar Canal SFTP"
     },
     {
-      "name": "Extrato",
-      "description": "Gerenciar extratos"
+      "name": "Canal Syncthing",
+      "description": "Gerenciar Canal Syncthing"
+    },
+    {
+      "name": "Canal WhatsApp",
+      "description": "Gerenciar Canal WhatsApp"
+    },
+    {
+      "name": "Certificado",
+      "description": "Gerenciar Certificados"
+    },
+    {
+      "name": "Comando",
+      "description": "Consulta de Comandos"
+    },
+    {
+      "name": "Conexões",
+      "description": "Gerenciar Conexões"
     },
     {
       "name": "Conta Pix",
       "description": "Gerenciar contas Pix"
     },
     {
+      "name": "Informações do Usuário",
+      "description": "Obter informações do usuário autenticado"
+    },
+    {
       "name": "Pix",
       "description": "Gerenciar cobranças via Pix"
+    },
+    {
+      "name": "Pix Automático - Cobrança",
+      "description": "Gerenciar cobranças do Pix Automático"
     },
     {
       "name": "Pix Automático - Conta",
@@ -78825,237 +78849,40 @@
       "description": "Gerenciar solicitações do Pix Automático"
     },
     {
-      "name": "Pix Automático - Cobrança",
-      "description": "Gerenciar cobranças do Pix Automático"
-    },
-    {
       "name": "Recebimentos",
       "description": "Gerenciar pagamentos recebidos"
-    },
-    {
-      "name": "Todos",
-      "description": "Gerenciar transferências"
-    },
-    {
-      "name": "Entre Contas",
-      "description": "Gerenciar transferências entre contas"
-    },
-    {
-      "name": "INTERNAL",
-      "description": "Aprovar e reagendar transferências internas"
-    },
-    {
-      "name": "Pix - Transferência",
-      "description": "Gerenciar transferências via Pix",
-      "x-displayName": "Pix"
-    },
-    {
-      "name": "TED",
-      "description": "Gerenciar transferências via TED"
-    },
-    {
-      "name": "Todos - Transferência",
-      "description": "Gerenciar lotes de transferência"
-    },
-    {
-      "name": "Contas de Transferência",
-      "description": "Gerenciar contas de transferência"
-    },
-    {
-      "name": "Boletos",
-      "description": "Gerenciar pagamentos de boletos"
-    },
-    {
-      "name": "Todos - Pagamento",
-      "description": "Gerenciar lotes de pagamento",
-      "x-displayName": "Todos"
-    },
-    {
-      "name": "Contas de DDA",
-      "description": "Gerenciar contas de DDA"
-    },
-    {
-      "name": "Boletos DDA",
-      "description": "Gerenciar boletos DDA"
-    },
-    {
-      "name": "Contas de Pagamento",
-      "description": "Gerenciar contas de pagamento"
-    },
-    {
-      "name": "Pix - Pagamento",
-      "description": "Gerenciar pagamentos via Pix",
-      "x-displayName": "Pix"
-    },
-    {
-      "name": "Tributo (beta)",
-      "description": "Gerenciar pagamentos de tributos"
-    },
-    {
-      "name": "Contas de Consumo",
-      "description": "Gerenciar pagamentos de contas de consumo"
-    },
-    {
-      "name": "Pagamentos",
-      "description": "Gerenciar pagamentos"
-    },
-    {
-      "name": "Caixas Postais",
-      "description": "Gerenciar Caixas Postais"
-    },
-    {
-      "name": "Caixas Postais - Mailbox",
-      "description": "Gerenciar Caixas Postais (Mailbox)",
-      "x-displayName": "Caixas Postais"
-    },
-    {
-      "name": "Arquivos de Mailbox",
-      "description": "Gerenciar Arquivos de Mailbox"
-    },
-    {
-      "name": "Canal Email",
-      "description": "Gerenciar Canal de E-mail"
-    },
-    {
-      "name": "Canal S3",
-      "description": "Gerenciar Canal S3"
-    },
-    {
-      "name": "Canal SFTP",
-      "description": "Gerenciar Canal SFTP"
-    },
-    {
-      "name": "Canal WhatsApp",
-      "description": "Gerenciar Canal WhatsApp"
-    },
-    {
-      "name": "Canal Syncthing",
-      "description": "Gerenciar Canal Syncthing"
-    },
-    {
-      "name": "Usuário",
-      "description": "Gerenciar Usuários"
-    },
-    {
-      "name": "Certificado",
-      "description": "Gerenciar Certificados"
     },
     {
       "name": "Subcontas",
       "description": "Gerenciar Subcontas"
     },
     {
-      "name": "Conexões",
-      "description": "Gerenciar Conexões"
+      "name": "Usuário",
+      "description": "Gerenciar Usuários"
     },
     {
-      "name": "Comando",
-      "description": "Consulta de Comandos"
-    },
-    {
-      "name": "Tokens de Acesso",
+      "name": "access_tokens",
       "description": "Gerenciar Tokens de Acesso"
     },
     {
-      "name": "Informações do Usuário",
-      "description": "Obter informações do usuário autenticado"
-    }
-  ],
-  "x-tagGroups": [
-    {
-      "name": "GERAL",
-      "tags": [
-        "Consulta de Boletos",
-        "Consulta de Pix QR Code"
-      ]
+      "name": "contas-financeiras",
+      "description": "Gerenciar Contas"
     },
     {
-      "name": "FINANCEIRO",
-      "tags": [
-        "Saldos",
-        "Contas",
-        "Provedores",
-        "Extrato"
-      ]
+      "name": "edi",
+      "description": "Gerenciar EDI"
     },
     {
-      "name": "COBRANÇAS",
-      "tags": [
-        "Conta Pix",
-        "Pix",
-        "Pix Automático - Conta",
-        "Pix Automático - Location",
-        "Pix Automático - Recorrência",
-        "Pix Automático - Solicitação",
-        "Pix Automático - Cobrança",
-        "Recebimentos"
-      ]
+      "name": "pagamentos",
+      "description": "Gerenciar Pagamentos"
     },
     {
-      "name": "TRANSFERÊNCIAS",
-      "tags": [
-        "Todos",
-        "Entre Contas",
-        "INTERNAL",
-        "Pix - Transferência",
-        "TED",
-        "Todos - Transferência",
-        "Contas de Transferência"
-      ]
+      "name": "person",
+      "description": "Gerenciar Pessoas"
     },
     {
-      "name": "PAGAMENTOS",
-      "tags": [
-        "Boletos",
-        "Todos - Pagamento",
-        "Contas de DDA",
-        "Boletos DDA",
-        "Contas de Pagamento",
-        "Pix - Pagamento",
-        "Tributo (beta)",
-        "Contas de Consumo",
-        "Pagamentos"
-      ]
-    },
-    {
-      "name": "EDI",
-      "tags": [
-        "Caixas Postais"
-      ]
-    },
-    {
-      "name": "MAILBOX",
-      "tags": [
-        "Caixas Postais - Mailbox",
-        "Arquivos de Mailbox",
-        "Canal Email",
-        "Canal S3",
-        "Canal SFTP",
-        "Canal WhatsApp",
-        "Canal Syncthing"
-      ]
-    },
-    {
-      "name": "ADMINISTRAÇÃO",
-      "tags": [
-        "Usuário",
-        "Certificado",
-        "Subcontas",
-        "Conexões",
-        "Comando"
-      ]
-    },
-    {
-      "name": "SEGURANÇA E AUTENTICAÇÃO",
-      "tags": [
-        "Tokens de Acesso"
-      ]
-    },
-    {
-      "name": "USUÁRIO",
-      "tags": [
-        "Informações do Usuário"
-      ]
+      "name": "transferencias",
+      "description": "Gerenciar Transferências"
     }
   ]
 }

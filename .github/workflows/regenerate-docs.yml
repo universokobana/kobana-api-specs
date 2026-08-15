@@ -98,7 +98,9 @@ jobs:
           BASE_SHA: ${{ steps.range.outputs.base_sha }}
           HEAD_SHA: ${{ github.sha }}
           MODEL: ${{ inputs.model }}
-          FORCE: ${{ inputs.force }}
+          # push automático (sem workflow_dispatch) não tem `inputs.force` —
+          # cai em 'false' explícito em vez de string vazia.
+          FORCE: ${{ inputs.force || 'false' }}
         run: |
           set -uo pipefail
           # Fora do workspace: qualquer arquivo solto no repo apareceria como
