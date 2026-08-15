@@ -1,6 +1,19 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+
+// Escrito pelo workflow .github/workflows/regenerate-docs.yml a cada
+// regeneração — garante que sempre haja algo a commitar e mostra no rodapé
+// quando a referência foi gerada pela última vez a partir dos specs OpenAPI.
+const LAST_GENERATED = (() => {
+  try {
+    return fs.readFileSync(path.join(process.cwd(), 'LAST_GENERATED'), 'utf-8').trim();
+  } catch {
+    return null;
+  }
+})();
 
 const CURRENT_LOCALE = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'pt-BR';
 
@@ -303,7 +316,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2008/${new Date().getFullYear()} Kobana Tecnologia Ltda. | CNPJ: 05.813.794/0001-26 | Calçada das Margaridas, 163, Sala 02 — Centro Comercial Alphaville — Barueri, SP — 06453-038`,
+      copyright: `© 2008/${new Date().getFullYear()} Kobana Tecnologia Ltda. | CNPJ: 05.813.794/0001-26 | Calçada das Margaridas, 163, Sala 02 — Centro Comercial Alphaville — Barueri, SP — 06453-038${LAST_GENERATED ? ` | Referência gerada em ${LAST_GENERATED}` : ''}`,
     },
     prism: {
       theme: prismThemes.github,
