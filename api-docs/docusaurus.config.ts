@@ -207,7 +207,27 @@ const config: Config = {
     ],
   ],
 
-  themes: ['docusaurus-theme-openapi-docs', '@docusaurus/theme-mermaid'],
+  themes: [
+    'docusaurus-theme-openapi-docs',
+    '@docusaurus/theme-mermaid',
+    [
+      // Offline, i18n-aware search — no external service (Algolia/DocSearch).
+      // Builds a hashed lunr index per locale at build time and adds the
+      // search bar to the navbar. Docs: github.com/easyops-cn/docusaurus-search-local
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        // lunr language codes matching the site locales (pt-BR/en/es).
+        language: ['pt', 'en', 'es'],
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchBarShortcutHint: true,
+      },
+    ],
+  ],
 
   themeConfig: {
     colorMode: {
