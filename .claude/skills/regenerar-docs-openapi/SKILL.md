@@ -27,13 +27,21 @@ spec quebrou ou tornou obsoleto nos arquivos versionados** e corrigir.
 
 Não faça `git commit` nem `git push`: o workflow
 `.github/workflows/regenerate-docs.yml` commita direto no `main` o que você
-deixar na árvore de trabalho dentro de `docs/`. Como não há revisão humana
-antes do deploy, o build de §3 é obrigatório — não termine com ele quebrado.
+deixar na árvore de trabalho dentro de `api-docs/`. Como não há revisão
+humana antes do deploy, o build de §3 é obrigatório — não termine com ele
+quebrado.
 
 ## §1 — Levantar o que mudou nos specs
 
 `BASE_SHA` e `HEAD_SHA` vêm do ambiente quando a skill roda no GitHub Actions
 (fallback: `HEAD~1` e `HEAD`).
+
+Se a variável de ambiente `FORCE` estiver definida como `true`, é uma
+execução manual de teste do pipeline: **não pule §2–§5 mesmo que o diff
+abaixo venha vazio.** Rode a regeneração e o build normalmente e diga isso no
+relatório final (ex.: "sem mudança de specs; rodado por FORCE=true"). Nunca
+responda só "não executado — sem mudança de spec que justifique" quando
+`FORCE=true`.
 
 ```bash
 BASE="${BASE_SHA:-HEAD~1}"; HEAD_REF="${HEAD_SHA:-HEAD}"

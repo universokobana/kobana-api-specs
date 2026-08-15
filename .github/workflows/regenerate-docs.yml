@@ -22,6 +22,11 @@ on:
         description: 'Modelo a usar no Claude Code CLI (vazio = default do CLI)'
         required: false
         default: ''
+      force:
+        description: 'Roda §2–§5 da skill mesmo sem diff nos specs (teste do pipeline)'
+        type: boolean
+        required: false
+        default: false
 
 concurrency:
   group: regenerate-docs-${{ github.ref }}
@@ -93,6 +98,7 @@ jobs:
           BASE_SHA: ${{ steps.range.outputs.base_sha }}
           HEAD_SHA: ${{ github.sha }}
           MODEL: ${{ inputs.model }}
+          FORCE: ${{ inputs.force }}
         run: |
           set -uo pipefail
           # Fora do workspace: qualquer arquivo solto no repo apareceria como
