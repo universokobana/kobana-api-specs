@@ -3,8 +3,8 @@ name: Regenerar docs (OpenAPI)
 # Os specs em swagger/ (e as coleções em postman/) são commitados aqui por
 # automação upstream. Quando isso acontece, este workflow roda o Claude Code
 # CLI chamando a skill `regenerar-docs-openapi`: ela regenera a referência do
-# site Docusaurus em docs/, valida o build e ajusta as páginas versionadas que
-# a mudança de spec tornou obsoletas. O resultado sai como Pull Request.
+# site Docusaurus em api-docs/, valida o build e ajusta as páginas versionadas
+# que a mudança de spec tornou obsoletas. O resultado sai como Pull Request.
 on:
   push:
     branches: [main]
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: docs/package-lock.json
+          cache-dependency-path: api-docs/package-lock.json
 
       - name: Check Claude credentials
         env:
@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Install site dependencies
-        working-directory: docs
+        working-directory: api-docs
         run: npm ci
 
       - name: Install Claude Code CLI
@@ -176,14 +176,14 @@ jobs:
           BASE_SHA: ${{ steps.range.outputs.base_sha }}
         run: |
           set -euo pipefail
-          # Só docs/ entra no commit: specs e coleções são de automação upstream
-          # e as páginas geradas estão no .gitignore do site.
-          if [ -n "$(git status --porcelain -- . ':(exclude)docs')" ]; then
-            echo "::warning::a skill alterou arquivos fora de docs/ — ignorados neste commit:"
-            git status --porcelain -- . ':(exclude)docs'
+          # Só api-docs/ entra no commit: specs e coleções são de automação
+          # upstream e as páginas geradas estão no .gitignore do site.
+          if [ -n "$(git status --porcelain -- . ':(exclude)api-docs')" ]; then
+            echo "::warning::a skill alterou arquivos fora de api-docs/ — ignorados neste commit:"
+            git status --porcelain -- . ':(exclude)api-docs'
           fi
-          if [ -z "$(git status --porcelain -- docs)" ]; then
-            echo "sem mudanças versionadas em docs/ — nada a commitar"
+          if [ -z "$(git status --porcelain -- api-docs)" ]; then
+            echo "sem mudanças versionadas em api-docs/ — nada a commitar"
             exit 0
           fi
 
@@ -191,7 +191,7 @@ jobs:
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout -B "$BRANCH"
-          git add -- docs
+          git add -- api-docs
           git commit \
             -m "docs: sincroniza documentação com os specs OpenAPI" \
             -m "Regenerado pela skill regenerar-docs-openapi a partir de $(git rev-parse --short "$BASE_SHA")..$(git rev-parse --short HEAD)." \

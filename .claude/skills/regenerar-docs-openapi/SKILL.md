@@ -1,6 +1,6 @@
 ---
 name: regenerar-docs-openapi
-description: Regenera a referência da API no site Docusaurus em docs/ a partir dos specs OpenAPI em swagger/, valida o build e ajusta as páginas versionadas que a mudança de spec afeta. Use quando os arquivos OpenAPI (swagger/**) ou as coleções Postman (postman/**) mudarem.
+description: Regenera a referência da API no site Docusaurus em api-docs/ a partir dos specs OpenAPI em swagger/, valida o build e ajusta as páginas versionadas que a mudança de spec afeta. Use quando os arquivos OpenAPI (swagger/**) ou as coleções Postman (postman/**) mudarem.
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 ---
 
@@ -8,7 +8,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 Os specs em `swagger/` e as coleções em `postman/` são **gerados upstream** e
 commitados neste repo por automação. Esta skill roda **depois** dessa
-atualização: regenera a referência do site em `docs/`, garante que o build
+atualização: regenera a referência do site em `api-docs/`, garante que o build
 continua passando e ajusta as páginas escritas à mão que a mudança de spec
 tornou desatualizadas.
 
@@ -17,9 +17,9 @@ tornou desatualizadas.
 | Caminho | Status | Quem escreve |
 | --- | --- | --- |
 | `swagger/**`, `postman/**` | versionado | automação upstream — **nunca editar aqui** |
-| `docs/openapi/`, `docs/static/openapi/`, `docs/static/postman/` | gerado (gitignored) | `npm run prepare-specs` |
-| `docs/docs/api/v1/`, `docs/docs/api/v2/` | gerado (gitignored) | `docusaurus gen-api-docs` — **nunca editar à mão** |
-| `docs/docs/**` (resto), `docs/sidebars.ts`, `docs/docusaurus.config.ts`, `docs/scripts/*.mjs` | versionado | pessoas — é **aqui** que suas mudanças entram |
+| `api-docs/openapi/`, `api-docs/static/openapi/`, `api-docs/static/postman/` | gerado (gitignored) | `npm run prepare-specs` |
+| `api-docs/api-docs/api/v1/`, `api-docs/api-docs/api/v2/` | gerado (gitignored) | `docusaurus gen-api-docs` — **nunca editar à mão** |
+| `api-docs/api-docs/**` (resto), `api-docs/sidebars.ts`, `api-docs/docusaurus.config.ts`, `api-docs/scripts/*.mjs` | versionado | pessoas — é **aqui** que suas mudanças entram |
 
 Como as páginas de endpoint não são versionadas, o valor desta skill não é
 "rodar o gerador" (o build do Vercel já roda): é **detectar o que a mudança de
@@ -60,21 +60,21 @@ colisão de slug — ver §3) e **arquivos de spec novos ou renomeados** (ver §
 ## §2 — Regenerar a referência
 
 ```bash
-cd docs
+cd api-docs
 [ -d node_modules ] || npm ci
 npm run gen-api-docs:all
 ```
 
 Esse comando encadeia, nesta ordem: `prepare-specs` → `clean-api-docs all` →
 `gen-api-docs all` → `fix-info-pages` → `rewrite-legacy-links`. Leia a saída
-inteira: os três scripts em `docs/scripts/` imprimem contagens e avisos
+inteira: os três scripts em `api-docs/scripts/` imprimem contagens e avisos
 (operationIds atribuídos e desambiguados, links `/reference/…` não resolvidos)
 que são o primeiro sinal de problema.
 
 ## §3 — Validar com o build
 
 ```bash
-cd docs && npm run build
+cd api-docs && npm run build
 ```
 
 `onBrokenLinks` e `onBrokenMarkdownLinks` estão em `throw`, então o build é o
@@ -84,11 +84,11 @@ nem spec:
 
 | Sintoma | Camada a corrigir |
 | --- | --- |
-| Endpoint sumiu da referência / duas operações no mesmo arquivo | colisão de slug — `docs/scripts/prepare-specs.mjs` (regra de `operationId`) |
-| Link quebrado para `/reference/<slug>` vindo de um `description` do spec | mapa em `docs/scripts/rewrite-legacy-links.mjs` |
-| Página de introdução da versão no lugar errado ou rótulo em inglês | `docs/scripts/fix-info-pages.mjs` |
-| Link quebrado entre páginas escritas à mão | a página em `docs/docs/**` |
-| Categoria/versão faltando no menu da aba "API" | `docs/sidebars.ts` |
+| Endpoint sumiu da referência / duas operações no mesmo arquivo | colisão de slug — `api-docs/scripts/prepare-specs.mjs` (regra de `operationId`) |
+| Link quebrado para `/reference/<slug>` vindo de um `description` do spec | mapa em `api-docs/scripts/rewrite-legacy-links.mjs` |
+| Página de introdução da versão no lugar errado ou rótulo em inglês | `api-docs/scripts/fix-info-pages.mjs` |
+| Link quebrado entre páginas escritas à mão | a página em `api-docs/api-docs/**` |
+| Categoria/versão faltando no menu da aba "API" | `api-docs/sidebars.ts` |
 
 Rode `npm run build` de novo até passar limpo. Se um link do spec não tiver
 destino possível neste site, o fallback do `rewrite-legacy-links` (índice da
@@ -100,18 +100,18 @@ Faça só o que o diff de §1 justificar. Nada mudou de estrutura? Não invente
 alteração — "sem mudanças versionadas" é um resultado válido e comum.
 
 - **Arquivo de spec novo/renomeado** (nova versão da API, nova coleção): entre
-  em `docs/scripts/prepare-specs.mjs` (listas `VERBATIM` e, se for uma versão
-  que vira referência navegável, `NORMALIZE`), em `docs/docusaurus.config.ts`
-  (bloco `config` do `docusaurus-plugin-openapi-docs`), em `docs/sidebars.ts`
+  em `api-docs/scripts/prepare-specs.mjs` (listas `VERBATIM` e, se for uma versão
+  que vira referência navegável, `NORMALIZE`), em `api-docs/docusaurus.config.ts`
+  (bloco `config` do `docusaurus-plugin-openapi-docs`), em `api-docs/sidebars.ts`
   (`generatedSidebar` + nova categoria "Referência — API vN") e na tabela de
-  `docs/docs/api/especificacoes.md`.
+  `api-docs/api-docs/api/especificacoes.md`.
 - **Novo endpoint base / mudança de host ou de prefixo de versão**:
-  `docs/docs/api/endpoints.md`.
+  `api-docs/api-docs/api/endpoints.md`.
 - **Novo banco suportado** (aparece como valor de enum/descrição nos specs):
-  crie a página em `docs/docs/api/bancos/<slug>.md` seguindo uma existente,
-  adicione o slug à lista `BANCOS` em `docs/sidebars.ts` e ao índice
-  `docs/docs/api/bancos/index.md`.
-- **Novo evento de webhook**: `docs/docs/api/webhooks/eventos.md` (e
+  crie a página em `api-docs/api-docs/api/bancos/<slug>.md` seguindo uma existente,
+  adicione o slug à lista `BANCOS` em `api-docs/sidebars.ts` e ao índice
+  `api-docs/api-docs/api/bancos/index.md`.
+- **Novo evento de webhook**: `api-docs/api-docs/api/webhooks/eventos.md` (e
   `payloads.md` se o spec traz o payload).
 - **Página conceitual contradita pelo spec** (autenticação, idempotência,
   limite de requisições, erros): corrija o trecho específico, sem reescrever a
@@ -119,8 +119,8 @@ alteração — "sem mudanças versionadas" é um resultado válido e comum.
 
 Regras: texto em **pt-BR**, no tom das páginas vizinhas; nunca duplique em
 prosa a tabela de parâmetros que a referência gerada já mostra — linke para a
-página do endpoint; não mexa em `swagger/`, `postman/`, `docs/docs/api/v1/`,
-`docs/docs/api/v2/`, `docs/openapi/` nem `docs/static/openapi|postman/`.
+página do endpoint; não mexa em `swagger/`, `postman/`, `api-docs/api-docs/api/v1/`,
+`api-docs/api-docs/api/v2/`, `api-docs/openapi/` nem `api-docs/static/openapi|postman/`.
 
 ## §5 — Relatório final
 
