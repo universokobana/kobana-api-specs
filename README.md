@@ -42,7 +42,7 @@ npm start
 
 Quando os specs em `swagger/` mudam no `main`, o workflow
 [`.github/workflows/regenerate-docs.yml`](./.github/workflows/regenerate-docs.yml) regenera a
-documentação com o Claude Code CLI e abre um Pull Request com os ajustes.
+documentação com o Claude Code CLI e commita os ajustes direto no `main`.
 
 Veja [`docs/README.md`](./docs/README.md) para detalhes.
 

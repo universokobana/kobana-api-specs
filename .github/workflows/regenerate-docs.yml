@@ -4,7 +4,8 @@ name: Regenerar docs (OpenAPI)
 # automação upstream. Quando isso acontece, este workflow roda o Claude Code
 # CLI chamando a skill `regenerar-docs-openapi`: ela regenera a referência do
 # site Docusaurus em docs/, valida o build e ajusta as páginas versionadas que
-# a mudança de spec tornou obsoletas. O resultado sai como Pull Request.
+# a mudança de spec tornou obsoletas. O que mudar dentro de docs/ é commitado
+# direto no branch que disparou o workflow (main).
 on:
   push:
     branches: [main]
@@ -32,12 +33,12 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v5
         with:
           # A skill compara o inventário de operações entre o commit base e o
-          # HEAD (git show BASE:swagger/...), e o passo final cria um branch.
+          # HEAD (git show BASE:swagger/...), e o passo final commita em cima do
+          # branch atualizado.
           fetch-depth: 0
 
       - uses: actions/setup-node@v5
@@ -95,7 +96,7 @@ jobs:
         run: |
           set -uo pipefail
           # Fora do workspace: qualquer arquivo solto no repo apareceria como
-          # mudança não versionada no passo do PR.
+          # mudança não versionada no passo do commit.
           STREAM_LOG="${RUNNER_TEMP}/claude-stream.jsonl"
           rm -f "$STREAM_LOG"
           # Default para que cancelamento/timeout ainda produza um valor.
@@ -132,7 +133,7 @@ jobs:
           echo "exit_code=$CLAUDE_EXIT" >> "$GITHUB_OUTPUT"
 
           # O CLI sai 0 mesmo quando a slash command não existe — a skill nunca
-          # rodou, então falhe alto em vez de abrir um PR vazio.
+          # rodou, então falhe alto em vez de seguir para um commit vazio.
           if grep -q '^Unknown command:' "$STREAM_LOG" 2>/dev/null; then
             echo "::error::claude reportou Unknown command — skill regenerar-docs-openapi não encontrada em .claude/skills/"
             echo "exit_code=1" >> "$GITHUB_OUTPUT"
@@ -144,7 +145,7 @@ jobs:
             exit "$CLAUDE_EXIT"
           fi
 
-          # Relatório final da skill (§5) — vira o corpo do PR.
+          # Relatório final da skill (§5) — publicado no summary do run.
           jq -r 'select(.type=="result") | .result // ""' "$STREAM_LOG" 2>/dev/null \
             > "${RUNNER_TEMP}/claude-report.md" || true
 
@@ -170,10 +171,13 @@ jobs:
             echo "| Duration | $(jq -r '.duration_ms // 0' <<<"$RESULT")ms |"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Open pull request with the doc updates
+      - name: Commit and push the doc updates
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_SHA: ${{ steps.range.outputs.base_sha }}
+          # Push trigger só olha swagger/** e postman/**, e aqui só docs/ é
+          # commitado — este push não redispara o workflow. (Commits feitos com
+          # o GITHUB_TOKEN também não disparam workflows.)
+          TARGET_BRANCH: ${{ github.ref_name }}
         run: |
           set -euo pipefail
           # Só docs/ entra no commit: specs e coleções são de automação upstream
@@ -187,47 +191,40 @@ jobs:
             exit 0
           fi
 
-          BRANCH="docs/openapi-sync-$(git rev-parse --short HEAD)"
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git checkout -B "$BRANCH"
           git add -- docs
           git commit \
             -m "docs: sincroniza documentação com os specs OpenAPI" \
             -m "Regenerado pela skill regenerar-docs-openapi a partir de $(git rev-parse --short "$BASE_SHA")..$(git rev-parse --short HEAD)." \
             -m "Co-Authored-By: Claude <noreply@anthropic.com>"
 
-          # Re-run no mesmo commit reaproveita o branch: force-with-lease só é
-          # válido com o ref remoto já buscado.
-          PUSH_ARGS=()
-          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
-            git fetch origin "$BRANCH"
-            PUSH_ARGS=(--force-with-lease)
-          fi
+          # O checkout deixa HEAD destacado no SHA do evento; se o branch andou
+          # durante a execução, rebase antes de empurrar.
           for attempt in 1 2 3 4; do
-            if git push -u origin "$BRANCH" "${PUSH_ARGS[@]}"; then break; fi
+            git fetch origin "$TARGET_BRANCH"
+            if ! git rebase "origin/$TARGET_BRANCH"; then
+              git rebase --abort || true
+              echo "::error::conflito ao rebasear em $TARGET_BRANCH — regenere após resolver"
+              exit 1
+            fi
+            if git push origin "HEAD:refs/heads/$TARGET_BRANCH"; then
+              echo "docs atualizadas em $TARGET_BRANCH: $(git rev-parse --short HEAD)"
+              exit 0
+            fi
             [ "$attempt" = 4 ] && { echo "::error::push falhou após 4 tentativas"; exit 1; }
             sleep $((2 ** attempt))
           done
 
-          BODY_FILE="${RUNNER_TEMP}/claude-report.md"
-          if [ ! -s "$BODY_FILE" ]; then
-            printf 'Documentação regenerada a partir dos specs OpenAPI.\n' > "$BODY_FILE"
-          fi
+      - name: Publish skill report
+        if: always()
+        run: |
+          set -uo pipefail
+          REPORT="${RUNNER_TEMP}/claude-report.md"
+          [ -s "$REPORT" ] || exit 0
           {
             echo ""
-            echo "---"
-            echo "_Gerado por [Claude Code](https://claude.ai/code) via \`.github/workflows/regenerate-docs.yml\` — run [${GITHUB_RUN_ID}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})_"
-          } >> "$BODY_FILE"
-
-          existing=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$existing" ]; then
-            gh pr edit "$existing" --body-file "$BODY_FILE"
-            echo "PR atualizado: #$existing"
-          else
-            gh pr create \
-              --base "${GITHUB_REF_NAME}" \
-              --head "$BRANCH" \
-              --title "docs: sincroniza documentação com os specs OpenAPI" \
-              --body-file "$BODY_FILE"
-          fi
+            echo "## Relatório"
+            echo ""
+            cat "$REPORT"
+          } >> "$GITHUB_STEP_SUMMARY"

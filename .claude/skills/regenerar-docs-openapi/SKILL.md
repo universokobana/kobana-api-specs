@@ -25,9 +25,10 @@ Como as páginas de endpoint não são versionadas, o valor desta skill não é
 "rodar o gerador" (o build do Vercel já roda): é **detectar o que a mudança de
 spec quebrou ou tornou obsoleto nos arquivos versionados** e corrigir.
 
-Não faça `git commit`, `git push`, nem abra PR: o workflow
-`.github/workflows/regenerate-docs.yml` commita e abre o PR com o que você
-deixar na árvore de trabalho.
+Não faça `git commit` nem `git push`: o workflow
+`.github/workflows/regenerate-docs.yml` commita direto no `main` o que você
+deixar na árvore de trabalho dentro de `docs/`. Como não há revisão humana
+antes do deploy, o build de §3 é obrigatório — não termine com ele quebrado.
 
 ## §1 — Levantar o que mudou nos specs
 
@@ -124,7 +125,8 @@ página do endpoint; não mexa em `swagger/`, `postman/`, `docs/docs/api/v1/`,
 
 ## §5 — Relatório final
 
-Termine com um resumo curto, em pt-BR, nesta forma (é o corpo do PR):
+Termine com um resumo curto, em pt-BR, nesta forma (é publicado no summary do
+run do Actions):
 
 ```
 ## Specs

@@ -59,12 +59,17 @@ Claude Code CLI chamando a skill
 3. corrige na camada certa o que a mudança de spec quebrou — `scripts/prepare-specs.mjs`
    (colisão de `operationId`), `scripts/rewrite-legacy-links.mjs` (links `/reference/…`),
    `sidebars.ts`, ou a página conceitual desatualizada em `docs/`;
-4. abre um Pull Request com o que mudou **dentro de `docs/`** (specs e páginas geradas
-   nunca entram no commit).
+4. commita direto no `main` o que mudou **dentro de `docs/`** (specs e páginas geradas
+   nunca entram no commit), rebaseando antes se o branch andou durante a execução.
 
-Se nada versionado mudar, o workflow termina sem abrir PR. Também é possível disparar
-manualmente em *Actions → Regenerar docs (OpenAPI) → Run workflow*, opcionalmente
-informando o commit base do diff e o modelo.
+Se nada versionado mudar, o workflow termina sem commitar. O relatório da skill vai para
+o summary do run. Também é possível disparar manualmente em *Actions → Regenerar docs
+(OpenAPI) → Run workflow*, opcionalmente informando o commit base do diff e o modelo.
+
+O commit vai com o `GITHUB_TOKEN`, então não redispara workflows — e o gatilho só olha
+`swagger/**` e `postman/**`, que este workflow nunca toca. Se o `main` ganhar proteção de
+branch, o push passa a exigir uma credencial autorizada a contorná-la (GitHub App ou PAT
+no lugar do `GITHUB_TOKEN`).
 
 Requer um destes secrets no repositório: `CLAUDE_CODE_OAUTH_TOKEN` (token OAuth da
 assinatura, gerado com `claude setup-token`) ou `ANTHROPIC_API_KEY`.
