@@ -237,7 +237,7 @@ const config: Config = {
           label: 'API',
         },
         {
-          href: 'https://app.kobana.com.br',
+          href: 'https://app.kobana.com.br/users/sign_in',
           label: 'Entrar',
           position: 'right',
         },
