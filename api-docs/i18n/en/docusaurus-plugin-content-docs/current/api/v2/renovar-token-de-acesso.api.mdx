@@ -1,0 +1,69 @@
+---
+id: renovar-token-de-acesso
+title: "Renew Access Token"
+description: "Creates a new access token with the same settings as the current token and revokes the old token. The new token is returned in the response."
+sidebar_label: "Renew Access Token"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Renew Access Token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v2/security/access_tokens/{uid}/renew"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new access token with the same settings as the current token and revokes the old token. The new token is returned in the response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./renovar-token-de-acesso.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./renovar-token-de-acesso.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./renovar-token-de-acesso.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

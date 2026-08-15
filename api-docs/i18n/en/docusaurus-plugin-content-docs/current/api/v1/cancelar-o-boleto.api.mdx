@@ -1,0 +1,69 @@
+---
+id: cancelar-o-boleto
+title: "Cancel the Billet"
+description: "Cancels billets with status Opened (opened) or Overdue (overdue)"
+sidebar_label: "Cancel the Billet"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9tuGzcQ/RVinpJiJdmOgiCLoogdu42RNjZ8aQM4gjVajiTGu+SG5MoWBH1Nn/sV+bFiyJW0khXbKfJYvayWO5fDmTPD4Qw8jhykV3BgcvLGQS8BR1lllZ9CejWDAaElu1/5MaRXvXkvAUkus6r0ymhI4S3qjHInBirPyTtxq/xYOI++cuKkJE1SPDPh+VwYK04mZGVF4pmJf55DAiVaLMiTdcGjxoIghUtHtrU/Iu0hAcWuxoSSLCRg6UulLElIh5g72oR0as1ESRIoJpgrKahAlYuhsSIz2mPmXRsSoDssypw9vaeJ0uIP5bXKbsTPN0X89+bGDFBjOzNFe2B/gQRcNqYCIZ2Bn5as6bxVegTzebKE/bF1LKkojSedTVvvafq96Bvq4oamwhuBE6OkKK3JyDmlR8JSmeN0fRfd26NX7/787aX968XZq4+j3SfiVXIBsEQ/XoPnbXUP3UFIszg+bPp+/fr1Q856bNSVRjty/H1vp8uPrYazQKecJMwT6D4gqI0XQ1Nphs9pZZ6kM8CyzFWGLNv57FhhtsI5g0hMSLs73QTIWlNzzisfgvjh699GDI0SpXHu6z8TygVpNm/RCiMsjZTz1gSfkhW08dcLGJI8qhxSOHKelrJCs026U85TIkwVzEvKyaM0bZj35ltiZwafKWPil9aUZL2KkVvAX8op7WkUWLUepHcXF6eLKjRDEXbaFkd3qeh3d3b6bY7uYvtLY2gtBrp6KtzjYOqYbeb7HmOsoqForG0COtaxTPdPj8WFuSEd4cUAP2b9iA0Jlq2tVbquExzkdF0zI1pc5Ocxm4dBjmRE2YRe+/gEF2Na4RXKCamGQ7KkfegzhNlYnJOdkO1cnv2eiMJYEujF2PvSpZ2OpAnlHEzXXusyHUvBTEYdz6ZbklrIuzGfgDfBv2TJ1snudYAIcbm7t/dQXXHFDKhRYf+pcPb2thZOPD4i10sjSTiytSuURnCLF2bByBKVXJXQ1oz9Xxf/18WPqYt5PNLI+QMjp7zLR1j/VNLVhRSUry1hrX6PgbrKcw769gP1bcOKiFbST/on0d/tixM/Jhte9vriV4uVDC8v+uKQ0I/DS7fPY5YN+pjH1IQPL/vinLzPqeDo1yVHuiogvdpN9pIXSTd52dsI2wD1zXUc5a7j/q7r3YdAbkwqemhsEZHjwFTL05tHFKwnQiaYWQA8lpDWcUPbMq1B6BqQQEF+bPhjWYVA8yiSQmey22kgcp2ZkvNO1OfxJhAp9qHK8sG7oNEMS/XOOD/vQAITtIrj72LCw4fQ3WIseKnlUMuBuVsnHST8bWMtDMBDrHLPneGbqvMw9iwm6XOmVATAQW6M1Eu+MPTFyMbvUYhHNWBinq0ofLTqylspuDvngW5oGr0I3p8c7H/YD6U52W3vcFTIupjGemE9t+/DboLCockq5lDwAgl4soU7GXIZq4waUc83apYFjWtVztRHDWYh8PXkeV6VxnoSMrQMSDZyiJ8rifcSEmZ5blFR+c1m1BMojfMF6oajWGLCj0nE03Bzt42W8CPuM3VGPd35Tpmj0lwDYXOzmtlXMOH5vMltSCCNp2Kkdy+BcSDqFcxmA3R0afP5nJe/VGT5btZbUTuUgFSht3/jXtHc47OzesZ/Lprz/FbcizNQT0Mp5RW/QQI3NI23h3BQ15eb74PxtHvaVlTR+9oVcYmNLzdPB/F9160HwGy7+K1himJvo+fWBVtaSdw7iFYa+1lGpX9QttfooKeXF0yt+qwr4oxl8Zavdngbk2dCIEI/CmszyFGPKhyxbDTJv38BZiyQtQ==
+sidebar_class_name: "put api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Cancel the Billet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v1/bank_billets/{id}/cancel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cancels billets with status Opened (opened) or Overdue (overdue)
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./cancelar-o-boleto.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./cancelar-o-boleto.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./cancelar-o-boleto.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

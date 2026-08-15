@@ -1,0 +1,189 @@
+---
+title: "Flujo de autorización"
+description: "Flujo de autenticación por autorización del usuario (authorization flow)"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Flujo de autenticación por autorización del usuario (authorization flow)
+
+El protocolo [OAuth2](https://oauth.net/2/) permite el acceso parcial o total por terceros sin necesidad de compartir la contraseña de la cuenta que está compartiendo los datos. Es más complejo que acceder por usuario y contraseña pero es más flexible y mucho más seguro.
+
+Este flujo es recomendable para el caso donde tu aplicación necesite permisos para acceder a cuentas de terceros, sean clientes o usuarios de tu sistema, por ejemplo.
+
+El flujo de autorización funciona muy bien para aplicaciones web, así como para desktop y mobile.
+
+### Bibliotecas
+
+Hay bibliotecas OAuth2 para casi todos los lenguajes ya que es un protocolo ampliamente utilizado en la industria de software y por empresas como Google y Facebook.
+
+[Elige una biblioteca antes de comenzar](https://oauth.net/2/).
+
+### Registro de la Aplicación
+
+Para comenzar necesitas [registrar tu aplicación](https://app-sandbox.kobana.com.br/conta/api/aplicacoes). Te proporcionaremos un `client_id` y `client_secret`.
+
+También deberás proporcionarnos una URL de Redirección `redirect_uri` para tu sitio.
+
+### Endpoints
+
+| Sandbox | URL |
+| --- | --- |
+| Authorize URL | GET [https://app-sandbox.kobana.com.br/oauth/authorize](https://app-sandbox.kobana.com.br/oauth/authorize) |
+| Token URL | POST [https://app-sandbox.kobana.com.br/oauth/token](https://app-sandbox.kobana.com.br/oauth/token) |
+
+| Producción | URL |
+| --- | --- |
+| Authorize URL | GET [https://app.kobana.com.br/oauth/authorize](https://app.kobana.com.br/oauth/authorize) |
+| Token URL | POST [https://app.kobana.com.br/oauth/token](https://app.kobana.com.br/oauth/token) |
+
+### Resumen del funcionamiento
+
+El flujo de autorización requiere que el usuario autorice el acceso de tu app a su cuenta. Para autenticar el usuario:
+
+- Usa el `client_id` y `client_secret` que obtuviste de nosotros durante el registro para redirigir al usuario a la `Authorize URL`. Opcionalmente incluye el `scope` para acceder a [información específica](/api/overview/authentication/permissions).
+- Si el usuario autoriza tu app, será redirigido a la `redirect_uri` que configuraste en el registro con el parámetro `code`.
+- Usa el parámetro `code` recibido para generar un `access_token` haciendo una solicitud a la `Token URL`.
+- Usa el `access_token` para hacer solicitudes en nombre del usuario.
+
+### Paso a Paso detallado
+
+#### 1. Considerando la siguiente información:
+
+```
+* **Client ID** -> xxxxxxxxxx
+* **Client Secret** -> yyyyyyyyyy
+* **Redirect URL** -> http://tusite.com.br
+```
+
+#### 2. Redirige al usuario a la dirección de solicitud de autorización.
+
+```
+https://app-sandbox.kobana.com.br/oauth/authorize?response_type=code&client_id=xxxxxxxxxx&redirect_uri=http://tusite.com.br
+```
+
+```ruby
+client_id = 'xxxxxxxxxx'
+client_secret = 'yyyyyyyyyy'
+redirect_url = 'http://tusite.com.br'
+client = OAuth2::Client.new(client_id, client_secret, site: 'https://app-sandbox.kobana.com.br')
+
+redirect_to client.auth_code.authorize_url(redirect_uri: redirect_url)
+```
+
+El usuario verá una pantalla solicitando autorización para que tu aplicación acceda a sus datos y con dos enlaces, uno para declinar y otro para autorizar que redirigen a las siguientes direcciones:
+
+##### Caso sea declinado
+
+```
+http://tusite.com.br/?error=access_denied&error_description=El+propietario+del+recurso+o+servidor+de+autorización+rechazó+la+solicitud
+```
+
+##### Caso sea autorizado
+
+```
+http://tusite.com.br/?code=57858ba460
+```
+
+`code` es el código para que puedas solicitar el token de acceso.
+
+#### 3. Realiza una solicitud `POST` a la dirección a continuación para recibir el token de acceso.
+
+```
+https://app-sandbox.kobana.com.br/oauth/token?grant_type=authorization_code&code=57858ba460&redirect_uri=http://tusite.com.br&client_id=xxxxxxxxxx&client_secret=yyyyyyyyyy
+```
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -i \
+-d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://tusite.com.br&client_id=xxxxxxxxxx&client_secret=yyyyyyyyyy' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://app-sandbox.kobana.com.br/oauth/token'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+client_id = 'fc4e525ff3'
+    client_secret = '95ea9a477d'
+    redirect_url = 'http://tusite.com.br'
+    code = 'código de autorización retornado'
+
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://app-sandbox.kobana.com.br')
+    access_token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
+```
+
+</TabItem>
+</Tabs>
+
+##### Respuesta en caso de error:
+
+```http
+HTTP/1.1 401 Unauthorized
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 401 Unauthorized
+Content-Type: application/json; charset=utf-8
+...
+
+{"error":"invalid_grant","error_description":"El permiso de autorización proporcionado es inválido, está vencido, revocado, no coincide con la URL de redirección utilizada en la solicitud de autorización o fue emitido por otro cliente."}
+```
+
+##### Respuesta en caso de éxito:
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
+```
+
+#### 4. Ahora puedes usar el `access_token` para realizar llamadas a la API.
+
+##### Solicitud
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -i \
+-H "Authorization: Bearer $KOBANA_TOKEN" \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+access_token.get('/v1/userinfo').body
+```
+
+</TabItem>
+</Tabs>
+
+##### Respuesta
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:14:56 GMT
+Status: 200 OK
+...
+
+# datos del usuario que autorizó el acceso
+```
+
+Puedes guardar este token por tiempo indefinido. El token no expira.
+
+### Desarrollando aplicaciones para Mobile y Desktop
+
+Si estás desarrollando para mobile o desktop, quizás no tengas una URL de redirección.
+
+En estos casos puedes revisar las formas de usar OAuth 2.0 para [diversos tipos de dispositivos](https://oauth.net/2/).

@@ -1,0 +1,69 @@
+---
+id: criar-conta-de-pagamento
+title: "Create Payment Account"
+description: "Creates a new payment account associated with a financial account. Use when the financial account needs more than one payment account (for example, multiple agreements at the same bank). The account is created without a bank connection (`connection_uid` returns `null`); associate a connection before enabling remittances/registration. Requires `write` scope + `payment.accounts`."
+sidebar_label: "Create Payment Account"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Payment Account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payment/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new payment account associated with a financial account. Use when the financial account needs more than one payment account (for example, multiple agreements at the same bank). The account is created without a bank connection (`connection_uid` returns `null`); associate a connection before enabling remittances/registration. Requires `write` scope + `payment.accounts`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./criar-conta-de-pagamento.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./criar-conta-de-pagamento.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./criar-conta-de-pagamento.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

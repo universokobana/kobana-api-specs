@@ -1,0 +1,69 @@
+---
+id: atualizar-conta-de-transferencia
+title: "Actualizar cuenta de transferencia"
+description: "Atualiza atributos editáveis de uma cuenta de transferencia. Aceita `remittance_enabled` (booleano, controla a geração de remessas EDI), `provider_data.service_point_number` (string, ponto de atendimento — por exemplo `numeroPa` em TED Sicoob) y `provider_data.cooperative_cnpj` (string, CNPJ de la cooperativa Sicoob). O corpo aceita PATCH parcial: envie apenas los campos que deseja Actualizar."
+sidebar_label: "Actualizar cuenta de transferencia"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "patch api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Actualizar cuenta de transferencia"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v2/transfer/accounts/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Atualiza atributos editáveis de uma cuenta de transferencia. Aceita `remittance_enabled` (booleano, controla a geração de remessas EDI), `provider_data.service_point_number` (string, ponto de atendimento — por exemplo `numeroPa` em TED Sicoob) y `provider_data.cooperative_cnpj` (string, CNPJ de la cooperativa Sicoob). O corpo aceita PATCH parcial: envie apenas los campos que deseja Actualizar.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./atualizar-conta-de-transferencia.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./atualizar-conta-de-transferencia.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./atualizar-conta-de-transferencia.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,78 @@
+{
+  "name": "kobana-banking-gateway-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "prepare-specs": "node scripts/prepare-specs.mjs",
+    "translate-openapi": "node scripts/translate-openapi.mjs",
+    "gen-api-docs": "docusaurus gen-api-docs",
+    "clean-api-docs": "docusaurus clean-api-docs",
+    "gen-api-docs:all": "npm run prepare-specs && docusaurus clean-api-docs all && docusaurus gen-api-docs all && node scripts/fix-info-pages.mjs && node scripts/rewrite-legacy-links.mjs && node scripts/remove-deprecated-operations.mjs && node scripts/fix-i18n-sidebar-ids.mjs && node scripts/translate-info-title.mjs && node scripts/fix-sidebar-translation-keys.mjs && node scripts/add-overview-cards.mjs && node scripts/translate-payloads.mjs en && node scripts/translate-payloads.mjs es",
+    "start": "docusaurus start --port 3300",
+    "start:pt": "docusaurus start --locale pt-BR --port 3300",
+    "start:en": "docusaurus start --locale en --port 3301",
+    "start:es": "docusaurus start --locale es --port 3302",
+    "build": "node scripts/build-all.mjs",
+    "build:raw": "npm run gen-api-docs:all && docusaurus build",
+    "build:per-locale": "npm run gen-api-docs:all && BUILD_LOCALE=pt docusaurus build --locale pt-BR --out-dir build-pt && BUILD_LOCALE=en docusaurus build --locale en --out-dir build-en && BUILD_LOCALE=es docusaurus build --locale es --out-dir build-es && node scripts/build-landing.mjs",
+    "preview": "npm run build:raw && docusaurus serve --port 3300",
+    "serve": "docusaurus serve --port 3300",
+    "serve:landing": "http-server build-landing -p 3300 -c-1 -s",
+    "serve:pt": "http-server build-pt -p 3300 -c-1 -s",
+    "serve:en": "http-server build-en -p 3301 -c-1 -s",
+    "serve:es": "http-server build-es -p 3302 -c-1 -s",
+    "serve:all": "concurrently -n landing,pt,en,es -c yellow,blue,green,magenta \"npm:serve:landing\" \"npm:serve:pt\" \"npm:serve:en\" \"npm:serve:es\"",
+    "serve:prod": "http-server build -p 3300 -c-1 -s",
+    "swizzle": "docusaurus swizzle",
+    "clear": "docusaurus clear",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.10.1",
+    "@docusaurus/faster": "^3.10.1",
+    "@docusaurus/preset-classic": "^3.10.1",
+    "@docusaurus/theme-mermaid": "^3.10.1",
+    "@fontsource-variable/syne": "^5.2.7",
+    "@fontsource-variable/work-sans": "^5.2.8",
+    "@fontsource/syne": "^5.2.7",
+    "@fontsource/work-sans": "^5.2.8",
+    "@mdx-js/react": "^3.0.0",
+    "@signalwire/docusaurus-plugin-llms-txt": "^1.2.2",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "^5.0.2",
+    "docusaurus-theme-openapi-docs": "^5.0.2",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.10.1",
+    "@docusaurus/tsconfig": "^3.10.1",
+    "@docusaurus/types": "^3.10.1",
+    "concurrently": "^9.1.0",
+    "http-server": "^14.1.1",
+    "typescript": "~5.6.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "overrides": {
+    "glob": "^13.0.0",
+    "inflight": "npm:lru-cache@^11.0.0",
+    "uuid": "^11.1.1"
+  }
+}

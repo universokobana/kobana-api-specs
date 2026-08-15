@@ -1,0 +1,189 @@
+---
+title: "Authorization Code Flow"
+description: "User authorization authentication flow (authorization code flow)"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+User authorization authentication flow (authorization code flow)
+
+The [OAuth2](https://oauth.net/2/) protocol allows partial or full access by third parties without needing to share the password of the account sharing the data. It is more complex than accessing by username and password but is more flexible and much more secure.
+
+This flow is recommended when your application needs permission to access third-party accounts, such as clients or users in your system, for example.
+
+The authorization flow works very well for web applications, as well as for desktop and mobile.
+
+### Libraries
+
+There are OAuth2 libraries for almost all languages since it is a widely used protocol in the software industry and by companies like Google and Facebook.
+
+[Choose a library before you start](https://oauth.net/2/).
+
+### Application Registration
+
+To get started you need to [register your application](https://app-sandbox.kobana.com.br/conta/api/aplicacoes). We will provide you with a `client_id` and `client_secret`.
+
+You must also provide us with a Redirect URL `redirect_uri` for your website.
+
+### Endpoints
+
+| Sandbox | URL |
+| --- | --- |
+| Authorize URL | GET [https://app-sandbox.kobana.com.br/oauth/authorize](https://app-sandbox.kobana.com.br/oauth/authorize) |
+| Token URL | POST [https://app-sandbox.kobana.com.br/oauth/token](https://app-sandbox.kobana.com.br/oauth/token) |
+
+| Production | URL |
+| --- | --- |
+| Authorize URL | GET [https://app.kobana.com.br/oauth/authorize](https://app.kobana.com.br/oauth/authorize) |
+| Token URL | POST [https://app.kobana.com.br/oauth/token](https://app.kobana.com.br/oauth/token) |
+
+### How it works
+
+The authorization flow requires the user to authorize your app's access to their account. To authenticate the user:
+
+- Use the `client_id` and `client_secret` you obtained from us during registration to redirect the user to the `Authorize URL`. Optionally include the `scope` to access specific [permissions](/api/overview/authentication/permissions).
+- If the user authorizes your app, they will be redirected to the `redirect_uri` you configured during registration with the `code` parameter.
+- Use the `code` parameter received to generate an `access_token` by making a request to the `Token URL`.
+- Use the `access_token` to make requests on behalf of the user.
+
+### Step-by-step guide
+
+#### 1. Assuming the following information:
+
+```
+* **Client ID** -> xxxxxxxxxx
+* **Client Secret** -> yyyyyyyyyy
+* **Redirect URL** -> http://seusite.com.br
+```
+
+#### 2. Redirect the user to the authorization request address.
+
+```
+https://app-sandbox.kobana.com.br/oauth/authorize?response_type=code&client_id=xxxxxxxxxx&redirect_uri=http://seusite.com.br
+```
+
+```ruby
+client_id = 'xxxxxxxxxx'
+client_secret = 'yyyyyyyyyy'
+redirect_url = 'http://seusite.com.br'
+client = OAuth2::Client.new(client_id, client_secret, site: 'https://app-sandbox.kobana.com.br')
+
+redirect_to client.auth_code.authorize_url(redirect_uri: redirect_url)
+```
+
+The user will see a screen requesting authorization for your application to access their data with two links, one to decline and one to authorize, which redirect to the following addresses:
+
+##### If declined
+
+```
+http://seusite.com.br/?error=access_denied&error_description=O+dono+do+recurso+ou+servidor+de+autorização+negou+a+solicitação
+```
+
+##### If authorized
+
+```
+http://seusite.com.br/?code=57858ba460
+```
+
+`code` is the code so you can request the access token.
+
+#### 3. Make a `POST` request to the address below to receive the access token.
+
+```
+https://app-sandbox.kobana.com.br/oauth/token?grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=xxxxxxxxxx&client_secret=yyyyyyyyyy
+```
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -i \
+-d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=xxxxxxxxxx&client_secret=yyyyyyyyyy' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://app-sandbox.kobana.com.br/oauth/token'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+client_id = 'fc4e525ff3'
+    client_secret = '95ea9a477d'
+    redirect_url = 'http://seusite.com.br'
+    code = 'código de autorização retornado'
+
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://app-sandbox.kobana.com.br')
+    access_token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
+```
+
+</TabItem>
+</Tabs>
+
+##### Error response:
+
+```http
+HTTP/1.1 401 Unauthorized
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 401 Unauthorized
+Content-Type: application/json; charset=utf-8
+...
+
+{"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
+```
+
+##### Success response:
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
+```
+
+#### 4. Now you can use the `access_token` to make API calls.
+
+##### Request
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -i \
+-H "Authorization: Bearer $KOBANA_TOKEN" \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+access_token.get('/v1/userinfo').body
+```
+
+</TabItem>
+</Tabs>
+
+##### Response
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:14:56 GMT
+Status: 200 OK
+...
+
+# user data who authorized access
+```
+
+You can save this token indefinitely. The token does not expire.
+
+### Developing applications for Mobile and Desktop
+
+If you are developing for mobile or desktop, you may not have a redirect URL.
+
+In these cases you can check the ways to use OAuth 2.0 for [various types of devices](https://oauth.net/2/).

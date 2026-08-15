@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gateway Bancário — Documentação</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #1c1e21;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .logo { margin-bottom: 24px; }
+    .logo img { height: 36px; }
+    h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+    p { color: #6b7280; font-size: 0.95rem; margin-bottom: 32px; }
+    .locales { display: flex; flex-direction: column; gap: 12px; }
+    .locales a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1c1e21;
+      font-weight: 500;
+      transition: border-color .15s, background .15s;
+    }
+    .locales a:hover { border-color: #2563eb; background: #eff6ff; }
+    .locales a .flag { font-size: 1.4rem; }
+    .locales a .label { flex: 1; text-align: left; margin-left: 14px; }
+    .locales a .sublabel { font-size: 0.8rem; color: #6b7280; font-weight: 400; }
+    .locales a .arrow { color: #9ca3af; }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #1b1b1d; color: #e3e3e3; }
+      .card { background: #242526; box-shadow: 0 2px 16px rgba(0,0,0,.4); }
+      .logo img { filter: brightness(0) invert(1); }
+      p { color: #a0a0a8; }
+      .locales a { border-color: #3d3d3f; color: #e3e3e3; }
+      .locales a:hover { border-color: #4a90d9; background: rgba(74,144,217,.08); }
+      .locales a .sublabel { color: #a0a0a8; }
+      .locales a .arrow { color: #6b6b6f; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/img/kobana-logo-hor-positivo.png" alt="Kobana" />
+    </div>
+    <h1>Gateway Bancário</h1>
+    <p>Selecione o idioma da documentação</p>
+    <nav class="locales">
+      <a href="/pt/">
+        <span class="flag">🇧🇷</span>
+        <span class="label">
+          Português<br />
+          <span class="sublabel">Documentação em português</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+      <a href="/en/">
+        <span class="flag">🇺🇸</span>
+        <span class="label">
+          English<br />
+          <span class="sublabel">Documentation in English</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+      <a href="/es/">
+        <span class="flag">🇪🇸</span>
+        <span class="label">
+          Español<br />
+          <span class="sublabel">Documentación en español</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+    </nav>
+  </div>
+<script>
+  (function () {
+    var I18N = {
+      'pt': {
+        title: 'Gateway Bancário — Documentação',
+        h1: 'Gateway Bancário',
+        subtitle: 'Selecione o idioma da documentação',
+      },
+      'en': {
+        title: 'Banking Gateway — Documentation',
+        h1: 'Banking Gateway',
+        subtitle: 'Select the documentation language',
+      },
+      'es': {
+        title: 'Gateway Bancario — Documentación',
+        h1: 'Gateway Bancario',
+        subtitle: 'Selecciona el idioma de la documentación',
+      },
+    };
+
+    try {
+      var langs = (navigator.languages || [navigator.language || 'pt-BR']).map(function (l) {
+        return (l || '').toLowerCase();
+      });
+      var locale = null;
+      var pick = null;
+      for (var i = 0; i < langs.length; i++) {
+        var t = langs[i];
+        if (!t) continue;
+        if (t === 'pt' || t.indexOf('pt-') === 0) { locale = 'pt'; pick = '/pt/'; break; }
+        if (t === 'en' || t.indexOf('en-') === 0) { locale = 'en'; pick = '/en/'; break; }
+        if (t === 'es' || t.indexOf('es-') === 0) { locale = 'es'; pick = '/es/'; break; }
+      }
+
+      if (locale && locale !== 'pt') {
+        var tr = I18N[locale];
+        document.title = tr.title;
+        var h1 = document.querySelector('h1');
+        if (h1) h1.textContent = tr.h1;
+        var p = document.querySelector('.card > p');
+        if (p) p.textContent = tr.subtitle;
+      }
+
+      if (!pick || sessionStorage.getItem('kb-skip-locale-redirect') === '1') return;
+      sessionStorage.setItem('kb-skip-locale-redirect', '1');
+      window.location.replace(pick);
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

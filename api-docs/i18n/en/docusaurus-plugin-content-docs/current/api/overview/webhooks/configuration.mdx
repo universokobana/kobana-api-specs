@@ -1,0 +1,56 @@
+---
+title: "Configuration"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+You can create webhooks in [My Account > API > Webhooks](https://app.kobana.com.br/conta/api/webhooks).
+
+### Payload Address (URL)
+
+Address that will receive the HTTP POST request for event notifications. It is recommended that it be an address that uses SSL, i.e., starting with `https://`.
+
+### Request Type (content-type)
+
+You can choose to receive the request in `application/json` or `application/x-www-form-urlencoded` format. This setting will be used in the request's `Content-Type` header.
+
+#### Example Request Content
+
+<Tabs>
+<TabItem value="json" label="application/json">
+
+```json
+{
+  "ping": "pong",
+  "event_code": "ping",
+  "webhook": {
+    "id": 11,
+    "url": "https://requestb.in"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="http" label="application/x-www-form-urlencoded">
+
+```http
+payload[event_code]=ping&payload[webhook][id]=11&payload[webhook][url]=http://requestb.in/15a0nqn1
+```
+
+</TabItem>
+</Tabs>
+
+### SSL Verification
+
+By default, the system will verify the SSL certificate when the URL is `https`. It is highly recommended to keep SSL verification active. If you're having issues because of the SSL certificate or don't have an SSL certificate issued by a known certifier, you can disable SSL verification. Only do this if you're very certain of what you're doing.
+
+### Events
+
+Events that will trigger notifications for this webhook. Selecting **All events (current and future)** you will receive new events that may be implemented after configuring this webhook.
+
+It is important to select only the events relevant to the integration you are developing, to reduce the load on your server.
+
+### Active?
+
+At any time you can activate and deactivate the webhook. When the webhook is inactive and an event occurs in the system, the notification is not created. If the event is activated later, that notification will be lost, but all future ones will be created when events occur. In other words, the system checks if the webhook is active or not at the moment the event occurs to determine if the notification will be created or not.

@@ -1,0 +1,209 @@
+---
+title: "Access Token"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+To make requests to the API using your own account, simply use the `Access Token` available in the system interface in the `Integrations > API > API Token` menu.
+
+:::info[Check the environment]
+
+The token is different between the sandbox and production environments.
+
+:::
+
+## Valid Request
+
+Here's an example of a request to test if the token is working.
+
+Assuming your `Access Token` is **xxxxxxxxxxxxxxxxxxxxxxxx**
+
+<Tabs>
+<TabItem value="curl" label="Shell">
+
+```bash
+curl -i \
+-H "Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxx" \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+BoletoSimples.configure do |c|
+  c.access_token = 'zjuio96wkixkzy6z98sy'
+end
+
+BoletoSimples::Extra.userinfo
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+BoletoSimples::configure(array(
+  "access_token" => 'zjuio96wkixkzy6z98sy'
+));
+
+BoletoSimples\\Extra::userinfo();
+```
+
+</TabItem>
+</Tabs>
+
+Return:
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:14:56 GMT
+Status: 200 OK
+...
+
+{"id":1,"login_url":"https://api-sandbox.kobana.com.br/welcome?email=user%40example.com\\u0026token=xxx","email":"user@example.com","account_type":null,"first_name":null,"middle_name":null,"last_name":null,"full_name":null,"cpf":null,"date_of_birth":null,"mother_name":null,"father_name":null,"account_level":0,"phone_number":null,"address_street_name":null,"address_number":null,"address_complement":null,"address_neighborhood":null,"address_postal_code":null,"address_city_name":null,"address_state":null,"business_name":null,"business_cnpj":null,"business_legal_name":null}
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+{
+  "id": 1,
+  "login_url": "https://api-sandbox.kobana.com.br/welcome?email=user%40example.com&token=xxx",
+  "email": "user@example.com",
+  "account_type": null,
+  "first_name": null,
+  "middle_name": null,
+  "last_name": null,
+  "full_name": null,
+  "cpf": null,
+  "date_of_birth": null,
+  "mother_name": null,
+  "father_name": null,
+  "account_level": 0,
+  "phone_number": null,
+  "address_street_name": null,
+  "address_number": null,
+  "address_complement": null,
+  "address_neighborhood": null,
+  "address_postal_code": null,
+  "address_city_name": null,
+  "address_state": null,
+  "business_name": null,
+  "business_cnpj": null,
+  "business_legal_name": null
+}
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+Array
+(
+  [id] => 1
+  [login_url] => https://api-sandbox.kobana.com.br/welcome?email=user%40example.com&token=xxx
+  [email] => user@example.com
+  [account_type] =>
+  [first_name] =>
+  [middle_name] =>
+  [last_name] =>
+  [full_name] =>
+  [cpf] =>
+  [date_of_birth] =>
+  [mother_name] =>
+  [father_name] =>
+  [account_level] => 0
+  [phone_number] =>
+  [address_street_name] =>
+  [address_number] =>
+  [address_complement] =>
+  [address_neighborhood] =>
+  [address_postal_code] =>
+  [address_city_name] =>
+  [address_state] =>
+  [business_name] =>
+  [business_cnpj] =>
+  [business_legal_name] =>
+  )
+```
+
+</TabItem>
+</Tabs>
+
+## Invalid Request
+
+Here's an example of a request when the token is invalid.
+
+<Tabs>
+<TabItem value="curl" label="cURL">
+
+```bash
+curl -i \
+-H "Authorization: Bearer tokeninvalido" \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+BoletoSimples.configure do |c|
+  c.access_token = 'tokeninvalido'
+end
+
+BoletoSimples::Extra.userinfo
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+BoletoSimples::configure(array(
+  "access_token" => 'tokeninvalido'
+));
+BoletoSimples\\Extra::userinfo();
+```
+
+</TabItem>
+</Tabs>
+
+Return:
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+HTTP/1.1 401 Unauthorized
+Date: Fri, 17 Oct 2014 18:20:18 GMT
+Status: 401 Unauthorized
+...
+
+{"error":"Você precisa se logar ou registrar antes de prosseguir."}
+```
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
+```ruby
+BoletoSimples::ResponseError: 401 GET https://sandbox.boletosimples.com.br/api/v1/userinfo.json (Você precisa se logar ou registrar antes de prosseguir.)
+\(See full trace by running task with --trace)
+```
+
+</TabItem>
+<TabItem value="php" label="PHP">
+
+```php
+Fatal error: Uncaught exception 'BoletoSimples\\ResponseError' with message 'Você precisa se logar ou registrar antes de prosseguir.'
+```
+
+</TabItem>
+</Tabs>
