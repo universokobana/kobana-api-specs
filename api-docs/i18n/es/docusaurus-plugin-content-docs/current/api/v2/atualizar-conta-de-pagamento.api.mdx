@@ -1,0 +1,69 @@
+---
+id: atualizar-conta-de-pagamento
+title: "Actualizar cuenta de pago"
+description: "Atualiza atributos editáveis de uma cuenta de pago. Aceita `remittance_enabled` (booleano, controla a geração de remessas EDI), `provider_data.service_point_number` (string, ponto de atendimento — por exemplo `numeroPa` en lo Sicoob) y `provider_data.cooperative_cnpj` (string, CNPJ de la cooperativa Sicoob). O corpo aceita PATCH parcial: envie apenas los campos que deseja Actualizar."
+sidebar_label: "Actualizar cuenta de pago"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "patch api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Actualizar cuenta de pago"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v2/payment/accounts/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Atualiza atributos editáveis de uma cuenta de pago. Aceita `remittance_enabled` (booleano, controla a geração de remessas EDI), `provider_data.service_point_number` (string, ponto de atendimento — por exemplo `numeroPa` en lo Sicoob) y `provider_data.cooperative_cnpj` (string, CNPJ de la cooperativa Sicoob). O corpo aceita PATCH parcial: envie apenas los campos que deseja Actualizar.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./atualizar-conta-de-pagamento.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./atualizar-conta-de-pagamento.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./atualizar-conta-de-pagamento.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

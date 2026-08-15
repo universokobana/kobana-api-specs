@@ -1,0 +1,71 @@
+---
+id: quitar-boletos
+title: "Pagar Boletos"
+description: "Pagar boletos."
+sidebar_label: "Pagar Boletos"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWMFu20YQ/ZXBnGyAluzGlxBFETlxmyCtLcQ2isIWnBV3JK1N7tC7S8auoI8JemqBnvIJ+rFilpRsyU7SpGgPhXURyeXOvJl5b3eHUwxq7DE9xecHvT3YeEOBneVNHCToKaucCTeYnk5xSMqR61VhgunpYDZIUJPPnCmDYYsp9tVYORhyToF958ye2V8UkAdLGXnlDMNEDckB2doozUA5iMcOHLNmDzn7xWS4qgg8gdFkgxmZq4osyLVj0O008OTm7y0UymVK5mdcMPR7P/ReHMJNtHb6Mw0nzJd+sNF1NCJHNqPuu/bh5sKCNr5UTmx0MEG5LCiQ8zFoqwrCFI3GBI1EWaowwQQdXVXGkcY0uIrWU/HqxRInJkjXqihzwvTp06cJ+mxChcJ0iuGmFNs+OGPHOJslS3cnntxWb0w2LNxOSGlyK45HKvf3PPcdl+wyw5agspCxcySppiy4+QdrMoZ6/j43mkEihYxtUFloYl8CxddUGws/mWBNdgnfXhbN1bNLHiqrOhkXnaH7Dj8VzUCw+pKtJy/j32zvyt8q3L224KUaSwFwluDu9s79975XeS61B1UF4USmMjP/YIU7l2TB2DYoTFAiksSlU1RlmZtMiY3uhRdD09sYp+iDCpXHdHd7J0FyjtuaBxNiEhrbmqDXf3XrAjaOyNVGs0tBU005lwXZsBlda5lXWVWFCTvzKwltNAVlckzxEFYszn8HbSIrA7XFUFrBwnr35M2PCRTKeKACJiGUPu12W4/kfGelFncIHsTJlqYtlZH3jLPB7IE68fCCMqFX6cRcME2VFjlZvmdsoHFk3mpF9n0QEb88Pu5Hrsf8dWD/IoW3u9vbbztSy0VSl9aUc+pGOB2o8J9H01ZinVzrWF40d5ESMHRU0z1ID9eyQdmU7XNOns8/aDPme5YrWzqWTKthTuct+xrDi8p/Ef6lfYiAg8pzal2d4X6+yiHyf4dD8/dejH09h85QApJfslRHvXMeYWLzeHf7ySdkW5IrjOcOHDAEQ5Zk9T/KuCTgYW7GKrBsEDEC8kFBnqtCadX5SkE/eVDQfTEfI1IOyHsCJxucZ6g5m/8BpaPMeNUAzhkKsuyhKkCTD+SBfMYl+xTO8J0zgc6wc6v6Ebuh0Zrso+AeBfefCO6B/TSejCwDWcmLHGq+UkC7DwroYP4bw4gNlOz9/M9aMtd6csDgaGx8cHwrCsvhfMSVXdkH932g5btgxSZdGx8oAa6ieU05Cds7j1p61NK/rqVZgmIwquKVxhSvKhOU22q7EUywoDBhGSmrWGfpAVLs1jtdbXw2UW5Mvjs1etYt1c05j0ZyMiZXL7qIygnvFyFMVWlesg+zLiZYK2ck+b6RZxyIqrRVIU2ZKs2WV1YP+Xo1YExkbO1ZbMpGqsqD8PWjU2fxeL7o7o5EXg2Aeuf8bpu3rL1AX5z25b55SXoWNHbEd+iOrw/3ege9WOB6p7MtIZLzDVfaB2sE4qySE7RaUAhyFadrgtcRNiYYyBX+cBS5kdGdZOZrNJAX2W9VfrHyqSzms+2sjqqSXaCWgpislUZdVFrdyzMVzcLlm8nP1pOZYMk+FMrecdR0w3tLCq3EPL1dk/8nbXPLk0DXoVvmylhZQmJup61cTrHekTwsBYMJprGvXmhmkOAksv8Up9Oh8nTi8tlMHl9V5OQjxOBWL1FX2sSF6yPN8N0sb7xp++ZNWG3OHwS+WPDtTVRoXskdJnhJN83HgLgttT35lwH5Rw36g2AbUCufDJaQ5ZtCM97LMirvjt07CsiSsFzo+ifHOJv9BQBjU+0=
+sidebar_class_name: "put api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Pagar Boletos"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v1/discharges/{id}/pay_off"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Pagar boletos.
+
+Ya es necesario haber enviado el CNAB. Todos los boletos que se identifiquen dentro del CNAB serán marcados como PAGADO y los [Webhooks](/api/overview/webhooks) serán disparados.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./quitar-boletos.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./quitar-boletos.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./quitar-boletos.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

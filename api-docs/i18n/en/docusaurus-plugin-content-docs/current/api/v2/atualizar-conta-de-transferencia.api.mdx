@@ -1,0 +1,69 @@
+---
+id: atualizar-conta-de-transferencia
+title: "Update Transfer Account"
+description: "Updates editable attributes of a transfer account. Accepts `remittance_enabled` (boolean, controls EDI remittance generation), `provider_data.service_point_number` (string, service point — for example `numeroPa` in Sicoob TED) and `provider_data.cooperative_cnpj` (string, Sicoob cooperative CNPJ). The body accepts partial PATCH: send only the fields you want to update."
+sidebar_label: "Update Transfer Account"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWt1u3LgVfhWCVzEqjTXy2B5Pi2Kd2Nt4g02M2ClQeI2ZI+lohrFEaklqbNcYoA/RF2h7t0Cv+gh+kz5JcShp/m3Hzv5cdHITD0WKH8/5zh917riFoeG9C/5GSQuGJcjONUiTor7/ScYC+KXHDcalFvaW9y7ueISgUR+WdsR7F5eTS48naGItCiuU5D3+qUjAomGYCAtRhgys1SIqaUylDJit388gjlUpbYsdxjEW1rCBxlxYCzLGPkpanAzYq0ipDEF6LFbSapUZdnx0wmZT2RAlaqDttzw2KLQaiwR1PwELLYN6LGLsF0pI25dlHqEesFfGaiGHHqsfM/eY/fdvf2ep0gxvIC8yZANZ5qjVKQyYkOxMxEpF7Pz4aIuBTJZ3ipUqHIwx9mNZfJ7bpV45N4O9eX/63VaLnY+QRSq5JVk4ERSgrYCMnR6ev3nbYwZlwpTMbpkdIUsFZolht6pk1yAts4qVTtot7vECNORoURunJgk5kjYMav9wiNJyjwvSzwghQc09rvHHUmhMeC+FzOCyHk+r0zFgY8hEwjAHkTnxkB4gtoZ2rUXFe/wdjoVk3wsrRXzF/nCVV399c6UikCSevBXpP3KPm3iEOfDeHbe3Ba2sxMQnE28KuxRJg7cAO1pAa3W5AvbTp5MjYhdJaZlfCyhx92Cvu7eb+sE+dPxOZ7frd7tx20+jqJOmSftgD9uPYrwkKKZQ0qCh52EQ0H9LspvXoqOV0+E6MrJX18KOVGnZKvm3uMdJ2KS93h2HoshE7Ii+/dnQRnezk91xY8GWhvfCIPA4UZIGSZA9HrQP0hSDyN8Nugf+/j6AH+2FXb+7E+114r12ku50ucdTIYFsPuvXouuvLN+L/X3Y6fjdvS747SCO4zYmO92DoIIqMSZ41TpZZpnHYagRc5S2H6uERNkOdzq7JOM10iDZHXZCovO8cbnjPTp92fqq3ScejyBzInUkdrJrpNsH22BcFf3cQ7yxqCVkfSeLv3z3p3dnnePg/JR21Qi2nszDINzzg67f7py3w157pxeEv2sHvYBEU5npkxMnkzXUU9FnjG0lkgK1FRXxGnVP5wlpcegse5GMb8/PT9mZm91ixzc9NgiDYNDikxlLHt/JKXPZEkhokHyQ2e2vYZGTB8n5UlxgjIoFKYVN37wWX9DuJmm7G/j7YdD198P9yId2AD7CbmcXO7C/C13Ct8z+VWCp0rkjQFm5N6IXka0B+jjw1yCvhByy2T6NeJs4+iLYy+a5CnsZ5iKsw2Y9c+vnIThD36NNVox5mXCP71GHIu2bAmORipi5iMu+VbqOrR7Dm0IZNGywPuK7gL0SolurVrXWyzxXKGcLaUX1lhY7o2A+oJUDCt1xhqCdAseQlbikviBoV6xa9mvPxUKZRsOUNYnIIofYSGUJ6kUs7Z1WEBy09tv72wTL7+zxCXmqBcf4XFjH9WImEpRWpAL1l7mLep3fzPLb4Q5/2tE/Yo7kmn0rcny2TR6BRUctWs2uRyhZDYPNYLBrMKyGQkAfCDa/FsCl5PlJcHPI6kyce/xaC4sPb3vslhqmNEuEqf6eZemk50UUxuWVdiTMzJlNFsPrF4rnOeJQKdMYK50wtxFNmSyG6l9m0wyMbXaudnOB3wrrGD4O+w23m1BH9uZMrhPsrMk2UefCGJJsCiIrNbbYubpCyZrUcuD0NWAmVoVzNM/PKjvBjsdRa1XXFw3aU9DAIEZjQDM0BulkpTaKjVV8/xMrNMbCABWWBWaK5SiVYWXOEjSuTCRMyvTYDxWpfuAVPpcqpkpHIklQ8snlo6nRrDq4aBBP0V4+I3PKhRR5mfNem5LoHG6qX7sHB2uzqupNLvI1zsttWudZHZdnTb0XCa4TBF4naHudMPR2g4BO1Qh1Cge0htsKzInF3PBe2+Oi+uupXK1Wyx0HefshrTS1WMF40xFyJXy1gH+tBaZsbmzd0U5kVRUenp5UXFs+KK8YmKCbIuT4/h+ZSBT3iDH3/8zRasVUpMUQ7P1/tFD8ctLo/WvQHxNIp5Ea6Xw8oGcrQJcncI9DaUcUleLFYalsP1WlTBxWV3B/Hdj3kE+JM63fmR2BdZaMyVwYqY8DOTmElUNUw2Q5pbEqR9139bqbVQiN5M4IdIKWhp+D2lvm3Oo5jtxbm5PMhT53lNrzY7LCohikVJZFyKIM5NXKqeT9vxQryLpSEZN/yVmkQcbKFTljpIqafEl1N9FQ7FGj+uXs6EX0fRmPfjZFUkyBJBGkLMhO50Tg7oQmK4Qlp52wWrpPrX7i+ULIq2ysiXKd1SjXXEvSbaFLVd8ry7511viyeNZZG8/eE+VSJVihjLn/9xgzhtLdPIJmimkcCmO1msWomVOYKYUfG4vTuczRGG+EsegxVbrXJ5ihhUS1NqFtE9o2oW0T2jah7f8itIXhamj784xVNYXWfgnLS+MIRUUmldZupxdWc2G4EP3qWLbGX9QqXHcxMBfvPmJOFSAbQSQyYSGhgq8m8Rh1AgkKcoqlA62eink/2013Jwyrm+6vNZqHLkfXeWia87CHnjeLx992OnWbVMcveJc19Kgu9Kem8/irj5pf49prMae/Ibbqq4aKrZR7oLGvVXJbCeFRnn2pPjffEzbfEzbfEzbfEzbfEzbfEzbfE36r7wlPtdQcztq2Zn1GjGAx0pZr7aobkkAjhRFDPhWT3y90LSmDCw1L8QjkENmrhUanLaee2okoeUKNFmBLyMRfQfuu38hPcGqi6BrTPJ6jHamk6hGKRy5Zpa40vj0Ot5u52/WRzfZdKZJJ3XfSdEmVmrLXkbWF6W1v30Eh3ipjJ9vc42PQwjGtSnfcA5dNS7o2uaAh34BMInXTWuhxoiK7EEtjrq5MocxI1w8vnbgGo6bf7owSqgrAOOzPN95NiUTQm34lZ1JuktM/pWUfZwnc8awKWN+Ss/eMrhsXTtZFk7XOfbmHZr3PXe8siJoTagVL1Vzxyt99eH34/tBdwIzDFrXYkE4r5tYDi3R+5+TsFhypuKTTVybqcYs6Nx/SOsjO8SFb1M42TVTGL42qiy6IHSXqprWzslDaYn0xRF0/C+yCz2UCK1Sp7jJ63FSLv1nmg8cLZWwOcm6jqsWSLd+ILp95LmHfdGX+Rl2ZtZlavLHbRQaiCgnalWiVt7rgY2pga+RP3qP2WNzjPcrsLz0+cs7ngt/dRWDwk84mExr+sURNXbmXM3fl3FodJB9o7ZznxauPdRDYYk9UWGtP0hTT8tZ5zKykX9zjV3hbd3G6Sr/uOX0etC9rQF0Lq9p+ofd1Co7uiqrnb6qt/HN6xWzGSmk7W1GZxKNzL+fCkqML93hU18955W01XJOzg+tKVsqd3Xl5N3bHM5DDEoY0t3op/fsfnmLQ6A==
+sidebar_class_name: "patch api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Transfer Account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v2/transfer/accounts/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates editable attributes of a transfer account. Accepts `remittance_enabled` (boolean, controls EDI remittance generation), `provider_data.service_point_number` (string, service point — for example `numeroPa` in Sicoob TED) and `provider_data.cooperative_cnpj` (string, Sicoob cooperative CNPJ). The body accepts partial PATCH: send only the fields you want to update.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./atualizar-conta-de-transferencia.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./atualizar-conta-de-transferencia.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./atualizar-conta-de-transferencia.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

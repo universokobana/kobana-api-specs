@@ -1,0 +1,187 @@
+---
+id: kobana-api-v-2-0
+slug: /api/v2
+title: "KOBANA API v2.0"
+description: "Documentación de la API de Kobana"
+sidebar_label: Introducción
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+import DocCard from "@theme/DocCard";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: v2.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"KOBANA API v2.0"}
+>
+</Heading>
+
+
+
+Documentación de la API de Kobana
+
+## Recursos de la API
+
+### Cobranza
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix', label: 'Pix'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/conta-pix', label: 'Conta Pix'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix-automatico-cobranca', label: 'Pix Automático - Cobrança'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix-automatico-conta', label: 'Pix Automático - Conta'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix-automatico-location', label: 'Pix Automático - Location'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix-automatico-recorrencia', label: 'Pix Automático - Recorrência'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/pix-automatico-solicitacao', label: 'Pix Automático - Solicitação'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/recebimentos', label: 'Recebimentos'}} />
+    </div>
+</div>
+
+### Administración
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/certificado', label: 'Certificado'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/subcontas', label: 'Subcontas'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/conexoes', label: 'Conexões'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/comando', label: 'Comando'}} />
+    </div>
+</div>
+
+### Mailbox
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/caixas-postais', label: 'Caixas Postais'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/arquivos-de-mailbox', label: 'Arquivos de Mailbox'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/canal-email', label: 'Canal Email'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/canal-s-3', label: 'Canal S3'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/canal-sftp', label: 'Canal SFTP'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/canal-whats-app', label: 'Canal WhatsApp'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/canal-syncthing', label: 'Canal Syncthing'}} />
+    </div>
+</div>
+
+### Usuarios
+
+<div className="row">
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/usuario', label: 'Usuário'}} />
+    </div>
+    <div className="col col--4 margin-bottom--lg">
+      <DocCard item={{type: 'link', href: '/api/v2/informacoes-do-usuario', label: 'Informações do Usuário'}} />
+    </div>
+</div>
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"v2_bearerAuth"}
+    >
+      
+      
+      
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    Suporte de API: [suporte@kobana.com.br](mailto:suporte@kobana.com.br)
+  </span><span>
+    URL: [https://ajuda.kobana.com.br](https://ajuda.kobana.com.br)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Terms of Service
+  </h3><a
+    href={"https://l.kobana.com.br/termos-uso"}
+  >
+    {'https://l.kobana.com.br/termos-uso'}
+  </a>
+</div>
+      
