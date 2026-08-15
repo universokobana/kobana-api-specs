@@ -183,7 +183,7 @@ const config: Config = {
           v2: {
             specPath: 'openapi/kobana-api-v2_0.json',
             outputDir: 'docs/api/v2',
-            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+            sidebarOptions: {groupPathsBy: 'tagGroup', categoryLinkSource: 'tag'},
             hideSendButton: false,
             showSchemas: false,
           },
@@ -197,7 +197,7 @@ const config: Config = {
           v2En: {
             specPath: 'openapi/i18n/kobana-api-v2_0.en.json',
             outputDir: 'i18n/en/docusaurus-plugin-content-docs/current/api/v2',
-            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+            sidebarOptions: {groupPathsBy: 'tagGroup', categoryLinkSource: 'tag'},
             hideSendButton: false,
             showSchemas: false,
           },
@@ -211,7 +211,7 @@ const config: Config = {
           v2Es: {
             specPath: 'openapi/i18n/kobana-api-v2_0.es.json',
             outputDir: 'i18n/es/docusaurus-plugin-content-docs/current/api/v2',
-            sidebarOptions: {groupPathsBy: 'tag', categoryLinkSource: 'tag'},
+            sidebarOptions: {groupPathsBy: 'tagGroup', categoryLinkSource: 'tag'},
             hideSendButton: false,
             showSchemas: false,
           },
