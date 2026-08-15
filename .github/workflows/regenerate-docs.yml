@@ -22,6 +22,11 @@ on:
         description: 'Modelo a usar no Claude Code CLI (vazio = default do CLI)'
         required: false
         default: ''
+      force:
+        description: 'Roda mesmo sem diff nos specs (teste do workflow): atualiza o timestamp do rodapé de api/overview/openapi.md para garantir algo a commitar'
+        type: boolean
+        required: false
+        default: false
 
 concurrency:
   group: regenerate-docs-${{ github.ref }}
@@ -170,6 +175,18 @@ jobs:
             echo "| **Cost (USD)** | **\$$(jq -r '.total_cost_usd // 0' <<<"$RESULT")** |"
             echo "| Duration | $(jq -r '.duration_ms // 0' <<<"$RESULT")ms |"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Stamp last-updated timestamp (force)
+        if: ${{ inputs.force == true }}
+        run: |
+          set -euo pipefail
+          FILE="api-docs/docs/api/overview/openapi.md"
+          STAMP="_Última atualização: $(date -u +'%Y-%m-%d %H:%M') UTC_"
+          if grep -q '^_Última atualização:' "$FILE"; then
+            sed -i "s|^_Última atualização:.*_\$|$STAMP|" "$FILE"
+          else
+            printf '\n---\n\n%s\n' "$STAMP" >> "$FILE"
+          fi
 
       - name: Commit and push the doc updates
         env:

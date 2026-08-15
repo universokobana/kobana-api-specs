@@ -24,3 +24,7 @@ Mantemos os arquivos nos seguintes formatos:
 Os arquivos estão disponíveis em um projeto no Github.
 
 [https://github.com/universokobana/kobana-api-specs](https://github.com/universokobana/kobana-api-specs)
+
+---
+
+_Última atualização: 2026-08-15 02:33 UTC_
