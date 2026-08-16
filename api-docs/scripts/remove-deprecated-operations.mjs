@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-const REMOVE_OPERATION_IDS = ['informacoes-do-usuario-descontinuado'];
+const REMOVE_OPERATION_IDS = ['get-userinfo'];
 
 const VERSION_DIRS = [
   'docs/api/v1',

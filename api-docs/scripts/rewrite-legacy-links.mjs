@@ -16,9 +16,9 @@
  *    the same mapping the client-redirects plugin uses;
  *  - endpoint pages (`/reference/get_v1-bank-billet-batch-exports-id`), by
  *    rebuilding readme's slug (`<method>_<path with / and _ as ->`, braces
- *    dropped) for every operation and pairing it with the page the plugin
- *    generates for that operation (`kebabCase(operationId)`, which
- *    `prepare-specs` has already made unique).
+ *    dropped) for every operation and pairing it with that operation's own
+ *    page URL (`/api/v2/<path>/<method>` — see set-operation-slugs.mjs,
+ *    which overrides the same operations' pages with this exact URL).
  *
  * Anything still unresolved falls back to that version's reference index, and
  * is reported — a link that lands on the index beats a build that fails or a
@@ -28,12 +28,8 @@
  */
 
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { createRequire } from 'node:module';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-
-const require = createRequire(import.meta.url);
-const kebabCase = require('lodash/kebabCase.js');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -77,6 +73,16 @@ function readmeSlug(method, path) {
   return `${method}_${tail}`;
 }
 
+/** Mirrors set-operation-slugs.mjs's operationSlug — keep both in sync. */
+function operationSlug(version, path, method) {
+  const segments = path
+    .replace(/^\/v\d+/, '')
+    .split('/')
+    .filter(Boolean)
+    .map((s) => (s.startsWith('{') && s.endsWith('}') ? `_${s.slice(1, -1)}` : s));
+  return `/api/${version}/${segments.join('/')}/${method}`;
+}
+
 const routes = new Map(Object.entries(CONCEPTUAL));
 
 for (const { version, spec } of VERSIONS) {
@@ -91,7 +97,7 @@ for (const { version, spec } of VERSIONS) {
     for (const method of METHODS) {
       const op = item[method];
       if (!op?.operationId) continue;
-      routes.set(readmeSlug(method, path), `/api/${version}/${kebabCase(op.operationId)}`);
+      routes.set(readmeSlug(method, path), operationSlug(version, path, method));
     }
   }
 }

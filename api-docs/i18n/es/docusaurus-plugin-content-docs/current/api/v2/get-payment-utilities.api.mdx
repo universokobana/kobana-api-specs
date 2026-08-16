@@ -1,0 +1,70 @@
+---
+id: get-payment-utilities
+slug: "/api/v2/payment/utilities/get"
+title: "Listar pagos de cuentas de Consumo"
+description: "Lista todos los pagos de cuentas de consumo (água, luz, gas, teléfono, etc.) realizados. Soporta paginación y retorna información detalhadas."
+sidebar_label: "Listar pagos de cuentas de Consumo"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar pagos de cuentas de Consumo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/payment/utilities"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todos los pagos de cuentas de consumo (água, luz, gas, teléfono, etc.) realizados. Soporta paginación y retorna información detalhadas.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-payment-utilities.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-payment-utilities.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-payment-utilities.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

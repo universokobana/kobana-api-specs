@@ -1,0 +1,151 @@
+---
+id: post-payments
+slug: "/api/v2/payments/post"
+title: "Crear un Pago"
+description: "Endpoint genérico para la creación de pagos de cualquier tipo. El tipo debe especificarse en el campo `kind`."
+sidebar_label: "Crear un Pago"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear un Pago"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payments"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Endpoint genérico para la creación de pagos de cualquier tipo. El tipo debe especificarse en el campo `kind`.
+
+## Requisitos previos
+
+Para emitir un pago, es necesario tener una Cuenta Financiera, informada en `financial_account_uid`. La cuenta de pago que registra la operación se define en `payment_account_uid`; si se omite, se usa la más antigua vinculada a la cuenta financiera; si se especifica, debe pertenecer a `financial_account_uid`.
+
+## Tipos Soportados
+
+### PIX
+Utilizar `kind: "pix"` y proporcionar la clave `pix`:
+```json
+{
+  "kind": "pix",
+  "financial_account_uid": "...",
+  "amount": 100.0,
+  "pix": {
+    "qrcode": "00020126330014br.gov.bcb.pix..."
+  }
+}
+```
+
+### Boleto Bancario
+Utilizar `kind: "bank_billet"` y proporcionar la clave `bank_billet`:
+```json
+{
+  "kind": "bank_billet",
+  "financial_account_uid": "...",
+  "amount": 200.0,
+  "bank_billet": {
+    "code": "81770000001-8 00005659970-7 41131079703-9 0014334-8"
+  }
+}
+```
+
+### DARF
+Utilizar `kind: "darf"` y proporcionar la clave `darf`:
+```json
+{
+  "kind": "darf",
+  "financial_account_uid": "...",
+  "amount": 300.0,
+  "darf": {
+    "tax_code": "0107",
+    "calculation_date": "2024-12-31",
+    "expire_at": "2025-01-10"
+  }
+}
+```
+
+### Tributos (Impuesto)
+Utilizar `kind: "tax"` y proporcionar la clave `tax` con código de barras:
+```json
+{
+  "kind": "tax",
+  "financial_account_uid": "...",
+  "amount": 400.0,
+  "tax": {
+    "kind": "iptu",
+    "code": "81770000001-8 00005659970-7..."
+  }
+}
+```
+
+### Cuentas de Consumo (Servicio)
+Utilizar `kind: "utility"` y proporcionar la clave `utility`:
+```json
+{
+  "kind": "utility",
+  "financial_account_uid": "...",
+  "amount": 500.0,
+  "utility": {
+    "code": "81770000001-8 00005659970-7..."
+  }
+}
+```
+
+## Eventos de Webhook
+
+El evento `payment.db.created` se dispara en esta operación.
+
+> **Endpoint Unificado:** Este endpoint unifica la creación de todos los tipos de pago. Para crear pagos de un tipo específico, también puede usar los endpoints dedicados en `/api/v2/payment/{type}`.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-payments.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-payments.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-payments.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

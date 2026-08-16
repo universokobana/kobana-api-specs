@@ -1,0 +1,70 @@
+---
+id: get-imports
+slug: "/api/v1/imports/_collection_name/get"
+title: "List Imports"
+description: "Lists the imports performed for a specific type of resource (customers, subscriptions, billets or carnês)."
+sidebar_label: "List Imports"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWF9v2zYQ/yrEPbWbbMv510QYhqbtsAXt2mJpnxxDpqSTzUYiVZJykxn6PAP2vk/QLzYcJduS7STu0A3DsLxEJo93v/vP4wIsnxoIRnCRF0pb/vm3z3+ggbEHBuNSC3sLwWgBEXKN+ry0MwhG42rsQYIm1qKwQkkI4JUw1jA7QyYcH8MK1KnSOSYsVZpxZgqMRSpiZm8LZCplGo0qdYzsUVwaq3LUxmOmjFZsjccikWVoDVOaxVzLz7+bx33woOCa52hRGwdO8hwhgPcGde98itKCB4JQzZAnqMEDjR9LoTGBIOWZwU30b7WaiwQZZ3OeiYRhzkXmcMdKWh5bQ1LxhudFRpJe4lxI9rOwUsTX7LvrvP56eq0iLnk/Vnk/0t+DByaeYc4hWABpDQEYq4WcQlV5K9gFn+IS8McS9S1sweNTZK/LPNqty5YQIS1OUXeloA4fllQLqb0TK504N7Lm3P6CiW3Ky8xCcOx7kPMbkZc5/WhDilWWYUySQ7fSICu4nd1jOg9QEq8RrMIGvNV32Akg8CDi8jpswshJMJZnWY7SGhhXbaWsLrHt5I2TXUPV2eJiObiS37DJCsyEPV9+dja6yCbssv3TUbYFTtiz+sPttFFP2PM6E4CyUKMplDRoyFAHvk//diE1LFWlTMhSSlpKkWABvCgyEXMiHHwwRL1Y6z9agEggOPCgpP/gD8/SFP2z3mkUJb0nh2e8x5MTv4fpaZweIk9P/YjYa+QWk1CrTwYCn7z1scQSk5BbCGSZZR4Yy7XtrKRCCjPrLBVaxWhMl4yLDJPQqrAWs5ay3imLpLNT16MQtVZULjaZr+issjxrftZENacWSV2vwlRkGDYx3PJZ2FS+fmzm0CU24leE4Gh4cuaUt6VxGSmTOqCXNpsLHvJCrPILbyxqybOQHFBjqqMpTLjly6WmgI/dV5gJszLXki8ZEA78g5Oef9obHr0bHgTDYeCffDv0A9+HtaYPEFLuEpThjpjgh70nR/5p74xHfu/o+JgfJcf4BA8P/o+J/3ZMjHeUaq41p+YiLOamta6iDxhTdy60KlBbUdctUmVHD9HIkzcyu12W5p0V+OJFH6q1Bbe7xV5c6uP9K3klJ8vgnATs/BMXVsgpa2JDyGmfjS6ksIJn7hCOr+SkDrRJwN6uyJhUtnUFSkpkVjEXcP0rOVnFWvdQrKj2Wkz6V7LRapUU25oRb+cdclTPihwfVPcFtzggSmrxjjt9NEZYKwkeULTwiBoB8ak20vHrg0GZ7A2lHcNfH0kDwQmh7aqbC3+bwFoIVJv18sHMqDYK6l9EuGXmbrX9WlzvqNf7aHlHQd/n6EbF365IX2CN/aW2+8ceBW5LZrfbPCyRRArrbq/zYdN7oHJ/HlDFdRF9Qa17irbXNCfwIEc7U82ym69ozoPBfDhoaAaLjdt6Re0M9Xw5g5U6o4HL2sIEg8GCF+InZWw1AA/mXAtSy9R3TrfhrprNPZ4Xome4TCJ10+9MUODR3sbauDVc3HO0qqrWDHtJHaoGMB+G7WF2ZVSCvhw7XBd3RDRDgZCpcpSNbV++eXb++pydv71g82GfmiWZoc7sZqGb7i8dNHfghYpLusfXtcUDizo3b9JL1HMRY8uEWVehAREq0yuNai7xPHZWbC4dlyX5CVmCJIb6d8ch/EOZ8C3rujmXUro+/HTThB4Uyticy5YgmvSbkrU1Fi3W08U//CLQONHijR0UGRd12SYTLJpoHsF8CMtCQMiDzflz7MHMheYIFouIG3yvs6qi5XpYpjBPhKFQvuMhoa1/d2jfie8ab9fz/5xnJZG4W/b+Yu6d2O+Tun4PWEser5P1C7V99EszRz9m/4bR+A7Vl9dTedtWe2mSzXio6H2geUL6Qt/v9Z50j3c6T1mdyKj3z+MYi/be1ihPvlxV9R9/eAdV9SdizO/S
+sidebar_class_name: "get api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Imports"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/imports/{collection_name}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists the imports performed for a specific type of resource (customers, subscriptions, billets or carnês).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-imports.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-imports.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-imports.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

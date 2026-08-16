@@ -1,0 +1,70 @@
+---
+id: get-financial-accounts-balances
+slug: "/api/v2/financial/accounts/_financial_account_uid/balances/get"
+title: "List balances"
+description: "Lists all balances of a specific financial account. Returns information about available, blocked, and automatically invested amounts."
+sidebar_label: "List balances"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List balances"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/balances"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all balances of a specific financial account. Returns information about available, blocked, and automatically invested amounts.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-balances.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-balances.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-balances.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

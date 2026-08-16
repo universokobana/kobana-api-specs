@@ -1,0 +1,70 @@
+---
+id: post-payment-accounts
+slug: "/api/v2/payment/accounts/post"
+title: "Crear cuenta de pago"
+description: "Cria uma nova cuenta de pago associada a uma cuenta financeira. Use quando a cuenta financeira precisa de mais de uma cuenta de pago (por exemplo, múltiplos convênios en lo mesmo banco). A cuenta é creada sin conexão bancária (`connection_uid` retorna `null`); associe uma conexão antes de Habilitar remessas/registro. Requer escopo `write` + `payment.accounts`."
+sidebar_label: "Crear cuenta de pago"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear cuenta de pago"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payment/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cria uma nova cuenta de pago associada a uma cuenta financeira. Use quando a cuenta financeira precisa de mais de uma cuenta de pago (por exemplo, múltiplos convênios en lo mesmo banco). A cuenta é creada sin conexão bancária (`connection_uid` retorna `null`); associe uma conexão antes de Habilitar remessas/registro. Requer escopo `write` + `payment.accounts`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-payment-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-payment-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-payment-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

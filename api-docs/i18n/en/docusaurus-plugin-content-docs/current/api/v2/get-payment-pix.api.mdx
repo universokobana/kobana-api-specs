@@ -1,0 +1,70 @@
+---
+id: get-payment-pix
+slug: "/api/v2/payment/pix/get"
+title: "List PIX Payments"
+description: "Lists all payments made via PIX. Supports pagination and returns detailed information about each payment."
+sidebar_label: "List PIX Payments"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List PIX Payments"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/payment/pix"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all payments made via PIX. Supports pagination and returns detailed information about each payment.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-payment-pix.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-payment-pix.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-payment-pix.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -31,6 +31,50 @@ deixar na árvore de trabalho dentro de `api-docs/`. Como não há revisão
 humana antes do deploy, o build de §3 é obrigatório — não termine com ele
 quebrado.
 
+## Invariante: a URL de um endpoint nunca muda sozinha
+
+A URL de cada página de operação (`/api/v2/data/bank_billet_queries/post`,
+`/api/v2/financial/accounts/statement_transactions/syncs/get`) é derivada
+**só** do método HTTP e do path do endpoint no spec — nunca do `summary`,
+da tag, ou de qualquer texto traduzido. Isso é proposital: resumo, tag e
+tradução mudam com frequência (reformulação de texto, reclassificação de
+categoria, refresh de tradução) e nenhuma dessas mudanças deve derrubar um
+link ou marcador que alguém salvou apontando para aquele endpoint. A única
+coisa que legitimamente muda a URL de um endpoint é o **próprio path ou
+método mudar upstream** — e nesse caso a URL mudar é o comportamento
+correto, não um bug.
+
+Essa regra vive em dois lugares, que precisam ficar em sincronia:
+
+- `api-docs/scripts/prepare-specs.mjs` atribui a cada operação um
+  `operationId` interno (`post-data-bank-billet-queries`) a partir de
+  método+path — só serve de nome de arquivo/id de sidebar, nunca aparece na
+  URL. É calculado de forma independente (não copiado) nos três specs
+  (pt/en/es), então fica idêntico nos três sem precisar sincronizar nada.
+- `api-docs/scripts/set-operation-slugs.mjs` roda depois de
+  `docusaurus gen-api-docs all` e sobrescreve a URL de cada página gerada
+  com um front matter `slug:` calculado direto do método+path daquela
+  operação, no formato `/api/v2/financial/accounts/_uid/put` — cada
+  segmento `{param}` do path vira `_param` (nunca é descartado: dropar um
+  parâmetro faria a URL parar de bater com a chamada real da API, e
+  arrisca duas operações diferentes colidindo na mesma página). Como
+  path+método nunca são traduzidos, o slug sai idêntico em pt/en/es sem
+  esforço extra. `api-docs/scripts/rewrite-legacy-links.mjs` replica a
+  mesma fórmula (`operationSlug`) para redirecionar links antigos do
+  readme.com para a URL nova — **se mexer na fórmula em um arquivo, mexa
+  nos dois**.
+
+**Nunca** volte a derivar id/URL do `summary` ou de texto traduzido — foi o
+esquema anterior e quebrava exatamente essa garantia (URL virava
+`/api/v2/create-a-bank-billet-query`, ficava diferente por idioma, e mudava
+sempre que o texto do spec era reescrito). Também não volte a descartar
+parâmetros de path para "desambiguar" listagem de detalhe (esquema anterior
+ao atual) — a URL deve espelhar a chamada real, parâmetro por parâmetro.
+Se `set-operation-slugs.mjs` lançar erro de colisão (duas operações caindo
+na mesma URL), não silencie removendo a checagem — normalmente é o mesmo
+path+método aparecendo duas vezes no spec (problema no spec upstream, não
+no script); investigue antes de mudar a fórmula.
+
 ## §1 — Levantar o que mudou nos specs
 
 `BASE_SHA` e `HEAD_SHA` vêm do ambiente quando a skill roda no GitHub Actions
@@ -62,9 +106,11 @@ git show "$HEAD_REF:$spec" | inv | sort > /tmp/inv-head.txt
 diff /tmp/inv-base.txt /tmp/inv-head.txt
 ```
 
-Registre: **endpoints adicionados/removidos**, **tags novas ou renomeadas**
-(cada tag é uma categoria da sidebar gerada), **summaries duplicados** (viram
-colisão de slug — ver §3) e **arquivos de spec novos ou renomeados** (ver §4).
+Registre: **endpoints adicionados/removidos ou com path/método alterado**
+(única mudança upstream que legitimamente muda uma URL — ver "Invariante"
+acima), **tags novas ou renomeadas** (cada tag é uma categoria da sidebar
+gerada, e uma tag nova precisa entrar em `apply-v2-menu-groups.mjs` — ver
+§3) e **arquivos de spec novos ou renomeados** (ver §4).
 
 ## §2 — Regenerar a referência
 
@@ -74,11 +120,16 @@ cd api-docs
 npm run gen-api-docs:all
 ```
 
-Esse comando encadeia, nesta ordem: `prepare-specs` → `clean-api-docs all` →
-`gen-api-docs all` → `fix-info-pages` → `rewrite-legacy-links`. Leia a saída
-inteira: os três scripts em `api-docs/scripts/` imprimem contagens e avisos
-(operationIds atribuídos e desambiguados, links `/reference/…` não resolvidos)
-que são o primeiro sinal de problema.
+Esse comando encadeia `prepare-specs` → `apply-v2-menu-groups` →
+`clean-api-docs all` → `gen-api-docs all` → `fix-info-pages` →
+`rewrite-legacy-links` → `remove-deprecated-operations` →
+`set-operation-slugs` → `fix-i18n-sidebar-ids` → `dedupe-tag-group-intro` →
+`translate-info-title` → `fix-sidebar-translation-keys` →
+`add-overview-cards` → `translate-payloads` (en/es) — a ordem exata está em
+`api-docs/package.json`, script `gen-api-docs:all`. Leia a saída inteira: os
+scripts em `api-docs/scripts/` imprimem contagens e avisos (operationIds
+atribuídos e desambiguados, páginas com `slug:` sobrescrito, links
+`/reference/…` não resolvidos) que são o primeiro sinal de problema.
 
 ## §3 — Validar com o build
 
@@ -93,7 +144,9 @@ nem spec:
 
 | Sintoma | Camada a corrigir |
 | --- | --- |
-| Endpoint sumiu da referência / duas operações no mesmo arquivo | colisão de slug — `api-docs/scripts/prepare-specs.mjs` (regra de `operationId`) |
+| Endpoint sumiu da referência / duas operações no mesmo arquivo | colisão de id interno — `api-docs/scripts/prepare-specs.mjs` (regra de `operationId`, método+path) |
+| Erro `set-operation-slugs: "..." would serve both...` | colisão de URL depois de remover parâmetros de path — ver "Invariante" acima; ajuste `operationSlug` em `set-operation-slugs.mjs` **e** `rewrite-legacy-links.mjs` |
+| Tag nova sem classificação (`apply-v2-menu-groups: tag(s) in use with no menu classification`) | adicione a tag em `TAG_INFO`/`GROUPS` (e, se o nome vier em pt-BR, em `TAG_RENAME`) em `api-docs/scripts/apply-v2-menu-groups.mjs` |
 | Link quebrado para `/reference/<slug>` vindo de um `description` do spec | mapa em `api-docs/scripts/rewrite-legacy-links.mjs` |
 | Página de introdução da versão no lugar errado ou rótulo em inglês | `api-docs/scripts/fix-info-pages.mjs` |
 | Link quebrado entre páginas escritas à mão | a página em `api-docs/docs/**` |

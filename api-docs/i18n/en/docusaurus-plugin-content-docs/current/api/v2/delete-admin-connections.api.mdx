@@ -1,0 +1,72 @@
+---
+id: delete-admin-connections
+slug: "/api/v2/admin/connections/_uid/delete"
+title: "Delete a Connection"
+description: "Deletes a connection."
+sidebar_label: "Delete a Connection"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVV9tu20YQ/ZXFPLUAdbEsNw1RFFFqozHcJkZitwFcwRmRQ2kjcpfZXTIWBH5M2+c+9RP8Y8UsKermOHHSPtQvFpezy3Nmzlx2CQ6nFsIr+EErRZGTWlkYB2ApKox0CwivljAhNGRGhZtBeDWuxgHEZCMjczaHEI4pJUdWoIjaU7q/KdH8XcxIxGwitRI62TIT72WaCkO2SJ2QSrgZCUOZLjH1pmkqpLMCrdWRRA8vEBnOpZoK6YTMcm2tnKQknBaFJX9AbqiUurDpYvUlisXo/LTFBAHkaDAjR8Z6igozghAuLZnOaErKQQCSuc0IYzIQgKF3hTQUQ5hgamnXB+dGlzImgaLEVMaCMpSpSLRhCA4jZ7sQAN1glqf8pTMqpRI/S6dkNBffzbP615O5nqDCbqSz7sR8DwHYaEYZQrgEt8h5p3VGqilUVdDCft05jSnLtSMVLTpntHgo+o3tYk4LdiY7kZQTudERWcsON5SnuNjmMXx/8ujZLz8emV8PXz56PT34RMSFjFcYc3Qz2AV0eXl6zALgcK6luUXEmYI2kQzoYHDU7w86yeE3cWf47VHcwcc46RwND5MkipNH8eE396Ib8+k218qS5feD/pD/bQPbAFMFMLzfRCjtRKILxWRZByyscAmY56mMvJx7by1vWq6JLME6dIWFcNgfBkDG6EakTjrP9Pntn1okWgoW/+1fJaWCFB9v0AgtDE2ldUb7b8a8QWl3vYIRk0OZQggn1lFrKxSfSTfSOgqELvzxPmkx1l2oxtUdntOTtxS5raBcrcC3wMcB5EbnZJys3bpi1x4jlaOpV2kmlcyKDMKDfj+ADG/qp6PHj3f18ezi4lzUJwkmudKK/2hXnNyE4s2w33+zIVb24bDfD4b9g2A4GARH/T6zWvm3hYPG4KIGc+oosxAeBCDrX/vUt7k1EVoCqsWLpA7atsqCdkUVaQr7xfSpkZSIjbW7qJ2qusqMzk/FhZ6T2iUKflXE5E2kKm9/T2XMkjhHc/tHRhxzPTFyiu72byM1sC9quXwJ+hMG6SPSIPU4vdKvPYE9oLsGEAAWbkbKNRnSLq9VzFh9Af8ysM8xa4XT9gPhZuhEgjKlWKzBNXQw04VyeyTqZU64wjqdkbn29d9b5dLQNToPepV8D0Ad7Grurv7Lp66YrDHXVKakyCC3wF0VRai4QE1ITFJU8z1WvibknF2JjNAIysTEoIq0LyMlCUtGFFnT61YSuzep/rs8+iz5fp6O/rVAVlUAGMeSg4Xp+YYLfJeu9gRLluPYePdjuz/yPmj7STlocqyq/CY29AI6jSEE3wWog3EmVSfaGBMDyMjN9NrGj1U8JEKvHPT8ht7Ght6ykHHFLZhMuRq8CsO9aOZcbsNeb4m5fKatq3oQQIlG4iStFdG88J1ScVO44qWORRVP9E13a2ziEpLLnTWfNQkWqWM5fnBr5eeA1fj7ilteDaAcXG/OwW0wGfpqrODn2sgHR6pEb6gZzl48HT0f+YpcDrp9pkjG1qFtFrbjfeah+Q3HOioyUg6bOciRyeyL5BWZUka04cJ0m1CPDbXtFFY3MwhG3ovNIPaqyLVx1HQKCHYCgm+LGPe8Wxe3EGy9+cmuCwPItXUZqo0P1ZcEgdvj3Bbf5XpG+l/eKRpFOLpxvTxF6UdE789lkxhXUA5YnZwadTg2sinkoXgcwMzr/AqWywlaujRpVfHyu4IM38fG68zwGRRLy78/MNpv+vSrl82c9rX44Hx9J4dVEVcLn5ZpwU8QwJwWzSzvi2Jz23gYqE+7ON0Jq/781p2tBcfl9tNBPPT+cw+cu+5iW6hqs1EUUb6JeO9OwHWoLbDHJz+dXJxAVf0DESNoBQ==
+sidebar_class_name: "delete api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a Connection"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v2/admin/connections/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a connection.
+        The deletion of a connection will result in the removal of all its associations, making it impossible to use the previously connected API.
+      
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./delete-admin-connections.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./delete-admin-connections.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./delete-admin-connections.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

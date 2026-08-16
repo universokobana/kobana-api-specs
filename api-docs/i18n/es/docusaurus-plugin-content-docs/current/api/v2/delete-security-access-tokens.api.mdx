@@ -1,0 +1,70 @@
+---
+id: delete-security-access-tokens
+slug: "/api/v2/security/access_tokens/_uid/delete"
+title: "Eliminar Token de Acceso"
+description: "Elimina permanentemente un token de acceso del sistema. Solo se pueden eliminar tokens revocados o vencidos."
+sidebar_label: "Eliminar Token de Acceso"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWNtu20YQ/ZXFPLUAZcmy3DREUcRthMZImxix0wYwBGfFHUlrk7vM7pK1IPBj0j73yZ+gHytml5REyc7FaftSv9jici9nZs7MLM8CHJ9aiM/hKEnQWnamr1BZGEVgMSmMdHOIzxcwRm7QHBVuBvH5qBpFINAmRuZOagUxDFOZScVZjibjCpXDjP6wQjFHOzKBjNMJmglMmZXWYcb32KlONbPI8gIFKoZhGxMWWWaw1AkX2jLNSlSJFNruQQQ5NzxDh8Z6dIpnCDG8tmg6R1NUDiKQBGuGXKCBCAy+K6RBAfGEpxa34R+riTYZN4Q30cagZphi4szyRslEs3L5PpVCMzqXJVo5nriABK95lqd0+nMspWK/SKdkcsW+u8rCrydXeswV30t0tjc230MENplhxiFegJvntNI6I9UUqipamfKmcywwy7VDlcw7z3H+uRb9mPISyetytY/kAT+W0nHDDOZGiyJJ5PLGxyc3OkHLM4nK6bZtg9+Hj579+tOh+e3g1aM30/1PtKKQosGdczdroXam2AH9+vipp8dZQxlPSt2CwpPkYr9/MDj85tG3j3sfBDKi82yulUVL7/u9Af1rnxnOqoknNFQRDHoHu/OGac1kpQNbmUWzsS4C4gVxL14Az/NUJpyWdi8trV+sTViAddwVFuJB7yACNEbXPE60IAMm2oylEKggAiedN3toLTYAln9qlusagcFMl1LoPahG1S3e0ONLTFzL9ecNgNXhowhyo3M0TgZXNQhX20jlcOqJl0klsyKDeL/XiyDj1+Hp8PHjHQ4ub4ScUsYztI4LzZ6dnZ34CPtz99jwMmZvB73e2w26kSsGvV406O1Hg34/Ouz1yLDGTStE3Bg+D3iOHWYW4v0IZPi1a33bvNqrC+Bq/nLifb9Fnmg1ooo0hd2K9zQ8hewZG/TZ1jZsTeOTYyZVXUS2bYXbp0EEJ9ws/8jQGc302Mgpd8sbIzWQOwJVvsSAdXTaqEueSuGpe+GHd/BuT4AIeOFmqFxN+dWw0u5iogslPGRftL8M8wudjU1wdM7N8n1wzrsC2YSn6fKGpZwFeD4utUU804VyO3aEYUrcwjqdobnAjMvUz8qlwQvuPG6BjoY/B3i0TcDb+ON4mvoS3QbtzZmiQrO8YVuxWdUeyifDULFxylWyy6l1jZjIhGZmbGxoJhCOMpSOImPe4qa9wQfz7N9LrXvR+X6E+sfCWVURcCEkRZOnJxsu8O242rkgkVvRMq6koAsNfGyDj7xfd4ayX+db5dcM7m5ySjNU1KXM/RvWoNWwGgwviG4TLVmurV3+VRJt65MM08zgVFpnwpm+xa0rwzogMLQOV3NDm8NruilGTBd+e4EpUiN5aHYPze6h2T00u4dm939udlUENNGn4bGAGHx7wE6jXHS84mA7QUyg6oluptcTvZBAigZ0y363WdUNqy7Cqu6ikKKiz0w0ZaM3FIba1cy53Mbd7oLn8pm2rupCBCU3ko/TQI/6hW+mivrGOQ11LFdirK/3WsoAFZZcbo35RJrwInXEzTuXVv5btzHglLpiAFD2LzaVm1VkCXrz6UzPYZIPk1QTvUFteP7yh6MXR75cl/09+uAmN4Q41wNbua6TgsQfvhIWUu6XC2TPPWz6rEWT2ZeTUzSlTHDDmWnbtC5N1LZT2ObCwhPvz1phOC1ybRzWDQWirdDwy0LwHT+HyheDDYufbDszglxbl3G1cdCwUaZ2tYmW+Yv1req/FsXq2Dq8dt085VKRluH9sah5fg5lHzaUvQhaXIcIYpJsRhHMPG3PYbEYc4uvTVpVNPyuQEOC4GhNdJ8QQlr6fYcYtemTr17VN7Ov2d1qz62WNBVazX2apQU9QQRXOK+lJl/xaoHs81DdX/+7FWqA1JIjV4Cpvn46sH9CxvsAxNtkxhbSMI0Ck29asfO5QPVnVV2fDn8eng2hqv4GvqLSWg==
+sidebar_class_name: "delete api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Eliminar Token de Acceso"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v2/security/access_tokens/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Elimina permanentemente un token de acceso del sistema. Solo se pueden eliminar tokens revocados o vencidos.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./delete-security-access-tokens.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./delete-security-access-tokens.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./delete-security-access-tokens.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

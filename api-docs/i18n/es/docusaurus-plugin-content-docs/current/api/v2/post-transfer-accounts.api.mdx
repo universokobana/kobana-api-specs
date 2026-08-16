@@ -1,0 +1,70 @@
+---
+id: post-transfer-accounts
+slug: "/api/v2/transfer/accounts/post"
+title: "Crear cuenta de transferencia"
+description: "Cria uma nova cuenta de transferencia associada a uma cuenta financeira. Use quando a cuenta financeira precisa de mais de uma cuenta de transferencia. A cuenta é creada sin conexão bancária (`connection_uid` retorna `null`); associe uma conexão antes de Habilitar remessas/registro. Requer escopo `write` + `transfer.accounts`."
+sidebar_label: "Crear cuenta de transferencia"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear cuenta de transferencia"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/transfer/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cria uma nova cuenta de transferencia associada a uma cuenta financeira. Use quando a cuenta financeira precisa de mais de uma cuenta de transferencia. A cuenta é creada sin conexão bancária (`connection_uid` retorna `null`); associe uma conexão antes de Habilitar remessas/registro. Requer escopo `write` + `transfer.accounts`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-transfer-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-transfer-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-transfer-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

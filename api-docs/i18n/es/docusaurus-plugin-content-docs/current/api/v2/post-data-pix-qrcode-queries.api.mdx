@@ -1,0 +1,70 @@
+---
+id: post-data-pix-qrcode-queries
+slug: "/api/v2/data/pix_qrcode_queries/post"
+title: "Crear una Consulta de Código QR de Pix"
+description: "Crea una nueva consulta de Código QR de Pix a través del qrcode. La consulta se procesa automáticamente y devuelve información detallada del Código QR de Pix."
+sidebar_label: "Crear una Consulta de Código QR de Pix"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear una Consulta de Código QR de Pix"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/data/pix_qrcode_queries"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Crea una nueva consulta de Código QR de Pix a través del qrcode. La consulta se procesa automáticamente y devuelve información detallada del Código QR de Pix.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-data-pix-qrcode-queries.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-data-pix-qrcode-queries.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-data-pix-qrcode-queries.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

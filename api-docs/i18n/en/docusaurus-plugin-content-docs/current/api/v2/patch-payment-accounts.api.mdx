@@ -1,0 +1,70 @@
+---
+id: patch-payment-accounts
+slug: "/api/v2/payment/accounts/_uid/patch"
+title: "Update Payment Account"
+description: "Updates editable attributes of a payment account. Accepts `remittance_enabled` (boolean, controls EDI remittance generation), `provider_data.service_point_number` (string, service point — for example `numeroPa` in Sicoob) and `provider_data.cooperative_cnpj` (string, Sicoob cooperative CNPJ). The body accepts partial PATCH: send only the fields you want to update."
+sidebar_label: "Update Payment Account"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "patch api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Payment Account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v2/payment/accounts/{uid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates editable attributes of a payment account. Accepts `remittance_enabled` (boolean, controls EDI remittance generation), `provider_data.service_point_number` (string, service point — for example `numeroPa` in Sicoob) and `provider_data.cooperative_cnpj` (string, Sicoob cooperative CNPJ). The body accepts partial PATCH: send only the fields you want to update.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./patch-payment-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./patch-payment-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./patch-payment-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,73 @@
+---
+id: put-transfer-internal-reschedule
+slug: "/api/v2/transfer/internal/_uid/reschedule/put"
+title: "Reschedule (change date) an internal Transfer"
+description: "> **Asynchronous Processing:** creates a rescheduling command (change of payment date) for the Transfer."
+sidebar_label: "Reschedule (change date) an internal Transfer"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Reschedule (change date) an internal Transfer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v2/transfer/internal/{uid}/reschedule"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+> **Asynchronous Processing:** creates a rescheduling command (change of payment date) for the Transfer.
+
+> ⚠️ **Provider support:** no financial provider currently supports internal transfer rescheduling via API — the call responds `422` ("does not have support for this operation via API for this financial provider"). The endpoint exists for symmetry and will automatically enable support when a provider implements it.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./put-transfer-internal-reschedule.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./put-transfer-internal-reschedule.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./put-transfer-internal-reschedule.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

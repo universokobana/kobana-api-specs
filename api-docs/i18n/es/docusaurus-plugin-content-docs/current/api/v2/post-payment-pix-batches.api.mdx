@@ -1,0 +1,83 @@
+---
+id: post-payment-pix-batches
+slug: "/api/v2/payment/pix_batches/post"
+title: "Crear um Lote de pago Pix"
+description: "Este endpoint se utiliza para la generación de un lote de pago."
+sidebar_label: "Crear um Lote de pago Pix"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear um Lote de pago Pix"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payment/pix_batches"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+Este endpoint se utiliza para la generación de un lote de pago.
+
+## Requisito previo
+
+Para emitir um lote de pago é necessário ter uma cuenta Financeira, informada em `financial_account_uid`. A cuenta de pago aplicada ao lote é definida em `payment_account_uid`; si se omite, se usa la más antiga vinculada à cuenta financeira; si se informa, debe pertenecer à `financial_account_uid`.
+
+## Eventos de Webhook
+
+O evento `payment.batch.db.created` é disparado nesta operação.
+
+Ao cadastrar um Lote de pago, o sistema cria um comando para registrá-lo en la instituição financeira. Após o registro del lote ser confirmado en la instituição, o evento `payment.pix_batch.confirmed` é disparado.
+
+O evento `payment.db.created` também é disparado nesta operação caso o lote contenha um novo pago.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-payment-pix-batches.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-payment-pix-batches.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-payment-pix-batches.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

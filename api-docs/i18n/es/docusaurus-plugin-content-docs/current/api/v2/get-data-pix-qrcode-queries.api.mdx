@@ -1,0 +1,70 @@
+---
+id: get-data-pix-qrcode-queries
+slug: "/api/v2/data/pix_qrcode_queries/get"
+title: "Listar Consultas de Código QR de Pix"
+description: "Lista todas las consultas de Código QR de Pix realizadas por la cuenta autenticada. Permite filtrar por etiquetas, external_id y otros parámetros."
+sidebar_label: "Listar Consultas de Código QR de Pix"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar Consultas de Código QR de Pix"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/data/pix_qrcode_queries"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todas las consultas de Código QR de Pix realizadas por la cuenta autenticada. Permite filtrar por etiquetas, external_id y otros parámetros.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-data-pix-qrcode-queries.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-data-pix-qrcode-queries.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-data-pix-qrcode-queries.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

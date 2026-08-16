@@ -1,0 +1,70 @@
+---
+id: get-transfer-accounts
+slug: "/api/v2/transfer/accounts/get"
+title: "List Transfer Accounts"
+description: "Lists all transfer accounts registered in the account. Supports pagination."
+sidebar_label: "List Transfer Accounts"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Transfer Accounts"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/transfer/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all transfer accounts registered in the account. Supports pagination.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-transfer-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-transfer-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-transfer-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

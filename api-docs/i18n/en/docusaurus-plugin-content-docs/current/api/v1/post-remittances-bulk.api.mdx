@@ -1,0 +1,72 @@
+---
+id: post-remittances-bulk
+slug: "/api/v1/remittances/bulk/post"
+title: "Create CNABs in Batch"
+description: "Create CNABs in Batch."
+sidebar_label: "Create CNABs in Batch"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create CNABs in Batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/remittances/bulk"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create CNABs in Batch.
+
+Remittance requests will be made according to occurrence IDs. A Remittance request will be created for each wallet associated with the occurrences. After Remittance creation, they will be processed and at the end of processing notifications will be issued through Webhooks.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-remittances-bulk.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-remittances-bulk.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-remittances-bulk.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,83 @@
+---
+id: post-payment-bank-billet-batches
+slug: "/api/v2/payment/bank_billet_batches/post"
+title: "Crear um Lote de pago de Boletos"
+description: "Este endpoint se utiliza para la generación de un lote de pago."
+sidebar_label: "Crear um Lote de pago de Boletos"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear um Lote de pago de Boletos"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payment/bank_billet_batches"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+Este endpoint se utiliza para la generación de un lote de pago.
+
+## Requisito previo
+
+Para emitir um lote de pago é necessário ter uma cuenta Financeira, informada em `financial_account_uid`. A cuenta de pago aplicada ao lote é definida em `payment_account_uid`; si se omite, se usa la más antiga vinculada à cuenta financeira; si se informa, debe pertenecer à `financial_account_uid`.
+
+## Eventos de Webhook
+
+O evento `payment.batch.db.created` é disparado nesta operação.
+
+Ao cadastrar um Lote de pago, o sistema cria um comando para registrá-lo en la instituição financeira. Após o registro del lote ser confirmado en la instituição, o evento `payment.bank_billet_batch.confirmed` é disparado.
+
+O evento `payment.db.created` também é disparado nesta operação caso o lote contenha um novo pago.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-payment-bank-billet-batches.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-payment-bank-billet-batches.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-payment-bank-billet-batches.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

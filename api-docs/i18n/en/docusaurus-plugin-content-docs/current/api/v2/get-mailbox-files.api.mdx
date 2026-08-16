@@ -1,0 +1,70 @@
+---
+id: get-mailbox-files
+slug: "/api/v2/mailbox/files/get"
+title: "List Mailbox Files"
+description: "Lists the Mailbox Files of the account."
+sidebar_label: "List Mailbox Files"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Mailbox Files"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/mailbox/files"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists the Mailbox Files of the account.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-mailbox-files.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-mailbox-files.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-mailbox-files.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

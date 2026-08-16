@@ -1,0 +1,72 @@
+---
+id: get-bank-billet-batch-exports
+slug: "/api/v1/bank_billet_batch_exports/_id/get"
+title: "Batch Export File"
+description: "Batch export file."
+sidebar_label: "Batch Export File"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWM1u3DYQfpXBnBpA+9fsJUJRxEHcxkiaGLFzKGxjwxVHK8YUqZCU4u1iH6booWiBPoVfrBhK+2s7btNcCtiH9YqaGc7P9w05u8AgZh7TMzy8qqwL4vr3698sSAuvbCC8SNBTVjsV5pieLXBKwpE7qEOB6dnF8iJBST5zqgrKGkzxmQhZARRNQa409c/NuTnKIRQUn6EQHowNMKcAUyIDlbMZeU8yyjjylTWe4JPSGqYE4+G4D9sGlAehHQk5h/Yztw6k/WS0FXfYEOBIKkdZgGA3llZKfUywEk6UFMj5GKcRJWGK7zy53sGMTMAEFQdYkJDkMEFHH2vlSGKaC+1pPxHHzjZK8taN0EoClULp6GpmTRBZ8LwrXYmy0rzTS2qUgZ9UMCq7hO8uy/bb00s7FUb0M1v2p+57TNBnBZUC0wWGecWaPjhlZrhcJmu3lVy5W4lQ7DgbXH3D16PnYHOY7pdu278nT558busL3qJNuuf3j4ff8r/PYGNGhpwIJMHXGdc/r7We4zLB8XB0U5cRRyaoTPAC5ELp2lEfjkyb3mAvyWCCnFyuVrpAUVW6kx988GxlsYlngT6IUHtMx8NRguSc7SofVIgFOWWLIAkOjo9Ameb6V62khW9OyDVKWpeCpIa0rUoy4VHcWrJebUQdCuvUL8RVkBSE0pjiG9ixeP0HSJWTIxMIGHyQCSlgZX3w7u2rBEqhPFAJRQiVTweDbkdyvr+Di4GjaCqjQUxET1JPcFItLi+WtxTOTj9QxpiuHJsLqi3bKidrOWUCzSLcd8vx4vT0GFpphk5MXx8Or1J4Px4O3/e5jqucro0J58ScgRmo9Pc70xViH2w3Oo5TlMPW2r5DK4hw1mMJWvfact1n/ZANAct21mrT9Ssx1TTp4NZaXJX6PpvPoxzJ1stt17s9zvG0oI2/3PGkyluwxBZCIisiVGgFFOsIRPgPQDlHDoL/kjUFmtEkuojt8nj4+CYxj8mVyvsdUv5saz5AuMsXoqGuJ7cdCE4yW1GMIhTKQya07n8hcR/fStxjJlMMSjjggwUcn2DeQmOz6z+hcpQpL5iIFWkLJRnroS65EIE8kM9sZX0K58jnC3xyKtA59jcUz62bKinJPLDrgV1fj13je45M5tP6svSFlBnfSpnXfOXLrYLKen/9V0MayLB5JxxYcDRTPji7YYCxYZLb2uyccIc+0FoWDNukK+UDJWDraF6SpiCk7T8Q54E4X4c4ywTZYIT+kcQUZxR6U2Eue1OldfwesqLXUshjgiWFwnaC8d7PowwOmtGAtSat1iRqTTqtwULJJV+9Y2gtdWrHkF8FthCVemF9WA4wwUY4xWXwLTPji0hIU5c8aIlK9bwwcmqvdtOACb/bW4sjVi5qHRird6ou4yV8NaudMLNaB5rRZHtoW6OAXV+NE/zcCvEYgcrkdgvq+PLNs4PXB7Hyzag/5BDJ+RY13cIulF5G16LCc5vVfEOOBcIEA7nSv8njPTejrRTqPUiwoPW92tuu1YksZrEbcU5qLg1112lM9goiPtRS3MhuHMKYAa3y0/0UJlhZH0phtjZqW3A7HMMP7Vi0E+1i04j/v+NvB4pAV2FQaaEMd46Y0kVHkTNsRpjgnSTBBFMlGa5FxPsZLhZT4emd08slL3+syfGPCBcbhkQmSRWb1h2D9HZ2v3nbXSIfwd0j662RrFq9mUd+6pqfMMFLmrfjcjyPutn+3zn1zwb9W71qd9/5jWHtG0/z7fuDLKNq+92Nw56Zv25rPx6e4nL5N370MdQ=
+sidebar_class_name: "get api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Batch Export File"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/bank_billet_batch_exports/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Batch export file.
+
+If the file has not yet been processed the response will be 404. If the file is already ready for download the response will be a redirect to the file download.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-bank-billet-batch-exports.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-bank-billet-batch-exports.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-bank-billet-batch-exports.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

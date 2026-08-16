@@ -30,7 +30,7 @@
       "get": {
         "summary": "Lista todas las cuentas PIX automáticas",
         "tags": [
-          "Pix Automático - Conta"
+          "Automatic Pix - Account"
         ],
         "security": [
           {
@@ -230,12 +230,12 @@
             }
           }
         },
-        "operationId": "lista-todas-as-contas-pix-automaticas"
+        "operationId": "get-charge-automatic-pix-accounts"
       },
       "post": {
         "summary": "Crear nueva cuenta PIX automática",
         "tags": [
-          "Pix Automático - Conta"
+          "Automatic Pix - Account"
         ],
         "security": [
           {
@@ -348,7 +348,7 @@
             }
           }
         },
-        "operationId": "criar-nova-conta-pix-automatica"
+        "operationId": "post-charge-automatic-pix-accounts"
       }
     },
     "/v2/charge/automatic_pix/accounts/{uid}": {
@@ -366,7 +366,7 @@
       "get": {
         "summary": "Ver cuenta PIX automática",
         "tags": [
-          "Pix Automático - Conta"
+          "Automatic Pix - Account"
         ],
         "security": [
           {
@@ -452,12 +452,12 @@
             }
           }
         },
-        "operationId": "visualizar-conta-pix-automatica"
+        "operationId": "get-charge-automatic-pix-accounts-2"
       },
       "patch": {
         "summary": "Actualizar cuenta PIX automática",
         "tags": [
-          "Pix Automático - Conta"
+          "Automatic Pix - Account"
         ],
         "security": [
           {
@@ -517,12 +517,12 @@
             }
           }
         },
-        "operationId": "atualizar-conta-pix-automatica"
+        "operationId": "patch-charge-automatic-pix-accounts"
       },
       "delete": {
         "summary": "Eliminar cuenta PIX automática",
         "tags": [
-          "Pix Automático - Conta"
+          "Automatic Pix - Account"
         ],
         "security": [
           {
@@ -570,14 +570,14 @@
             }
           }
         },
-        "operationId": "excluir-conta-pix-automatica"
+        "operationId": "delete-charge-automatic-pix-accounts"
       }
     },
     "/v2/charge/automatic_pix/locations": {
       "get": {
         "summary": "Lista todas las Ubicaciones del Pix Automático",
         "tags": [
-          "Pix Automático - Location"
+          "Automatic Pix - Location"
         ],
         "security": [
           {
@@ -802,12 +802,12 @@
             }
           }
         },
-        "operationId": "lista-todas-as-locations-do-pix-automatico"
+        "operationId": "get-charge-automatic-pix-locations"
       },
       "post": {
         "summary": "Crear nueva Ubicación del PIX Automático",
         "tags": [
-          "Pix Automático - Location"
+          "Automatic Pix - Location"
         ],
         "security": [
           {
@@ -938,7 +938,7 @@
             }
           }
         },
-        "operationId": "criar-nova-location-do-pix-automatico"
+        "operationId": "post-charge-automatic-pix-locations"
       }
     },
     "/v2/charge/automatic_pix/locations/{uid}": {
@@ -956,7 +956,7 @@
       "get": {
         "summary": "Consulta una Ubicación específica del PIX Automático",
         "tags": [
-          "Pix Automático - Location"
+          "Automatic Pix - Location"
         ],
         "security": [
           {
@@ -1075,14 +1075,14 @@
             }
           }
         },
-        "operationId": "consulta-uma-location-do-pix-automatico-especifica"
+        "operationId": "get-charge-automatic-pix-locations-2"
       }
     },
     "/v2/charge/automatic_pix/pix": {
       "get": {
         "summary": "Lista todas las cobrancias PIX automáticas",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -1351,14 +1351,14 @@
             }
           }
         },
-        "operationId": "lista-todas-as-cobrancas-pix-automaticas"
+        "operationId": "get-charge-automatic-pix-pix"
       }
     },
     "/v2/charge/automatic_pix/recurrences/{recurrence_uid}/pix": {
       "post": {
         "summary": "Crear nueva cobrancia PIX automática",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -1515,14 +1515,14 @@
             }
           }
         },
-        "operationId": "criar-nova-cobranca-pix-automatica"
+        "operationId": "post-charge-automatic-pix-recurrences-pix"
       }
     },
     "/v2/charge/automatic_pix/pix/{uid}": {
       "get": {
         "summary": "Información de la cobrancia PIX automática",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -1678,12 +1678,12 @@
             }
           }
         },
-        "operationId": "informacoes-da-cobranca-pix-automatica"
+        "operationId": "get-charge-automatic-pix-pix-2"
       },
       "patch": {
         "summary": "Actualizar cobrancia PIX automática",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -1854,14 +1854,14 @@
             }
           }
         },
-        "operationId": "atualizar-cobranca-pix-automatica"
+        "operationId": "patch-charge-automatic-pix-pix"
       }
     },
     "/v2/charge/automatic_pix/pix/{uid}/cancel": {
       "put": {
         "summary": "Cancelar cobrancia PIX automática",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -2054,14 +2054,14 @@
             }
           }
         },
-        "operationId": "cancelar-cobranca-pix-automatica"
+        "operationId": "put-charge-automatic-pix-pix-cancel"
       }
     },
     "/v2/charge/automatic_pix/pix/{uid}/retry": {
       "put": {
         "summary": "Reintentar cobrancia PIX automática",
         "tags": [
-          "Pix Automático - Cobrança"
+          "Automatic Pix - Charge"
         ],
         "security": [
           {
@@ -2273,14 +2273,14 @@
             }
           }
         },
-        "operationId": "retentar-cobranca-pix-automatica"
+        "operationId": "put-charge-automatic-pix-pix-retry"
       }
     },
     "/v2/charge/automatic_pix/recurrences": {
       "get": {
         "summary": "Lista todas las recurrencias PIX automáticas",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -2545,12 +2545,12 @@
             }
           }
         },
-        "operationId": "lista-todas-as-recorrencias-pix-automaticas"
+        "operationId": "get-charge-automatic-pix-recurrences"
       },
       "post": {
         "summary": "Crear nueva recurrencia PIX automática",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -2703,14 +2703,14 @@
             }
           }
         },
-        "operationId": "criar-nova-recorrencia-pix-automatica"
+        "operationId": "post-charge-automatic-pix-recurrences"
       }
     },
     "/v2/charge/automatic_pix/recurrences/{uid}": {
       "get": {
         "summary": "Información de la recurrencia PIX automática",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -2864,12 +2864,12 @@
             }
           }
         },
-        "operationId": "informacoes-da-recorrencia-pix-automatica"
+        "operationId": "get-charge-automatic-pix-recurrences-2"
       },
       "patch": {
         "summary": "Actualizar recurrencia PIX automática",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -3057,14 +3057,14 @@
             }
           }
         },
-        "operationId": "atualizar-recorrencia-pix-automatica"
+        "operationId": "patch-charge-automatic-pix-recurrences"
       }
     },
     "/v2/charge/automatic_pix/recurrences/{uid}/update": {
       "put": {
         "summary": "Actualizar recurrencia PIX automática mediante comando",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -3205,14 +3205,14 @@
             }
           }
         },
-        "operationId": "atualizar-recorrencia-pix-automatica-via-comando"
+        "operationId": "put-charge-automatic-pix-recurrences-update"
       }
     },
     "/v2/charge/automatic_pix/recurrences/{uid}/cancel": {
       "put": {
         "summary": "Cancelar recurrencia PIX automática",
         "tags": [
-          "Pix Automático - Recorrência"
+          "Automatic Pix - Recurrence"
         ],
         "security": [
           {
@@ -3344,14 +3344,14 @@
             }
           }
         },
-        "operationId": "cancelar-recorrencia-pix-automatica"
+        "operationId": "put-charge-automatic-pix-recurrences-cancel"
       }
     },
     "/v2/charge/automatic_pix/requests": {
       "get": {
         "summary": "Lista todas las solicitudes PIX automáticas",
         "tags": [
-          "Pix Automático - Solicitação"
+          "Automatic Pix - Request"
         ],
         "security": [
           {
@@ -3614,14 +3614,14 @@
             }
           }
         },
-        "operationId": "lista-todas-as-solicitacoes-pix-automaticas"
+        "operationId": "get-charge-automatic-pix-requests"
       }
     },
     "/v2/charge/automatic_pix/recurrences/{recurrence_uid}/requests": {
       "post": {
         "summary": "Crear nueva solicitud PIX automática",
         "tags": [
-          "Pix Automático - Solicitação"
+          "Automatic Pix - Request"
         ],
         "security": [
           {
@@ -3784,14 +3784,14 @@
             }
           }
         },
-        "operationId": "criar-nova-solicitacao-pix-automatica"
+        "operationId": "post-charge-automatic-pix-recurrences-requests"
       }
     },
     "/v2/charge/automatic_pix/requests/{uid}": {
       "get": {
         "summary": "Información de la solicitud PIX automática",
         "tags": [
-          "Pix Automático - Solicitação"
+          "Automatic Pix - Request"
         ],
         "security": [
           {
@@ -3939,12 +3939,12 @@
             }
           }
         },
-        "operationId": "informacoes-da-solicitacao-pix-automatica"
+        "operationId": "get-charge-automatic-pix-requests-2"
       },
       "patch": {
         "summary": "Actualizar solicitud PIX automática",
         "tags": [
-          "Pix Automático - Solicitação"
+          "Automatic Pix - Request"
         ],
         "security": [
           {
@@ -4107,14 +4107,14 @@
             }
           }
         },
-        "operationId": "atualizar-solicitacao-pix-automatica"
+        "operationId": "patch-charge-automatic-pix-requests"
       }
     },
     "/v2/charge/automatic_pix/requests/{uid}/cancel": {
       "put": {
         "summary": "Cancelar solicitud PIX automática",
         "tags": [
-          "Pix Automático - Solicitação"
+          "Automatic Pix - Request"
         ],
         "security": [
           {
@@ -4299,14 +4299,14 @@
             }
           }
         },
-        "operationId": "cancelar-solicitacao-pix-automatica"
+        "operationId": "put-charge-automatic-pix-requests-cancel"
       }
     },
     "/v2/charge/payments": {
       "get": {
         "summary": "Listar Recibos",
         "tags": [
-          "Recebimentos"
+          "Receipts"
         ],
         "security": [
           {
@@ -4537,12 +4537,12 @@
             }
           }
         },
-        "operationId": "listar-recebimentos"
+        "operationId": "get-charge-payments"
       },
       "post": {
         "summary": "Informar Recibo",
         "tags": [
-          "Recebimentos"
+          "Receipts"
         ],
         "security": [
           {
@@ -4697,14 +4697,14 @@
           "required": true,
           "description": "Datos del recibo."
         },
-        "operationId": "informar-recebimento"
+        "operationId": "post-charge-payments"
       }
     },
     "/v2/charge/payments/{uid}": {
       "get": {
         "summary": "Información del Recibo",
         "tags": [
-          "Recebimentos"
+          "Receipts"
         ],
         "security": [
           {
@@ -4848,12 +4848,12 @@
             }
           }
         },
-        "operationId": "informacoes-do-recebimento"
+        "operationId": "get-charge-payments-2"
       },
       "delete": {
         "summary": "Eliminar Recibo",
         "tags": [
-          "Recebimentos"
+          "Receipts"
         ],
         "security": [
           {
@@ -4947,14 +4947,14 @@
             }
           }
         },
-        "operationId": "excluir-recebimento"
+        "operationId": "delete-charge-payments"
       }
     },
     "/v2/charge/pix_accounts": {
       "get": {
         "summary": "Listar Cuentas Pix",
         "tags": [
-          "Conta Pix"
+          "Pix Account"
         ],
         "security": [
           {
@@ -5311,12 +5311,12 @@
             }
           }
         },
-        "operationId": "listar-contas-pix"
+        "operationId": "get-charge-pix-accounts"
       },
       "post": {
         "summary": "Crear Cuenta Pix",
         "tags": [
-          "Conta Pix"
+          "Pix Account"
         ],
         "security": [
           {
@@ -5468,14 +5468,14 @@
           "required": true,
           "description": "Información a guardar en la cuenta pix"
         },
-        "operationId": "criar-pix-account"
+        "operationId": "post-charge-pix-accounts"
       }
     },
     "/v2/charge/pix_accounts/{uid}": {
       "get": {
         "summary": "Ver una cuenta Pix",
         "tags": [
-          "Conta Pix"
+          "Pix Account"
         ],
         "security": [
           {
@@ -5576,12 +5576,12 @@
             }
           }
         },
-        "operationId": "visualizar-uma-conta-pix"
+        "operationId": "get-charge-pix-accounts-2"
       },
       "put": {
         "summary": "Actualizar Cuenta Pix",
         "tags": [
-          "Conta Pix"
+          "Pix Account"
         ],
         "security": [
           {
@@ -5762,12 +5762,12 @@
           "required": true,
           "description": "Información a actualizar en la cuenta pix"
         },
-        "operationId": "atualizar-pix-account"
+        "operationId": "put-charge-pix-accounts"
       },
       "delete": {
         "summary": "Eliminar Cuenta Pix",
         "tags": [
-          "Conta Pix"
+          "Pix Account"
         ],
         "security": [
           {
@@ -5880,7 +5880,7 @@
             }
           }
         },
-        "operationId": "deletar-pix-account"
+        "operationId": "delete-charge-pix-accounts"
       }
     },
     "/v2/charge/pix": {
@@ -6493,7 +6493,7 @@
             }
           }
         },
-        "operationId": "listar-pix"
+        "operationId": "get-charge-pix"
       },
       "post": {
         "summary": "Crear un Pix",
@@ -6751,7 +6751,7 @@
           "required": true,
           "description": "Parámetros para crear un cobro Pix"
         },
-        "operationId": "criar-um-pix"
+        "operationId": "post-charge-pix"
       }
     },
     "/v2/charge/pix/{uid}": {
@@ -6961,7 +6961,7 @@
             }
           }
         },
-        "operationId": "visualizar-um-pix"
+        "operationId": "get-charge-pix-2"
       },
       "delete": {
         "summary": "Eliminar un Pix",
@@ -7041,7 +7041,7 @@
             }
           }
         },
-        "operationId": "excluir-um-pix"
+        "operationId": "delete-charge-pix"
       }
     },
     "/v2/charge/pix/{pix_uid}/update": {
@@ -7335,7 +7335,7 @@
           "required": true,
           "description": "Parámetros para actualización del Pix"
         },
-        "operationId": "atualizar-um-pix"
+        "operationId": "put-charge-pix-update"
       }
     },
     "/v2/charge/pix/{pix_uid}/cancel": {
@@ -7574,7 +7574,7 @@
             }
           }
         },
-        "operationId": "cancelar-um-pix"
+        "operationId": "put-charge-pix-cancel"
       }
     },
     "/v2/charge/pix/{pix_uid}/commands": {
@@ -7819,7 +7819,7 @@
             }
           }
         },
-        "operationId": "listar-comandos-de-um-pix"
+        "operationId": "get-charge-pix-commands"
       }
     },
     "/v2/charge/pix/{pix_uid}/commands/{id}": {
@@ -8051,14 +8051,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-comando"
+        "operationId": "get-charge-pix-commands-2"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/balances": {
       "get": {
         "summary": "Listar saldos",
         "tags": [
-          "Saldos"
+          "Balances"
         ],
         "security": [
           {
@@ -9685,12 +9685,12 @@
             }
           }
         },
-        "operationId": "listar-saldos"
+        "operationId": "get-financial-accounts-balances"
       },
       "post": {
         "summary": "Crear un saldo",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -9847,14 +9847,14 @@
           "required": true,
           "description": "Parámetros para crear un registro de saldo"
         },
-        "operationId": "criar-um-saldo"
+        "operationId": "post-financial-accounts-balances"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/balances/{balance_uid}": {
       "get": {
         "summary": "Ver un Saldo",
         "tags": [
-          "Saldos"
+          "Balances"
         ],
         "security": [
           {
@@ -10029,14 +10029,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-saldo"
+        "operationId": "get-financial-accounts-balances-2"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/commands": {
       "get": {
         "summary": "Listar Comandos de una Cuenta",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -10140,14 +10140,14 @@
             }
           }
         },
-        "operationId": "listar-comandos-de-uma-conta"
+        "operationId": "get-financial-accounts-commands"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/commands/{id}": {
       "get": {
         "summary": "Ver un Comando",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -10248,14 +10248,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-comando-financial-accounts-commands"
+        "operationId": "get-financial-accounts-commands-2"
       }
     },
     "/v2/financial/accounts": {
       "get": {
         "summary": "Listar Cuentas",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -11952,12 +11952,12 @@
             }
           }
         },
-        "operationId": "listar-contas"
+        "operationId": "get-financial-accounts"
       },
       "post": {
         "summary": "Crear una Cuenta",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -12117,14 +12117,14 @@
           "required": true,
           "description": "Parámetros para crear un cobro Pix"
         },
-        "operationId": "criar-uma-conta"
+        "operationId": "post-financial-accounts"
       }
     },
     "/v2/financial/accounts/{id}": {
       "get": {
         "summary": "Ver una Cuenta",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -12298,12 +12298,12 @@
             }
           }
         },
-        "operationId": "visualizar-uma-conta"
+        "operationId": "get-financial-accounts-2"
       },
       "put": {
         "summary": "Actualizar Cuenta",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -12534,14 +12534,14 @@
           "required": true,
           "description": "Información a actualizar en la Cuenta Financiera"
         },
-        "operationId": "atualizar-conta"
+        "operationId": "put-financial-accounts"
       }
     },
     "/v2/financial/accounts/{uid}": {
       "delete": {
         "summary": "Eliminar una Cuenta",
         "tags": [
-          "Contas"
+          "Accounts"
         ],
         "security": [
           {
@@ -12655,14 +12655,14 @@
             }
           }
         },
-        "operationId": "excluir-uma-conta"
+        "operationId": "delete-financial-accounts"
       }
     },
     "/v2/financial/providers": {
       "get": {
         "summary": "Listar Proveedores",
         "tags": [
-          "Provedores"
+          "Providers"
         ],
         "description": "\nEste endpoint se utiliza para recibir los proveedores de servicio que Kobana está integrada.\n\nUn proveedor de servicio es cualquier institución regulada por el BACEN, sea un banco comercial, institución financiera, institución de pagos, proveedor de servicio de pagos, etc.\n\nEl `slug` del proveedor de servicio se utiliza para la creación de una cuenta financiera.",
         "security": [
@@ -13122,14 +13122,14 @@
             }
           }
         },
-        "operationId": "listar-provedores"
+        "operationId": "get-financial-providers"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/imports": {
       "get": {
         "summary": "Listar Importaciones de estado de cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -13406,12 +13406,12 @@
             }
           }
         },
-        "operationId": "listar-importacoes-de-extrato"
+        "operationId": "get-financial-accounts-statement-transactions-imports"
       },
       "post": {
         "summary": "Importar Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -13536,14 +13536,14 @@
           "required": true,
           "description": "Parámetros para crear una importación."
         },
-        "operationId": "importar-extrato"
+        "operationId": "post-financial-accounts-statement-transactions-imports"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/imports/{uid}": {
       "get": {
         "summary": "Ver Importación de Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -13651,14 +13651,14 @@
             }
           }
         },
-        "operationId": "visualizar-importacao-de-extrato"
+        "operationId": "get-financial-accounts-statement-transactions-imports-2"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/syncs": {
       "get": {
         "summary": "Listar Sincronizaciones de Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -13786,14 +13786,14 @@
             }
           }
         },
-        "operationId": "listar-sincronizacoes-de-extrato"
+        "operationId": "get-financial-accounts-statement-transactions-syncs"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/syncs/{uid}": {
       "get": {
         "summary": "Consultar Sincronización de Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -13952,14 +13952,14 @@
             }
           }
         },
-        "operationId": "consultar-sincronizacao-de-extrato"
+        "operationId": "get-financial-accounts-statement-transactions-syncs-2"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions": {
       "get": {
         "summary": "Listar Transacciones",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -14732,14 +14732,14 @@
             }
           }
         },
-        "operationId": "listar-transacoes"
+        "operationId": "get-financial-accounts-statement-transactions"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/sync": {
       "post": {
         "summary": "Sincronizar Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -14902,14 +14902,14 @@
           },
           "description": "Ventana de período a sincronizar. Omitido, usa desde el primer día del mes corriente hasta hoy."
         },
-        "operationId": "sincronizar-extrato"
+        "operationId": "post-financial-accounts-statement-transactions-sync"
       }
     },
     "/v2/financial/accounts/{financial_account_uid}/statement_transactions/summary": {
       "get": {
         "summary": "Resumir Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -15225,14 +15225,14 @@
             }
           }
         },
-        "operationId": "resumir-extrato"
+        "operationId": "get-financial-accounts-statement-transactions-summary"
       }
     },
     "/v2/financial/statement_categories": {
       "get": {
         "summary": "Listar Categorías de Estado de Cuenta",
         "tags": [
-          "Extrato"
+          "Statement"
         ],
         "security": [
           {
@@ -20171,14 +20171,14 @@
             }
           }
         },
-        "operationId": "listar-categorias-de-extrato"
+        "operationId": "get-financial-statement-categories"
       }
     },
     "/v2/admin/certificates/{uid}": {
       "delete": {
         "summary": "Excluir un Certificado",
         "tags": [
-          "Certificado"
+          "Certificate"
         ],
         "security": [
           {
@@ -20301,14 +20301,14 @@
             }
           }
         },
-        "operationId": "excluir-um-certificado"
+        "operationId": "delete-admin-certificates"
       }
     },
     "/v2/admin/certificates": {
       "post": {
         "summary": "Incluir un Certificado",
         "tags": [
-          "Certificado"
+          "Certificate"
         ],
         "security": [
           {
@@ -20463,12 +20463,12 @@
           "required": true,
           "description": "Información del certificado a ser incluido."
         },
-        "operationId": "incluir-um-certificado"
+        "operationId": "post-admin-certificates"
       },
       "get": {
         "summary": "Listar Certificados",
         "tags": [
-          "Certificado"
+          "Certificate"
         ],
         "security": [
           {
@@ -20626,14 +20626,14 @@
             }
           }
         },
-        "operationId": "listar-certificados"
+        "operationId": "get-admin-certificates"
       }
     },
     "/v2/admin/commands": {
       "get": {
         "summary": "Listar Comandos",
         "tags": [
-          "Comando"
+          "Commands"
         ],
         "security": [
           {
@@ -20846,14 +20846,14 @@
             }
           }
         },
-        "operationId": "listar-comandos"
+        "operationId": "get-admin-commands"
       }
     },
     "/v2/admin/commands/{uid}": {
       "get": {
         "summary": "Visualizar Comando",
         "tags": [
-          "Comando"
+          "Commands"
         ],
         "security": [
           {
@@ -20944,14 +20944,14 @@
             }
           }
         },
-        "operationId": "visualizar-comando"
+        "operationId": "get-admin-commands-2"
       }
     },
     "/v2/admin/connections/{uid}/associations": {
       "post": {
         "summary": "Conectar Cuenta de Servicio",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21098,12 +21098,12 @@
           "required": true,
           "description": "Información de la cuenta de servicio a ser asociada."
         },
-        "operationId": "conectar-conta-de-servico"
+        "operationId": "post-admin-connections-associations"
       },
       "delete": {
         "summary": "Desconectar Cuenta de Servicio",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21179,14 +21179,14 @@
           "required": true,
           "description": "Información de la cuenta de servicio a ser removida."
         },
-        "operationId": "desconectar-conta-de-servico"
+        "operationId": "delete-admin-connections-associations"
       }
     },
     "/v2/admin/connections": {
       "post": {
         "summary": "Incluir una Conexión",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21448,12 +21448,12 @@
           "required": true,
           "description": "Información de la conexión a ser registrada."
         },
-        "operationId": "incluir-uma-conexao"
+        "operationId": "post-admin-connections"
       },
       "get": {
         "summary": "Listar Conexiones",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21671,14 +21671,14 @@
             }
           }
         },
-        "operationId": "listar-conexoes"
+        "operationId": "get-admin-connections"
       }
     },
     "/v2/admin/connections/{uid}": {
       "get": {
         "summary": "Información de la conexión",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21808,12 +21808,12 @@
             }
           }
         },
-        "operationId": "informacoes-da-conexao"
+        "operationId": "get-admin-connections-2"
       },
       "put": {
         "summary": "Actualizar Conexión",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -21945,12 +21945,12 @@
           "required": true,
           "description": "Información de la conexión"
         },
-        "operationId": "atualizar-conexao"
+        "operationId": "put-admin-connections"
       },
       "delete": {
         "summary": "Excluir una Conexión",
         "tags": [
-          "Conexões"
+          "Connections"
         ],
         "security": [
           {
@@ -22015,14 +22015,14 @@
             }
           }
         },
-        "operationId": "excluir-uma-conexao"
+        "operationId": "delete-admin-connections"
       }
     },
     "/v2/admin/subaccounts": {
       "post": {
         "summary": "Crear una Subcuenta",
         "tags": [
-          "Subcontas"
+          "Sub-accounts"
         ],
         "security": [
           {
@@ -22172,12 +22172,12 @@
           "required": true,
           "description": "Información de la subcuenta a ser creada."
         },
-        "operationId": "criar-uma-subconta"
+        "operationId": "post-admin-subaccounts"
       },
       "get": {
         "summary": "Listar Subcuentas",
         "tags": [
-          "Subcontas"
+          "Sub-accounts"
         ],
         "security": [
           {
@@ -22423,14 +22423,14 @@
             }
           }
         },
-        "operationId": "listar-subcontas"
+        "operationId": "get-admin-subaccounts"
       }
     },
     "/v2/admin/subaccounts/{uid}": {
       "get": {
         "summary": "Visualizar una Subcuenta",
         "tags": [
-          "Subcontas"
+          "Sub-accounts"
         ],
         "security": [
           {
@@ -22573,12 +22573,12 @@
             }
           }
         },
-        "operationId": "visualizar-uma-subconta"
+        "operationId": "get-admin-subaccounts-2"
       },
       "put": {
         "summary": "Alterar Subcuenta",
         "tags": [
-          "Subcontas"
+          "Sub-accounts"
         ],
         "security": [
           {
@@ -22757,14 +22757,14 @@
           "required": true,
           "description": "Información de la subcuenta para ser alterada."
         },
-        "operationId": "alterar-subconta"
+        "operationId": "put-admin-subaccounts"
       }
     },
     "/v2/admin/users": {
       "post": {
         "summary": "Incluir un Usuario",
         "tags": [
-          "Usuário"
+          "User"
         ],
         "security": [
           {
@@ -22909,12 +22909,12 @@
           "required": true,
           "description": "Información del usuario a ser incluido."
         },
-        "operationId": "incluir-um-usuario"
+        "operationId": "post-admin-users"
       },
       "get": {
         "summary": "Listar Usuarios",
         "tags": [
-          "Usuário"
+          "User"
         ],
         "security": [
           {
@@ -23114,14 +23114,14 @@
             }
           }
         },
-        "operationId": "listar-usuarios"
+        "operationId": "get-admin-users"
       }
     },
     "/v2/admin/users/{uid}": {
       "put": {
         "summary": "Alterar Datos De Un Usuario",
         "tags": [
-          "Usuário"
+          "User"
         ],
         "security": [
           {
@@ -23291,12 +23291,12 @@
           "required": true,
           "description": "Información del usuario a ser alterada."
         },
-        "operationId": "alterar-dados-de-um-usuario"
+        "operationId": "put-admin-users"
       },
       "delete": {
         "summary": "Excluir un Usuario",
         "tags": [
-          "Usuário"
+          "User"
         ],
         "security": [
           {
@@ -23400,14 +23400,14 @@
             }
           }
         },
-        "operationId": "excluir-um-usuario"
+        "operationId": "delete-admin-users"
       }
     },
     "/v2/transfer/batches": {
       "get": {
         "summary": "Listar Lotes de Transferencia",
         "tags": [
-          "Todos"
+          "Batches"
         ],
         "security": [
           {
@@ -24153,14 +24153,14 @@
             }
           }
         },
-        "operationId": "listar-lotes-de-transferencia"
+        "operationId": "get-transfer-batches"
       }
     },
     "/v2/transfer/batches/{uid}": {
       "get": {
         "summary": "Visualizar un Lote de Transferencia",
         "tags": [
-          "Todos"
+          "Batches"
         ],
         "security": [
           {
@@ -24444,14 +24444,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-lote-de-transferencia"
+        "operationId": "get-transfer-batches-2"
       }
     },
     "/v2/transfer/batches/{uid}/approve": {
       "put": {
         "summary": "Aprobar un Lote de Transferencia",
         "tags": [
-          "Todos"
+          "Batches"
         ],
         "security": [
           {
@@ -24762,14 +24762,14 @@
             }
           }
         },
-        "operationId": "aprovar-um-lote-de-transferencia"
+        "operationId": "put-transfer-batches-approve"
       }
     },
     "/v2/transfer/batches/{uid}/reprove": {
       "put": {
         "summary": "Rechazar un Lote de Transferencia",
         "tags": [
-          "Todos"
+          "Batches"
         ],
         "security": [
           {
@@ -25080,14 +25080,14 @@
             }
           }
         },
-        "operationId": "reprovar-um-lote-de-transferencia"
+        "operationId": "put-transfer-batches-reprove"
       }
     },
     "/v2/transfer/batches/{uid}/cancel": {
       "put": {
         "summary": "Cancelar un Lote de Transferencia",
         "tags": [
-          "Todos"
+          "Batches"
         ],
         "security": [
           {
@@ -25406,14 +25406,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-lote-de-transferencia"
+        "operationId": "put-transfer-batches-cancel"
       }
     },
     "/v2/transfer/internal_batches": {
       "post": {
         "summary": "Crear un Lote de Transferencia Entre Cuentas",
         "tags": [
-          "Entre Contas"
+          "Between Accounts"
         ],
         "security": [
           {
@@ -25654,14 +25654,14 @@
           "required": true,
           "description": "Parámetros para creación de un Lote de Transferencia Entre Cuentas"
         },
-        "operationId": "criar-um-lote-de-transferencia-entre-contas"
+        "operationId": "post-transfer-internal-batches"
       }
     },
     "/v2/transfer/internal": {
       "get": {
         "summary": "Listar Transferencias Entre Cuentas",
         "tags": [
-          "Entre Contas"
+          "Between Accounts"
         ],
         "security": [
           {
@@ -25963,12 +25963,12 @@
             }
           }
         },
-        "operationId": "listar-transferencias-entre-contas"
+        "operationId": "get-transfer-internal"
       },
       "post": {
         "summary": "Crear una Transferencia Entre Cuentas",
         "tags": [
-          "Entre Contas"
+          "Between Accounts"
         ],
         "security": [
           {
@@ -26141,14 +26141,14 @@
           "required": true,
           "description": "Parámetros para creación de una Transferencia Entre Cuentas"
         },
-        "operationId": "criar-uma-transferencia-entre-contas"
+        "operationId": "post-transfer-internal"
       }
     },
     "/v2/transfer/internal/{uid}": {
       "get": {
         "summary": "Visualizar una Transferencia Entre Cuentas",
         "tags": [
-          "Entre Contas"
+          "Between Accounts"
         ],
         "security": [
           {
@@ -26284,14 +26284,14 @@
             }
           }
         },
-        "operationId": "visualizar-uma-transferencia-entre-contas"
+        "operationId": "get-transfer-internal-2"
       }
     },
     "/v2/transfer/internal/{uid}/cancel": {
       "put": {
         "summary": "Cancelar una Transferencia Entre Cuentas",
         "tags": [
-          "Entre Contas"
+          "Between Accounts"
         ],
         "security": [
           {
@@ -26493,7 +26493,7 @@
             }
           }
         },
-        "operationId": "cancelar-uma-transferencia-entre-contas"
+        "operationId": "put-transfer-internal-cancel"
       }
     },
     "/v2/transfer/internal/{uid}/approve": {
@@ -26591,7 +26591,7 @@
             }
           }
         },
-        "operationId": "liberar-aprovar-uma-transferencia-interna"
+        "operationId": "put-transfer-internal-approve"
       }
     },
     "/v2/transfer/internal/{uid}/reschedule": {
@@ -26710,14 +26710,14 @@
           },
           "required": true
         },
-        "operationId": "reagendar-mudar-a-data-uma-transferencia-interna"
+        "operationId": "put-transfer-internal-reschedule"
       }
     },
     "/v2/transfer/pix_batches": {
       "post": {
         "summary": "Crear un Lote de Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -26996,14 +26996,14 @@
           "required": true,
           "description": "Parámetros para creación de un Lote de Transferencia Pix"
         },
-        "operationId": "criar-um-lote-de-transferencia-pix"
+        "operationId": "post-transfer-pix-batches"
       }
     },
     "/v2/transfer/pix": {
       "get": {
         "summary": "Listar Transferencias Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -27308,12 +27308,12 @@
             }
           }
         },
-        "operationId": "listar-transferencias-pix"
+        "operationId": "get-transfer-pix"
       },
       "post": {
         "summary": "Crear una Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -27507,14 +27507,14 @@
           "required": true,
           "description": "Parámetros para creación de una Transferencia Pix"
         },
-        "operationId": "criar-uma-transferencia-pix"
+        "operationId": "post-transfer-pix"
       }
     },
     "/v2/transfer/pix/{uid}": {
       "get": {
         "summary": "Visualizar una Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -27654,14 +27654,14 @@
             }
           }
         },
-        "operationId": "visualizar-uma-transferencia-pix"
+        "operationId": "get-transfer-pix-2"
       }
     },
     "/v2/transfer/pix/{uid}/cancel": {
       "put": {
         "summary": "Cancelar una Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -27867,14 +27867,14 @@
             }
           }
         },
-        "operationId": "cancelar-uma-transferencia-pix"
+        "operationId": "put-transfer-pix-cancel"
       }
     },
     "/v2/transfer/pix/{uid}/approve": {
       "put": {
         "summary": "Liberar (aprobar) una Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -28080,14 +28080,14 @@
             }
           }
         },
-        "operationId": "liberar-aprovar-uma-transferencia-pix"
+        "operationId": "put-transfer-pix-approve"
       }
     },
     "/v2/transfer/pix/{uid}/reschedule": {
       "put": {
         "summary": "Reagendar (cambiar la fecha) una Transferencia Pix",
         "tags": [
-          "Pix - Transferência"
+          "Pix - Transfer"
         ],
         "security": [
           {
@@ -28306,7 +28306,7 @@
           },
           "required": true
         },
-        "operationId": "reagendar-mudar-a-data-uma-transferencia-pix"
+        "operationId": "put-transfer-pix-reschedule"
       }
     },
     "/v2/transfer/ted_batches": {
@@ -28637,7 +28637,7 @@
           "required": true,
           "description": "Parametros para criação de um Lote de transferencia TED"
         },
-        "operationId": "criar-um-lote-de-transferencia-ted"
+        "operationId": "post-transfer-ted-batches"
       }
     },
     "/v2/transfer/ted": {
@@ -28970,7 +28970,7 @@
             }
           }
         },
-        "operationId": "listar-transferencias-ted"
+        "operationId": "get-transfer-ted"
       },
       "post": {
         "summary": "Crear uma transferencia TED",
@@ -29156,7 +29156,7 @@
           "required": true,
           "description": "Parametros para criação de uma transferencia TED"
         },
-        "operationId": "criar-uma-transferencia-ted"
+        "operationId": "post-transfer-ted"
       }
     },
     "/v2/transfer/ted/{uid}": {
@@ -29307,7 +29307,7 @@
             }
           }
         },
-        "operationId": "visualizar-uma-transferencia-ted"
+        "operationId": "get-transfer-ted-2"
       }
     },
     "/v2/transfer/ted/{uid}/cancel": {
@@ -29524,7 +29524,7 @@
             }
           }
         },
-        "operationId": "cancelar-uma-transferencia-ted"
+        "operationId": "put-transfer-ted-cancel"
       }
     },
     "/v2/transfer/ted/{uid}/approve": {
@@ -29741,7 +29741,7 @@
             }
           }
         },
-        "operationId": "liberar-aprovar-uma-transferencia-ted"
+        "operationId": "put-transfer-ted-approve"
       }
     },
     "/v2/transfer/ted/{uid}/reschedule": {
@@ -29971,14 +29971,14 @@
           },
           "required": true
         },
-        "operationId": "reagendar-mudar-a-data-uma-transferencia-ted"
+        "operationId": "put-transfer-ted-reschedule"
       }
     },
     "/v2/transfer/accounts": {
       "get": {
         "summary": "Listar cuentas de transferencia",
         "tags": [
-          "Contas de Transferência"
+          "Transfer Accounts"
         ],
         "security": [
           {
@@ -30153,12 +30153,12 @@
             }
           }
         },
-        "operationId": "listar-contas-de-transferencia"
+        "operationId": "get-transfer-accounts"
       },
       "post": {
         "summary": "Crear cuenta de transferencia",
         "tags": [
-          "Contas de Transferência"
+          "Transfer Accounts"
         ],
         "security": [
           {
@@ -30297,14 +30297,14 @@
           "required": true,
           "description": "Dados de la nova cuenta de transferencia."
         },
-        "operationId": "criar-conta-de-transferencia"
+        "operationId": "post-transfer-accounts"
       }
     },
     "/v2/transfer/accounts/{uid}": {
       "get": {
         "summary": "Buscar cuenta de transferencia",
         "tags": [
-          "Contas de Transferência"
+          "Transfer Accounts"
         ],
         "security": [
           {
@@ -30440,12 +30440,12 @@
             }
           }
         },
-        "operationId": "buscar-conta-de-transferencia"
+        "operationId": "get-transfer-accounts-2"
       },
       "patch": {
         "summary": "Actualizar cuenta de transferencia",
         "tags": [
-          "Contas de Transferência"
+          "Transfer Accounts"
         ],
         "security": [
           {
@@ -30611,14 +30611,14 @@
           "required": true,
           "description": "Atributos a Actualizar. Apenas campos graváveis são considerados; envie só los que deseja alterar (PATCH parcial)."
         },
-        "operationId": "atualizar-conta-de-transferencia"
+        "operationId": "patch-transfer-accounts"
       }
     },
     "/v2/transfers": {
       "get": {
         "summary": "Listar transferencias",
         "tags": [
-          "Transferências"
+          "Transfers"
         ],
         "security": [
           {
@@ -30907,12 +30907,12 @@
             }
           }
         },
-        "operationId": "listar-transferencias"
+        "operationId": "get-transfers"
       },
       "post": {
         "summary": "Crear uma transferencia",
         "tags": [
-          "Transferências"
+          "Transfers"
         ],
         "security": [
           {
@@ -31075,14 +31075,14 @@
           "required": true,
           "description": "Parâmetros para criação de uma transferencia"
         },
-        "operationId": "criar-uma-transferencia"
+        "operationId": "post-transfers"
       }
     },
     "/v2/transfers/{uid}": {
       "get": {
         "summary": "Ver uma transferencia",
         "tags": [
-          "Transferências"
+          "Transfers"
         ],
         "security": [
           {
@@ -31222,14 +31222,14 @@
             }
           }
         },
-        "operationId": "visualizar-uma-transferencia"
+        "operationId": "get-transfers-2"
       }
     },
     "/v2/transfers/{uid}/cancel": {
       "put": {
         "summary": "Cancelar uma transferencia",
         "tags": [
-          "Transferências"
+          "Transfers"
         ],
         "security": [
           {
@@ -31406,14 +31406,14 @@
             }
           }
         },
-        "operationId": "cancelar-uma-transferencia"
+        "operationId": "put-transfers-cancel"
       }
     },
     "/v2/payment/bank_billet_batches": {
       "post": {
         "summary": "Crear um Lote de pago de Boletos",
         "tags": [
-          "Boletos"
+          "Bank Billets"
         ],
         "security": [
           {
@@ -31621,14 +31621,14 @@
           "required": true,
           "description": "Parametros para criação de um Lote de pago"
         },
-        "operationId": "criar-um-lote-de-pagamento-de-boletos"
+        "operationId": "post-payment-bank-billet-batches"
       }
     },
     "/v2/payment/bank_billets": {
       "get": {
         "summary": "Listar pagos de Boleto",
         "tags": [
-          "Boletos"
+          "Bank Billets"
         ],
         "security": [
           {
@@ -31920,12 +31920,12 @@
             }
           }
         },
-        "operationId": "listar-pagamentos-de-boleto"
+        "operationId": "get-payment-bank-billets"
       },
       "post": {
         "summary": "Crear um pago de Boleto",
         "tags": [
-          "Boletos"
+          "Bank Billets"
         ],
         "security": [
           {
@@ -32079,14 +32079,14 @@
           "required": true,
           "description": "Parametros para criação de um pago"
         },
-        "operationId": "criar-um-pagamento-de-boleto"
+        "operationId": "post-payment-bank-billets"
       }
     },
     "/v2/payment/bank_billets/{uid}": {
       "get": {
         "summary": "Ver um pago de Boleto",
         "tags": [
-          "Boletos"
+          "Bank Billets"
         ],
         "security": [
           {
@@ -32203,14 +32203,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-pagamento-de-boleto"
+        "operationId": "get-payment-bank-billets-2"
       }
     },
     "/v2/payment/bank_billets/{uid}/cancel": {
       "put": {
         "summary": "Cancelar um pago de Boleto",
         "tags": [
-          "Boletos"
+          "Bank Billets"
         ],
         "security": [
           {
@@ -32398,14 +32398,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-pagamento-de-boleto"
+        "operationId": "put-payment-bank-billets-cancel"
       }
     },
     "/v2/payment/batches": {
       "get": {
         "summary": "Listar Lotes de pagos",
         "tags": [
-          "Todos - Pagamento"
+          "Payment Batches"
         ],
         "security": [
           {
@@ -33182,14 +33182,14 @@
             }
           }
         },
-        "operationId": "listar-lotes-de-pagamentos"
+        "operationId": "get-payment-batches"
       }
     },
     "/v2/payment/batches/{uid}": {
       "get": {
         "summary": "Ver um Lote de pago",
         "tags": [
-          "Todos - Pagamento"
+          "Payment Batches"
         ],
         "security": [
           {
@@ -33403,14 +33403,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-lote-de-pagamento"
+        "operationId": "get-payment-batches-2"
       }
     },
     "/v2/payment/batches/{uid}/approve": {
       "put": {
         "summary": "Aprobar um Lote de pago",
         "tags": [
-          "Todos - Pagamento"
+          "Payment Batches"
         ],
         "security": [
           {
@@ -33651,14 +33651,14 @@
             }
           }
         },
-        "operationId": "aprovar-um-lote-de-pagamento"
+        "operationId": "put-payment-batches-approve"
       }
     },
     "/v2/payment/batches/{uid}/reprove": {
       "put": {
         "summary": "Rechazar um Lote de pago",
         "tags": [
-          "Todos - Pagamento"
+          "Payment Batches"
         ],
         "security": [
           {
@@ -33899,14 +33899,14 @@
             }
           }
         },
-        "operationId": "reprovar-um-lote-de-pagamento"
+        "operationId": "put-payment-batches-reprove"
       }
     },
     "/v2/payment/batches/{uid}/cancel": {
       "put": {
         "summary": "Cancelar um Lote de pago",
         "tags": [
-          "Todos - Pagamento"
+          "Payment Batches"
         ],
         "security": [
           {
@@ -34137,14 +34137,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-lote-de-pagamento"
+        "operationId": "put-payment-batches-cancel"
       }
     },
     "/v2/payment/dda_accounts": {
       "get": {
         "summary": "Listar cuentas de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -34269,12 +34269,12 @@
             }
           }
         },
-        "operationId": "listar-contas-de-dda"
+        "operationId": "get-payment-dda-accounts"
       },
       "post": {
         "summary": "Crear cuenta de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -34426,14 +34426,14 @@
           },
           "required": true
         },
-        "operationId": "criar-conta-de-dda"
+        "operationId": "post-payment-dda-accounts"
       }
     },
     "/v2/payment/dda_accounts/{uid}": {
       "get": {
         "summary": "Buscar cuenta de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -34587,12 +34587,12 @@
             }
           }
         },
-        "operationId": "buscar-conta-de-dda"
+        "operationId": "get-payment-dda-accounts-2"
       },
       "put": {
         "summary": "Actualizar cuenta de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -34710,14 +34710,14 @@
           },
           "required": true
         },
-        "operationId": "atualizar-conta-de-dda"
+        "operationId": "put-payment-dda-accounts"
       }
     },
     "/v2/payment/dda_accounts/{uid}/enable": {
       "put": {
         "summary": "Habilitar cuenta de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -34862,14 +34862,14 @@
             }
           }
         },
-        "operationId": "habilitar-conta-de-dda"
+        "operationId": "put-payment-dda-accounts-enable"
       }
     },
     "/v2/payment/dda_accounts/{uid}/disable": {
       "put": {
         "summary": "Deshabilitar cuenta de DDA",
         "tags": [
-          "Contas de DDA"
+          "DDA Accounts"
         ],
         "security": [
           {
@@ -35022,14 +35022,14 @@
             }
           }
         },
-        "operationId": "desabilitar-conta-de-dda"
+        "operationId": "put-payment-dda-accounts-disable"
       }
     },
     "/v2/payment/dda_bank_billets": {
       "get": {
         "summary": "Listar Boletos DDA",
         "tags": [
-          "Boletos DDA"
+          "DDA Bank Billets"
         ],
         "security": [
           {
@@ -35154,14 +35154,14 @@
             }
           }
         },
-        "operationId": "listar-boletos-dda"
+        "operationId": "get-payment-dda-bank-billets"
       }
     },
     "/v2/payment/dda_bank_billets/{uid}": {
       "get": {
         "summary": "Buscar Boleto DDA",
         "tags": [
-          "Boletos DDA"
+          "DDA Bank Billets"
         ],
         "security": [
           {
@@ -35312,12 +35312,12 @@
             }
           }
         },
-        "operationId": "buscar-boleto-dda"
+        "operationId": "get-payment-dda-bank-billets-2"
       },
       "delete": {
         "summary": "Eliminar Boleto DDA",
         "tags": [
-          "Boletos DDA"
+          "DDA Bank Billets"
         ],
         "security": [
           {
@@ -35411,14 +35411,14 @@
             }
           }
         },
-        "operationId": "excluir-boleto-dda"
+        "operationId": "delete-payment-dda-bank-billets"
       }
     },
     "/v2/payment/dda_bank_billets/{uid}/reject": {
       "put": {
         "summary": "Rechazar Boleto DDA",
         "tags": [
-          "Boletos DDA"
+          "DDA Bank Billets"
         ],
         "security": [
           {
@@ -35588,14 +35588,14 @@
             }
           }
         },
-        "operationId": "rejeitar-boleto-dda"
+        "operationId": "put-payment-dda-bank-billets-reject"
       }
     },
     "/v2/payment/dda_bank_billets/{uid}/release": {
       "put": {
         "summary": "Liberar Boleto DDA para pago",
         "tags": [
-          "Boletos DDA"
+          "DDA Bank Billets"
         ],
         "security": [
           {
@@ -35765,14 +35765,14 @@
             }
           }
         },
-        "operationId": "liberar-boleto-dda-para-pagamento"
+        "operationId": "put-payment-dda-bank-billets-release"
       }
     },
     "/v2/payment/accounts": {
       "get": {
         "summary": "Listar cuentas de pago",
         "tags": [
-          "Contas de Pagamento"
+          "Payment Accounts"
         ],
         "security": [
           {
@@ -35947,12 +35947,12 @@
             }
           }
         },
-        "operationId": "listar-contas-de-pagamento"
+        "operationId": "get-payment-accounts"
       },
       "post": {
         "summary": "Crear cuenta de pago",
         "tags": [
-          "Contas de Pagamento"
+          "Payment Accounts"
         ],
         "security": [
           {
@@ -36091,14 +36091,14 @@
           "required": true,
           "description": "Dados de la nova cuenta de pago."
         },
-        "operationId": "criar-conta-de-pagamento"
+        "operationId": "post-payment-accounts"
       }
     },
     "/v2/payment/accounts/{uid}": {
       "get": {
         "summary": "Buscar cuenta de pago",
         "tags": [
-          "Contas de Pagamento"
+          "Payment Accounts"
         ],
         "security": [
           {
@@ -36234,12 +36234,12 @@
             }
           }
         },
-        "operationId": "buscar-conta-de-pagamento"
+        "operationId": "get-payment-accounts-2"
       },
       "patch": {
         "summary": "Actualizar cuenta de pago",
         "tags": [
-          "Contas de Pagamento"
+          "Payment Accounts"
         ],
         "security": [
           {
@@ -36405,14 +36405,14 @@
           "required": true,
           "description": "Atributos a Actualizar. Apenas campos graváveis são considerados; envie só los que deseja alterar (PATCH parcial)."
         },
-        "operationId": "atualizar-conta-de-pagamento"
+        "operationId": "patch-payment-accounts"
       }
     },
     "/v2/payment/pix_batches": {
       "post": {
         "summary": "Crear um Lote de pago Pix",
         "tags": [
-          "Pix - Pagamento"
+          "Pix - Payment"
         ],
         "security": [
           {
@@ -36663,14 +36663,14 @@
           "required": true,
           "description": "Parametros para criação de um Lote de pago"
         },
-        "operationId": "criar-um-lote-de-pagamento-pix"
+        "operationId": "post-payment-pix-batches"
       }
     },
     "/v2/payment/pix": {
       "get": {
         "summary": "Listar pagos Pix",
         "tags": [
-          "Pix - Pagamento"
+          "Pix - Payment"
         ],
         "security": [
           {
@@ -36962,12 +36962,12 @@
             }
           }
         },
-        "operationId": "listar-pagamentos-pix"
+        "operationId": "get-payment-pix"
       },
       "post": {
         "summary": "Crear um pago Pix",
         "tags": [
-          "Pix - Pagamento"
+          "Pix - Payment"
         ],
         "security": [
           {
@@ -37121,14 +37121,14 @@
           "required": true,
           "description": "Parametros para criação de um pago"
         },
-        "operationId": "criar-um-pagamento-pix"
+        "operationId": "post-payment-pix"
       }
     },
     "/v2/payment/pix/{uid}": {
       "get": {
         "summary": "Ver um pago Pix",
         "tags": [
-          "Pix - Pagamento"
+          "Pix - Payment"
         ],
         "security": [
           {
@@ -37245,14 +37245,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-pagamento-pix"
+        "operationId": "get-payment-pix-2"
       }
     },
     "/v2/payment/pix/{uid}/cancel": {
       "put": {
         "summary": "Cancelar um pago Pix",
         "tags": [
-          "Pix - Pagamento"
+          "Pix - Payment"
         ],
         "security": [
           {
@@ -37440,14 +37440,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-pagamento-pix"
+        "operationId": "put-payment-pix-cancel"
       }
     },
     "/v2/payment/tax_batches": {
       "post": {
         "summary": "Crear Lote de pagos de Tributo",
         "tags": [
-          "Tributo (beta)"
+          "Tax (beta)"
         ],
         "security": [
           {
@@ -37606,14 +37606,14 @@
             }
           }
         },
-        "operationId": "criar-lote-de-pagamentos-de-tributo"
+        "operationId": "post-payment-tax-batches"
       }
     },
     "/v2/payment/taxes": {
       "get": {
         "summary": "Listar pagos de Tributo",
         "tags": [
-          "Tributo (beta)"
+          "Tax (beta)"
         ],
         "security": [
           {
@@ -37920,12 +37920,12 @@
             }
           }
         },
-        "operationId": "listar-pagamentos-de-tributo"
+        "operationId": "get-payment-taxes"
       },
       "post": {
         "summary": "Crear pago de Tributo",
         "tags": [
-          "Tributo (beta)"
+          "Tax (beta)"
         ],
         "security": [
           {
@@ -38085,14 +38085,14 @@
             }
           }
         },
-        "operationId": "criar-pagamento-de-tributo"
+        "operationId": "post-payment-taxes"
       }
     },
     "/v2/payment/taxes/{uid}": {
       "get": {
         "summary": "Exibir pago de Tributo",
         "tags": [
-          "Tributo (beta)"
+          "Tax (beta)"
         ],
         "security": [
           {
@@ -38211,14 +38211,14 @@
             }
           }
         },
-        "operationId": "exibir-pagamento-de-tributo"
+        "operationId": "get-payment-taxes-2"
       }
     },
     "/v2/payment/taxes/{uid}/cancel": {
       "put": {
         "summary": "Cancelar um pago de Tributo",
         "tags": [
-          "Tributo (beta)"
+          "Tax (beta)"
         ],
         "security": [
           {
@@ -38343,14 +38343,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-pagamento-de-tributo"
+        "operationId": "put-payment-taxes-cancel"
       }
     },
     "/v2/payment/utilities": {
       "get": {
         "summary": "Listar pagos de cuentas de Consumo",
         "tags": [
-          "Contas de Consumo"
+          "Utility Bills"
         ],
         "security": [
           {
@@ -38642,12 +38642,12 @@
             }
           }
         },
-        "operationId": "listar-pagamentos-de-contas-de-consumo"
+        "operationId": "get-payment-utilities"
       },
       "post": {
         "summary": "Crear um pago de cuenta de Consumo",
         "tags": [
-          "Contas de Consumo"
+          "Utility Bills"
         ],
         "security": [
           {
@@ -38806,14 +38806,14 @@
           "required": true,
           "description": "Parametros para criação de um pago"
         },
-        "operationId": "criar-um-pagamento-de-conta-de-consumo"
+        "operationId": "post-payment-utilities"
       }
     },
     "/v2/payment/utilities/{uid}": {
       "get": {
         "summary": "Ver um pago de cuenta de Consumo",
         "tags": [
-          "Contas de Consumo"
+          "Utility Bills"
         ],
         "security": [
           {
@@ -38930,14 +38930,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-pagamento-de-conta-de-consumo"
+        "operationId": "get-payment-utilities-2"
       }
     },
     "/v2/payment/utilities/{uid}/cancel": {
       "put": {
         "summary": "Cancelar um pago de cuenta de Consumo",
         "tags": [
-          "Contas de Consumo"
+          "Utility Bills"
         ],
         "security": [
           {
@@ -39125,14 +39125,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-pagamento-de-conta-de-consumo"
+        "operationId": "put-payment-utilities-cancel"
       }
     },
     "/v2/payment/utility_batches": {
       "post": {
         "summary": "Crear un Lote de Pago de Cuentas de Consumo",
         "tags": [
-          "Contas de Consumo"
+          "Utility Bills"
         ],
         "security": [
           {
@@ -39340,14 +39340,14 @@
           "required": true,
           "description": "Parametros para criação de um Lote de pago"
         },
-        "operationId": "criar-um-lote-de-pagamento-de-contas-de-consumo"
+        "operationId": "post-payment-utility-batches"
       }
     },
     "/v2/payments": {
       "get": {
         "summary": "Listar Pagos",
         "tags": [
-          "Pagamentos"
+          "Payments"
         ],
         "security": [
           {
@@ -39675,12 +39675,12 @@
             }
           }
         },
-        "operationId": "listar-pagamentos"
+        "operationId": "get-payments"
       },
       "post": {
         "summary": "Crear un Pago",
         "tags": [
-          "Pagamentos"
+          "Payments"
         ],
         "security": [
           {
@@ -39884,14 +39884,14 @@
           "required": true,
           "description": "Parámetros para la creación de un Pago"
         },
-        "operationId": "criar-um-pagamento"
+        "operationId": "post-payments"
       }
     },
     "/v2/payments/{uid}": {
       "get": {
         "summary": "Ver un Pago",
         "tags": [
-          "Pagamentos"
+          "Payments"
         ],
         "security": [
           {
@@ -40033,14 +40033,14 @@
             }
           }
         },
-        "operationId": "visualizar-um-pagamento"
+        "operationId": "get-payments-2"
       }
     },
     "/v2/payments/{uid}/cancel": {
       "put": {
         "summary": "Cancelar un Pago",
         "tags": [
-          "Pagamentos"
+          "Payments"
         ],
         "security": [
           {
@@ -40228,14 +40228,14 @@
             }
           }
         },
-        "operationId": "cancelar-um-pagamento"
+        "operationId": "put-payments-cancel"
       }
     },
     "/v2/payments/{uid}/approve": {
       "put": {
         "summary": "Liberar (aprobar) un Pago",
         "tags": [
-          "Pagamentos"
+          "Payments"
         ],
         "security": [
           {
@@ -40408,14 +40408,14 @@
             }
           }
         },
-        "operationId": "liberar-aprovar-um-pagamento"
+        "operationId": "put-payments-approve"
       }
     },
     "/v2/data/bank_billet_queries": {
       "post": {
         "summary": "Crear una Consulta de Boleto",
         "tags": [
-          "Consulta de Boletos"
+          "Bank Billet Query"
         ],
         "security": [
           {
@@ -40605,12 +40605,12 @@
           "required": true,
           "description": "Información a guardar en la consulta de boleto"
         },
-        "operationId": "criar-uma-consulta-de-boleto"
+        "operationId": "post-data-bank-billet-queries"
       },
       "get": {
         "summary": "Listar Consultas de Boletos",
         "tags": [
-          "Consulta de Boletos"
+          "Bank Billet Query"
         ],
         "security": [
           {
@@ -40863,14 +40863,14 @@
             }
           }
         },
-        "operationId": "listar-consultas-de-boletos"
+        "operationId": "get-data-bank-billet-queries"
       }
     },
     "/v2/data/pix_qrcode_queries": {
       "post": {
         "summary": "Crear una Consulta de Código QR de Pix",
         "tags": [
-          "Consulta de Pix QR Code"
+          "Pix QR Code Query"
         ],
         "security": [
           {
@@ -41045,12 +41045,12 @@
           "required": true,
           "description": "Información a guardar en la consulta de Código QR de Pix"
         },
-        "operationId": "criar-uma-consulta-de-pix-qr-code"
+        "operationId": "post-data-pix-qrcode-queries"
       },
       "get": {
         "summary": "Listar Consultas de Código QR de Pix",
         "tags": [
-          "Consulta de Pix QR Code"
+          "Pix QR Code Query"
         ],
         "security": [
           {
@@ -41233,14 +41233,14 @@
             }
           }
         },
-        "operationId": "listar-consultas-de-pix-qr-code"
+        "operationId": "get-data-pix-qrcode-queries"
       }
     },
     "/v2/edi/edi_boxes": {
       "get": {
         "summary": "Listar Buzones de Correo",
         "tags": [
-          "Caixas Postais"
+          "Mailboxes"
         ],
         "security": [
           {
@@ -41571,12 +41571,12 @@
             }
           }
         },
-        "operationId": "listar-caixas-postais"
+        "operationId": "get-edi-edi-boxes"
       },
       "post": {
         "summary": "Crear Buzón de Correo",
         "tags": [
-          "Caixas Postais"
+          "Mailboxes"
         ],
         "security": [
           {
@@ -41765,14 +41765,14 @@
           "required": true,
           "description": "Información del Buzón de Correo a crear."
         },
-        "operationId": "criar-caixa-postal"
+        "operationId": "post-edi-edi-boxes"
       }
     },
     "/v2/edi/edi_boxes/{uid}": {
       "get": {
         "summary": "Ver Buzón de Correo",
         "tags": [
-          "Caixas Postais"
+          "Mailboxes"
         ],
         "security": [
           {
@@ -41965,12 +41965,12 @@
             }
           }
         },
-        "operationId": "visualizar-caixa-postal"
+        "operationId": "get-edi-edi-boxes-2"
       },
       "put": {
         "summary": "Actualizar Buzón de Correo",
         "tags": [
-          "Caixas Postais"
+          "Mailboxes"
         ],
         "security": [
           {
@@ -42196,14 +42196,14 @@
           "required": true,
           "description": "Información del Buzón de Correo a actualizar."
         },
-        "operationId": "atualizar-caixa-postal"
+        "operationId": "put-edi-edi-boxes"
       }
     },
     "/v2/security/access_tokens": {
       "post": {
         "summary": "Crear un Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42373,14 +42373,14 @@
           "required": true,
           "description": "Información del token de acceso a crear."
         },
-        "operationId": "criar-um-token-de-acesso"
+        "operationId": "post-security-access-tokens"
       }
     },
     "/v2/security/access_tokens/{uid}": {
       "put": {
         "summary": "Actualizar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42534,12 +42534,12 @@
           "required": true,
           "description": "Información del token de acceso a cambiar."
         },
-        "operationId": "atualizar-token-de-acesso"
+        "operationId": "put-security-access-tokens"
       },
       "delete": {
         "summary": "Eliminar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42623,14 +42623,14 @@
             }
           }
         },
-        "operationId": "excluir-token-de-acesso"
+        "operationId": "delete-security-access-tokens"
       }
     },
     "/v2/security/access_tokens/{uid}/enable": {
       "put": {
         "summary": "Habilitar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42747,14 +42747,14 @@
             }
           }
         },
-        "operationId": "habilitar-token-de-acesso"
+        "operationId": "put-security-access-tokens-enable"
       }
     },
     "/v2/security/access_tokens/{uid}/disable": {
       "put": {
         "summary": "Deshabilitar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42871,14 +42871,14 @@
             }
           }
         },
-        "operationId": "desabilitar-token-de-acesso"
+        "operationId": "put-security-access-tokens-disable"
       }
     },
     "/v2/security/access_tokens/{uid}/renew": {
       "put": {
         "summary": "Renovar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -42996,14 +42996,14 @@
             }
           }
         },
-        "operationId": "renovar-token-de-acesso"
+        "operationId": "put-security-access-tokens-renew"
       }
     },
     "/v2/security/access_tokens/{uid}/revoke": {
       "put": {
         "summary": "Revocar Token de Acceso",
         "tags": [
-          "Tokens de Acesso"
+          "Access Tokens"
         ],
         "security": [
           {
@@ -43120,7 +43120,7 @@
             }
           }
         },
-        "operationId": "revogar-token-de-acesso"
+        "operationId": "put-security-access-tokens-revoke"
       }
     },
     "/v2/mailbox/entries/{entry_id}/email": {
@@ -43148,7 +43148,7 @@
       "get": {
         "summary": "Mostrar Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43286,12 +43286,12 @@
             }
           }
         },
-        "operationId": "exibir-canal-de-e-mail"
+        "operationId": "get-mailbox-entries-email"
       },
       "post": {
         "summary": "Crear Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43465,12 +43465,12 @@
           },
           "required": true
         },
-        "operationId": "criar-canal-de-e-mail"
+        "operationId": "post-mailbox-entries-email"
       },
       "patch": {
         "summary": "Actualizar Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43620,12 +43620,12 @@
           },
           "required": true
         },
-        "operationId": "atualizar-canal-de-e-mail"
+        "operationId": "patch-mailbox-entries-email"
       },
       "delete": {
         "summary": "Eliminar Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43656,7 +43656,7 @@
             }
           }
         },
-        "operationId": "excluir-canal-de-e-mail"
+        "operationId": "delete-mailbox-entries-email"
       }
     },
     "/v2/mailbox/entries/{entry_id}/email/activate": {
@@ -43681,7 +43681,7 @@
       "put": {
         "summary": "Activar Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43778,7 +43778,7 @@
             }
           }
         },
-        "operationId": "ativar-canal-de-e-mail"
+        "operationId": "put-mailbox-entries-email-activate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/email/deactivate": {
@@ -43803,7 +43803,7 @@
       "put": {
         "summary": "Desactivar Canal de Correo Electrónico",
         "tags": [
-          "Canal Email"
+          "Email Channel"
         ],
         "security": [
           {
@@ -43900,7 +43900,7 @@
             }
           }
         },
-        "operationId": "desativar-canal-de-e-mail"
+        "operationId": "put-mailbox-entries-email-deactivate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/s3": {
@@ -43928,7 +43928,7 @@
       "get": {
         "summary": "Mostrar Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44043,12 +44043,12 @@
             }
           }
         },
-        "operationId": "exibir-canal-s-3"
+        "operationId": "get-mailbox-entries-s-3"
       },
       "post": {
         "summary": "Crear Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44162,12 +44162,12 @@
             }
           }
         },
-        "operationId": "criar-canal-s-3"
+        "operationId": "post-mailbox-entries-s-3"
       },
       "delete": {
         "summary": "Eliminar Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44198,7 +44198,7 @@
             }
           }
         },
-        "operationId": "excluir-canal-s-3"
+        "operationId": "delete-mailbox-entries-s-3"
       }
     },
     "/v2/mailbox/entries/{entry_id}/s3/activate": {
@@ -44223,7 +44223,7 @@
       "put": {
         "summary": "Activar Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44297,7 +44297,7 @@
             }
           }
         },
-        "operationId": "ativar-canal-s-3"
+        "operationId": "put-mailbox-entries-s-3-activate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/s3/deactivate": {
@@ -44322,7 +44322,7 @@
       "put": {
         "summary": "Desactivar Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44396,7 +44396,7 @@
             }
           }
         },
-        "operationId": "desativar-canal-s-3"
+        "operationId": "put-mailbox-entries-s-3-deactivate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/s3/fetch": {
@@ -44421,7 +44421,7 @@
       "put": {
         "summary": "Buscar archivos del Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44496,7 +44496,7 @@
             }
           }
         },
-        "operationId": "buscar-arquivos-do-canal-s-3"
+        "operationId": "put-mailbox-entries-s-3-fetch"
       }
     },
     "/v2/mailbox/entries/{entry_id}/s3/update_password": {
@@ -44521,7 +44521,7 @@
       "put": {
         "summary": "Actualizar credenciales AWS del Canal S3",
         "tags": [
-          "Canal S3"
+          "S3 Channel"
         ],
         "security": [
           {
@@ -44596,7 +44596,7 @@
             }
           }
         },
-        "operationId": "atualizar-credenciais-aws-do-canal-s-3"
+        "operationId": "put-mailbox-entries-s-3-update-password"
       }
     },
     "/v2/mailbox/entries/{entry_id}/sftp": {
@@ -44624,7 +44624,7 @@
       "get": {
         "summary": "Mostrar Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -44742,12 +44742,12 @@
             }
           }
         },
-        "operationId": "exibir-canal-sftp"
+        "operationId": "get-mailbox-entries-sftp"
       },
       "post": {
         "summary": "Crear Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -44880,12 +44880,12 @@
             }
           }
         },
-        "operationId": "criar-canal-sftp"
+        "operationId": "post-mailbox-entries-sftp"
       },
       "patch": {
         "summary": "Actualizar Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -44999,12 +44999,12 @@
             }
           }
         },
-        "operationId": "atualizar-canal-sftp"
+        "operationId": "patch-mailbox-entries-sftp"
       },
       "delete": {
         "summary": "Eliminar Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -45035,7 +45035,7 @@
             }
           }
         },
-        "operationId": "excluir-canal-sftp"
+        "operationId": "delete-mailbox-entries-sftp"
       }
     },
     "/v2/mailbox/entries/{entry_id}/sftp/activate": {
@@ -45060,7 +45060,7 @@
       "put": {
         "summary": "Activar Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -45137,7 +45137,7 @@
             }
           }
         },
-        "operationId": "ativar-canal-sftp"
+        "operationId": "put-mailbox-entries-sftp-activate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/sftp/deactivate": {
@@ -45162,7 +45162,7 @@
       "put": {
         "summary": "Desactivar Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -45239,7 +45239,7 @@
             }
           }
         },
-        "operationId": "desativar-canal-sftp"
+        "operationId": "put-mailbox-entries-sftp-deactivate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/sftp/fetch": {
@@ -45264,7 +45264,7 @@
       "put": {
         "summary": "Buscar archivos del Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -45342,7 +45342,7 @@
             }
           }
         },
-        "operationId": "buscar-arquivos-do-canal-sftp"
+        "operationId": "put-mailbox-entries-sftp-fetch"
       }
     },
     "/v2/mailbox/entries/{entry_id}/sftp/update_password": {
@@ -45367,7 +45367,7 @@
       "put": {
         "summary": "Actualizar credenciales SSH del Canal SFTP",
         "tags": [
-          "Canal SFTP"
+          "SFTP Channel"
         ],
         "security": [
           {
@@ -45445,7 +45445,7 @@
             }
           }
         },
-        "operationId": "atualizar-credenciais-ssh-do-canal-sftp"
+        "operationId": "put-mailbox-entries-sftp-update-password"
       }
     },
     "/v2/mailbox/entries/{entry_id}/syncthing": {
@@ -45473,7 +45473,7 @@
       "get": {
         "summary": "Mostrar Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -45589,12 +45589,12 @@
             }
           }
         },
-        "operationId": "exibir-canal-syncthing"
+        "operationId": "get-mailbox-entries-syncthing"
       },
       "post": {
         "summary": "Crear Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -45734,12 +45734,12 @@
           },
           "required": true
         },
-        "operationId": "criar-canal-syncthing"
+        "operationId": "post-mailbox-entries-syncthing"
       },
       "patch": {
         "summary": "Actualizar Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -45856,12 +45856,12 @@
           },
           "required": true
         },
-        "operationId": "atualizar-canal-syncthing"
+        "operationId": "patch-mailbox-entries-syncthing"
       },
       "delete": {
         "summary": "Eliminar Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -45892,7 +45892,7 @@
             }
           }
         },
-        "operationId": "excluir-canal-syncthing"
+        "operationId": "delete-mailbox-entries-syncthing"
       }
     },
     "/v2/mailbox/entries/{entry_id}/syncthing/activate": {
@@ -45917,7 +45917,7 @@
       "put": {
         "summary": "Activar Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -45992,7 +45992,7 @@
             }
           }
         },
-        "operationId": "ativar-canal-syncthing"
+        "operationId": "put-mailbox-entries-syncthing-activate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/syncthing/deactivate": {
@@ -46017,7 +46017,7 @@
       "put": {
         "summary": "Desactivar Canal Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -46092,7 +46092,7 @@
             }
           }
         },
-        "operationId": "desativar-canal-syncthing"
+        "operationId": "put-mailbox-entries-syncthing-deactivate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/syncthing/resend_invites": {
@@ -46117,7 +46117,7 @@
       "put": {
         "summary": "Reenviar Invitaciones de Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -46193,7 +46193,7 @@
             }
           }
         },
-        "operationId": "reenviar-convites-syncthing"
+        "operationId": "put-mailbox-entries-syncthing-resend-invites"
       }
     },
     "/v2/mailbox/entries/{entry_id}/syncthing/update_status": {
@@ -46218,7 +46218,7 @@
       "put": {
         "summary": "Actualizar Estado del Servidor Syncthing",
         "tags": [
-          "Canal Syncthing"
+          "Syncthing Channel"
         ],
         "security": [
           {
@@ -46294,7 +46294,7 @@
             }
           }
         },
-        "operationId": "atualizar-status-do-servidor-syncthing"
+        "operationId": "put-mailbox-entries-syncthing-update-status"
       }
     },
     "/v2/mailbox/entries/{entry_id}/whatsapp": {
@@ -46322,7 +46322,7 @@
       "get": {
         "summary": "Mostrar Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -46473,12 +46473,12 @@
             }
           }
         },
-        "operationId": "exibir-canal-whats-app"
+        "operationId": "get-mailbox-entries-whatsapp"
       },
       "post": {
         "summary": "Crear Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -46669,12 +46669,12 @@
           },
           "required": true
         },
-        "operationId": "criar-canal-whats-app"
+        "operationId": "post-mailbox-entries-whatsapp"
       },
       "patch": {
         "summary": "Actualizar Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -46840,12 +46840,12 @@
           },
           "required": true
         },
-        "operationId": "atualizar-canal-whats-app"
+        "operationId": "patch-mailbox-entries-whatsapp"
       },
       "delete": {
         "summary": "Eliminar Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -46876,7 +46876,7 @@
             }
           }
         },
-        "operationId": "excluir-canal-whats-app"
+        "operationId": "delete-mailbox-entries-whatsapp"
       }
     },
     "/v2/mailbox/entries/{entry_id}/whatsapp/activate": {
@@ -46901,7 +46901,7 @@
       "put": {
         "summary": "Activar Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -47011,7 +47011,7 @@
             }
           }
         },
-        "operationId": "ativar-canal-whats-app"
+        "operationId": "put-mailbox-entries-whatsapp-activate"
       }
     },
     "/v2/mailbox/entries/{entry_id}/whatsapp/deactivate": {
@@ -47036,7 +47036,7 @@
       "put": {
         "summary": "Desactivar Canal WhatsApp",
         "tags": [
-          "Canal WhatsApp"
+          "WhatsApp Channel"
         ],
         "security": [
           {
@@ -47146,14 +47146,14 @@
             }
           }
         },
-        "operationId": "desativar-canal-whats-app"
+        "operationId": "put-mailbox-entries-whatsapp-deactivate"
       }
     },
     "/v2/mailbox/entries": {
       "get": {
         "summary": "Listar Buzones de Correo",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Mailboxes - Mailbox"
         ],
         "security": [
           {
@@ -47311,12 +47311,12 @@
             }
           }
         },
-        "operationId": "listar-caixas-postais-mailbox-entries"
+        "operationId": "get-mailbox-entries"
       },
       "post": {
         "summary": "Crear Buzón de Correo",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Mailboxes - Mailbox"
         ],
         "security": [
           {
@@ -47453,14 +47453,14 @@
           "required": true,
           "description": "Información del Buzón de Correo a crear."
         },
-        "operationId": "criar-caixa-postal-mailbox-entries"
+        "operationId": "post-mailbox-entries"
       }
     },
     "/v2/mailbox/entries/{uid}": {
       "get": {
         "summary": "Ver Buzón de Correo",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Mailboxes - Mailbox"
         ],
         "security": [
           {
@@ -47594,12 +47594,12 @@
             }
           }
         },
-        "operationId": "visualizar-caixa-postal-mailbox-entries"
+        "operationId": "get-mailbox-entries-2"
       },
       "patch": {
         "summary": "Actualizar Buzón de Correo",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Mailboxes - Mailbox"
         ],
         "security": [
           {
@@ -47744,12 +47744,12 @@
           "required": true,
           "description": "Información del Buzón de Correo a actualizar."
         },
-        "operationId": "atualizar-caixa-postal-mailbox-entries"
+        "operationId": "patch-mailbox-entries"
       },
       "delete": {
         "summary": "Eliminar Buzón de Correo",
         "tags": [
-          "Caixas Postais - Mailbox"
+          "Mailboxes - Mailbox"
         ],
         "security": [
           {
@@ -47862,14 +47862,14 @@
             }
           }
         },
-        "operationId": "deletar-caixa-postal"
+        "operationId": "delete-mailbox-entries"
       }
     },
     "/v2/mailbox/files": {
       "get": {
         "summary": "Listar Archivos del Buzón de Correo",
         "tags": [
-          "Arquivos de Mailbox"
+          "Mailbox Files"
         ],
         "security": [
           {
@@ -48017,14 +48017,14 @@
             }
           }
         },
-        "operationId": "listar-arquivos-de-mailbox"
+        "operationId": "get-mailbox-files"
       }
     },
     "/v2/mailbox/entries/{entry_uid}/files": {
       "post": {
         "summary": "Crear Archivo de Buzón de Correo",
         "tags": [
-          "Arquivos de Mailbox"
+          "Mailbox Files"
         ],
         "security": [
           {
@@ -48166,14 +48166,14 @@
           "required": true,
           "description": "Información del Archivo de Buzón de Correo a crear."
         },
-        "operationId": "criar-arquivo-de-mailbox"
+        "operationId": "post-mailbox-entries-files"
       }
     },
     "/v2/mailbox/files/{uid}": {
       "get": {
         "summary": "Ver Archivo de Buzón de Correo",
         "tags": [
-          "Arquivos de Mailbox"
+          "Mailbox Files"
         ],
         "security": [
           {
@@ -48302,12 +48302,12 @@
             }
           }
         },
-        "operationId": "visualizar-arquivo-de-mailbox"
+        "operationId": "get-mailbox-files-2"
       },
       "patch": {
         "summary": "Actualizar Archivo de Buzón de Correo",
         "tags": [
-          "Arquivos de Mailbox"
+          "Mailbox Files"
         ],
         "security": [
           {
@@ -48447,12 +48447,12 @@
           "required": true,
           "description": "Información del Archivo de Buzón de Correo a actualizar."
         },
-        "operationId": "atualizar-arquivo-de-mailbox"
+        "operationId": "patch-mailbox-files"
       },
       "delete": {
         "summary": "Eliminar Archivo de Buzón de Correo",
         "tags": [
-          "Arquivos de Mailbox"
+          "Mailbox Files"
         ],
         "security": [
           {
@@ -48546,14 +48546,14 @@
             }
           }
         },
-        "operationId": "deletar-arquivo-de-mailbox"
+        "operationId": "delete-mailbox-files"
       }
     },
     "/v2/me": {
       "get": {
         "summary": "Obtener información del usuario autenticado",
         "tags": [
-          "Informações do Usuário"
+          "User Information"
         ],
         "security": [
           {
@@ -48717,7 +48717,7 @@
             }
           }
         },
-        "operationId": "obter-informacoes-do-usuario-autenticado"
+        "operationId": "get-me"
       }
     }
   },
@@ -78999,284 +78999,284 @@
   },
   "tags": [
     {
-      "name": "Consulta de Boletos",
-      "description": "Consulta de boletos"
+      "name": "Bank Billet Query",
+      "description": "Query bank billets"
     },
     {
-      "name": "Consulta de Pix QR Code",
-      "description": "Consulta de Pix QR Code"
+      "name": "Pix QR Code Query",
+      "description": "Query Pix QR Code"
     },
     {
-      "name": "Saldos",
-      "description": "Gerenciar saldos"
+      "name": "Balances",
+      "description": "Manage balances"
     },
     {
-      "name": "Contas",
-      "description": "Gerenciar contas financeiras"
+      "name": "Accounts",
+      "description": "Manage financial accounts"
     },
     {
-      "name": "Provedores",
-      "description": "Listar provedores financeiros"
+      "name": "Providers",
+      "description": "List financial providers"
     },
     {
-      "name": "Extrato",
-      "description": "Gerenciar extratos"
+      "name": "Statement",
+      "description": "Manage statements"
     },
     {
-      "name": "Conta Pix",
-      "description": "Gerenciar contas Pix"
+      "name": "Pix Account",
+      "description": "Manage Pix accounts"
     },
     {
       "name": "Pix",
-      "description": "Gerenciar cobranças via Pix"
+      "description": "Manage charges via Pix"
     },
     {
-      "name": "Pix Automático - Conta",
-      "description": "Gerenciar contas do Pix Automático"
+      "name": "Automatic Pix - Account",
+      "description": "Manage Automatic Pix accounts"
     },
     {
-      "name": "Pix Automático - Location",
-      "description": "Gerenciar locations do Pix Automático"
+      "name": "Automatic Pix - Location",
+      "description": "Manage Automatic Pix locations"
     },
     {
-      "name": "Pix Automático - Recorrência",
-      "description": "Gerenciar recorrências do Pix Automático"
+      "name": "Automatic Pix - Recurrence",
+      "description": "Manage Automatic Pix recurrences"
     },
     {
-      "name": "Pix Automático - Solicitação",
-      "description": "Gerenciar solicitações do Pix Automático"
+      "name": "Automatic Pix - Request",
+      "description": "Manage Automatic Pix requests"
     },
     {
-      "name": "Pix Automático - Cobrança",
-      "description": "Gerenciar cobranças do Pix Automático"
+      "name": "Automatic Pix - Charge",
+      "description": "Manage Automatic Pix charges"
     },
     {
-      "name": "Recebimentos",
-      "description": "Gerenciar pagamentos recebidos"
+      "name": "Receipts",
+      "description": "Manage received payments"
     },
     {
-      "name": "Transferências",
-      "description": "Gerenciar transferências"
+      "name": "Transfers",
+      "description": "Manage transfers"
     },
     {
-      "name": "Entre Contas",
-      "description": "Gerenciar transferências entre contas"
+      "name": "Between Accounts",
+      "description": "Manage transfers between accounts"
     },
     {
       "name": "INTERNAL",
-      "description": "Aprovar e reagendar transferências internas"
+      "description": "Approve and reschedule internal transfers"
     },
     {
-      "name": "Pix - Transferência",
-      "description": "Gerenciar transferências via Pix",
+      "name": "Pix - Transfer",
+      "description": "Manage transfers via Pix",
       "x-displayName": "Pix"
     },
     {
       "name": "TED",
-      "description": "Gerenciar transferências via TED"
+      "description": "Manage transfers via TED"
     },
     {
-      "name": "Todos",
-      "description": "Gerenciar lotes de transferência"
+      "name": "Batches",
+      "description": "Manage transfer batches"
     },
     {
-      "name": "Contas de Transferência",
-      "description": "Gerenciar contas de transferência"
+      "name": "Transfer Accounts",
+      "description": "Manage transfer accounts"
     },
     {
-      "name": "Boletos",
-      "description": "Gerenciar pagamentos de boletos"
+      "name": "Bank Billets",
+      "description": "Manage bank billet payments"
     },
     {
-      "name": "Todos - Pagamento",
-      "description": "Gerenciar lotes de pagamento",
-      "x-displayName": "Todos"
+      "name": "Payment Batches",
+      "description": "Manage payment batches",
+      "x-displayName": "Batches"
     },
     {
-      "name": "Contas de DDA",
-      "description": "Gerenciar contas de DDA"
+      "name": "DDA Accounts",
+      "description": "Manage DDA accounts"
     },
     {
-      "name": "Boletos DDA",
-      "description": "Gerenciar boletos DDA"
+      "name": "DDA Bank Billets",
+      "description": "Manage DDA bank billets"
     },
     {
-      "name": "Contas de Pagamento",
-      "description": "Gerenciar contas de pagamento"
+      "name": "Payment Accounts",
+      "description": "Manage payment accounts"
     },
     {
-      "name": "Pix - Pagamento",
-      "description": "Gerenciar pagamentos via Pix",
+      "name": "Pix - Payment",
+      "description": "Manage payments via Pix",
       "x-displayName": "Pix"
     },
     {
-      "name": "Tributo (beta)",
-      "description": "Gerenciar pagamentos de tributos"
+      "name": "Tax (beta)",
+      "description": "Manage tax payments"
     },
     {
-      "name": "Contas de Consumo",
-      "description": "Gerenciar pagamentos de contas de consumo"
+      "name": "Utility Bills",
+      "description": "Manage utility bill payments"
     },
     {
-      "name": "Pagamentos",
-      "description": "Gerenciar pagamentos"
+      "name": "Payments",
+      "description": "Manage payments"
     },
     {
-      "name": "Caixas Postais",
-      "description": "Gerenciar Caixas Postais"
+      "name": "Mailboxes",
+      "description": "Manage mailboxes"
     },
     {
-      "name": "Caixas Postais - Mailbox",
-      "description": "Gerenciar Caixas Postais (Mailbox)",
-      "x-displayName": "Caixas Postais"
+      "name": "Mailboxes - Mailbox",
+      "description": "Manage mailboxes",
+      "x-displayName": "Mailboxes"
     },
     {
-      "name": "Arquivos de Mailbox",
-      "description": "Gerenciar Arquivos de Mailbox"
+      "name": "Mailbox Files",
+      "description": "Manage mailbox files"
     },
     {
-      "name": "Canal Email",
-      "description": "Gerenciar Canal de E-mail"
+      "name": "Email Channel",
+      "description": "Manage Email channel"
     },
     {
-      "name": "Canal S3",
-      "description": "Gerenciar Canal S3"
+      "name": "S3 Channel",
+      "description": "Manage S3 channel"
     },
     {
-      "name": "Canal SFTP",
-      "description": "Gerenciar Canal SFTP"
+      "name": "SFTP Channel",
+      "description": "Manage SFTP channel"
     },
     {
-      "name": "Canal WhatsApp",
-      "description": "Gerenciar Canal WhatsApp"
+      "name": "WhatsApp Channel",
+      "description": "Manage WhatsApp channel"
     },
     {
-      "name": "Canal Syncthing",
-      "description": "Gerenciar Canal Syncthing"
+      "name": "Syncthing Channel",
+      "description": "Manage Syncthing channel"
     },
     {
-      "name": "Usuário",
-      "description": "Gerenciar Usuários"
+      "name": "User",
+      "description": "Manage users"
     },
     {
-      "name": "Certificado",
-      "description": "Gerenciar Certificados"
+      "name": "Certificate",
+      "description": "Manage certificates"
     },
     {
-      "name": "Subcontas",
-      "description": "Gerenciar Subcontas"
+      "name": "Sub-accounts",
+      "description": "Manage sub-accounts"
     },
     {
-      "name": "Conexões",
-      "description": "Gerenciar Conexões"
+      "name": "Connections",
+      "description": "Manage connections"
     },
     {
-      "name": "Comando",
-      "description": "Consulta de Comandos"
+      "name": "Commands",
+      "description": "Query commands"
     },
     {
-      "name": "Tokens de Acesso",
-      "description": "Gerenciar Tokens de Acesso"
+      "name": "Access Tokens",
+      "description": "Manage access tokens"
     },
     {
-      "name": "Informações do Usuário",
-      "description": "Obter informações do usuário autenticado"
+      "name": "User Information",
+      "description": "Get authenticated user information"
     }
   ],
   "x-tagGroups": [
     {
-      "name": "GERAL",
+      "name": "General",
       "tags": [
-        "Consulta de Boletos",
-        "Consulta de Pix QR Code"
+        "Bank Billet Query",
+        "Pix QR Code Query"
       ]
     },
     {
-      "name": "FINANCEIRO",
+      "name": "Financial",
       "tags": [
-        "Saldos",
-        "Contas",
-        "Provedores",
-        "Extrato"
+        "Balances",
+        "Accounts",
+        "Providers",
+        "Statement"
       ]
     },
     {
-      "name": "COBRANÇAS",
+      "name": "Charges",
       "tags": [
-        "Conta Pix",
+        "Pix Account",
         "Pix",
-        "Pix Automático - Conta",
-        "Pix Automático - Location",
-        "Pix Automático - Recorrência",
-        "Pix Automático - Solicitação",
-        "Pix Automático - Cobrança",
-        "Recebimentos"
+        "Automatic Pix - Account",
+        "Automatic Pix - Location",
+        "Automatic Pix - Recurrence",
+        "Automatic Pix - Request",
+        "Automatic Pix - Charge",
+        "Receipts"
       ]
     },
     {
-      "name": "TRANSFERÊNCIAS",
+      "name": "Transfers",
       "tags": [
-        "Transferências",
-        "Entre Contas",
+        "Transfers",
+        "Between Accounts",
         "INTERNAL",
-        "Pix - Transferência",
+        "Pix - Transfer",
         "TED",
-        "Todos",
-        "Contas de Transferência"
+        "Batches",
+        "Transfer Accounts"
       ]
     },
     {
-      "name": "PAGAMENTOS",
+      "name": "Payments",
       "tags": [
-        "Boletos",
-        "Todos - Pagamento",
-        "Contas de DDA",
-        "Boletos DDA",
-        "Contas de Pagamento",
-        "Pix - Pagamento",
-        "Tributo (beta)",
-        "Contas de Consumo",
-        "Pagamentos"
+        "Bank Billets",
+        "Payment Batches",
+        "DDA Accounts",
+        "DDA Bank Billets",
+        "Payment Accounts",
+        "Pix - Payment",
+        "Tax (beta)",
+        "Utility Bills",
+        "Payments"
       ]
     },
     {
       "name": "EDI",
       "tags": [
-        "Caixas Postais"
+        "Mailboxes"
       ]
     },
     {
-      "name": "MAILBOX",
+      "name": "Mailbox",
       "tags": [
-        "Caixas Postais - Mailbox",
-        "Arquivos de Mailbox",
-        "Canal Email",
-        "Canal S3",
-        "Canal SFTP",
-        "Canal WhatsApp",
-        "Canal Syncthing"
+        "Mailboxes - Mailbox",
+        "Mailbox Files",
+        "Email Channel",
+        "S3 Channel",
+        "SFTP Channel",
+        "WhatsApp Channel",
+        "Syncthing Channel"
       ]
     },
     {
-      "name": "ADMINISTRAÇÃO",
+      "name": "Administration",
       "tags": [
-        "Usuário",
-        "Certificado",
-        "Subcontas",
-        "Conexões",
-        "Comando"
+        "User",
+        "Certificate",
+        "Sub-accounts",
+        "Connections",
+        "Commands"
       ]
     },
     {
-      "name": "SEGURANÇA E AUTENTICAÇÃO",
+      "name": "Security and Authentication",
       "tags": [
-        "Tokens de Acesso"
+        "Access Tokens"
       ]
     },
     {
-      "name": "USUÁRIO",
+      "name": "User",
       "tags": [
-        "Informações do Usuário"
+        "User Information"
       ]
     }
   ]

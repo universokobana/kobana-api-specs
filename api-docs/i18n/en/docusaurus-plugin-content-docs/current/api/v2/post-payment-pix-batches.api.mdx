@@ -1,0 +1,83 @@
+---
+id: post-payment-pix-batches
+slug: "/api/v2/payment/pix_batches/post"
+title: "Create a PIX Payment Batch"
+description: "This endpoint is used to generate a payment batch."
+sidebar_label: "Create a PIX Payment Batch"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a PIX Payment Batch"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/payment/pix_batches"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+This endpoint is used to generate a payment batch.
+
+## Prerequisite
+
+To issue a payment batch, you must have a Financial Account, specified in `financial_account_uid`. The payment account applied to the batch is defined in `payment_account_uid`; if omitted, the oldest linked to the financial account is used; if specified, it must belong to `financial_account_uid`.
+
+## Webhook Events
+
+The `payment.batch.db.created` event is triggered in this operation.
+
+When registering a Payment Batch, the system creates a command to register it in the financial institution. After the batch registration is confirmed in the institution, the `payment.pix_batch.confirmed` event is triggered.
+
+The `payment.db.created` event is also triggered in this operation if the batch contains a new payment.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-payment-pix-batches.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-payment-pix-batches.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-payment-pix-batches.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

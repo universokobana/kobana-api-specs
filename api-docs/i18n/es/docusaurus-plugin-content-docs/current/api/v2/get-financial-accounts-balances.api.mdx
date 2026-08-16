@@ -1,0 +1,70 @@
+---
+id: get-financial-accounts-balances
+slug: "/api/v2/financial/accounts/_financial_account_uid/balances/get"
+title: "Listar saldos"
+description: "Lista todos los saldos de una cuenta financiera específica. Devuelve información sobre valores disponibles, bloqueados e invertidos automáticamente."
+sidebar_label: "Listar saldos"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar saldos"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/balances"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todos los saldos de una cuenta financiera específica. Devuelve información sobre valores disponibles, bloqueados e invertidos automáticamente.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-balances.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-balances.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-balances.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

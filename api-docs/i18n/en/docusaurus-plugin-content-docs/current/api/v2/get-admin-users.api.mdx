@@ -1,0 +1,70 @@
+---
+id: get-admin-users
+slug: "/api/v2/admin/users/get"
+title: "List Users"
+description: "Lists all users registered in the account, with option to filter by email. Supports pagination."
+sidebar_label: "List Users"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWt1y27gVfhUMLrpJl5RIWrJ+pu3au/nZNNnEEyfttl6PFiQOJcQkwAVAJV6PZvoQfYG2F532ttMnyJv0SToHJCXqx7Kd7PaiE19YNgScH5yD851zgCtq2dTQ8Rl9bUDTc48aSEot7CUdn13RGJgGfVzaGR2fnS/OPcrBJFoUVihJx/SZMNYQlmWkNKAN0TAVxoIGToQkdgaEJYkqpfXIW2FnRLmFxCqSisyCJvElgZyJrENOy6JQ2hpSsKmQDOd1qEcLplkOFrRxAkmWAx07Yf3jKUhLPSpQkhkwDpp6VMMPpdDA6ThlmYFNiU+0mgsOhJE5ywSvuJNUaZIoaVliDXKFdywvMuT0FOZCkm+ElSK5IL+6yKu/ji5UzCTrJCrvxPo31KMmmUHO6PiK2ssCVxqrhZzSxcJbiv2t/4RDXigLMrn0n8LlXaVvLScXcIkbWWiYg7Sk0CoBY4ScEg1Fxi7X9ei9fTj4+neP+/r3By8H307DW0pcsCk0Qv5QgkaJNzaUTYE8L/N4t/xbTIS0MAW9zgX05GZOFROiUqIhUZobUoAm9brbM0ayKSszS8f9wKM5eyfyMsd/2iI5v9gvz6MtFwamk5k7CsvRNSPAO8iLTB2h29xK5qVFznG2KZQ0YPD7KAjwY12g1+4MpqqUnHoU/RkPyPiKsqLIROLOVPeNwblXK6muqLHMloaOoyDwKGeWuaMmOB1HBx4t8Q8ahKM0hWDkJ0HI/QHEgT9K0pGfpP0hj5IgORwMUFen85iOknAYDuMoPuCHLE16w7gXjoZDSEPggwMOR6kwM9CdRgqPpkIbO6l3/xumpxrwcOeC8wya8VORv/83GOrRjK1mP1by/d9ZppBKmWUbREi9iLSmJRqYBT6ZCzZhhVgaoACdC2OEki4m/hIDYjOXWTqmURAd+sHQD3uvwmgchuNw9HkYjIOAerQs+O0mgmRxdvNE9EZnhGiXEQ78QRgF/nB42Pdj3huN4sMoORxCywj9cJimCQ+Go3TIo96odxjHUcjCIBgmUTxKjgpVamU6Foz9ZIF9Fgh3WCAI/cFBb+iP+Ij7AxYFQTDoDaMeb1kAeqNkyEJ+MODDYcBh0Bv1AEZpGgyjfn8QHWUwRQt8Oga3MEKwZYQ4TQf+IOapP+pFsQ9hdHCYhP1hP4lbRugd9Ib8EJKD3mF/MIj7vRhGg1HUS9LksD8Kh0czsFbIKWjfJLMcMtCfjsS11jjHnKzJ0BA9MAGZlDqjY1lmmUclvLPV/7Q7j7qM50J2XXr4RYPzv+79wn1ELsGbAh2Hi8UO+FPxG0hwwwutCtBWVODX4NVOaG8D4tevXp2QUze7Qx6+G5Pve0HwfYcuGphbUmBaM5eNWcjNLgnWCWNGDNIipgKvAB8JdsiJVqnIgKQCMm7IPeeDHilmSoJHVu7UbblQd+k23aWneJjPIaVJMVNW4X56JIMpyybIyCOx0HbG2aVHpiA5aI9kTE5LNgXjESty+NFxZIlLCmORCXs50WBUqROcwoVh9SgXJsmUKTXcJ0wDUTK7JBpsqSVw8nYGVSZv1QVIkjCtBRg3kihdJSUcs06TqAI2Na61WP7RcTqs/l2p0YwIjhtrWyOJyvNS1vnLarjQkIIG6dRpBtf0vU+UroqQLKvE62z5EgaUnX5UaHDWpWOry+1E/AHmoUjbGf/ear6HI6QU/H479ev1Dxd1+NpM7rYS6jLOREJer7NYyyNLoyej4eCw3zuIQoyQTnKdqHxyrT57pC8NcFcCVXuf1luNJdyTmu62LnV03dYmVTp3QaTJf7eT1M/MjuS4NCXTQh3VIy5HXnjUOdKKz9mKEYYbulWSvlyVoG4puVd9OPuv2YR+3u+TMCQj/PGDwGHNWsi/NdNHuIi4RW0Gv1Xv/6aQ6Bpg3JrqN27VNtlTkc0Zkm3hza2JPmO7JD1l0irj9F+B1e3VL7PsGu2JE5as6G+h3NKDYqUyYHLbWyV3gdYQkRJhyVtmSE2FzAUjxydP2nwdai42YPPGQN9UWrvclbRJtTid0WTG9BQ6MZMXk1hkGVjT+aWD8ryTlMaqHDSOnC/WIXvPqUG49jGAb+3DA2YBz60jhEPtzY6CqOcHoR+ErxxQj4Pgj6hNG/8/imtFaCfPsP8q7I8PljzbqcQeH7oD84piXvV7blZ6BZQ3Q/kznOvQm9xLxFxUjkyY5OSrk0f3twDjjkfjqyXJW5wNrpISlZzIqp9yhxPo9hJPxFcnj9Y49aNRZzSMOlFv4Ed9usBEayu32OsbpRbbUfzlM7RLTYg4QuTecWLFHE6t0mwKDn0fazZnlmnCDElZlsUsuVgTb2ZtYcbdLiuKzlpPrauZyEyXOZITU9HsxpmKTVcDFxoS2+10Ot1UWdV5U7izW+VCd9i3x24BaZIOcq+UdTqESP5W5Ux6xP2SSk5iIZm+9IiyM9CT5SKlSaoBsKNYAvnPn/68lczsQp+cZYAyNynQ7c/KtcfEkVpjEo5GgR/0/Sio8KJOET8yIH5mSJV9IcqupWerLJTc25m/7diJM1pY/8uXrgZxkbJJX+9gx1qqZuWKeStL3GWE4xy0SFj3lKnJCSszh9bXJM0fsWnHbYpkSbHKvFSVXxcZs2jmlexrcuzcOJNoADnRTfv4Ai5jxTSfSDYX0wolcEd3Zvsfoc+Dhh6WAhqwcQ8ce55NTunVrX6W3UWduTAly+j5wjmBdRaaRxOX/7q4tVZ4bsb1VTv1rKoqzzdj96pUvaJMXr5IXaNzb+DD7kM9wXne9h1IHQqdCTXMhSrdHQa0+u+ubl9FOrER6eZRt51BfOFq45B6yBCtt6qofx6xkf5PIfLBSuSqqt9RiORCVu32cAspS63dRQZeKFQAuCFP6EVeGDjvYJyLyr9OWhauGyYt12l5zML9eLQXhNut81ZBj0EqZSIrNXTIE1ldE7ni94Oa6r0g9ChoreobrEa4V66c5oDpKxFy/v4vmeCK3DsFPRdc6THhMIdMFZgQ3HesuSuTJCvtTGnxI3AHBLbqcr0gaxTf/4Nw4SKfBYKXaCRhnJGGevf1y2cIbAIrMdLYueaIOesGFjdBtOs2wufgMzzMii7O9zZu2mey3pHlbmwdzz19nZXbBGt3NqPRzp5PRYngljVO7piudYHWfKsXBB6aqhdFXj8IUKvGaFtRMhfySRUowz0do3XdarNff4BvPrFfagEpaY3tUq1xWPQB5xCbil7jeNSjJ0y//2sOViuiYo3w8f5fWqiqeHHO9zHSP0QhnUVqSZ2c7vhMnAJbgm5OoB5la8d0OSyVnVTXXlXs0Sz/OGGfYwnQBPXmBprYGbMuNGDhuRSuVofleM+9pUQ1jMe3Lgcnq85HITRgkeQQuj7Hd5Da2/S5bT0eOKqNJiuZK1WmIEG7MnrTixImpbIkBhJnTF5saSWxeinwdGGzSGMMiTWTiXIRaQ7EtZXy+na9cbG9h+rnO0cf5L4f5kc/mSFvwLithOw5GLRjvbs3rb4LglZnrIHOg23oPFk2R1aw+QdVEq7kZ5bM2BycezVIQE5dnzh1rVlhSMKyrPOByHqwE1lPEO0cPKFnGoO8k1IbReYqef9PzNISYRiGwAIyRXKQyqC3ctxEQwBTU2XG5DuKiTV5q4WF72hnhcGp0rHgHOQn+PsEf5/g7xP8fYK//3/4W3gUJzoHeoLPEKZgfXe77bvbbYyMYGeq/spdbeO7yc1bcHx5B3revGisbsqbCuyKFeJrZeyiSz06Z1pg39tUoOi+cFgoMfif4ZBvmOSxerder2Go2CzZq55Z/fBtz9KFe2zWvAI9RWirBJhHk/Zz0KXRUPTmNaG7xnGTnBGETFXLa+nTF18ePz92kXcedfDVAW5DZcJ6YN2uT51obsGDujfeXH1Y0Ll5kbqCNml3krON2hUnKuOXRtVZBkvsqpFPT0vXvaoRAV9MrBmEvSk529rd5mmJqRYfbW6hRwtlbM5kixG+lSWvaw9YU/Nqlfz8D17U1maz8M52i4wJ6a6Jqu5S5bFndI4vM5zP4oY4mc89OnP+d0avrmJm4LXOFgscrl5Hoi+7NmN23evVtprrr0Z3inQBl6sHqK61TsfURYvbs9n7ZHQf19WD1A/kfNvHoXuEaKasJDhfxQT3HttrHg7fcfNv9QZ6j2Rrz68/cIPu+pR5jzi7nlWvSVVNwyZ80ZZ4q87ADV7G8McPX9HF4r/YJAh1
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Users"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/admin/users"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all users registered in the account, with option to filter by email. Supports pagination.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-admin-users.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-admin-users.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-admin-users.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

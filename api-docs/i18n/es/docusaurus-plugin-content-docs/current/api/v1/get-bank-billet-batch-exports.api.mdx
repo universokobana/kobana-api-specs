@@ -1,0 +1,72 @@
+---
+id: get-bank-billet-batch-exports
+slug: "/api/v1/bank_billet_batch_exports/_id/get"
+title: "Archivo de Exportación del Lote"
+description: "Archivo de exportación del lote."
+sidebar_label: "Archivo de Exportación del Lote"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWEtv3DYQ/iuDOSWA9uFmLxGKIm7jNkHS2Iidk204XHJ2lzZFKiSl2l3sjzF6KFKgp9x63T9WDKV92s6raA+FffFK5Mx88/iGHE0xinHA/Bj3Lkvno5j/Pv/NgXLw0kXC0wwDycrreIX58RSHJDz53SpOMD8+nZ1mqChIr8uoncUcd72c6NqBIqBGn9TzDxYUGTAuUvfEnthDDWRAtFvF/C8L1sFEQNDKQemdpCCUAyPAUygrClFAID+/hkF/0IVN+SsBFOL8GowO0UEpvAAGJfxY+Nt0VJbfKe1JNuC2RFa6u5ghLxYUyYcUACsKwhzfBPKd3THZiBlq9nxCQpHHDD29q7QnhflImEDbETrwrnReamcJKgvSeU8OyJCMfv7Baumgnl+bFAnGJZ2NQkYXGAxdiqI0DOAF1drCzzpaLS/g24ui+fXkwg2FFV3piu7Qf4cZBjmhQmA+xXhVsmSIXtsxzmbZ0hutFl6UIk42fIi+uuHC86fL4N+V53Wsjx8//hiMUzYXSmcDBV5/1P+G/22a3Ns0kmzAmCx5oVKMYP7+UkeHswwH/Z2bCn4UxiS4oopko5aNri4cuQuyoG0bdMyQI86JzacoytJoKVhH7zywounKrymGKGIVMB/0dzIk711bJFHHlKRGtyLYPXi+MgEPDsnXWjmfg6KajCsLsvFhMq1YrrKiihPn9a/EmVEUhTaY4z5saJy/B6VH5MlGaouFo7HQ3nvz+mUGhdABqIBJjGXIe73WIvnQ3aiVnqekSlIvspGOoo6QFILD2enslgS64TlJLv/Ss7qom/QtYrLcp22kcWLGVkpDZJI/Ozo6SGWT4teFvfMc3g76/bddzuUiqEttwntxxdUaqQifRtNmYrvqtrE8bZ6a8hp6qukGpNtz2aBs0vYpIz/MPyg9djc0V7ZpeUEMDZ211dcoXmT+i/Av9UMCHIUx1Jo6wT2zWUMUPqeG5teBlX19DZ0gO8R/2ZId9c5ZgonN60H/0UdoW5IvdHBdeOUgarLEbfpQupLADY0ei+i8bltm6vXGiEIo0f1KQj+6ldAHrD55xOdECASeT8fgoHZy/geUnqQOogFsHBRkXYCq4NMlUgAK0pUu5HCCnoSCX7yOdILdFfVHzg+1UmTvWXfPuv+EdYPPPG3t6momvpJUg1tJ9YovnCOnoXQhzP+sOZCW1XvhwYGnsQ7RuxVHrItnI1fZjbNxL0Ra7gXLOulSh0gZuCqpV2SIi797T617av3r1JplyAoTK54rzHFMsTMU9qIz1Mak31FOOs3tOWCGBcWJazemuYNnLOzVOz2WOmukzpLUWSvVm2o14zs++XoxoFSe2bBwbCpK/cyFOOthhrXwmlMSGtKmhcRVWxU8AYpSd4KwauguN8OAGa9tvUuz30hUJnIV3yk6Szf8xRB5yKRrANQ7Z+vT5LIiGPpibuHnZhPPK6jtyK2RAF/sf7/7ajelvd7p9tlF8qGpoPbFVlk5WfFde621iSSuCF4k2JhhJF+E/VGqGElrwTRbxcEbXehUYTE1CJni2U5VhxUnidrCxGwrNeK8UuJGnKlo2llohJ9sBzPD0oVYCLtmaG3o3tsexl42w9hGGKar5v0/HNjbMop0GXulEdpy30mhn7akOsZ6BzO8k1aYYa4VF/gkMeQYp9OhCPTGm9mMX7+ryPP3kNMVpxL3lE4t747Rfz3sD163E/ZD+Lxp+lavFkeIvUrsNhU/YYYXdNVM9emga79MfBnAf/SZ4lawDaiNDydLyPwtolnflZLK9bUblwtuJ8te+dPeEc5mfwOav6JP
+sidebar_class_name: "get api-method"
+info_path: current/api/v1/kobana-api-v-1-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Archivo de Exportación del Lote"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/bank_billet_batch_exports/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Archivo de exportación del lote.
+
+Si el archivo aún no ha sido procesado la respuesta será 404. Si el archivo ya está listo para descargar la respuesta será una redirección para descargar el archivo.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-bank-billet-batch-exports.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-bank-billet-batch-exports.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-bank-billet-batch-exports.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

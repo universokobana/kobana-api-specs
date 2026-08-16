@@ -1,0 +1,79 @@
+---
+id: get-financial-accounts-statement-transactions-syncs
+slug: "/api/v2/financial/accounts/_financial_account_uid/statement_transactions/syncs/get"
+title: "List Statement Synchronizations"
+description: "Lists the statement synchronizations requested for a Financial Account, from most recent to oldest."
+sidebar_label: "List Statement Synchronizations"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Statement Synchronizations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/statement_transactions/syncs"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists the statement synchronizations requested for a Financial Account, from most recent to oldest.
+
+Each item represents a request made in
+[Synchronize Statement](ref:post_v2-financial-accounts-financial-account-uid-statement-transactions-sync-1)
+and aggregates the commands created for the requested window — windows that span more than one month generate one command per month.
+
+The `commands_summary` field brings the count of commands by status, which allows identifying how many months
+failed without needing to open the request. To see the commands individually, use the query by `uid`.
+
+> Only synchronizations requested via API appear here. Automatic periodic synchronizations do not generate a record.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-statement-transactions-syncs.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-statement-transactions-syncs.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-statement-transactions-syncs.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

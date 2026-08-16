@@ -254,7 +254,7 @@
      "required": true,
      "description": "Información a ser guardada en la cartera de cobro"
     },
-    "operationId": "criar-carteira-de-cobranca"
+    "operationId": "post-bank-billet-accounts"
    },
    "get": {
     "summary": "Listar Carteras",
@@ -557,7 +557,7 @@
       }
      }
     },
-    "operationId": "listar-carteiras"
+    "operationId": "get-bank-billet-accounts"
    }
   },
   "/v1/bank_billet_accounts/{id}": {
@@ -766,7 +766,7 @@
       }
      }
     },
-    "operationId": "informacoes-da-carteira"
+    "operationId": "get-bank-billet-accounts-2"
    },
    "put": {
     "summary": "Actualizar la Cartera",
@@ -933,7 +933,7 @@
      "required": true,
      "description": "Información a ser actualizada en la Cartera"
     },
-    "operationId": "atualizar-a-carteira"
+    "operationId": "put-bank-billet-accounts"
    },
    "delete": {
     "summary": "Eliminar la Cartera de Cobro",
@@ -1063,7 +1063,7 @@
       }
      }
     },
-    "operationId": "excluir-a-carteira-de-cobranca"
+    "operationId": "delete-bank-billet-accounts"
    }
   },
   "/v1/bank_billet_accounts/{id}/ask": {
@@ -1252,7 +1252,7 @@
       }
      }
     },
-    "operationId": "solicitar-homologacao-da-carteira-de-cobranca"
+    "operationId": "get-bank-billet-accounts-ask"
    }
   },
   "/v1/bank_billet_accounts/{id}/validate": {
@@ -1362,7 +1362,7 @@
      },
      "required": true
     },
-    "operationId": "validar-carteira-de-cobranca"
+    "operationId": "put-bank-billet-accounts-validate"
    }
   },
   "/v1/bank_billet_accounts/{id}/set_default": {
@@ -1472,7 +1472,7 @@
      },
      "required": true
     },
-    "operationId": "alterar-carteira-de-cobranca-padrao"
+    "operationId": "put-bank-billet-accounts-set-default"
    }
   },
   "/v1/bank_billets": {
@@ -1774,7 +1774,7 @@
      "required": true,
      "description": "Información a ser guardada en el boleto"
     },
-    "operationId": "criar-um-boleto"
+    "operationId": "post-bank-billets"
    },
    "get": {
     "summary": "Listar Boletos",
@@ -2588,7 +2588,7 @@
       }
      }
     },
-    "operationId": "listar-boletos"
+    "operationId": "get-bank-billets"
    }
   },
   "/v1/bank_billets/{id}": {
@@ -2887,7 +2887,7 @@
       }
      }
     },
-    "operationId": "visualizar-o-boleto"
+    "operationId": "get-bank-billets-2"
    },
    "put": {
     "summary": "Actualizar el Boleto",
@@ -3030,7 +3030,7 @@
      "required": true,
      "description": "Información a ser actualizada en el boleto"
     },
-    "operationId": "atualizar-o-boleto"
+    "operationId": "put-bank-billets"
    }
   },
   "/v1/bank_billets/{id}/cancel": {
@@ -3131,7 +3131,7 @@
      },
      "description": "Información de cancelación de un boleto"
     },
-    "operationId": "cancelar-o-boleto"
+    "operationId": "put-bank-billets-cancel"
    }
   },
   "/v1/bank_billets/{id}/duplicate": {
@@ -3401,7 +3401,7 @@
      },
      "description": "Se permite el envío de cualquier otro parámetro del boleto."
     },
-    "operationId": "duplicar-boleto"
+    "operationId": "post-bank-billets-duplicate"
    }
   },
   "/v1/bank_billets/{id}/protest/{type}": {
@@ -3500,7 +3500,7 @@
       }
      }
     },
-    "operationId": "protestar-boleto"
+    "operationId": "put-bank-billets-protest"
    }
   },
   "/v1/bank_billets/{id}/pay": {
@@ -3582,7 +3582,7 @@
      },
      "description": "Información de pago del boleto"
     },
-    "operationId": "marcar-boleto-como-pago"
+    "operationId": "put-bank-billets-pay"
    }
   },
   "/v1/bank_billets/cancel_all": {
@@ -3660,7 +3660,7 @@
      },
      "description": "Al menos un parámetro es obligatorio en la llamada. Los parámetros se pueden combinar."
     },
-    "operationId": "cancelar-boletos-em-lote"
+    "operationId": "post-bank-billets-cancel-all"
    }
   },
   "/v1/bank_billets/{id}/send_email": {
@@ -3742,7 +3742,7 @@
      },
      "description": "Envío de boleto por correo electrónico"
     },
-    "operationId": "enviar-boleto-por-e-mail"
+    "operationId": "post-bank-billets-send-email"
    }
   },
   "/v1/bank_billets/{id}/send_sms": {
@@ -3824,7 +3824,7 @@
      },
      "description": "Envío de boleto por sms"
     },
-    "operationId": "enviar-boleto-por-sms"
+    "operationId": "post-bank-billets-send-sms"
    }
   },
   "/v1/customer_subscriptions": {
@@ -4056,7 +4056,7 @@
      "required": true,
      "description": "Información a ser guardada en la suscripción"
     },
-    "operationId": "criar-uma-assinatura"
+    "operationId": "post-customer-subscriptions"
    },
    "get": {
     "summary": "Listar Suscripciones",
@@ -4482,7 +4482,7 @@
       }
      }
     },
-    "operationId": "listar-assinaturas"
+    "operationId": "get-customer-subscriptions"
    }
   },
   "/v1/customer_subscriptions/{id}": {
@@ -4695,7 +4695,7 @@
       }
      }
     },
-    "operationId": "informacoes-da-assinatura"
+    "operationId": "get-customer-subscriptions-2"
    },
    "put": {
     "summary": "Actualizar la Suscripción",
@@ -4815,7 +4815,7 @@
      "required": true,
      "description": "Información a ser guardada en la suscripción"
     },
-    "operationId": "atualizar-a-assinatura"
+    "operationId": "put-customer-subscriptions"
    },
    "delete": {
     "summary": "Eliminar la Suscripción",
@@ -4924,7 +4924,7 @@
       }
      }
     },
-    "operationId": "excluir-a-assinatura"
+    "operationId": "delete-customer-subscriptions"
    }
   },
   "/v1/customer_subscriptions/{id}/next_charge": {
@@ -5139,7 +5139,7 @@
       }
      }
     },
-    "operationId": "gerar-proxima-cobranca"
+    "operationId": "post-customer-subscriptions-next-charge"
    }
   },
   "/v1/customers": {
@@ -5313,7 +5313,7 @@
      "required": true,
      "description": "Información a ser guardada en el cliente"
     },
-    "operationId": "criar-um-cliente"
+    "operationId": "post-customers"
    },
    "get": {
     "summary": "Listar Clientes",
@@ -5532,7 +5532,7 @@
       }
      }
     },
-    "operationId": "listar-clientes"
+    "operationId": "get-customers"
    }
   },
   "/v1/customers/{id}": {
@@ -5686,7 +5686,7 @@
       }
      }
     },
-    "operationId": "visualizar-o-cliente"
+    "operationId": "get-customers-2"
    },
    "put": {
     "summary": "Actualizar Cliente",
@@ -5796,7 +5796,7 @@
      "required": true,
      "description": "Información a ser actualizada en el cliente"
     },
-    "operationId": "atualizar-cliente"
+    "operationId": "put-customers"
    }
   },
   "/v1/customers/cnpj_cpf": {
@@ -5949,7 +5949,7 @@
       }
      }
     },
-    "operationId": "busca-cliente-por-cnpj-cpf"
+    "operationId": "get-customers-cnpj-cpf"
    }
   },
   "/v1/customers/email": {
@@ -6102,7 +6102,7 @@
       }
      }
     },
-    "operationId": "busca-cliente-por-e-mail"
+    "operationId": "get-customers-email"
    }
   },
   "/v1/installments": {
@@ -6705,7 +6705,7 @@
       }
      }
     },
-    "operationId": "listar-carnes"
+    "operationId": "get-installments"
    },
    "post": {
     "summary": "Crear un Carné",
@@ -6950,7 +6950,7 @@
      "required": true,
      "description": "Información a ser guardada en el carné"
     },
-    "operationId": "criar-um-carne"
+    "operationId": "post-installments"
    }
   },
   "/v1/installments/{id}": {
@@ -7158,7 +7158,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-carne"
+    "operationId": "get-installments-2"
    },
    "delete": {
     "summary": "Eliminar el Carné",
@@ -7228,7 +7228,7 @@
       }
      }
     },
-    "operationId": "excluir-o-carne"
+    "operationId": "delete-installments"
    }
   },
   "/v1/email_deliveries": {
@@ -8376,7 +8376,7 @@
       }
      }
     },
-    "operationId": "listar-e-mails-enviados"
+    "operationId": "get-email-deliveries"
    }
   },
   "/v1/email_deliveries/{id}": {
@@ -8524,7 +8524,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-e-mail-enviado"
+    "operationId": "get-email-deliveries-2"
    }
   },
   "/v1/email_deliveries/{id}/resend": {
@@ -8625,7 +8625,7 @@
       }
      }
     },
-    "operationId": "reenviar-e-mail-enviado"
+    "operationId": "put-email-deliveries-resend"
    }
   },
   "/v1/events": {
@@ -10587,7 +10587,7 @@
       }
      }
     },
-    "operationId": "listar-eventos"
+    "operationId": "get-events"
    }
   },
   "/v1/events/{id}": {
@@ -10893,7 +10893,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-evento"
+    "operationId": "get-events-2"
    }
   },
   "/v1/sms_deliveries": {
@@ -11976,7 +11976,7 @@
       }
      }
     },
-    "operationId": "listar-sms-enviados"
+    "operationId": "get-sms-deliveries"
    }
   },
   "/v1/sms_deliveries/{id}": {
@@ -12110,7 +12110,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-sms-enviado"
+    "operationId": "get-sms-deliveries-2"
    }
   },
   "/v1/sms_deliveries/{id}/resend": {
@@ -12211,7 +12211,7 @@
       }
      }
     },
-    "operationId": "reenviar-sms-enviado"
+    "operationId": "put-sms-deliveries-resend"
    }
   },
   "/v1/userinfo": {
@@ -12318,7 +12318,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-usuario-descontinuado"
+    "operationId": "get-userinfo"
    }
   },
   "/v1/webhook_deliveries": {
@@ -13491,7 +13491,7 @@
       }
      }
     },
-    "operationId": "listar-webhooks-enviados"
+    "operationId": "get-webhook-deliveries"
    }
   },
   "/v1/webhook_deliveries/{id}": {
@@ -13639,7 +13639,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-webhook-enviado"
+    "operationId": "get-webhook-deliveries-2"
    }
   },
   "/v1/webhook_deliveries/resend": {
@@ -13728,7 +13728,7 @@
      "required": true,
      "description": "Información para filtrar los webhooks a reenviar"
     },
-    "operationId": "reenviar-webhooks-enviados"
+    "operationId": "put-webhook-deliveries-resend"
    }
   },
   "/v1/webhooks": {
@@ -13865,7 +13865,7 @@
      "required": true,
      "description": "Información a ser guardada en el webhook"
     },
-    "operationId": "criar-webhook"
+    "operationId": "post-webhooks"
    },
    "get": {
     "summary": "Listar Webhooks",
@@ -14051,7 +14051,7 @@
       }
      }
     },
-    "operationId": "listar-webhooks"
+    "operationId": "get-webhooks"
    }
   },
   "/v1/webhooks/{id}": {
@@ -14176,7 +14176,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-webhook"
+    "operationId": "get-webhooks-2"
    },
    "put": {
     "summary": "Actualizar Webhook",
@@ -14286,7 +14286,7 @@
      "required": true,
      "description": "Información a ser actualizada en el webhook"
     },
-    "operationId": "atualizar-webhook"
+    "operationId": "put-webhooks"
    },
    "delete": {
     "summary": "Eliminar Webhook",
@@ -14385,7 +14385,7 @@
       }
      }
     },
-    "operationId": "excluir-webhook"
+    "operationId": "delete-webhooks"
    }
   },
   "/v1/bank_billet_batch_exports/{id}": {
@@ -14486,7 +14486,7 @@
       }
      }
     },
-    "operationId": "arquivo-de-exportacao-do-lote"
+    "operationId": "get-bank-billet-batch-exports"
    }
   },
   "/v1/bank_billet_batches": {
@@ -14613,7 +14613,7 @@
      "required": true,
      "description": "Datos del pago del boleto"
     },
-    "operationId": "criar-lote"
+    "operationId": "post-bank-billet-batches"
    },
    "get": {
     "summary": "Listar Lotes",
@@ -14747,7 +14747,7 @@
       }
      }
     },
-    "operationId": "listar-lotes"
+    "operationId": "get-bank-billet-batches"
    }
   },
   "/v1/bank_billet_batches/{id}/": {
@@ -14866,7 +14866,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-lote"
+    "operationId": "get-bank-billet-batches-2"
    },
    "delete": {
     "summary": "Eliminar el lote",
@@ -14965,7 +14965,7 @@
       }
      }
     },
-    "operationId": "excluir-o-lote"
+    "operationId": "delete-bank-billet-batches"
    }
   },
   "/v1/bank_billet_batches/{id}/add_bank_billets": {
@@ -15115,7 +15115,7 @@
      "required": true,
      "description": "IDs de los Boletos"
     },
-    "operationId": "incluir-boletos-no-lote"
+    "operationId": "put-bank-billet-batches-add-bank-billets"
    }
   },
   "/v1/bank_billet_batches/{id}/remove_bank_billet": {
@@ -15248,7 +15248,7 @@
      "required": true,
      "description": "ID de los Boleto"
     },
-    "operationId": "excluir-boleto-do-lote"
+    "operationId": "delete-bank-billet-batches-remove-bank-billet"
    }
   },
   "/v1/bank_billet_batches/{id}/zip": {
@@ -15380,7 +15380,7 @@
       }
      }
     },
-    "operationId": "exportar-lote-no-formato-zip"
+    "operationId": "post-bank-billet-batches-zip"
    }
   },
   "/v1/bank_billet_batches/{id}/pdf": {
@@ -15512,7 +15512,7 @@
       }
      }
     },
-    "operationId": "exportar-lote-no-formato-pdf"
+    "operationId": "post-bank-billet-batches-pdf"
    }
   },
   "/v1/bank_billet_discharges": {
@@ -15979,7 +15979,7 @@
       }
      }
     },
-    "operationId": "listar-registros-de-retorno"
+    "operationId": "get-bank-billet-discharges"
    }
   },
   "/v1/bank_billet_discharges/{id}": {
@@ -16107,7 +16107,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-registro-de-retorno"
+    "operationId": "get-bank-billet-discharges-2"
    }
   },
   "/v1/bank_billet_payments": {
@@ -16259,7 +16259,7 @@
      "required": true,
      "description": "Datos del pago del boleto"
     },
-    "operationId": "efetuar-pagamento-de-boleto"
+    "operationId": "post-bank-billet-payments"
    },
    "get": {
     "summary": "Listar Pagos de Boleto",
@@ -16431,7 +16431,7 @@
       }
      }
     },
-    "operationId": "listar-pagamentos-de-boleto"
+    "operationId": "get-bank-billet-payments"
    }
   },
   "/v1/bank_billet_payments/{id}": {
@@ -16568,7 +16568,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-pagamento-de-boleto"
+    "operationId": "get-bank-billet-payments-2"
    },
    "delete": {
     "summary": "Eliminar Pago de Boleto",
@@ -16661,7 +16661,7 @@
       }
      }
     },
-    "operationId": "excluir-pagamento-de-boleto"
+    "operationId": "delete-bank-billet-payments"
    }
   },
   "/v1/bank_billet_registrations": {
@@ -16848,7 +16848,7 @@
       }
      }
     },
-    "operationId": "listar-registros-de-boleto"
+    "operationId": "get-bank-billet-registrations"
    }
   },
   "/v1/bank_billet_registrations/{id}": {
@@ -16970,7 +16970,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-registro-de-boleto"
+    "operationId": "get-bank-billet-registrations-2"
    }
   },
   "/v1/bank_billet_remittances": {
@@ -17173,7 +17173,7 @@
       }
      }
     },
-    "operationId": "listar-registros-de-remessa"
+    "operationId": "get-bank-billet-remittances"
    }
   },
   "/v1/bank_billet_remittances/pending": {
@@ -17376,7 +17376,7 @@
       }
      }
     },
-    "operationId": "listar-registros-de-remessa-pendentes"
+    "operationId": "get-bank-billet-remittances-pending"
    }
   },
   "/v1/bank_billet_remittances/{id}/occurrence/{our_code}": {
@@ -17496,7 +17496,7 @@
       }
      }
     },
-    "operationId": "criar-pendencias"
+    "operationId": "post-bank-billet-remittances-occurrence"
    }
   },
   "/v1/bank_billet_remittances/{id}": {
@@ -17597,7 +17597,7 @@
       }
      }
     },
-    "operationId": "excluir-pendencias"
+    "operationId": "delete-bank-billet-remittances"
    },
    "get": {
     "summary": "Información del Registro de Remesa",
@@ -17713,7 +17713,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-registro-de-remessa"
+    "operationId": "get-bank-billet-remittances-2"
    }
   },
   "/v1/discharges": {
@@ -17856,7 +17856,7 @@
      "required": true,
      "description": "Datos del CNAB a enviar"
     },
-    "operationId": "enviar-cnab"
+    "operationId": "post-discharges"
    },
    "get": {
     "summary": "Listar CNABs",
@@ -18020,7 +18020,7 @@
       }
      }
     },
-    "operationId": "listar-cna-bs"
+    "operationId": "get-discharges"
    }
   },
   "/v1/discharges/{id}": {
@@ -18145,7 +18145,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-cnab"
+    "operationId": "get-discharges-2"
    }
   },
   "/v1/discharges/{id}/pay_off": {
@@ -18246,7 +18246,7 @@
       }
      }
     },
-    "operationId": "quitar-boletos"
+    "operationId": "put-discharges-pay-off"
    }
   },
   "/v1/discharges/{id}/reprocess": {
@@ -18347,7 +18347,7 @@
       }
      }
     },
-    "operationId": "reprocessar-cnab"
+    "operationId": "put-discharges-reprocess"
    }
   },
   "/v1/discharges/{id}/download": {
@@ -18454,7 +18454,7 @@
       }
      }
     },
-    "operationId": "download-do-cnab"
+    "operationId": "get-discharges-download"
    }
   },
   "/v1/imports/{collection_name}": {
@@ -18584,7 +18584,7 @@
       }
      }
     },
-    "operationId": "listar-importacoes"
+    "operationId": "get-imports"
    },
    "post": {
     "summary": "Importar",
@@ -18703,7 +18703,7 @@
      "required": true,
      "description": "Parámetros para crear una importación."
     },
-    "operationId": "importar"
+    "operationId": "post-imports"
    }
   },
   "/v1/imports/{collection_name}/{id}": {
@@ -18813,7 +18813,7 @@
       }
      }
     },
-    "operationId": "visualizar-importacao"
+    "operationId": "get-imports-2"
    }
   },
   "/v1/remittances": {
@@ -18976,7 +18976,7 @@
      "required": true,
      "description": "Datos del CNAB a crear"
     },
-    "operationId": "criar-cnab"
+    "operationId": "post-remittances"
    },
    "get": {
     "summary": "Listar CNABs",
@@ -19192,7 +19192,7 @@
       }
      }
     },
-    "operationId": "listar-cna-bs-remittances"
+    "operationId": "get-remittances"
    }
   },
   "/v1/remittances/{id}": {
@@ -19337,7 +19337,7 @@
       }
      }
     },
-    "operationId": "informacoes-do-cnab-remittances"
+    "operationId": "get-remittances-2"
    },
    "delete": {
     "summary": "Eliminar CNAB",
@@ -19436,7 +19436,7 @@
       }
      }
     },
-    "operationId": "apagar-cnab"
+    "operationId": "delete-remittances"
    }
   },
   "/v1/remittances/{id}/raw": {
@@ -19563,7 +19563,7 @@
       }
      }
     },
-    "operationId": "raw-text-plain-do-cnab"
+    "operationId": "get-remittances-raw"
    }
   },
   "/v1/remittances/bulk": {
@@ -19739,7 +19739,7 @@
      "required": true,
      "description": "IDs de Registros de Remesa"
     },
-    "operationId": "criar-cna-bs-em-lote"
+    "operationId": "post-remittances-bulk"
    }
   },
   "/v1/reports/bank_billets": {
@@ -19937,7 +19937,7 @@
       }
      }
     },
-    "operationId": "contagem-de-boletos"
+    "operationId": "get-reports-bank-billets"
    }
   }
  },

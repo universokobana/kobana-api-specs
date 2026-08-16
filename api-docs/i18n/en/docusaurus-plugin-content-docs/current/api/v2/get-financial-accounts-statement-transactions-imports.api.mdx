@@ -1,0 +1,70 @@
+---
+id: get-financial-accounts-statement-transactions-imports
+slug: "/api/v2/financial/accounts/_financial_account_uid/statement_transactions/imports/get"
+title: "List Statement Imports"
+description: "Lists all statement imports performed for a financial account. Allows filtering by status, processing date, tags, and imported file name."
+sidebar_label: "List Statement Imports"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Statement Imports"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/statement_transactions/imports"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all statement imports performed for a financial account. Allows filtering by status, processing date, tags, and imported file name.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-statement-transactions-imports.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-statement-transactions-imports.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-statement-transactions-imports.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

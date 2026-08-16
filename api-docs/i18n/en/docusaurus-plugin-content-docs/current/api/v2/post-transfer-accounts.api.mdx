@@ -1,0 +1,70 @@
+---
+id: post-transfer-accounts
+slug: "/api/v2/transfer/accounts/post"
+title: "Create Transfer Account"
+description: "Creates a new transfer account associated with a financial account. Use when the financial account needs more than one transfer account. The account is created without a bank connection (`connection_uid` returns `null`); associate a connection before enabling remittances/registration. Requires `write` scope + `transfer.accounts`."
+sidebar_label: "Create Transfer Account"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Transfer Account"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/transfer/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates a new transfer account associated with a financial account. Use when the financial account needs more than one transfer account. The account is created without a bank connection (`connection_uid` returns `null`); associate a connection before enabling remittances/registration. Requires `write` scope + `transfer.accounts`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-transfer-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-transfer-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-transfer-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

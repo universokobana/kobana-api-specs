@@ -19,8 +19,17 @@
  * seven endpoints silently vanished from the reference. Assigning ids here
  * fixes that without touching the specs, which are generated upstream.
  *
+ * The id is built from method+path (`post-data-bank-billet-queries`), not
+ * from the summary — a method+path pair is unique by construction (no
+ * disambiguation needed) and, unlike a summary, is never translated, so
+ * `apply-openapi-translations.mjs` reproduces the exact same id when it
+ * rebuilds the en/es copies from this file. The id itself is no longer what
+ * the reader sees in the URL (see set-operation-slugs.mjs, which overrides
+ * that with the operation's actual path+method) — it only needs to be a
+ * stable, collision-free filename.
+ *
  * The first operation to claim a slug keeps it, so page URLs stay put; later
- * collisions are suffixed with their resource path (`listar-cnabs-remittances`).
+ * collisions are suffixed with a counter.
  */
 
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -83,6 +92,27 @@ function resourceSlug(path) {
 
 let assigned = 0;
 let disambiguated = 0;
+
+/** Mutates every operation in `doc` to carry a stable, unique operationId. */
+function assignOperationIds(doc) {
+  const taken = new Set();
+  for (const [path, item] of Object.entries(doc.paths ?? {})) {
+    for (const method of METHODS) {
+      const op = item?.[method];
+      if (!op) continue;
+      const base = kebabCase(`${method}-${resourceSlug(path)}`);
+      let id = base;
+      for (let n = 2; taken.has(id); n++) {
+        id = kebabCase(`${base}-${n}`);
+        disambiguated++;
+      }
+      taken.add(id);
+      op.operationId = id;
+      assigned++;
+    }
+  }
+}
+
 for (const [from, to] of NORMALIZE) {
   const src = resolve(REPO, from);
   if (!existsSync(src)) {
@@ -91,25 +121,22 @@ for (const [from, to] of NORMALIZE) {
     continue;
   }
   const doc = JSON.parse(readFileSync(src, 'utf8'));
-  const taken = new Set();
-  for (const [path, item] of Object.entries(doc.paths ?? {})) {
-    for (const method of METHODS) {
-      const op = item?.[method];
-      if (!op) continue;
-      const base = kebabCase(op.operationId ?? op.summary ?? `${method}-${path}`);
-      let id = base;
-      if (taken.has(id)) {
-        id = kebabCase(`${base}-${resourceSlug(path)}`);
-        if (taken.has(id)) id = kebabCase(`${id}-${method}`);
-        for (let n = 2; taken.has(id); n++) id = kebabCase(`${base}-${resourceSlug(path)}-${n}`);
-        disambiguated++;
-      }
-      taken.add(id);
-      op.operationId = id;
-      assigned++;
-    }
-  }
+  assignOperationIds(doc);
   write(resolve(SITE, to), `${JSON.stringify(doc, null, 1)}\n`);
+
+  // The id depends only on method+path, never on translated text, so it's
+  // assigned the exact same way (independently, not copied) on the
+  // committed en/es translations — keeping them in sync with whatever the
+  // pt doc above just got without needing to re-run the (expensive,
+  // AI-translation-dependent) apply-openapi-translations.mjs.
+  const version = to.match(/v\d_0/)[0];
+  for (const lang of ['en', 'es']) {
+    const i18nPath = resolve(SITE, `openapi/i18n/kobana-api-${version}.${lang}.json`);
+    if (!existsSync(i18nPath)) continue;
+    const i18nDoc = JSON.parse(readFileSync(i18nPath, 'utf8'));
+    assignOperationIds(i18nDoc);
+    write(i18nPath, `${JSON.stringify(i18nDoc, null, 1)}\n`);
+  }
 }
 
 console.log(

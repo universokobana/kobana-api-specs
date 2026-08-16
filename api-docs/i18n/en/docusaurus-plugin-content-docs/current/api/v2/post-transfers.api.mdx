@@ -1,0 +1,176 @@
+---
+id: post-transfers
+slug: "/api/v2/transfers/post"
+title: "Create a Transfer"
+description: "Generic endpoint for creating transfers of any type. The type is specified by the mandatory 'kind' field at the root level of the payload:"
+sidebar_label: "Create a Transfer"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a Transfer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/transfers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Generic endpoint for creating transfers of any type. The type is specified by the mandatory 'kind' field at the root level of the payload:
+
+## Prerequisites
+
+To issue a transfer, you must have a Financial Account, specified in `financial_account_uid`. The transfer account that records the operation is defined in `transfer_account_uid`; if omitted, the oldest linked to the financial account is used; if specified, it must belong to `financial_account_uid`.
+
+## Supported Types
+
+### PIX by Key
+Specify `kind: "pix"` and provide the PIX data within `pix.data` (Payment standard):
+```json
+{
+  "financial_account_uid": "...",
+  "amount": 100.0,
+  "kind": "pix",
+  "pix": {
+    "kind": "pix",
+    "data": {
+      "type": "key",
+      "key_type": "email",
+      "key": "recipient@example.com"
+    }
+  },
+  "beneficiary": {
+    "name": "João Silva",
+    "document": "123.456.789-10"
+  }
+}
+```
+
+### PIX by Bank Account
+Specify `kind: "pix"` and provide the PIX data within `pix.data` with `type: "bank_account"`:
+```json
+{
+  "financial_account_uid": "...",
+  "amount": 200.0,
+  "kind": "pix",
+  "pix": {
+    "kind": "pix",
+    "data": {
+      "type": "bank_account",
+      "bank_account": {
+        "bank_code": "237",
+        "agency_number": "1234",
+        "account_number": "56789-0"
+      }
+    }
+  },
+  "beneficiary": {
+    "name": "Maria Santos",
+    "document": "987.654.321-00"
+  }
+}
+```
+
+### TED
+Specify `kind: "ted"` and provide the bank data within `ted.data`:
+```json
+{
+  "financial_account_uid": "...",
+  "amount": 300.0,
+  "kind": "ted",
+  "ted": {
+    "kind": "ted",
+    "data": {
+      "bank_account": {
+        "bank_code": "341",
+        "agency_number": "4321",
+        "agency_digit": "5",
+        "account_number": "98765-4",
+        "account_type": "checking"
+      }
+    }
+  },
+  "beneficiary": {
+    "name": "Pedro Oliveira",
+    "document": "11.222.333/0001-44"
+  }
+}
+```
+
+### Internal Transfer
+Specify `kind: "internal"` and provide the destination account data within `internal.data`:
+```json
+{
+  "financial_account_uid": "...",
+  "amount": 400.0,
+  "kind": "internal",
+  "internal": {
+    "kind": "internal",
+    "data": {
+      "agency_number": "0001",
+      "account_number": "12345-6"
+    }
+  },
+  "beneficiary": {
+    "name": "Ana Costa",
+    "document": "555.666.777-88"
+  }
+}
+```
+
+## Webhook Events
+
+The `transfer.db.created` event is triggered in this operation.
+
+> **Unified Endpoint:** This endpoint unifies the creation of all transfer types. To create transfers of a specific type, you can also use the dedicated endpoints in `/api/v2/transfer/{type}`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-transfers.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-transfers.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-transfers.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

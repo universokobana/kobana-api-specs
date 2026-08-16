@@ -1,0 +1,70 @@
+---
+id: get-data-bank-billet-queries
+slug: "/api/v2/data/bank_billet_queries/get"
+title: "List Bank Billet Queries"
+description: "Lists all bank billet queries performed by the authenticated account. Allows filtering by status, tags, creation dates and other parameters."
+sidebar_label: "List Bank Billet Queries"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Bank Billet Queries"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/data/bank_billet_queries"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists all bank billet queries performed by the authenticated account. Allows filtering by status, tags, creation dates and other parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-data-bank-billet-queries.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-data-bank-billet-queries.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-data-bank-billet-queries.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,70 @@
+---
+id: get-transfer-accounts
+slug: "/api/v2/transfer/accounts/get"
+title: "Listar cuentas de transferencia"
+description: "Lista todas las cuentas de transferencia registradas en la cuenta. Soporta paginación."
+sidebar_label: "Listar cuentas de transferencia"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar cuentas de transferencia"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/transfer/accounts"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todas las cuentas de transferencia registradas en la cuenta. Soporta paginación.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-transfer-accounts.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-transfer-accounts.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-transfer-accounts.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

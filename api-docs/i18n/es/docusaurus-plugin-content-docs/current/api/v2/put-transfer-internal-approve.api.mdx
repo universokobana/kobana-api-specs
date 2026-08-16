@@ -1,0 +1,73 @@
+---
+id: put-transfer-internal-approve
+slug: "/api/v2/transfer/internal/_uid/approve/put"
+title: "Liberar (aprobar) una Transferencia interna"
+description: "> **Procesamiento Asíncrono:** crea un comando de liberación (approve) para la Transferencia esperando aprobación."
+sidebar_label: "Liberar (aprobar) una Transferencia interna"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "put api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Liberar (aprobar) una Transferencia interna"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v2/transfer/internal/{uid}/approve"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+
+> **Procesamiento Asíncrono:** crea un comando de liberación (approve) para la Transferencia esperando aprobación.
+
+> ⚠️ **Soporte por banco:** ningún proveedor financiero soporta liberación de transferencia interna vía API en este momento — la llamada responde `422` ("no posee soporte a esta operación vía API para este proveedor financiero"). El endpoint existe para simetría y habilita el soporte automáticamente cuando algún proveedor lo implemente.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./put-transfer-internal-approve.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./put-transfer-internal-approve.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./put-transfer-internal-approve.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

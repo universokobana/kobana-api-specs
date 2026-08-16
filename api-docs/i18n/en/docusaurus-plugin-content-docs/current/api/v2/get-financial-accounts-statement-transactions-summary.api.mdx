@@ -1,0 +1,83 @@
+---
+id: get-financial-accounts-statement-transactions-summary
+slug: "/api/v2/financial/accounts/_financial_account_uid/statement_transactions/summary/get"
+title: "Summarize Statement"
+description: "Aggregates statement transactions into totals by group, instead of returning one line per transaction."
+sidebar_label: "Summarize Statement"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWVlz2zgS/isoPM2kKIlW7CSr2podT44Zz2yOGjsPKdsltcCWiIgEaACUo1Gpan/E/sL9JVsNXqIu25kkT/GLRRDsbvTx9YEldzC1fHDJzx04TFE5fh1wiyI30i344HLJxwgGzWnuYj64vF5dBzxCK4zMnNSKD/jpdGpwCg4tsxUR5gwoC4K2WCaV08xpB4ll4wWbGp1nAZPKOoSI6Qkz6HKjpJoyrZAlUiHL0KwT6V6pK3Wq7C0ay25ytAXlRM6QXfFY37I0FzGLZMTOmM1QRUwrNkEk7uz3PFn864rTT2BWqmmCzKAnE7Bb6WLmYrxSYKSLU3RSsIgEkYrWWQQOxmCR/e8///W7de5YBlOpwJHMtAeVkwYbBXh5f2KPHl3EyG6livQti9EgE6CYQRAxe/o4ZBEs7KNHAYMpkDrY0bOQTYxOPc1EWqLfZUTDoM20ssis/AuZtEQ9kal0GJFOab/K0zEa0qfXsA2Y0o5extI6bRYBs5oBS7SaViJJyyxMsNCuEJg560lZSJFNZOJI3WDb4pxN/LPQ6dirQCviOfJMh+PFiIGKKgZTVGi8b6TaIHMxqCt1FIZhLaOLa1uQOAY/oqBDebOMjvv90W5PAeZMrgTQXpunKZiFNxAUnnalRO7IgjEkE5ZoPbMkcZagQy9ghALlnJxWJqhcsvBKaKkaEqvZ2Eg1LTQwKjVSnHCUooMRGydazGzAZEQ+ICBh5OyxtrX/lIprPI1BFEnS25UixZVUu40CpZpok1a+5df9kbMskRh1ecAzMJAifeZjVEGKfMDfWzSd0ylFccAlBWeMEKHhAScVS4MRH0wgsbgZxO+MnssIGbA5JDJimIJM2EQbJrRyIJwlrvgJSIN8wP/AuVTstXRKihn75ywtfv0802NQ0BU67Y7NTzzgVsSYAh8suVtk9KV1pFC+WgW12BOpQAkJyRCE0Llyw1xG1QkycHFLfmfyLfHfvz97Qe7xqqLETgtKLaHDo2fiH0dPws6JeHbSedo/mXTGJ0+wcwyTx08m/ZMnx2O8p8iVrSopb3I09NAW69fKcpFMUVkPWRbJdmXYCp2mMGCjCBajgI1uEWf0P9XKxfRjJlVE/8nNp9osRl32AieQJ25Q7Wrbxa8F1fZddr/P6bQQuTGoBA4jcDgkSDp80nMHxhFSIpnB1aDXZecEJREaOS+gwuQJbkBKGRlPH4edCBYFrLWP1Q/7J53wqBMePeRIAacwAscHnCQ7eESnDx/wJUHG9vE2pXzyZaUk+2/KdUcknzfQvYncLWEjHEt3wNsDjipPqTQQBiO/tfjkel3ANU/7GkIehSf3DMibryTBxemfZ69ODwpxTcyKlGHpfT8M6V+b33NIRJ6sZysecMJWAuvBkntsFz5Eeh8tfbJspFhyKixyywf9MAzITcDDvo/22vGeeYoEeoPHQWm1oU+GfBCW1queO4+JkMLWAp2kTEbEcycKeGbHnfBZ5+iYB7vCqBan2OFdeKDyJAk4pB7dC0KtJfqutQBju2sfLTd7a+8rn/OMhIiGViqB1eJN9aPG7MFlqbnrVcApi1ca9qXbsKJCIVl82byzCyWGCdhduwpNuOEYEvD8w4CXv7d2r1Y7PEqPqfah7G50hsbJwp8q29f7pHI49Vm97WO/XVy8Y+d+d5e9/DRgo+MwHHX5qnKZmgIYA9sY91YhK2Tw5bfXV1F91iXIDBeWZQYtFfkRVoV2U/xR9EiHqb37XKX3bgMPKQjG5Pi7cv0vuZihY6MPHz586Lx+PQrYbYyqELHIqp6wPzYl1LsR9y6ORXLTE0bkttnRaqnkxd9n9gIW2ywiWHgORTDdrbF90L3J7GKR4TY3ou7ZNfG1w/cOH+N5+SkTOtrBoqLcYjNskXioX9Qc15YL8gUm3hk+b+r+aaN7barwgl4LWWuyRfu1bu9JosFtl0p5SjwKKtQ4+IZQ2sKF1kH6c0l7ImuU2Q+KGnQ5xx89kzXYfzCLN+ioQcoTV1VCdTtfH2NF6LaWSDZhoE3xVdVmCpdDkiyqNicoulCwW30URFHdIDZNU91d1WAlFcPJBIUvJtvYszu33R27e4CB2FLhITGqK8PV7uz4UB5UeO7nsA8Q9gPA4SAqjIFRgwGtnH0PdzlM/7VUMs1T6jJzbCztbWflVK2zbGnrsxnCp3szbGqOL3xOqViqozzJ7Sa7r3DGDWY7MLzK/ptUN/N2BZSrrZFfocYaxT3IF+w2SrA7vL3jZHp3SqyUKWJQU/TjIFDOs7t5eJ6ohLcIRsTMoUk9qaY83FLUpmKq0n8f6el23+9hsak2D0OiH8ZWUV/ORBg4/0gao1e+z9kaO7W6mO0ycrvA/SIG+jdYtzb8Leh7pd5VOX9B9gslYqOV/AuazL9Zkf/tUHteUGQlxY3svava/3InLKk36q3+Ak529sc+i2g4ha5Tz9Q6pf/YTm2Lznp902na0RRdrEsCfsbom8vevN+rqfUqar3lzqndqtdYfJ1Lr+Fi0cyruWVuEhpSOpfZQa+3hEz+pq1b9XjA52AkKcQW3bF/4ZviMrNBJjsWVDTWn7qtqSMP6N3Gmq98/eCMwnrvpyvfzVfXH+fUoBUCzPvD9XuQ2qgkejUcoOdiE00mOA1x/U7pipHp219O35yy03dnbN7vhnRENLawb7nQNvofXjT/wQstctKptzEPOIGWfTs5RzOXAtdUmLQP1KON2nZyq8txAwivxXJqcp5n2jiazxEbHmwYBD7mEWxp18+GyaGLj3/eVGHAM21dCqrFiMxPVxfNRdPGeZfNOOT7ndL3O6Xvd0rf+k6phDSHn1wvS0AqX88Z3yUWueCSz/uUwCrkJ6gt8wEP+GDfPc7ulEAvyqRwHfDYw/slXy4pLN6bZLWi5WKaS6kikpbSwZ557jp4fKtbl536muGifT3ki3I+4JyG1fc/xFe5UDkg8Z4rn8+Ufv9tyQNE8Fcyn6u+g+P9A0KUNy7fmu3aPcq3Zn3T4nndVF4PDLsf/ixvXH5kh65jd0pS9VuqpYBKwt24sqLpfXm//TBJ73fZfUBlrXv2lr2K90XaW3u3dbtDeq7L7V9fXvDV6v/ZlW0k
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Summarize Statement"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/statement_transactions/summary"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Aggregates statement transactions into totals by group, instead of returning one line per transaction.
+
+Answers questions like "how much did I spend on fees in July?" in a single request, with the
+arithmetic done in the database — without paginating the entire statement.
+
+> **The window here can reach 730 days**, against 180 from the listing. The response size is
+> limited by the number of groups, not by history, so a long window is safe.
+
+Accepts the same filters as the listing. If the combination of `group_by` and window generates more than
+1000 groups, the request is rejected with `422` instead of returning a truncated summary — a total
+cut in half looks complete and deceives silently.
+
+The response also brings the `filters` and `meta` blocks, identical to those in the listing, with the addition
+of `filters.group_by` informing the grouping applied.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-statement-transactions-summary.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-statement-transactions-summary.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-statement-transactions-summary.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

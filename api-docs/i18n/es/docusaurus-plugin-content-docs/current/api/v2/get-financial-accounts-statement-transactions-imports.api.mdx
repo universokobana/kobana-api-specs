@@ -1,0 +1,70 @@
+---
+id: get-financial-accounts-statement-transactions-imports
+slug: "/api/v2/financial/accounts/_financial_account_uid/statement_transactions/imports/get"
+title: "Listar Importaciones de estado de cuenta"
+description: "Lista todas las importaciones de estado de cuenta realizadas para una cuenta financiera. Permite filtrar por estado, fecha de procesamiento, etiquetas y nombre del archivo importado."
+sidebar_label: "Listar Importaciones de estado de cuenta"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar Importaciones de estado de cuenta"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/statement_transactions/imports"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lista todas las importaciones de estado de cuenta realizadas para una cuenta financiera. Permite filtrar por estado, fecha de procesamiento, etiquetas y nombre del archivo importado.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-statement-transactions-imports.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-statement-transactions-imports.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-statement-transactions-imports.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

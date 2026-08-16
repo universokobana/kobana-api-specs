@@ -1,0 +1,84 @@
+---
+id: get-financial-accounts-statement-transactions-summary
+slug: "/api/v2/financial/accounts/_financial_account_uid/statement_transactions/summary/get"
+title: "Resumir Estado de Cuenta"
+description: "Agrega las transacciones del estado de cuenta en totales por grupo, en lugar de devolver una línea por transacción."
+sidebar_label: "Resumir Estado de Cuenta"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Resumir Estado de Cuenta"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/financial/accounts/{financial_account_uid}/statement_transactions/summary"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Agrega las transacciones del estado de cuenta en totales por grupo, en lugar de devolver una línea por transacción.
+
+Responde preguntas como "cuánto gasté en tarifas en julio?" en una única solicitud, con la
+aritmética hecha en la base de datos — sin paginar el estado de cuenta completo.
+
+> **La ventana aquí puede llegar a 730 días**, contra los 180 del listado. El tamaño de la respuesta es
+> limitado por la cantidad de grupos, no por el historial, entonces una ventana larga es segura.
+
+Acepta los mismos filtros del listado. Si la combinación de `group_by` y ventana genera más de
+1000 grupos, la solicitud es rechazada con `422` en lugar de devolver un resumen truncado — un total
+cortado por la mitad se ve completo y engaña silenciosamente.
+
+La respuesta también trae los bloques `filters` y `meta`, idénticos a los del listado, con la adición
+de `filters.group_by` informando el agrupamiento aplicado.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-financial-accounts-statement-transactions-summary.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-financial-accounts-statement-transactions-summary.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-financial-accounts-statement-transactions-summary.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

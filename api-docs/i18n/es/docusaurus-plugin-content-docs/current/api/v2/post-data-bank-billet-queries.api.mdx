@@ -1,0 +1,70 @@
+---
+id: post-data-bank-billet-queries
+slug: "/api/v2/data/bank_billet_queries/post"
+title: "Crear una Consulta de Boleto"
+description: "Crea una nueva consulta de boleto bancario a través de la línea digitada o código de barras. La consulta se procesa automáticamente y devuelve información detallada del boleto."
+sidebar_label: "Crear una Consulta de Boleto"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: current/api/v2/kobana-api-v-2-0
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear una Consulta de Boleto"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v2/data/bank_billet_queries"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Crea una nueva consulta de boleto bancario a través de la línea digitada o código de barras. La consulta se procesa automáticamente y devuelve información detallada del boleto.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./post-data-bank-billet-queries.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./post-data-bank-billet-queries.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./post-data-bank-billet-queries.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

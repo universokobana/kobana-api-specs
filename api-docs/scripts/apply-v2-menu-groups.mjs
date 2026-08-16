@@ -16,12 +16,20 @@
  *    `/v2/payment/batches` come tagged "Todos"; both `/v2/edi/edi_boxes` and
  *    `/v2/mailbox/entries` come tagged "Caixas Postais").
  *  - A tag we want renamed for the menu (e.g. `/v2/transfers*` becomes
- *    "Transferências" instead of upstream's "Todos"). A name-based rename
+ *    "Transfers" instead of upstream's "Todos"). A name-based rename
  *    would be simpler here, but the pt spec and the committed en/es
  *    translations were snapshotted at different times and don't always
  *    agree on raw tag names for the same endpoint — a rename keyed by name
  *    would silently merge unrelated resources on whichever locale disagrees,
  *    so every affected path is listed explicitly instead.
+ *
+ * TAG_INFO/GROUPS names are English on purpose and applied identically to
+ * every locale file (see TARGETS) — the sidebar's category/resource labels
+ * (unlike operation summaries/descriptions) previously carried the raw pt
+ * tag names straight through to the en/es specs, so switching the site
+ * language left the menu itself untranslated. English was picked as the one
+ * consistent label across locales rather than adding a third translation
+ * layer here.
  *
  * Then rebuilds `tags` and `x-tagGroups` from TAXONOMY below, restricted to
  * tags actually in use. Fails loudly if a used tag has no taxonomy entry —
@@ -56,133 +64,182 @@ const TARGETS = [
 // but "Todos" in the en/es snapshots) — a name-based rename would silently
 // merge unrelated resources on whichever locale disagrees.
 const PATH_TAG_OVERRIDES = {
-  '/v2/transfer/pix/{uid}/approve': { put: 'Pix - Transferência' },
-  '/v2/transfer/pix/{uid}/reschedule': { put: 'Pix - Transferência' },
-  '/v2/payment/batches': { get: 'Todos - Pagamento' },
-  '/v2/payment/batches/{uid}': { get: 'Todos - Pagamento' },
-  '/v2/payment/batches/{uid}/approve': { put: 'Todos - Pagamento' },
-  '/v2/payment/batches/{uid}/reprove': { put: 'Todos - Pagamento' },
-  '/v2/payment/batches/{uid}/cancel': { put: 'Todos - Pagamento' },
-  '/v2/mailbox/entries': { get: 'Caixas Postais - Mailbox', post: 'Caixas Postais - Mailbox' },
+  '/v2/transfer/pix/{uid}/approve': { put: 'Pix - Transfer' },
+  '/v2/transfer/pix/{uid}/reschedule': { put: 'Pix - Transfer' },
+  '/v2/payment/batches': { get: 'Payment Batches' },
+  '/v2/payment/batches/{uid}': { get: 'Payment Batches' },
+  '/v2/payment/batches/{uid}/approve': { put: 'Payment Batches' },
+  '/v2/payment/batches/{uid}/reprove': { put: 'Payment Batches' },
+  '/v2/payment/batches/{uid}/cancel': { put: 'Payment Batches' },
+  '/v2/mailbox/entries': { get: 'Mailboxes - Mailbox', post: 'Mailboxes - Mailbox' },
   '/v2/mailbox/entries/{uid}': {
-    get: 'Caixas Postais - Mailbox',
-    patch: 'Caixas Postais - Mailbox',
-    delete: 'Caixas Postais - Mailbox',
+    get: 'Mailboxes - Mailbox',
+    patch: 'Mailboxes - Mailbox',
+    delete: 'Mailboxes - Mailbox',
   },
-  '/v2/transfers': { get: 'Transferências', post: 'Transferências' },
-  '/v2/transfers/{uid}': { get: 'Transferências' },
-  '/v2/transfers/{uid}/cancel': { put: 'Transferências' },
-  '/v2/transfer/batches': { get: 'Todos' },
-  '/v2/transfer/batches/{uid}': { get: 'Todos' },
-  '/v2/transfer/batches/{uid}/approve': { put: 'Todos' },
-  '/v2/transfer/batches/{uid}/reprove': { put: 'Todos' },
-  '/v2/transfer/batches/{uid}/cancel': { put: 'Todos' },
+  '/v2/transfers': { get: 'Transfers', post: 'Transfers' },
+  '/v2/transfers/{uid}': { get: 'Transfers' },
+  '/v2/transfers/{uid}/cancel': { put: 'Transfers' },
+  '/v2/transfer/batches': { get: 'Batches' },
+  '/v2/transfer/batches/{uid}': { get: 'Batches' },
+  '/v2/transfer/batches/{uid}/approve': { put: 'Batches' },
+  '/v2/transfer/batches/{uid}/reprove': { put: 'Batches' },
+  '/v2/transfer/batches/{uid}/cancel': { put: 'Batches' },
+};
+
+// Upstream raw tag name -> menu tag name. Applied to every operation's tags
+// (not just the ones in PATH_TAG_OVERRIDES above), since most tags reach here
+// unchanged from the pt spec and need translating regardless of path. Entries
+// whose name doesn't change (Pix, TED, INTERNAL) are omitted.
+const TAG_RENAME = {
+  'Consulta de Boletos': 'Bank Billet Query',
+  'Consulta de Pix QR Code': 'Pix QR Code Query',
+  Saldos: 'Balances',
+  Contas: 'Accounts',
+  Provedores: 'Providers',
+  Extrato: 'Statement',
+  'Conta Pix': 'Pix Account',
+  'Pix Automático - Conta': 'Automatic Pix - Account',
+  'Pix Automático - Location': 'Automatic Pix - Location',
+  'Pix Automático - Recorrência': 'Automatic Pix - Recurrence',
+  'Pix Automático - Solicitação': 'Automatic Pix - Request',
+  'Pix Automático - Cobrança': 'Automatic Pix - Charge',
+  Recebimentos: 'Receipts',
+  Transferências: 'Transfers',
+  'Entre Contas': 'Between Accounts',
+  'Pix - Transferência': 'Pix - Transfer',
+  Todos: 'Batches',
+  'Contas de Transferência': 'Transfer Accounts',
+  Boletos: 'Bank Billets',
+  'Todos - Pagamento': 'Payment Batches',
+  'Contas de DDA': 'DDA Accounts',
+  'Boletos DDA': 'DDA Bank Billets',
+  'Contas de Pagamento': 'Payment Accounts',
+  'Pix - Pagamento': 'Pix - Payment',
+  'Tributo (beta)': 'Tax (beta)',
+  'Contas de Consumo': 'Utility Bills',
+  Pagamentos: 'Payments',
+  'Caixas Postais': 'Mailboxes',
+  'Caixas Postais - Mailbox': 'Mailboxes - Mailbox',
+  'Arquivos de Mailbox': 'Mailbox Files',
+  'Canal Email': 'Email Channel',
+  'Canal S3': 'S3 Channel',
+  'Canal SFTP': 'SFTP Channel',
+  'Canal WhatsApp': 'WhatsApp Channel',
+  'Canal Syncthing': 'Syncthing Channel',
+  Usuário: 'User',
+  Certificado: 'Certificate',
+  Subcontas: 'Sub-accounts',
+  Conexões: 'Connections',
+  Comando: 'Commands',
+  'Tokens de Acesso': 'Access Tokens',
+  'Informações do Usuário': 'User Information',
 };
 
 // name -> { description, xDisplayName? }. Order here is the order tags are
 // declared in `tags[]` — cosmetic (categoryLinkSource: 'tag' resolves labels
 // from x-tagGroups membership order at the group level), kept for readability.
 const TAG_INFO = {
-  'Consulta de Boletos': { description: 'Consulta de boletos' },
-  'Consulta de Pix QR Code': { description: 'Consulta de Pix QR Code' },
-  Saldos: { description: 'Gerenciar saldos' },
-  Contas: { description: 'Gerenciar contas financeiras' },
-  Provedores: { description: 'Listar provedores financeiros' },
-  Extrato: { description: 'Gerenciar extratos' },
-  'Conta Pix': { description: 'Gerenciar contas Pix' },
-  Pix: { description: 'Gerenciar cobranças via Pix' },
-  'Pix Automático - Conta': { description: 'Gerenciar contas do Pix Automático' },
-  'Pix Automático - Location': { description: 'Gerenciar locations do Pix Automático' },
-  'Pix Automático - Recorrência': { description: 'Gerenciar recorrências do Pix Automático' },
-  'Pix Automático - Solicitação': { description: 'Gerenciar solicitações do Pix Automático' },
-  'Pix Automático - Cobrança': { description: 'Gerenciar cobranças do Pix Automático' },
-  Recebimentos: { description: 'Gerenciar pagamentos recebidos' },
-  Transferências: { description: 'Gerenciar transferências' },
-  'Entre Contas': { description: 'Gerenciar transferências entre contas' },
-  INTERNAL: { description: 'Aprovar e reagendar transferências internas' },
-  'Pix - Transferência': { description: 'Gerenciar transferências via Pix', xDisplayName: 'Pix' },
-  TED: { description: 'Gerenciar transferências via TED' },
-  Todos: { description: 'Gerenciar lotes de transferência' },
-  'Contas de Transferência': { description: 'Gerenciar contas de transferência' },
-  Boletos: { description: 'Gerenciar pagamentos de boletos' },
-  'Todos - Pagamento': { description: 'Gerenciar lotes de pagamento', xDisplayName: 'Todos' },
-  'Contas de DDA': { description: 'Gerenciar contas de DDA' },
-  'Boletos DDA': { description: 'Gerenciar boletos DDA' },
-  'Contas de Pagamento': { description: 'Gerenciar contas de pagamento' },
-  'Pix - Pagamento': { description: 'Gerenciar pagamentos via Pix', xDisplayName: 'Pix' },
-  'Tributo (beta)': { description: 'Gerenciar pagamentos de tributos' },
-  'Contas de Consumo': { description: 'Gerenciar pagamentos de contas de consumo' },
-  Pagamentos: { description: 'Gerenciar pagamentos' },
-  'Caixas Postais': { description: 'Gerenciar Caixas Postais' },
-  'Caixas Postais - Mailbox': {
-    description: 'Gerenciar Caixas Postais (Mailbox)',
-    xDisplayName: 'Caixas Postais',
+  'Bank Billet Query': { description: 'Query bank billets' },
+  'Pix QR Code Query': { description: 'Query Pix QR Code' },
+  Balances: { description: 'Manage balances' },
+  Accounts: { description: 'Manage financial accounts' },
+  Providers: { description: 'List financial providers' },
+  Statement: { description: 'Manage statements' },
+  'Pix Account': { description: 'Manage Pix accounts' },
+  Pix: { description: 'Manage charges via Pix' },
+  'Automatic Pix - Account': { description: 'Manage Automatic Pix accounts' },
+  'Automatic Pix - Location': { description: 'Manage Automatic Pix locations' },
+  'Automatic Pix - Recurrence': { description: 'Manage Automatic Pix recurrences' },
+  'Automatic Pix - Request': { description: 'Manage Automatic Pix requests' },
+  'Automatic Pix - Charge': { description: 'Manage Automatic Pix charges' },
+  Receipts: { description: 'Manage received payments' },
+  Transfers: { description: 'Manage transfers' },
+  'Between Accounts': { description: 'Manage transfers between accounts' },
+  INTERNAL: { description: 'Approve and reschedule internal transfers' },
+  'Pix - Transfer': { description: 'Manage transfers via Pix', xDisplayName: 'Pix' },
+  TED: { description: 'Manage transfers via TED' },
+  Batches: { description: 'Manage transfer batches' },
+  'Transfer Accounts': { description: 'Manage transfer accounts' },
+  'Bank Billets': { description: 'Manage bank billet payments' },
+  'Payment Batches': { description: 'Manage payment batches', xDisplayName: 'Batches' },
+  'DDA Accounts': { description: 'Manage DDA accounts' },
+  'DDA Bank Billets': { description: 'Manage DDA bank billets' },
+  'Payment Accounts': { description: 'Manage payment accounts' },
+  'Pix - Payment': { description: 'Manage payments via Pix', xDisplayName: 'Pix' },
+  'Tax (beta)': { description: 'Manage tax payments' },
+  'Utility Bills': { description: 'Manage utility bill payments' },
+  Payments: { description: 'Manage payments' },
+  Mailboxes: { description: 'Manage mailboxes' },
+  'Mailboxes - Mailbox': {
+    description: 'Manage mailboxes',
+    xDisplayName: 'Mailboxes',
   },
-  'Arquivos de Mailbox': { description: 'Gerenciar Arquivos de Mailbox' },
-  'Canal Email': { description: 'Gerenciar Canal de E-mail' },
-  'Canal S3': { description: 'Gerenciar Canal S3' },
-  'Canal SFTP': { description: 'Gerenciar Canal SFTP' },
-  'Canal WhatsApp': { description: 'Gerenciar Canal WhatsApp' },
-  'Canal Syncthing': { description: 'Gerenciar Canal Syncthing' },
-  Usuário: { description: 'Gerenciar Usuários' },
-  Certificado: { description: 'Gerenciar Certificados' },
-  Subcontas: { description: 'Gerenciar Subcontas' },
-  Conexões: { description: 'Gerenciar Conexões' },
-  Comando: { description: 'Consulta de Comandos' },
-  'Tokens de Acesso': { description: 'Gerenciar Tokens de Acesso' },
-  'Informações do Usuário': { description: 'Obter informações do usuário autenticado' },
+  'Mailbox Files': { description: 'Manage mailbox files' },
+  'Email Channel': { description: 'Manage Email channel' },
+  'S3 Channel': { description: 'Manage S3 channel' },
+  'SFTP Channel': { description: 'Manage SFTP channel' },
+  'WhatsApp Channel': { description: 'Manage WhatsApp channel' },
+  'Syncthing Channel': { description: 'Manage Syncthing channel' },
+  User: { description: 'Manage users' },
+  Certificate: { description: 'Manage certificates' },
+  'Sub-accounts': { description: 'Manage sub-accounts' },
+  Connections: { description: 'Manage connections' },
+  Commands: { description: 'Query commands' },
+  'Access Tokens': { description: 'Manage access tokens' },
+  'User Information': { description: 'Get authenticated user information' },
 };
 
 const GROUPS = [
-  ['GERAL', ['Consulta de Boletos', 'Consulta de Pix QR Code']],
-  ['FINANCEIRO', ['Saldos', 'Contas', 'Provedores', 'Extrato']],
+  ['General', ['Bank Billet Query', 'Pix QR Code Query']],
+  ['Financial', ['Balances', 'Accounts', 'Providers', 'Statement']],
   [
-    'COBRANÇAS',
+    'Charges',
     [
-      'Conta Pix',
+      'Pix Account',
       'Pix',
-      'Pix Automático - Conta',
-      'Pix Automático - Location',
-      'Pix Automático - Recorrência',
-      'Pix Automático - Solicitação',
-      'Pix Automático - Cobrança',
-      'Recebimentos',
+      'Automatic Pix - Account',
+      'Automatic Pix - Location',
+      'Automatic Pix - Recurrence',
+      'Automatic Pix - Request',
+      'Automatic Pix - Charge',
+      'Receipts',
     ],
   ],
   [
-    'TRANSFERÊNCIAS',
-    ['Transferências', 'Entre Contas', 'INTERNAL', 'Pix - Transferência', 'TED', 'Todos', 'Contas de Transferência'],
+    'Transfers',
+    ['Transfers', 'Between Accounts', 'INTERNAL', 'Pix - Transfer', 'TED', 'Batches', 'Transfer Accounts'],
   ],
   [
-    'PAGAMENTOS',
+    'Payments',
     [
-      'Boletos',
-      'Todos - Pagamento',
-      'Contas de DDA',
-      'Boletos DDA',
-      'Contas de Pagamento',
-      'Pix - Pagamento',
-      'Tributo (beta)',
-      'Contas de Consumo',
-      'Pagamentos',
+      'Bank Billets',
+      'Payment Batches',
+      'DDA Accounts',
+      'DDA Bank Billets',
+      'Payment Accounts',
+      'Pix - Payment',
+      'Tax (beta)',
+      'Utility Bills',
+      'Payments',
     ],
   ],
-  ['EDI', ['Caixas Postais']],
+  ['EDI', ['Mailboxes']],
   [
-    'MAILBOX',
+    'Mailbox',
     [
-      'Caixas Postais - Mailbox',
-      'Arquivos de Mailbox',
-      'Canal Email',
-      'Canal S3',
-      'Canal SFTP',
-      'Canal WhatsApp',
-      'Canal Syncthing',
+      'Mailboxes - Mailbox',
+      'Mailbox Files',
+      'Email Channel',
+      'S3 Channel',
+      'SFTP Channel',
+      'WhatsApp Channel',
+      'Syncthing Channel',
     ],
   ],
-  ['ADMINISTRAÇÃO', ['Usuário', 'Certificado', 'Subcontas', 'Conexões', 'Comando']],
-  ['SEGURANÇA E AUTENTICAÇÃO', ['Tokens de Acesso']],
-  ['USUÁRIO', ['Informações do Usuário']],
+  ['Administration', ['User', 'Certificate', 'Sub-accounts', 'Connections', 'Commands']],
+  ['Security and Authentication', ['Access Tokens']],
+  ['User', ['User Information']],
 ];
 
 // sanity on the static config itself, independent of any spec file
@@ -207,6 +264,14 @@ function transform(doc, label) {
       const op = item[method];
       if (!op) continue;
       op.tags = [tag];
+    }
+  }
+
+  for (const item of Object.values(doc.paths ?? {})) {
+    for (const op of Object.values(item)) {
+      if (op && typeof op === 'object' && Array.isArray(op.tags)) {
+        op.tags = op.tags.map((t) => TAG_RENAME[t] ?? t);
+      }
     }
   }
 
