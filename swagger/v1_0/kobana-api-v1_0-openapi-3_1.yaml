@@ -47,7 +47,7 @@ paths:
             application/json:
               example:
                 id: 1
-                uid: 01a0223e-2777-7406-9a19-f311b938a684
+                uid: 01a02740-2641-7738-a0a0-13a024039825
                 bank_contract_slug: bb-bs-18-19-7
                 financial_account: null
                 next_our_number: 1
@@ -87,23 +87,23 @@ paths:
                 custom_name: 'Sicoob 01  CC: 00003666-8 0229385'
                 kind: cnab400
                 beneficiary_address_street: Av. Presidente Vargas
-                remittance_disabled_at: '2026-08-21T09:54:53+07:00'
+                remittance_disabled_at: '2026-08-22T07:45:10+05:30'
                 beneficiary_address_street_number: '633'
                 beneficiary_address_complement: sala 1716
                 beneficiary_address_city: Rio de Janeiro
                 beneficiary_address_neighborhood: Centro
                 beneficiary_address_state: RJ
                 beneficiary_address_zipcode: '20071004'
-                bolepix_enabled_at: '2026-08-21T09:54:53+07:00'
+                bolepix_enabled_at: '2026-08-22T07:45:10+05:30'
                 bolepix:
                   pix_mode: 2
                   pix_account_id: 1
                   pix_account:
                     id: 1
-                    uid: 01a0223e-27bd-74b2-be6e-d9268b8d168a
+                    uid: 01a02740-267f-7bed-9bfe-54aa36472ee8
                     custom_name: 'Bancoob/BB 01  CC: 00003666-8 0229385'
                     validated_at: null
-                    enabled_at: '2026-08-21T09:54:53+07:00'
+                    enabled_at: '2026-08-22T07:45:10+05:30'
                     financial_provider_slug: bb
                     key: pix_key@email.com
                     status: pending
@@ -121,14 +121,14 @@ paths:
                         state: RJ
                     configuration: null
                     financial_account_uid: null
-                    created_at: '2026-08-21T09:54:53+07:00'
-                    updated_at: '2026-08-21T09:54:53+07:00'
+                    created_at: '2026-08-22T07:45:10+05:30'
+                    updated_at: '2026-08-22T07:45:10+05:30'
                   pix_billing_options: null
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-08-21T09:54:54+07:00'
-                updated_at: '2026-08-21T09:54:54+07:00'
+                created_at: '2026-08-22T07:45:10+05:30'
+                updated_at: '2026-08-22T07:45:10+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '401':
@@ -140,7 +140,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -230,7 +230,7 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 01a0223e-2c74-709c-9db6-eb8a22277ee5
+                  uid: 01a02740-2a4e-7a08-9b88-a89c9aa0172b
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -286,10 +286,10 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-08-21T09:54:55+07:00'
-                  updated_at: '2026-08-21T09:54:55+07:00'
+                  created_at: '2026-08-22T07:45:11+05:30'
+                  updated_at: '2026-08-22T07:45:11+05:30'
                 - id: 4
-                  uid: 01a0223e-2ca3-7a5b-aa7c-dab3f54e4694
+                  uid: 01a02740-2a72-71c8-80d2-2edd67e29616
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -345,10 +345,10 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-08-21T09:54:55+07:00'
-                  updated_at: '2026-08-21T09:54:55+07:00'
+                  created_at: '2026-08-22T07:45:11+05:30'
+                  updated_at: '2026-08-22T07:45:11+05:30'
                 - id: 5
-                  uid: 01a0223e-2cbd-7b40-a374-3a54214c962e
+                  uid: 01a02740-2a87-76f1-b13f-82641a130d25
                   bank_contract_slug: sicoob-01
                   financial_account: null
                   next_our_number: 1
@@ -404,8 +404,8 @@ paths:
                   bolepix_key: null
                   allow_expiration_on_weekends: false
                   allow_duplicate_charge_payments: false
-                  created_at: '2026-08-21T09:54:55+07:00'
-                  updated_at: '2026-08-21T09:54:55+07:00'
+                  created_at: '2026-08-22T07:45:11+05:30'
+                  updated_at: '2026-08-22T07:45:11+05:30'
               schema:
                 type: array
                 items:
@@ -419,7 +419,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -470,7 +470,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 01a0223e-2eb3-731d-9d9b-c88413a8737c
+                uid: 01a02740-2c60-73a1-b25b-8d21a94bbfd4
                 bank_contract_slug: sicoob-01
                 financial_account: null
                 next_our_number: 1
@@ -517,22 +517,22 @@ paths:
                 beneficiary_address_neighborhood: Centro
                 beneficiary_address_state: RJ
                 beneficiary_address_zipcode: '20071004'
-                bolepix_enabled_at: '2026-08-21T09:54:55+07:00'
+                bolepix_enabled_at: '2026-08-22T07:45:11+05:30'
                 bolepix:
                   pix_mode: 2
                   pix_account_id: 2
                   pix_account:
                     id: 2
-                    uid: 01a0223e-2e7c-7102-b782-6a3340b5155e
+                    uid: 01a02740-2c14-7c31-ac4a-2a94d0373888
                     custom_name: Sicoob
-                    validated_at: '2026-08-21T09:54:55+07:00'
-                    enabled_at: '2026-08-21T09:54:55+07:00'
+                    validated_at: '2026-08-22T07:45:12+05:30'
+                    enabled_at: '2026-08-22T07:45:12+05:30'
                     financial_provider_slug: sicoob
                     key: '+5522987654321'
                     status: active
                     default: true
                     beneficiary:
-                      document_number: 305.552.685-60
+                      document_number: 424.588.407-01
                       name: Margret Santos Filgueiras
                       address:
                         zip_code: '24360440'
@@ -543,15 +543,15 @@ paths:
                         city_name: Rio de Janeiro
                         state: RJ
                     configuration: null
-                    financial_account_uid: 01a0223e-2e0a-783c-bc2e-8441b2a617ec
-                    created_at: '2026-08-21T09:54:55+07:00'
-                    updated_at: '2026-08-21T09:54:55+07:00'
+                    financial_account_uid: 01a02740-2bab-7975-940e-a63e7fd09a62
+                    created_at: '2026-08-22T07:45:12+05:30'
+                    updated_at: '2026-08-22T07:45:12+05:30'
                   pix_billing_options: null
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-08-21T09:54:55+07:00'
-                updated_at: '2026-08-21T09:54:55+07:00'
+                created_at: '2026-08-22T07:45:12+05:30'
+                updated_at: '2026-08-22T07:45:12+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '401':
@@ -563,7 +563,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -630,7 +630,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -748,7 +748,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -811,7 +811,7 @@ paths:
             application/json:
               example:
                 id: 16
-                uid: 01a0223e-3990-77af-a187-cd84a1351d26
+                uid: 01a02740-356c-7b0c-9854-b92ef20d89c9
                 bank_contract_slug: sicoob-01
                 financial_account: null
                 next_our_number: 2
@@ -858,22 +858,22 @@ paths:
                 beneficiary_address_neighborhood: Centro
                 beneficiary_address_state: RJ
                 beneficiary_address_zipcode: '20071004'
-                bolepix_enabled_at: '2026-08-21T09:54:58+07:00'
+                bolepix_enabled_at: '2026-08-22T07:45:14+05:30'
                 bolepix:
                   pix_mode: 2
                   pix_account_id: 3
                   pix_account:
                     id: 3
-                    uid: 01a0223e-397e-7020-95a1-24f4da913842
+                    uid: 01a02740-355e-7c3c-9ffc-02e4f3e0e0f8
                     custom_name: Sicoob
-                    validated_at: '2026-08-21T09:54:58+07:00'
-                    enabled_at: '2026-08-21T09:54:58+07:00'
+                    validated_at: '2026-08-22T07:45:14+05:30'
+                    enabled_at: '2026-08-22T07:45:14+05:30'
                     financial_provider_slug: sicoob
                     key: '+5522987654321'
                     status: active
                     default: true
                     beneficiary:
-                      document_number: 802.331.985-04
+                      document_number: 370.743.242-48
                       name: Margret Santos Filgueiras
                       address:
                         zip_code: '24360440'
@@ -884,15 +884,15 @@ paths:
                         city_name: Rio de Janeiro
                         state: RJ
                     configuration: null
-                    financial_account_uid: 01a0223e-393d-7090-af28-3fd657397579
-                    created_at: '2026-08-21T09:54:58+07:00'
-                    updated_at: '2026-08-21T09:54:58+07:00'
+                    financial_account_uid: 01a02740-3526-74bd-b673-b96023ac72b2
+                    created_at: '2026-08-22T07:45:14+05:30'
+                    updated_at: '2026-08-22T07:45:14+05:30'
                   pix_billing_options: null
                 bolepix_key: null
                 allow_expiration_on_weekends: false
                 allow_duplicate_charge_payments: false
-                created_at: '2026-08-21T09:54:58+07:00'
-                updated_at: '2026-08-21T09:54:58+07:00'
+                created_at: '2026-08-22T07:45:14+05:30'
+                updated_at: '2026-08-22T07:45:14+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_account_object'
         '404':
@@ -1084,8 +1084,8 @@ paths:
             application/json:
               example:
                 id: 2
-                uid: 01a0223e-3eef-7a51-b4d1-57bac1989112
-                expire_at: '2026-08-31'
+                uid: 01a02740-3a4b-7201-9aaf-a6aa71f5af5f
+                expire_at: '2026-09-01'
                 paid_at: null
                 description: Serviços prestados
                 status: generating
@@ -1137,7 +1137,7 @@ paths:
                 interest_monthly_percentage: null
                 days_for_interest: 2
                 discount_type: 2
-                discount_limit_date: '2026-08-28'
+                discount_limit_date: '2026-08-29'
                 discount_value: null
                 discount_percentage: 10
                 days_for_revoke: 30
@@ -1167,7 +1167,7 @@ paths:
                 extra1_digit: null
                 extra2: null
                 extra2_digit: null
-                line: 75691.43279 01022.938508 00000.240028 4 15550000003456
+                line: 75691.43279 01022.938508 00000.240028 1 15560000003456
                 our_number: '2'
                 customer_subscription_id: null
                 installment_total: null
@@ -1175,8 +1175,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-08-21T09:54:59+07:00'
-                updated_at: '2026-08-21T09:54:59+07:00'
+                created_at: '2026-08-22T07:45:15+05:30'
+                updated_at: '2026-08-22T07:45:15+05:30'
                 tags:
                   - tag1
                   - tag2
@@ -1199,7 +1199,7 @@ paths:
                 guarantor_zipcode: null
                 guarantor_address: null
                 guarantor_address_complement: null
-                barcode: '75694155500000034561432701022938500000024002'
+                barcode: '75691155600000034561432701022938500000024002'
                 registered_at: null
                 prevent_registration: false
                 customer_id: null
@@ -1231,7 +1231,7 @@ paths:
                 charge_type: 1
                 custom_data:
                   bank_billet_number: '123_456'
-                issued_at: '2026-08-21T09:54:59+07:00'
+                issued_at: '2026-08-22T07:45:15+05:30'
                 shorten_url: 'http://dev.bole.to:5001/2/mq'
                 pix_enabled: false
                 pix_qrcode: null
@@ -1272,7 +1272,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -1462,10 +1462,10 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: 01a0223e-423a-7029-814b-eb1e69a52b15
-                  expire_at: '2026-08-24'
+                  uid: 01a02740-3d40-7f14-88a5-1f8feec9e3be
+                  expire_at: '2026-08-25'
                   paid_at: null
-                  description: 'Serviço de criação de site\r\nExpira em: 24/08/2026'
+                  description: 'Serviço de criação de site\r\nExpira em: 25/08/2026'
                   status: opened
                   registration_status: pending
                   customer_person_name: José da Silva
@@ -1545,7 +1545,7 @@ paths:
                   extra1_digit: null
                   extra2: null
                   extra2_digit: null
-                  line: 75691.43279 01022.938508 04000.300014 5 15480000005000
+                  line: 75691.43279 01022.938508 04000.300014 1 15490000005000
                   our_number: '40003'
                   customer_subscription_id: null
                   installment_total: null
@@ -1553,8 +1553,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-08-21T09:55:00+07:00'
-                  updated_at: '2026-08-21T09:55:00+07:00'
+                  created_at: '2026-08-22T07:45:16+05:30'
+                  updated_at: '2026-08-22T07:45:16+05:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1577,7 +1577,7 @@ paths:
                   guarantor_zipcode: null
                   guarantor_address: null
                   guarantor_address_complement: null
-                  barcode: '75695154800000050001432701022938500400030001'
+                  barcode: '75691154900000050001432701022938500400030001'
                   registered_at: null
                   prevent_registration: false
                   customer_id: 4
@@ -1608,7 +1608,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-08-21T09:55:00+07:00'
+                  issued_at: '2026-08-22T07:45:16+05:30'
                   shorten_url: 'http://dev.bole.to:5001/2/qb'
                   pix_enabled: false
                   pix_qrcode: null
@@ -1639,10 +1639,10 @@ paths:
                   pix: []
                   payments: []
                 - id: 4
-                  uid: 01a0223e-4221-7f82-846e-f36321593208
-                  expire_at: '2026-08-24'
+                  uid: 01a02740-3d2c-73e8-aecb-fd47b52b01b6
+                  expire_at: '2026-08-25'
                   paid_at: null
-                  description: 'Serviço de criação de site\r\nExpira em: 24/08/2026'
+                  description: 'Serviço de criação de site\r\nExpira em: 25/08/2026'
                   status: opened
                   registration_status: pending
                   customer_person_name: José da Silva
@@ -1722,7 +1722,7 @@ paths:
                   extra1_digit: null
                   extra2: null
                   extra2_digit: null
-                  line: 75691.43279 01022.938508 04000.230013 7 15480000005000
+                  line: 75691.43279 01022.938508 04000.230013 2 15490000005000
                   our_number: '40002'
                   customer_subscription_id: null
                   installment_total: null
@@ -1730,8 +1730,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-08-21T09:55:00+07:00'
-                  updated_at: '2026-08-21T09:55:00+07:00'
+                  created_at: '2026-08-22T07:45:16+05:30'
+                  updated_at: '2026-08-22T07:45:16+05:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1754,7 +1754,7 @@ paths:
                   guarantor_zipcode: null
                   guarantor_address: null
                   guarantor_address_complement: null
-                  barcode: '75697154800000050001432701022938500400023001'
+                  barcode: '75692154900000050001432701022938500400023001'
                   registered_at: null
                   prevent_registration: false
                   customer_id: 3
@@ -1785,7 +1785,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-08-21T09:55:00+07:00'
+                  issued_at: '2026-08-22T07:45:16+05:30'
                   shorten_url: 'http://dev.bole.to:5001/2/zq'
                   pix_enabled: false
                   pix_qrcode: null
@@ -1816,10 +1816,10 @@ paths:
                   pix: []
                   payments: []
                 - id: 3
-                  uid: 01a0223e-4206-7538-8be4-d478cb59f7c4
-                  expire_at: '2026-08-24'
+                  uid: 01a02740-3d15-7ad6-8a53-c588a777d5db
+                  expire_at: '2026-08-25'
                   paid_at: null
-                  description: 'Serviço de criação de site\r\nExpira em: 24/08/2026'
+                  description: 'Serviço de criação de site\r\nExpira em: 25/08/2026'
                   status: opened
                   registration_status: pending
                   customer_person_name: José da Silva
@@ -1899,7 +1899,7 @@ paths:
                   extra1_digit: null
                   extra2: null
                   extra2_digit: null
-                  line: 75691.43279 01022.938508 04000.160012 9 15480000005000
+                  line: 75691.43279 01022.938508 04000.160012 4 15490000005000
                   our_number: '40001'
                   customer_subscription_id: null
                   installment_total: null
@@ -1907,8 +1907,8 @@ paths:
                   installment_id: null
                   carne_url: null
                   bank_billet_layout_id: null
-                  created_at: '2026-08-21T09:55:00+07:00'
-                  updated_at: '2026-08-21T09:55:00+07:00'
+                  created_at: '2026-08-22T07:45:16+05:30'
+                  updated_at: '2026-08-22T07:45:16+05:30'
                   tags:
                     - tag 1
                     - tag2
@@ -1931,7 +1931,7 @@ paths:
                   guarantor_zipcode: null
                   guarantor_address: null
                   guarantor_address_complement: null
-                  barcode: '75699154800000050001432701022938500400016001'
+                  barcode: '75694154900000050001432701022938500400016001'
                   registered_at: null
                   prevent_registration: false
                   customer_id: 2
@@ -1962,7 +1962,7 @@ paths:
                   dispatch_type: 1
                   charge_type: 1
                   custom_data: null
-                  issued_at: '2026-08-21T09:55:00+07:00'
+                  issued_at: '2026-08-22T07:45:16+05:30'
                   shorten_url: 'http://dev.bole.to:5001/2/bl'
                   pix_enabled: false
                   pix_qrcode: null
@@ -2005,7 +2005,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -2056,10 +2056,10 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 01a0223e-433e-7a4e-b3af-1fc6cab8917f
-                expire_at: '2026-08-24'
+                uid: 01a02740-3e2b-72b0-a91c-656a2fc135d9
+                expire_at: '2026-08-25'
                 paid_at: null
-                description: 'Serviço de criação de site\r\nExpira em: 24/08/2026'
+                description: 'Serviço de criação de site\r\nExpira em: 25/08/2026'
                 status: opened
                 registration_status: pending
                 customer_person_name: José da Silva
@@ -2139,7 +2139,7 @@ paths:
                 extra1_digit: null
                 extra2: null
                 extra2_digit: null
-                line: 75691.43279 01022.938508 04000.480014 3 15480000005000
+                line: 75691.43279 01022.938508 04000.480014 9 15490000005000
                 our_number: '40004'
                 customer_subscription_id: null
                 installment_total: null
@@ -2147,8 +2147,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-08-21T09:55:00+07:00'
-                updated_at: '2026-08-21T09:55:00+07:00'
+                created_at: '2026-08-22T07:45:16+05:30'
+                updated_at: '2026-08-22T07:45:16+05:30'
                 tags:
                   - tag 1
                   - tag2
@@ -2171,7 +2171,7 @@ paths:
                 guarantor_zipcode: null
                 guarantor_address: null
                 guarantor_address_complement: null
-                barcode: '75693154800000050001432701022938500400048001'
+                barcode: '75699154900000050001432701022938500400048001'
                 registered_at: null
                 prevent_registration: false
                 customer_id: 5
@@ -2202,7 +2202,7 @@ paths:
                 dispatch_type: 1
                 charge_type: 1
                 custom_data: null
-                issued_at: '2026-08-21T09:55:00+07:00'
+                issued_at: '2026-08-22T07:45:16+05:30'
                 shorten_url: 'http://dev.bole.to:5001/2/xr'
                 pix_enabled: false
                 pix_qrcode: null
@@ -2243,7 +2243,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -2317,7 +2317,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -2463,10 +2463,10 @@ paths:
             application/json:
               example:
                 id: 12
-                uid: 01a0223e-4840-73ef-b3e3-225c607f6952
-                expire_at: '2026-08-28'
+                uid: 01a02740-426d-7c91-9fb5-59af497594d4
+                expire_at: '2026-08-31'
                 paid_at: null
-                description: 'Serviço de criação de site\r\nExpira em: 28/08/2026'
+                description: 'Serviço de criação de site\r\nExpira em: 31/08/2026'
                 status: generating
                 registration_status: pending
                 customer_person_name: José da Silva
@@ -2546,7 +2546,7 @@ paths:
                 extra1_digit: null
                 extra2: null
                 extra2_digit: null
-                line: 75691.43279 01022.938508 00000.240010 3 15520000134556
+                line: 75691.43279 01022.938508 00000.240010 1 15550000134556
                 our_number: '2'
                 customer_subscription_id: null
                 installment_total: null
@@ -2554,8 +2554,8 @@ paths:
                 installment_id: null
                 carne_url: null
                 bank_billet_layout_id: null
-                created_at: '2026-08-21T09:55:02+07:00'
-                updated_at: '2026-08-21T09:55:02+07:00'
+                created_at: '2026-08-22T07:45:17+05:30'
+                updated_at: '2026-08-22T07:45:17+05:30'
                 tags:
                   - tag 1
                   - tag2
@@ -2578,7 +2578,7 @@ paths:
                 guarantor_zipcode: null
                 guarantor_address: null
                 guarantor_address_complement: null
-                barcode: '75693155200001345561432701022938500000024001'
+                barcode: '75691155500001345561432701022938500000024001'
                 registered_at: null
                 prevent_registration: false
                 customer_id: 10
@@ -2609,7 +2609,7 @@ paths:
                 dispatch_type: 1
                 charge_type: 1
                 custom_data: null
-                issued_at: '2026-08-21T09:55:02+07:00'
+                issued_at: '2026-08-22T07:45:17+05:30'
                 shorten_url: 'http://dev.bole.to:5001/2/gr'
                 pix_enabled: false
                 pix_qrcode: null
@@ -2951,10 +2951,10 @@ paths:
             application/json:
               example:
                 id: 1
-                uid: 01a0223e-512b-727b-a07d-eb16b95b3fec
+                uid: 01a02740-49d4-7e05-8548-4ee00a70539e
                 amount: 34.56
                 cycle: monthly
-                next_billing: '2026-09-21'
+                next_billing: '2026-09-22'
                 end_at: null
                 instructions: null
                 customer_id: 27
@@ -2977,8 +2977,8 @@ paths:
                 customer_nickname: Zezin La da Rua
                 customer_notes: Informação sobre o cliente
                 description: Serviços prestados
-                created_at: '2026-08-21T09:55:04+07:00'
-                updated_at: '2026-08-21T09:55:04+07:00'
+                created_at: '2026-08-22T07:45:19+05:30'
+                updated_at: '2026-08-22T07:45:19+05:30'
                 created_via_api: true
                 days_in_advance: 7
                 bank_billet_account_id: 47
@@ -3053,7 +3053,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3162,15 +3162,15 @@ paths:
             application/json:
               example:
                 - id: 2
-                  uid: 01a0223e-5309-7338-a71a-1ae6eac599fc
+                  uid: 01a02740-4b45-7b4d-a01e-ec225cc12efe
                   amount: 150
                   cycle: monthly
-                  next_billing: '2026-09-21'
+                  next_billing: '2026-09-22'
                   end_at: null
                   instructions: Não receber após o vencimento
                   customer_id: 28
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 119.994.304-50
+                  customer_cnpj_cpf: 143.266.339-99
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3178,7 +3178,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: remedios.reilly@hyatt.example
+                  customer_email: anibal_langosh@lindgren.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3188,8 +3188,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:04+07:00'
-                  updated_at: '2026-08-21T09:55:04+07:00'
+                  created_at: '2026-08-22T07:45:20+05:30'
+                  updated_at: '2026-08-22T07:45:20+05:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3254,15 +3254,15 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 3
-                  uid: 01a0223e-5323-731f-bc89-1c97c2e37072
+                  uid: 01a02740-4b5b-7d1a-a641-73a9d8b75d07
                   amount: 150
                   cycle: monthly
-                  next_billing: '2026-09-21'
+                  next_billing: '2026-09-22'
                   end_at: null
                   instructions: Não receber após o vencimento
                   customer_id: 29
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 116.466.710-66
+                  customer_cnpj_cpf: 812.343.797-83
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3270,7 +3270,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: billy@romaguera-ohara.example
+                  customer_email: robert@johns-schowalter.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3280,8 +3280,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:04+07:00'
-                  updated_at: '2026-08-21T09:55:04+07:00'
+                  created_at: '2026-08-22T07:45:20+05:30'
+                  updated_at: '2026-08-22T07:45:20+05:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3346,15 +3346,15 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 4
-                  uid: 01a0223e-533f-7ab6-a9fe-7141e5d67d96
+                  uid: 01a02740-4b74-70dc-8b5c-39f639f977b1
                   amount: 150
                   cycle: monthly
-                  next_billing: '2026-09-21'
+                  next_billing: '2026-09-22'
                   end_at: null
                   instructions: Não receber após o vencimento
                   customer_id: 30
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 316.987.108-01
+                  customer_cnpj_cpf: 533.099.464-01
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -3362,7 +3362,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: solomon.harris@collier-lemke.example
+                  customer_email: clyde.koepp@hahn-sanford.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -3372,8 +3372,8 @@ paths:
                   customer_nickname: null
                   customer_notes: null
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:05+07:00'
-                  updated_at: '2026-08-21T09:55:05+07:00'
+                  created_at: '2026-08-22T07:45:20+05:30'
+                  updated_at: '2026-08-22T07:45:20+05:30'
                   created_via_api: false
                   days_in_advance: 7
                   bank_billet_account_id: 49
@@ -3450,7 +3450,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3501,15 +3501,15 @@ paths:
             application/json:
               example:
                 id: 5
-                uid: 01a0223e-5411-7c2a-bc68-f46b7aecff0d
+                uid: 01a02740-4c18-79c5-8306-b1fa9c4fef45
                 amount: 150
                 cycle: monthly
-                next_billing: '2026-09-21'
+                next_billing: '2026-09-22'
                 end_at: null
                 instructions: Não receber após o vencimento
                 customer_id: 31
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 628.537.729-42
+                customer_cnpj_cpf: 413.996.271-20
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -3517,7 +3517,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: ricky@hamill.example
+                customer_email: tina_braun@casper.example
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -3527,8 +3527,8 @@ paths:
                 customer_nickname: null
                 customer_notes: null
                 description: Cliente especial
-                created_at: '2026-08-21T09:55:05+07:00'
-                updated_at: '2026-08-21T09:55:05+07:00'
+                created_at: '2026-08-22T07:45:20+05:30'
+                updated_at: '2026-08-22T07:45:20+05:30'
                 created_via_api: false
                 days_in_advance: 7
                 bank_billet_account_id: 50
@@ -3603,7 +3603,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3670,7 +3670,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3744,7 +3744,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3807,15 +3807,15 @@ paths:
             application/json:
               example:
                 id: 8
-                uid: 01a0223e-571e-7ff4-83af-631d0d78c720
+                uid: 01a02740-4ec1-7956-be03-8e882df077de
                 amount: 150
                 cycle: monthly
-                next_billing: '2026-10-21'
+                next_billing: '2026-10-22'
                 end_at: null
                 instructions: Não receber após o vencimento
                 customer_id: 34
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 725.671.920-50
+                customer_cnpj_cpf: 867.544.339-06
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -3823,7 +3823,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: vernia.grady@mante.example
+                customer_email: reyna@jacobi-torphy.example
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -3833,8 +3833,8 @@ paths:
                 customer_nickname: null
                 customer_notes: null
                 description: Cliente especial
-                created_at: '2026-08-21T09:55:06+07:00'
-                updated_at: '2026-08-21T09:55:06+07:00'
+                created_at: '2026-08-22T07:45:21+05:30'
+                updated_at: '2026-08-22T07:45:21+05:30'
                 created_via_api: false
                 days_in_advance: 7
                 bank_billet_account_id: 53
@@ -3910,7 +3910,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -3966,7 +3966,7 @@ paths:
             application/json:
               example:
                 id: 35
-                uid: 01a0223e-5821-7940-b60f-907aa3f7b1f4
+                uid: 01a02740-504d-7b54-a09a-0f3d1feadc96
                 city_name: Minas Gerais
                 person_name: Jonh Doe
                 nickname: null
@@ -3983,8 +3983,8 @@ paths:
                 notes: Observações
                 state: MG
                 created_via_api: true
-                created_at: '2026-08-21T09:55:06+07:00'
-                updated_at: '2026-08-21T09:55:06+07:00'
+                created_at: '2026-08-22T07:45:21+05:30'
+                updated_at: '2026-08-22T07:45:21+05:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -3995,7 +3995,7 @@ paths:
                 tags: []
                 tag_list: null
                 custom_data: null
-                portal_password: HyPoBXy3
+                portal_password: uWh9SVVi
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4014,7 +4014,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4079,7 +4079,7 @@ paths:
             application/json:
               example:
                 - id: 37
-                  uid: 01a0223e-5939-7faa-b9c6-d2582cc39bc0
+                  uid: 01a02740-5244-7c80-8384-d4ba0d422a0b
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4087,8 +4087,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 868.838.690-00
-                  email: mariah.lakin@rohan.example
+                  cnpj_cpf: 257.466.319-57
+                  email: sung@hagenes-shields.test
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4096,8 +4096,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-08-21T09:55:06+07:00'
-                  updated_at: '2026-08-21T09:55:06+07:00'
+                  created_at: '2026-08-22T07:45:21+05:30'
+                  updated_at: '2026-08-22T07:45:21+05:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4106,13 +4106,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - sit
-                    - totam
-                    - dolorem
-                  tag_list: 'sit,totam,dolorem'
+                    - molestiae
+                    - placeat
+                    - aut
+                  tag_list: 'molestiae,placeat,aut'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: RQhICTDS
+                  portal_password: bhMZQ7Jo
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4121,7 +4121,7 @@ paths:
                   credit_restriction_responsable_email: null
                   ignore_credit_restriction_included_at: null
                 - id: 38
-                  uid: 01a0223e-593f-7427-9250-063191e8661f
+                  uid: 01a02740-524c-7702-ae19-96fce0314afc
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4129,8 +4129,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 648.910.880-10
-                  email: leena@jast.test
+                  cnpj_cpf: 982.227.937-05
+                  email: augustina@altenwerth.test
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4138,8 +4138,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-08-21T09:55:06+07:00'
-                  updated_at: '2026-08-21T09:55:06+07:00'
+                  created_at: '2026-08-22T07:45:21+05:30'
+                  updated_at: '2026-08-22T07:45:21+05:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4148,13 +4148,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - perspiciatis
+                    - autem
                     - et
-                    - aut
-                  tag_list: 'perspiciatis,et,aut'
+                    - voluptatem
+                  tag_list: 'autem,et,voluptatem'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: tBykzbKs
+                  portal_password: swMrmtLW
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4163,7 +4163,7 @@ paths:
                   credit_restriction_responsable_email: null
                   ignore_credit_restriction_included_at: null
                 - id: 39
-                  uid: 01a0223e-5944-7942-99f5-fa45a29cafa0
+                  uid: 01a02740-5258-7d87-bd1c-17a7a51aa902
                   city_name: Rio de Janeiro
                   person_name: Margret Santos Filgueiras
                   nickname: null
@@ -4171,8 +4171,8 @@ paths:
                   address_complement: '709'
                   address_number: '120'
                   mobile_number: null
-                  cnpj_cpf: 520.100.790-27
-                  email: lakeisha_heathcote@nolan-harvey.test
+                  cnpj_cpf: 012.389.335-64
+                  email: damien.towne@stracke-homenick.test
                   neighborhood: São Francisco
                   phone_number: '2199999999'
                   zipcode: '24360440'
@@ -4180,8 +4180,8 @@ paths:
                   notes: null
                   state: RJ
                   created_via_api: false
-                  created_at: '2026-08-21T09:55:06+07:00'
-                  updated_at: '2026-08-21T09:55:06+07:00'
+                  created_at: '2026-08-22T07:45:21+05:30'
+                  updated_at: '2026-08-22T07:45:21+05:30'
                   ignore_email: null
                   ignore_sms: false
                   ignore_whatsapp: false
@@ -4190,13 +4190,13 @@ paths:
                   truncated_address: 'Av. Burkhard Hehn Simões, 120'
                   external_code: null
                   tags:
-                    - facilis
-                    - illo
-                    - suscipit
-                  tag_list: 'facilis,illo,suscipit'
+                    - quo
+                    - velit
+                    - veritatis
+                  tag_list: 'quo,velit,veritatis'
                   custom_data:
                     numero_cliente: 63126
-                  portal_password: 845MHncc
+                  portal_password: 4WJEPqZ0
                   birthday: '1978-06-12'
                   ignore_credit_restriction: false
                   credit_restriction_status: 0
@@ -4217,7 +4217,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4261,7 +4261,7 @@ paths:
             application/json:
               example:
                 id: 40
-                uid: 01a0223e-59cc-7739-b12a-3f8f55bbbab2
+                uid: 01a02740-5323-78a9-b5ba-973822087064
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4269,8 +4269,8 @@ paths:
                 address_complement: '709'
                 address_number: '120'
                 mobile_number: null
-                cnpj_cpf: 306.530.705-78
-                email: lizeth_grant@roberts-powlowski.example
+                cnpj_cpf: 467.033.987-71
+                email: santos_schamberger@hodkiewicz.test
                 neighborhood: São Francisco
                 phone_number: '2199999999'
                 zipcode: '24360440'
@@ -4278,8 +4278,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-08-21T09:55:06+07:00'
-                updated_at: '2026-08-21T09:55:06+07:00'
+                created_at: '2026-08-22T07:45:22+05:30'
+                updated_at: '2026-08-22T07:45:22+05:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4288,13 +4288,13 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - beatae
-                  - consectetur
-                  - illo
-                tag_list: 'beatae,consectetur,illo'
+                  - nam
+                  - fugit
+                  - est
+                tag_list: 'nam,fugit,est'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: 7XrjpJuc
+                portal_password: H5Vf7IDo
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4313,7 +4313,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4373,7 +4373,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4435,7 +4435,7 @@ paths:
             application/json:
               example:
                 id: 42
-                uid: 01a0223e-5bad-7f0b-99b8-2d1f46e17e03
+                uid: 01a02740-54a7-7182-bcf3-80b87812496d
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4444,7 +4444,7 @@ paths:
                 address_number: '120'
                 mobile_number: null
                 cnpj_cpf: 399.881.072-26
-                email: lloyd@schroeder-crist.test
+                email: rolland@wilderman-wehner.example
                 neighborhood: São Francisco
                 phone_number: '2199999999'
                 zipcode: '24360440'
@@ -4452,8 +4452,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-08-21T09:55:07+07:00'
-                updated_at: '2026-08-21T09:55:07+07:00'
+                created_at: '2026-08-22T07:45:22+05:30'
+                updated_at: '2026-08-22T07:45:22+05:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4462,13 +4462,13 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - a
-                  - facilis
-                  - cumque
-                tag_list: 'a,facilis,cumque'
+                  - architecto
+                  - unde
+                  - dolorem
+                tag_list: 'architecto,unde,dolorem'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: dhhKFTcp
+                portal_password: 13otyeFQ
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4487,7 +4487,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4542,7 +4542,7 @@ paths:
             application/json:
               example:
                 id: 43
-                uid: 01a0223e-5ca2-7505-a124-5cb5e8c1490f
+                uid: 01a02740-5571-7818-9676-96fb5b0dc771
                 city_name: Rio de Janeiro
                 person_name: Margret Santos Filgueiras
                 nickname: null
@@ -4550,7 +4550,7 @@ paths:
                 address_complement: '709'
                 address_number: '120'
                 mobile_number: null
-                cnpj_cpf: 914.506.728-76
+                cnpj_cpf: 333.857.454-11
                 email: search@example.com
                 neighborhood: São Francisco
                 phone_number: '2199999999'
@@ -4559,8 +4559,8 @@ paths:
                 notes: null
                 state: RJ
                 created_via_api: false
-                created_at: '2026-08-21T09:55:07+07:00'
-                updated_at: '2026-08-21T09:55:07+07:00'
+                created_at: '2026-08-22T07:45:22+05:30'
+                updated_at: '2026-08-22T07:45:22+05:30'
                 ignore_email: null
                 ignore_sms: false
                 ignore_whatsapp: false
@@ -4569,13 +4569,12 @@ paths:
                 truncated_address: 'Av. Burkhard Hehn Simões, 120'
                 external_code: null
                 tags:
-                  - rerum
-                  - maiores
+                  - quia
                   - aut
-                tag_list: 'rerum,maiores,aut'
+                tag_list: 'quia,aut'
                 custom_data:
                   numero_cliente: 63126
-                portal_password: XWlvLRVo
+                portal_password: 3piiEuFH
                 birthday: '1978-06-12'
                 ignore_credit_restriction: false
                 credit_restriction_status: 0
@@ -4594,7 +4593,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -4657,18 +4656,18 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: 01a0223e-5f4a-7351-945a-cc77a1d277b4
+                  uid: 01a02740-57af-7e4b-800a-1a1712f55f4b
                   amount: 133.54
                   cycle: monthly
-                  start_at: '2026-08-21'
-                  end_at: '2027-07-21'
+                  start_at: '2026-08-22'
+                  end_at: '2027-07-22'
                   instructions: null
                   customer_id: 48
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:08+07:00'
-                  updated_at: '2026-08-21T09:55:08+07:00'
+                  created_at: '2026-08-22T07:45:23+05:30'
+                  updated_at: '2026-08-22T07:45:23+05:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 017.040.118-92
+                  customer_cnpj_cpf: 042.188.485-13
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4676,7 +4675,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: nathanial@hane-denesik.example
+                  customer_email: alvaro_bednar@stokes-willms.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4754,18 +4753,18 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 4
-                  uid: 01a0223e-5f2d-70ea-9e60-25213e8c5688
+                  uid: 01a02740-579d-72d7-9a86-e2bd1a7af65c
                   amount: 133.54
                   cycle: monthly
-                  start_at: '2026-08-21'
-                  end_at: '2027-07-21'
+                  start_at: '2026-08-22'
+                  end_at: '2027-07-22'
                   instructions: null
                   customer_id: 47
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:08+07:00'
-                  updated_at: '2026-08-21T09:55:08+07:00'
+                  created_at: '2026-08-22T07:45:23+05:30'
+                  updated_at: '2026-08-22T07:45:23+05:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 756.282.139-93
+                  customer_cnpj_cpf: 346.735.524-23
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4773,7 +4772,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: danille.jast@corkery.test
+                  customer_email: hiram@macgyver.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4851,18 +4850,18 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 3
-                  uid: 01a0223e-5f15-77b2-9789-495f962c8036
+                  uid: 01a02740-578b-79df-b684-d9134e2d98ef
                   amount: 133.54
                   cycle: monthly
-                  start_at: '2026-08-21'
-                  end_at: '2027-07-21'
+                  start_at: '2026-08-22'
+                  end_at: '2027-07-22'
                   instructions: null
                   customer_id: 46
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:08+07:00'
-                  updated_at: '2026-08-21T09:55:08+07:00'
+                  created_at: '2026-08-22T07:45:23+05:30'
+                  updated_at: '2026-08-22T07:45:23+05:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 365.442.760-06
+                  customer_cnpj_cpf: 770.520.139-91
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4870,7 +4869,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: delorse@bechtelar.test
+                  customer_email: aldo@grant.test
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -4948,18 +4947,18 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 2
-                  uid: 01a0223e-5efb-7ded-8794-8535b4c14297
+                  uid: 01a02740-5779-74ab-9624-445d7c282481
                   amount: 133.54
                   cycle: monthly
-                  start_at: '2026-08-21'
-                  end_at: '2027-07-21'
+                  start_at: '2026-08-22'
+                  end_at: '2027-07-22'
                   instructions: null
                   customer_id: 45
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:08+07:00'
-                  updated_at: '2026-08-21T09:55:08+07:00'
+                  created_at: '2026-08-22T07:45:23+05:30'
+                  updated_at: '2026-08-22T07:45:23+05:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 968.411.481-85
+                  customer_cnpj_cpf: 287.761.902-85
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -4967,7 +4966,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: anton@deckow-turcotte.example
+                  customer_email: antonio_mckenzie@toy-kuvalis.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -5045,18 +5044,18 @@ paths:
                   ignore_whatsapp: false
                   days_for_sue_type: null
                 - id: 1
-                  uid: 01a0223e-5ede-7295-a1c9-7be4bf54d6dd
+                  uid: 01a02740-5763-7115-8e87-f793bb590f27
                   amount: 133.54
                   cycle: monthly
-                  start_at: '2026-08-21'
-                  end_at: '2027-07-21'
+                  start_at: '2026-08-22'
+                  end_at: '2027-07-22'
                   instructions: null
                   customer_id: 44
                   description: Cliente especial
-                  created_at: '2026-08-21T09:55:07+07:00'
-                  updated_at: '2026-08-21T09:55:07+07:00'
+                  created_at: '2026-08-22T07:45:23+05:30'
+                  updated_at: '2026-08-22T07:45:23+05:30'
                   customer_person_name: Margret Santos Filgueiras
-                  customer_cnpj_cpf: 432.069.176-89
+                  customer_cnpj_cpf: 346.590.132-00
                   customer_address: Av. Burkhard Hehn Simões
                   customer_state: RJ
                   customer_neighborhood: São Francisco
@@ -5064,7 +5063,7 @@ paths:
                   customer_address_number: '120'
                   customer_address_complement: '709'
                   customer_phone_number: '2199999999'
-                  customer_email: delpha@walsh.example
+                  customer_email: avril@leuschke-krajcik.example
                   customer_city_name: Rio de Janeiro
                   customer_email_cc: john_cc@example.com
                   customer_ignore_email: null
@@ -5154,7 +5153,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -5197,16 +5196,16 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 01a0223e-6047-772c-b368-f8cbe81c3193
+                uid: 01a02740-5882-7c36-a4d2-695609dec3d7
                 amount: 133.54
                 cycle: biweekly
-                start_at: '2026-08-25'
-                end_at: '2027-02-06'
+                start_at: '2026-08-26'
+                end_at: '2027-02-07'
                 instructions: null
                 customer_id: null
                 description: Serviços prestados
-                created_at: '2026-08-21T09:55:08+07:00'
-                updated_at: '2026-08-21T09:55:08+07:00'
+                created_at: '2026-08-22T07:45:23+05:30'
+                updated_at: '2026-08-22T07:45:23+05:30'
                 customer_person_name: Leofutol Bezerra
                 customer_cnpj_cpf: 337.539.339-37
                 customer_address: Av. Presidente Vargas
@@ -5304,7 +5303,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -5386,18 +5385,18 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 01a0223e-618a-7c28-b16a-805f51e126ab
+                uid: 01a02740-5982-7df5-a2d2-fbb7ebaa3885
                 amount: 133.54
                 cycle: monthly
-                start_at: '2026-08-21'
-                end_at: '2027-07-21'
+                start_at: '2026-08-22'
+                end_at: '2027-07-22'
                 instructions: null
                 customer_id: 49
                 description: Cliente especial
-                created_at: '2026-08-21T09:55:08+07:00'
-                updated_at: '2026-08-21T09:55:08+07:00'
+                created_at: '2026-08-22T07:45:23+05:30'
+                updated_at: '2026-08-22T07:45:23+05:30'
                 customer_person_name: Margret Santos Filgueiras
-                customer_cnpj_cpf: 253.143.282-59
+                customer_cnpj_cpf: 753.408.656-65
                 customer_address: Av. Burkhard Hehn Simões
                 customer_state: RJ
                 customer_neighborhood: São Francisco
@@ -5405,7 +5404,7 @@ paths:
                 customer_address_number: '120'
                 customer_address_complement: '709'
                 customer_phone_number: '2199999999'
-                customer_email: britteny@emmerich-maggio.test
+                customer_email: thuy@parisian.test
                 customer_city_name: Rio de Janeiro
                 customer_email_cc: john_cc@example.com
                 customer_ignore_email: null
@@ -5493,7 +5492,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -6443,7 +6442,7 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 01a0223e-650b-79c2-8ab8-2d8fcd1a0738
+                  uid: 01a02740-5c3b-7a74-bd78-44671a5403eb
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6459,7 +6458,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,hoyt@boyle.example'
+                  to: 'cliente@example.com,kit@okuneva.example'
                   subject: Assunto de email
                   email_account_id: 7
                   email_template_id: 10
@@ -6470,16 +6469,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:09+07:00'
-                  updated_at: '2026-08-21T09:55:09+07:00'
+                  created_at: '2026-08-22T07:45:24+05:30'
+                  updated_at: '2026-08-22T07:45:24+05:30'
                   resource_owner:
-                    uid: 01a0223e-6542-7fee-b5c8-d963aa2bba00
+                    uid: 01a02740-5c63-7106-bff0-31cc869232ce
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6542-7fee-b5c8-d963aa2bba00
+                    uid: 01a02740-5c63-7106-bff0-31cc869232ce
                     type: bank_billet
                 - id: 5
-                  uid: 01a0223e-64ba-71f4-b583-fdb2f31bf9fc
+                  uid: 01a02740-5bf9-7a2b-80fe-5dbf7e5be32c
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6495,7 +6494,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,damion.runolfsson@hauck-kuhn.test'
+                  to: 'cliente@example.com,bennie@macejkovic.test'
                   subject: Assunto de email
                   email_account_id: 6
                   email_template_id: 8
@@ -6506,16 +6505,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:09+07:00'
-                  updated_at: '2026-08-21T09:55:09+07:00'
+                  created_at: '2026-08-22T07:45:24+05:30'
+                  updated_at: '2026-08-22T07:45:24+05:30'
                   resource_owner:
-                    uid: 01a0223e-64e9-7358-91f2-96f0d1e577af
+                    uid: 01a02740-5c20-7344-a92e-ef6705dad366
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-64e9-7358-91f2-96f0d1e577af
+                    uid: 01a02740-5c20-7344-a92e-ef6705dad366
                     type: bank_billet
                 - id: 4
-                  uid: 01a0223e-646a-7de3-ba1d-7ac0f2cd9264
+                  uid: 01a02740-5bb8-7042-94ad-d8d097b76972
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6531,7 +6530,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,terrence@west.example'
+                  to: 'cliente@example.com,alphonso@thompson.test'
                   subject: Assunto de email
                   email_account_id: 5
                   email_template_id: 6
@@ -6542,16 +6541,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:09+07:00'
-                  updated_at: '2026-08-21T09:55:09+07:00'
+                  created_at: '2026-08-22T07:45:24+05:30'
+                  updated_at: '2026-08-22T07:45:24+05:30'
                   resource_owner:
-                    uid: 01a0223e-6499-7c0f-a291-7cd3f19f186a
+                    uid: 01a02740-5be0-7e2b-983d-92138d278b7d
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6499-7c0f-a291-7cd3f19f186a
+                    uid: 01a02740-5be0-7e2b-983d-92138d278b7d
                     type: bank_billet
                 - id: 3
-                  uid: 01a0223e-6416-7eb1-8110-733e463c5b56
+                  uid: 01a02740-5b74-7b9f-8154-3cf1403889cb
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6567,7 +6566,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,peter.wisoky@orn-emard.example'
+                  to: 'cliente@example.com,andre@boyle-cole.example'
                   subject: Assunto de email
                   email_account_id: 4
                   email_template_id: 4
@@ -6578,16 +6577,16 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:09+07:00'
-                  updated_at: '2026-08-21T09:55:09+07:00'
+                  created_at: '2026-08-22T07:45:24+05:30'
+                  updated_at: '2026-08-22T07:45:24+05:30'
                   resource_owner:
-                    uid: 01a0223e-6448-7f06-8e14-137bc78e5947
+                    uid: 01a02740-5b9e-7c5a-880d-8ea735020f97
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6448-7f06-8e14-137bc78e5947
+                    uid: 01a02740-5b9e-7c5a-880d-8ea735020f97
                     type: bank_billet
                 - id: 2
-                  uid: 01a0223e-6382-7fe0-adb4-1e2c88357e09
+                  uid: 01a02740-5b0f-718c-80d6-950fa2820a18
                   event_code: bank_billet.created
                   sent_error: null
                   delivered_at: null
@@ -6603,7 +6602,7 @@ paths:
                   click_count: 0
                   read_at: null
                   read_count: 0
-                  to: 'cliente@example.com,jewell@koch.example'
+                  to: 'cliente@example.com,mervin@green.example'
                   subject: Assunto de email
                   email_account_id: 3
                   email_template_id: 2
@@ -6614,13 +6613,13 @@ paths:
                   reply_to_address: null
                   customer_id: null
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:09+07:00'
-                  updated_at: '2026-08-21T09:55:09+07:00'
+                  created_at: '2026-08-22T07:45:24+05:30'
+                  updated_at: '2026-08-22T07:45:24+05:30'
                   resource_owner:
-                    uid: 01a0223e-63d3-7713-9b86-dc43603e4fd8
+                    uid: 01a02740-5b52-7f56-8ad4-ddb277d3ccb5
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-63d3-7713-9b86-dc43603e4fd8
+                    uid: 01a02740-5b52-7f56-8ad4-ddb277d3ccb5
                     type: bank_billet
               schema:
                 type: array
@@ -6635,7 +6634,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -6679,7 +6678,7 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 01a0223e-65ef-75cb-97e5-bd905deb562e
+                uid: 01a02740-5d37-7ce6-a378-5cd8b8431efa
                 event_code: bank_billet.created
                 sent_error: null
                 delivered_at: null
@@ -6695,7 +6694,7 @@ paths:
                 click_count: 0
                 read_at: null
                 read_count: 0
-                to: 'cliente@example.com,clair@mraz.test'
+                to: 'cliente@example.com,talitha.towne@goldner.example'
                 subject: Assunto de email
                 email_account_id: 8
                 email_template_id: 12
@@ -6706,13 +6705,13 @@ paths:
                 reply_to_address: null
                 customer_id: null
                 customer_external_code: null
-                created_at: '2026-08-21T09:55:09+07:00'
-                updated_at: '2026-08-21T09:55:09+07:00'
+                created_at: '2026-08-22T07:45:24+05:30'
+                updated_at: '2026-08-22T07:45:24+05:30'
                 resource_owner:
-                  uid: 01a0223e-662b-76b0-882e-f17dfc0a5dd0
+                  uid: 01a02740-5d70-7b69-8e9b-0075571fb0f3
                   type: bank_billet
                 resource_base:
-                  uid: 01a0223e-662b-76b0-882e-f17dfc0a5dd0
+                  uid: 01a02740-5d70-7b69-8e9b-0075571fb0f3
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_email_delivery_object'
@@ -6725,7 +6724,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -6786,7 +6785,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -7686,18 +7685,18 @@ paths:
             application/json:
               example:
                 - resource_owner:
-                    uid: 01a0223e-694d-7d35-b66e-afe77bf54466
+                    uid: 01a02740-5fcf-748d-9d9c-2cbf549f2390
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-694d-7d35-b66e-afe77bf54466
+                    uid: 01a02740-5fcf-748d-9d9c-2cbf549f2390
                     type: bank_billet
-                  uid: 01a0223e-6966-7f5f-b5d0-711d8218d987
+                  uid: 01a02740-5fe3-73a1-b2af-02eee9daba2b
                   code: ping
                   data:
                     object:
                       id: 37
                       pix: []
-                      uid: 01a0223e-694d-7d35-b66e-afe77bf54466
+                      uid: 01a02740-5fcf-748d-9d9c-2cbf549f2390
                       url: 'http://dev.bole.to:5001/2/bwl'
                       line: 75691.43279 01022.938508 04003.310010 9 82900000005000
                       meta: null
@@ -7734,15 +7733,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T17:30:00+05:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T17:30:00+05:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40033'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T17:30:00+05:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -7872,22 +7871,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T17:30:00+05:30'
+                  created_at: '2020-06-15T17:30:00+05:30'
+                  updated_at: '2020-06-15T17:30:00+05:30'
                 - resource_owner:
-                    uid: 01a0223e-6993-70cc-9d60-15af91a11271
+                    uid: 01a02740-6008-790f-9a95-ff0cbedd665b
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6993-70cc-9d60-15af91a11271
+                    uid: 01a02740-6008-790f-9a95-ff0cbedd665b
                     type: bank_billet
-                  uid: 01a0223e-69ab-7178-9718-05768f5515b9
+                  uid: 01a02740-601b-7433-8882-3b5d4d52c5a3
                   code: ping
                   data:
                     object:
                       id: 38
                       pix: []
-                      uid: 01a0223e-6993-70cc-9d60-15af91a11271
+                      uid: 01a02740-6008-790f-9a95-ff0cbedd665b
                       url: 'http://dev.bole.to:5001/2/zkq'
                       line: 75691.43279 01022.938508 04003.490010 7 82900000005000
                       meta: null
@@ -7924,15 +7923,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T17:30:00+05:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T17:30:00+05:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40034'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T17:30:00+05:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8062,22 +8061,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T17:30:00+05:30'
+                  created_at: '2020-06-15T17:30:00+05:30'
+                  updated_at: '2020-06-15T17:30:00+05:30'
                 - resource_owner:
-                    uid: 01a0223e-69d7-7217-a782-5c842f15a03f
+                    uid: 01a02740-6041-71e9-865a-0208f2830500
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-69d7-7217-a782-5c842f15a03f
+                    uid: 01a02740-6041-71e9-865a-0208f2830500
                     type: bank_billet
-                  uid: 01a0223e-69ee-7546-bc68-1846a6005398
+                  uid: 01a02740-6054-7b78-8b3a-025a35b3bfdf
                   code: ping
                   data:
                     object:
                       id: 39
                       pix: []
-                      uid: 01a0223e-69d7-7217-a782-5c842f15a03f
+                      uid: 01a02740-6041-71e9-865a-0208f2830500
                       url: 'http://dev.bole.to:5001/2/qdb'
                       line: 75691.43279 01022.938508 04003.560010 5 82900000005000
                       meta: null
@@ -8114,15 +8113,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T17:30:00+05:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T17:30:00+05:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40035'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T17:30:00+05:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8252,22 +8251,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T17:30:00+05:30'
+                  created_at: '2020-06-15T17:30:00+05:30'
+                  updated_at: '2020-06-15T17:30:00+05:30'
                 - resource_owner:
-                    uid: 01a0223e-6a18-7f7f-bc55-c72a922a7f80
+                    uid: 01a02740-6078-7262-b0f6-adc74b40d234
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6a18-7f7f-bc55-c72a922a7f80
+                    uid: 01a02740-6078-7262-b0f6-adc74b40d234
                     type: bank_billet
-                  uid: 01a0223e-6a34-7b5b-b782-d944f74a987d
+                  uid: 01a02740-608f-72e1-949c-bb46d402b938
                   code: ping
                   data:
                     object:
                       id: 40
                       pix: []
-                      uid: 01a0223e-6a18-7f7f-bc55-c72a922a7f80
+                      uid: 01a02740-6078-7262-b0f6-adc74b40d234
                       url: 'http://dev.bole.to:5001/2/xzr'
                       line: 75691.43279 01022.938508 04003.630011 3 82900000005000
                       meta: null
@@ -8304,15 +8303,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T17:30:00+05:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T17:30:00+05:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40036'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T17:30:00+05:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8442,22 +8441,22 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T17:30:00+05:30'
+                  created_at: '2020-06-15T17:30:00+05:30'
+                  updated_at: '2020-06-15T17:30:00+05:30'
                 - resource_owner:
-                    uid: 01a0223e-6a5f-7399-a095-c8059facebe8
+                    uid: 01a02740-60b3-71d1-846a-aabe0747038b
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6a5f-7399-a095-c8059facebe8
+                    uid: 01a02740-60b3-71d1-846a-aabe0747038b
                     type: bank_billet
-                  uid: 01a0223e-6a76-7eec-b84c-966d10c07a61
+                  uid: 01a02740-60d2-72d1-be8a-eb32f32e0116
                   code: ping
                   data:
                     object:
                       id: 41
                       pix: []
-                      uid: 01a0223e-6a5f-7399-a095-c8059facebe8
+                      uid: 01a02740-60b3-71d1-846a-aabe0747038b
                       url: 'http://dev.bole.to:5001/2/rgn'
                       line: 75691.43279 01022.938508 04003.700012 1 82900000005000
                       meta: null
@@ -8494,15 +8493,15 @@ paths:
                       expire_at: '2020-06-18'
                       fine_type: 0
                       import_id: null
-                      issued_at: '2020-06-15T19:00:00+07:00'
+                      issued_at: '2020-06-15T17:30:00+05:30'
                       acceptance: 'N'
-                      created_at: '2020-06-15T19:00:00+07:00'
+                      created_at: '2020-06-15T17:30:00+05:30'
                       fine_value: null
                       ignore_sms: false
                       our_number: '40037'
                       pix_qrcode: null
                       revoked_at: null
-                      updated_at: '2020-06-15T19:00:00+07:00'
+                      updated_at: '2020-06-15T17:30:00+05:30'
                       cancel_type: null
                       charge_type: 1
                       custom_data: null
@@ -8632,9 +8631,9 @@ paths:
                       divergent_payment_minimum_value: null
                       divergent_payment_maximum_percentage: null
                       divergent_payment_minimum_percentage: null
-                  occurred_at: '2020-06-15T19:00:00+07:00'
-                  created_at: '2020-06-15T19:00:00+07:00'
-                  updated_at: '2020-06-15T19:00:00+07:00'
+                  occurred_at: '2020-06-15T17:30:00+05:30'
+                  created_at: '2020-06-15T17:30:00+05:30'
+                  updated_at: '2020-06-15T17:30:00+05:30'
               schema:
                 type: array
                 items:
@@ -8660,7 +8659,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -8704,18 +8703,18 @@ paths:
             application/json:
               example:
                 resource_owner:
-                  uid: 01a0223e-6b7b-74b7-8139-1357f549fae3
+                  uid: 01a02740-61ca-77ea-81d3-602901e9e3e7
                   type: bank_billet
                 resource_base:
-                  uid: 01a0223e-6b7b-74b7-8139-1357f549fae3
+                  uid: 01a02740-61ca-77ea-81d3-602901e9e3e7
                   type: bank_billet
-                uid: 01a0223e-6b91-7aa7-83cd-b24a89dcf3a4
+                uid: 01a02740-61dd-74df-a57d-25d2b8165e47
                 code: ping
                 data:
                   object:
                     id: 42
                     pix: []
-                    uid: 01a0223e-6b7b-74b7-8139-1357f549fae3
+                    uid: 01a02740-61ca-77ea-81d3-602901e9e3e7
                     url: 'http://dev.bole.to:5001/2/ejv'
                     line: 75691.43279 01022.938508 04003.880012 1 82900000005000
                     meta: null
@@ -8752,15 +8751,15 @@ paths:
                     expire_at: '2020-06-18'
                     fine_type: 0
                     import_id: null
-                    issued_at: '2020-06-15T19:00:00+07:00'
+                    issued_at: '2020-06-15T17:30:00+05:30'
                     acceptance: 'N'
-                    created_at: '2020-06-15T19:00:00+07:00'
+                    created_at: '2020-06-15T17:30:00+05:30'
                     fine_value: null
                     ignore_sms: false
                     our_number: '40038'
                     pix_qrcode: null
                     revoked_at: null
-                    updated_at: '2020-06-15T19:00:00+07:00'
+                    updated_at: '2020-06-15T17:30:00+05:30'
                     cancel_type: null
                     charge_type: 1
                     custom_data: null
@@ -8890,9 +8889,9 @@ paths:
                     divergent_payment_minimum_value: null
                     divergent_payment_maximum_percentage: null
                     divergent_payment_minimum_percentage: null
-                occurred_at: '2020-06-15T19:00:00+07:00'
-                created_at: '2020-06-15T19:00:00+07:00'
-                updated_at: '2020-06-15T19:00:00+07:00'
+                occurred_at: '2020-06-15T17:30:00+05:30'
+                created_at: '2020-06-15T17:30:00+05:30'
+                updated_at: '2020-06-15T17:30:00+05:30'
               schema:
                 $ref: '#/components/schemas/v1_event_object'
         '401':
@@ -8904,7 +8903,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -9817,7 +9816,7 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 01a0223e-6dd1-7055-9e7e-fd0749c9eb58
+                  uid: 01a02740-63c6-720f-9768-4cff6653d413
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9830,16 +9829,16 @@ paths:
                   sms_notification_id: 6
                   customer_id: 68
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:11+07:00'
-                  updated_at: '2026-08-21T09:55:11+07:00'
+                  created_at: '2026-08-22T07:45:26+05:30'
+                  updated_at: '2026-08-22T07:45:26+05:30'
                   resource_owner:
-                    uid: 01a0223e-6def-7bd1-bada-b438e0084870
+                    uid: 01a02740-63e0-782d-a4b1-8f87e25faf06
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6def-7bd1-bada-b438e0084870
+                    uid: 01a02740-63e0-782d-a4b1-8f87e25faf06
                     type: bank_billet
                 - id: 5
-                  uid: 01a0223e-6d8c-79ec-9316-50425eb4b629
+                  uid: 01a02740-638a-7baf-865e-c4a43c24ea23
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9852,16 +9851,16 @@ paths:
                   sms_notification_id: 5
                   customer_id: 67
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:11+07:00'
-                  updated_at: '2026-08-21T09:55:11+07:00'
+                  created_at: '2026-08-22T07:45:26+05:30'
+                  updated_at: '2026-08-22T07:45:26+05:30'
                   resource_owner:
-                    uid: 01a0223e-6da8-7dae-a6e9-af76022afbe0
+                    uid: 01a02740-63a4-7a35-984f-ff3e79f6cb63
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6da8-7dae-a6e9-af76022afbe0
+                    uid: 01a02740-63a4-7a35-984f-ff3e79f6cb63
                     type: bank_billet
                 - id: 4
-                  uid: 01a0223e-6d46-7194-a8b3-c4f3dfac058b
+                  uid: 01a02740-634e-7980-9880-661fdd580b39
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9874,16 +9873,16 @@ paths:
                   sms_notification_id: 4
                   customer_id: 66
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:11+07:00'
-                  updated_at: '2026-08-21T09:55:11+07:00'
+                  created_at: '2026-08-22T07:45:26+05:30'
+                  updated_at: '2026-08-22T07:45:26+05:30'
                   resource_owner:
-                    uid: 01a0223e-6d63-7299-8076-a1a41eefaf2f
+                    uid: 01a02740-6368-7614-a311-5fb13186ebac
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6d63-7299-8076-a1a41eefaf2f
+                    uid: 01a02740-6368-7614-a311-5fb13186ebac
                     type: bank_billet
                 - id: 3
-                  uid: 01a0223e-6cfb-7dfa-9d10-df1ef6875891
+                  uid: 01a02740-6315-7e04-a79b-528913d207d2
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9896,16 +9895,16 @@ paths:
                   sms_notification_id: 3
                   customer_id: 65
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:11+07:00'
-                  updated_at: '2026-08-21T09:55:11+07:00'
+                  created_at: '2026-08-22T07:45:26+05:30'
+                  updated_at: '2026-08-22T07:45:26+05:30'
                   resource_owner:
-                    uid: 01a0223e-6d1c-7c42-8b04-9a7df2e6ddac
+                    uid: 01a02740-632d-74b2-9b47-9d65c91bd485
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6d1c-7c42-8b04-9a7df2e6ddac
+                    uid: 01a02740-632d-74b2-9b47-9d65c91bd485
                     type: bank_billet
                 - id: 2
-                  uid: 01a0223e-6ca5-7f05-90c9-3b39429abbd4
+                  uid: 01a02740-62cf-71e1-9b3b-f0840088e13f
                   event_code: bank_billet.created
                   message: MyText
                   phone_to: '+5522987654321'
@@ -9918,13 +9917,13 @@ paths:
                   sms_notification_id: 2
                   customer_id: 64
                   customer_external_code: null
-                  created_at: '2026-08-21T09:55:11+07:00'
-                  updated_at: '2026-08-21T09:55:11+07:00'
+                  created_at: '2026-08-22T07:45:26+05:30'
+                  updated_at: '2026-08-22T07:45:26+05:30'
                   resource_owner:
-                    uid: 01a0223e-6cd1-7169-b3f8-757ccba6216e
+                    uid: 01a02740-62f1-7648-8aa3-1249e85befdd
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-6cd1-7169-b3f8-757ccba6216e
+                    uid: 01a02740-62f1-7648-8aa3-1249e85befdd
                     type: bank_billet
               schema:
                 type: array
@@ -9939,7 +9938,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -9983,7 +9982,7 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 01a0223e-6eb4-7348-916b-52f4406365ca
+                uid: 01a02740-6487-7039-9609-395024b15f42
                 event_code: bank_billet.created
                 message: MyText
                 phone_to: '+5522987654321'
@@ -9996,13 +9995,13 @@ paths:
                 sms_notification_id: 7
                 customer_id: 69
                 customer_external_code: null
-                created_at: '2026-08-21T09:55:12+07:00'
-                updated_at: '2026-08-21T09:55:12+07:00'
+                created_at: '2026-08-22T07:45:26+05:30'
+                updated_at: '2026-08-22T07:45:26+05:30'
                 resource_owner:
-                  uid: 01a0223e-6edf-7091-960a-3f55a5741572
+                  uid: 01a02740-64ac-77f4-ac67-0333e2b9ec2c
                   type: bank_billet
                 resource_base:
-                  uid: 01a0223e-6edf-7091-960a-3f55a5741572
+                  uid: 01a02740-64ac-77f4-ac67-0333e2b9ec2c
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_sms_delivery_object'
@@ -10015,7 +10014,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -10076,7 +10075,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -10125,18 +10124,18 @@ paths:
             application/json:
               example:
                 id: 138
-                email: ae5b65d58087276dda6a2df4fa4fb338@abshire.example
+                email: fade3b561652b1e0d9c18e2309e29c66@klocko.example
                 account_type: individual
                 first_name: Margret
                 middle_name: Simões
                 last_name: Gonçalo
                 full_name: Margret Simões Gonçalo
-                cpf: 001.736.676-35
+                cpf: 407.611.951-73
                 date_of_birth: '1970-03-01'
                 mother_name: Lenadra Simões Gonçalo
                 father_name: José Simões Gonçalo
-                created_at: '2026-08-21T09:55:12+07:00'
-                updated_at: '2026-08-21T09:55:12+07:00'
+                created_at: '2026-08-22T07:45:27+05:30'
+                updated_at: '2026-08-22T07:45:27+05:30'
                 address_street_name: Av. Burkhard Hehn Simões
                 address_number: '120'
                 address_complement: '709'
@@ -10161,7 +10160,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '404':
@@ -11070,7 +11069,7 @@ paths:
             application/json:
               example:
                 - id: 5
-                  uid: 59902fa3-b8d6-43a5-8b6f-2ec4eebeb545
+                  uid: 8f28bef8-a68f-4859-aa66-c63a4bc044d5
                   url: null
                   duration: null
                   request_headers: null
@@ -11079,7 +11078,7 @@ paths:
                     webhook:
                       id: 5
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-08-21T09:55:13+07:00'
+                      first_try: '2026-08-22T07:45:27+05:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -11095,16 +11094,16 @@ paths:
                   webhook_id: 5
                   event_code: bank_billet.created
                   resource_owner_id: 54
-                  created_at: '2026-08-21T09:55:13+07:00'
-                  updated_at: '2026-08-21T09:55:13+07:00'
+                  created_at: '2026-08-22T07:45:27+05:30'
+                  updated_at: '2026-08-22T07:45:27+05:30'
                   resource_owner:
-                    uid: 01a0223e-72cc-7e94-a37f-aa9993e73db2
+                    uid: 01a02740-6826-7723-a089-fc5c84205807
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-72cc-7e94-a37f-aa9993e73db2
+                    uid: 01a02740-6826-7723-a089-fc5c84205807
                     type: bank_billet
                 - id: 4
-                  uid: 266e8a53-039e-4fff-a80f-26ea9bb739eb
+                  uid: af08a987-7a38-4cd5-b90c-b6e1aef5d3d3
                   url: null
                   duration: null
                   request_headers: null
@@ -11113,7 +11112,7 @@ paths:
                     webhook:
                       id: 4
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-08-21T09:55:13+07:00'
+                      first_try: '2026-08-22T07:45:27+05:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -11129,16 +11128,16 @@ paths:
                   webhook_id: 4
                   event_code: bank_billet.created
                   resource_owner_id: 53
-                  created_at: '2026-08-21T09:55:13+07:00'
-                  updated_at: '2026-08-21T09:55:13+07:00'
+                  created_at: '2026-08-22T07:45:27+05:30'
+                  updated_at: '2026-08-22T07:45:27+05:30'
                   resource_owner:
-                    uid: 01a0223e-728a-7634-a15b-0d4eef3ff264
+                    uid: 01a02740-67ed-74a3-89f6-f8081f11853c
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-728a-7634-a15b-0d4eef3ff264
+                    uid: 01a02740-67ed-74a3-89f6-f8081f11853c
                     type: bank_billet
                 - id: 3
-                  uid: bed58192-062c-454b-a36d-1d5bfaa876f9
+                  uid: 32ffebdc-5899-49df-a5fb-cda6f639cfe0
                   url: null
                   duration: null
                   request_headers: null
@@ -11147,7 +11146,7 @@ paths:
                     webhook:
                       id: 3
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-08-21T09:55:13+07:00'
+                      first_try: '2026-08-22T07:45:27+05:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -11163,16 +11162,16 @@ paths:
                   webhook_id: 3
                   event_code: bank_billet.created
                   resource_owner_id: 52
-                  created_at: '2026-08-21T09:55:12+07:00'
-                  updated_at: '2026-08-21T09:55:12+07:00'
+                  created_at: '2026-08-22T07:45:27+05:30'
+                  updated_at: '2026-08-22T07:45:27+05:30'
                   resource_owner:
-                    uid: 01a0223e-724c-7657-8494-529b377c4d6d
+                    uid: 01a02740-67ab-7207-b81f-763a74216dbf
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-724c-7657-8494-529b377c4d6d
+                    uid: 01a02740-67ab-7207-b81f-763a74216dbf
                     type: bank_billet
                 - id: 2
-                  uid: aa89e228-55a0-468a-88be-df8b725f5e12
+                  uid: ce23d141-fb6d-4314-836c-d643c2a09966
                   url: null
                   duration: null
                   request_headers: null
@@ -11181,7 +11180,7 @@ paths:
                     webhook:
                       id: 2
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-08-21T09:55:13+07:00'
+                      first_try: '2026-08-22T07:45:27+05:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -11197,16 +11196,16 @@ paths:
                   webhook_id: 2
                   event_code: bank_billet.created
                   resource_owner_id: 51
-                  created_at: '2026-08-21T09:55:12+07:00'
-                  updated_at: '2026-08-21T09:55:12+07:00'
+                  created_at: '2026-08-22T07:45:27+05:30'
+                  updated_at: '2026-08-22T07:45:27+05:30'
                   resource_owner:
-                    uid: 01a0223e-720b-79b3-a4e2-53f30d5bab64
+                    uid: 01a02740-675b-70d5-a4ec-caebc872b987
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-720b-79b3-a4e2-53f30d5bab64
+                    uid: 01a02740-675b-70d5-a4ec-caebc872b987
                     type: bank_billet
                 - id: 1
-                  uid: 5778a656-b204-4dc0-a04f-cfa3855468af
+                  uid: 8cddc580-b711-4993-bc08-c7d135a52f38
                   url: null
                   duration: null
                   request_headers: null
@@ -11215,7 +11214,7 @@ paths:
                     webhook:
                       id: 1
                       url: 'http://dev.bole.to:5001'
-                      first_try: '2026-08-21T09:55:13+07:00'
+                      first_try: '2026-08-22T07:45:27+05:30'
                   request_error: null
                   response_body: null
                   response_code: null
@@ -11231,13 +11230,13 @@ paths:
                   webhook_id: 1
                   event_code: bank_billet.created
                   resource_owner_id: 50
-                  created_at: '2026-08-21T09:55:12+07:00'
-                  updated_at: '2026-08-21T09:55:12+07:00'
+                  created_at: '2026-08-22T07:45:27+05:30'
+                  updated_at: '2026-08-22T07:45:27+05:30'
                   resource_owner:
-                    uid: 01a0223e-71c7-796f-9b02-b284d7b5b6cd
+                    uid: 01a02740-671f-7838-959a-b7685b91b595
                     type: bank_billet
                   resource_base:
-                    uid: 01a0223e-71c7-796f-9b02-b284d7b5b6cd
+                    uid: 01a02740-671f-7838-959a-b7685b91b595
                     type: bank_billet
               schema:
                 type: array
@@ -11252,7 +11251,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11296,7 +11295,7 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: e6baf0c7-8127-4843-9f4f-6b8f4eb494ea
+                uid: b93bbee5-dbe3-42c6-96f4-31b0810d62c1
                 url: null
                 duration: null
                 request_headers: null
@@ -11305,7 +11304,7 @@ paths:
                   webhook:
                     id: 6
                     url: 'http://dev.bole.to:5001'
-                    first_try: '2026-08-21T09:55:13+07:00'
+                    first_try: '2026-08-22T07:45:27+05:30'
                 request_error: null
                 response_body: null
                 response_code: null
@@ -11321,13 +11320,13 @@ paths:
                 webhook_id: 6
                 event_code: bank_billet.created
                 resource_owner_id: 55
-                created_at: '2026-08-21T09:55:13+07:00'
-                updated_at: '2026-08-21T09:55:13+07:00'
+                created_at: '2026-08-22T07:45:27+05:30'
+                updated_at: '2026-08-22T07:45:27+05:30'
                 resource_owner:
-                  uid: 01a0223e-743b-7956-8fa4-bf4a8dd77943
+                  uid: 01a02740-69a8-767a-b4f1-31e2d487f1a6
                   type: bank_billet
                 resource_base:
-                  uid: 01a0223e-743b-7956-8fa4-bf4a8dd77943
+                  uid: 01a02740-69a8-767a-b4f1-31e2d487f1a6
                   type: bank_billet
               schema:
                 $ref: '#/components/schemas/v1_webhook_delivery_object'
@@ -11340,7 +11339,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11403,7 +11402,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11454,7 +11453,7 @@ paths:
             application/json:
               example:
                 id: 13
-                uid: 01a0223e-77f0-70fc-808b-44982b7af2cd
+                uid: 01a02740-6ca5-7260-9316-d3c46f3e2d6d
                 name: null
                 url: 'http://example.com/new'
                 content_type: application/json
@@ -11465,9 +11464,9 @@ paths:
                 concurrency_limit: 10
                 subaccounts: false
                 auth_kind: basic_auth
-                created_at: '2026-08-21T09:55:14+07:00'
-                updated_at: '2026-08-21T09:55:14+07:00'
-                secret_key: 8046ab224a98f3e1a69d9289dfd9462678f465ffa266069c30596be32c79e009
+                created_at: '2026-08-22T07:45:28+05:30'
+                updated_at: '2026-08-22T07:45:28+05:30'
+                secret_key: 65062175e80e6158ff3fd87a786aa1faaa4337b8c66c85766b79602bbc400739
               schema:
                 $ref: '#/components/schemas/v1_webhook_object'
         '401':
@@ -11479,7 +11478,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11548,7 +11547,7 @@ paths:
             application/json:
               example:
                 - id: 18
-                  uid: 01a0223e-78f3-7901-ae0c-5e28273ee798
+                  uid: 01a02740-6d97-7a69-87c6-beeae7a08911
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11559,10 +11558,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-08-21T09:55:14+07:00'
-                  updated_at: '2026-08-21T09:55:14+07:00'
+                  created_at: '2026-08-22T07:45:28+05:30'
+                  updated_at: '2026-08-22T07:45:28+05:30'
                 - id: 17
-                  uid: 01a0223e-78eb-7f9f-b9bc-250607a84ad5
+                  uid: 01a02740-6d92-7936-87a9-84cf35039e04
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11573,10 +11572,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-08-21T09:55:14+07:00'
-                  updated_at: '2026-08-21T09:55:14+07:00'
+                  created_at: '2026-08-22T07:45:28+05:30'
+                  updated_at: '2026-08-22T07:45:28+05:30'
                 - id: 16
-                  uid: 01a0223e-78e4-7afc-a074-e21a569e38b6
+                  uid: 01a02740-6d8b-7ed6-9d8b-73158b3f28ab
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11587,10 +11586,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-08-21T09:55:14+07:00'
-                  updated_at: '2026-08-21T09:55:14+07:00'
+                  created_at: '2026-08-22T07:45:28+05:30'
+                  updated_at: '2026-08-22T07:45:28+05:30'
                 - id: 15
-                  uid: 01a0223e-78dc-7795-9044-1da91efa7c64
+                  uid: 01a02740-6d82-7b1e-9937-3becff0263d8
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11601,10 +11600,10 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-08-21T09:55:14+07:00'
-                  updated_at: '2026-08-21T09:55:14+07:00'
+                  created_at: '2026-08-22T07:45:28+05:30'
+                  updated_at: '2026-08-22T07:45:28+05:30'
                 - id: 14
-                  uid: 01a0223e-78d4-768f-901e-0581c56ae38e
+                  uid: 01a02740-6d7c-7460-b367-87821ae33ed4
                   name: Nome do Webhook
                   url: 'http://dev.bole.to:5001'
                   content_type: application/json
@@ -11615,8 +11614,8 @@ paths:
                   concurrency_limit: 10
                   subaccounts: false
                   auth_kind: none
-                  created_at: '2026-08-21T09:55:14+07:00'
-                  updated_at: '2026-08-21T09:55:14+07:00'
+                  created_at: '2026-08-22T07:45:28+05:30'
+                  updated_at: '2026-08-22T07:45:28+05:30'
               schema:
                 type: array
                 items:
@@ -11630,7 +11629,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11674,7 +11673,7 @@ paths:
             application/json:
               example:
                 id: 19
-                uid: 01a0223e-796c-7a22-82a3-20e760beeb3f
+                uid: 01a02740-6e03-778e-80fd-df68f8d16704
                 name: Nome do Webhook
                 url: 'http://dev.bole.to:5001'
                 content_type: application/json
@@ -11685,8 +11684,8 @@ paths:
                 concurrency_limit: 10
                 subaccounts: false
                 auth_kind: none
-                created_at: '2026-08-21T09:55:14+07:00'
-                updated_at: '2026-08-21T09:55:14+07:00'
+                created_at: '2026-08-22T07:45:29+05:30'
+                updated_at: '2026-08-22T07:45:29+05:30'
               schema:
                 $ref: '#/components/schemas/v1_webhook_object'
         '401':
@@ -11698,7 +11697,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11758,7 +11757,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11825,7 +11824,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11889,7 +11888,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -11945,9 +11944,9 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 01a0223e-7e0b-7200-95e2-cc1cfc3136f4
-                created_at: '2026-08-21T09:55:15+07:00'
-                updated_at: '2026-08-21T09:55:15+07:00'
+                uid: 01a02740-71c2-7f3d-8ff4-16320b93e2be
+                created_at: '2026-08-22T07:45:29+05:30'
+                updated_at: '2026-08-22T07:45:29+05:30'
                 name: Lote de Boletos
                 bank_billet_ids:
                   - 65
@@ -11963,7 +11962,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12030,25 +12029,25 @@ paths:
             application/json:
               example:
                 - id: 6
-                  uid: 01a0223e-8076-7365-b643-937d76a746d6
-                  created_at: '2026-08-21T09:55:16+07:00'
-                  updated_at: '2026-08-21T09:55:16+07:00'
+                  uid: 01a02740-7302-71df-bc56-d12d52505895
+                  created_at: '2026-08-22T07:45:30+05:30'
+                  updated_at: '2026-08-22T07:45:30+05:30'
                   name: Lote
                   bank_billet_ids:
                     - 71
                     - 72
                 - id: 5
-                  uid: 01a0223e-7fe4-7351-bb9a-8e9d5f35cac0
-                  created_at: '2026-08-21T09:55:16+07:00'
-                  updated_at: '2026-08-21T09:55:16+07:00'
+                  uid: 01a02740-72b8-7853-bb90-bfe63e23f402
+                  created_at: '2026-08-22T07:45:30+05:30'
+                  updated_at: '2026-08-22T07:45:30+05:30'
                   name: Lote
                   bank_billet_ids:
                     - 69
                     - 70
                 - id: 4
-                  uid: 01a0223e-7f4d-754e-b046-21ed5b295bfb
-                  created_at: '2026-08-21T09:55:16+07:00'
-                  updated_at: '2026-08-21T09:55:16+07:00'
+                  uid: 01a02740-7265-78b8-a86f-eba9d3900c38
+                  created_at: '2026-08-22T07:45:30+05:30'
+                  updated_at: '2026-08-22T07:45:30+05:30'
                   name: Lote
                   bank_billet_ids:
                     - 67
@@ -12066,7 +12065,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12110,9 +12109,9 @@ paths:
             application/json:
               example:
                 id: 7
-                uid: 01a0223e-81c6-7b61-9750-53334c366b8d
-                created_at: '2026-08-21T09:55:16+07:00'
-                updated_at: '2026-08-21T09:55:16+07:00'
+                uid: 01a02740-73b1-782b-a7e0-dcae06524db5
+                created_at: '2026-08-22T07:45:30+05:30'
+                updated_at: '2026-08-22T07:45:30+05:30'
                 name: Lote
                 bank_billet_ids:
                   - 73
@@ -12128,7 +12127,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12188,7 +12187,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12256,7 +12255,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12349,7 +12348,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12431,16 +12430,16 @@ paths:
               example:
                 id: 3
                 account_id: 186
-                account_public_id: 01a0223e-8733-78d9-afcc-d0ba397de2ef
+                account_public_id: 01a02740-7813-7607-8202-a63fd38dc005
                 bank_billet_batch_id: 12
-                bank_billet_batch_public_id: 01a0223e-8792-7e06-bccd-07786d4a8fa7
-                created_at: '2026-08-21T09:55:18+07:00'
+                bank_billet_batch_public_id: 01a02740-7862-7401-9048-1ed105a1b47e
+                created_at: '2026-08-22T07:45:31+05:30'
                 file_format: zip
                 output_url: null
                 processed_at: null
-                public_id: 01a0223e-87a5-7539-b79e-e93349826c84
+                public_id: 01a02740-7873-7260-8e88-6744c460eb3d
                 status: enqueued
-                updated_at: '2026-08-21T09:55:18+07:00'
+                updated_at: '2026-08-22T07:45:31+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_batch_export_object'
         '401':
@@ -12452,7 +12451,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -12519,16 +12518,16 @@ paths:
               example:
                 id: 4
                 account_id: 189
-                account_public_id: 01a0223e-883a-7947-98cd-f8a1d7f17b6a
+                account_public_id: 01a02740-78f2-7b4e-bbf2-c5a9fbde00c3
                 bank_billet_batch_id: 13
-                bank_billet_batch_public_id: 01a0223e-88a8-72e9-b0fa-c9257b49fd29
-                created_at: '2026-08-21T09:55:18+07:00'
+                bank_billet_batch_public_id: 01a02740-794a-7684-bc3e-96bb3bdfd477
+                created_at: '2026-08-22T07:45:31+05:30'
                 file_format: pdf
                 output_url: null
                 processed_at: null
-                public_id: 01a0223e-88bc-7bd4-b737-46598b8b741e
+                public_id: 01a02740-795b-7485-8534-40347cbf182e
                 status: enqueued
-                updated_at: '2026-08-21T09:55:18+07:00'
+                updated_at: '2026-08-22T07:45:31+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_batch_export_object'
         '401':
@@ -12540,7 +12539,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13144,7 +13143,7 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 01a0223e-8a97-738a-b483-18524d922aab
+                  uid: 01a02740-7ae1-75a7-99a5-5acae5603024
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 3
@@ -13158,11 +13157,11 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-08-21T09:55:19+07:00'
-                  updated_at: '2026-08-21T09:55:19+07:00'
+                  created_at: '2026-08-22T07:45:32+05:30'
+                  updated_at: '2026-08-22T07:45:32+05:30'
                   kind: '400'
                 - id: 2
-                  uid: 01a0223e-8a55-7f7b-8bd2-77dcf7ebd8eb
+                  uid: 01a02740-7aae-787a-a760-2bc49c4fde03
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 2
@@ -13176,11 +13175,11 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-08-21T09:55:19+07:00'
-                  updated_at: '2026-08-21T09:55:19+07:00'
+                  created_at: '2026-08-22T07:45:32+05:30'
+                  updated_at: '2026-08-22T07:45:32+05:30'
                   kind: '400'
                 - id: 1
-                  uid: 01a0223e-8a06-77ba-b5c1-91e0d6608d38
+                  uid: 01a02740-7a6b-7441-9a73-fbb1f8328c99
                   occurrence: '03'
                   date_of_occurrence: '2014-03-08'
                   discharge_id: 1
@@ -13194,8 +13193,8 @@ paths:
                   our_occurrence: '2001'
                   bank_billet_account_id: null
                   bank_number: '756'
-                  created_at: '2026-08-21T09:55:19+07:00'
-                  updated_at: '2026-08-21T09:55:19+07:00'
+                  created_at: '2026-08-22T07:45:32+05:30'
+                  updated_at: '2026-08-22T07:45:32+05:30'
                   kind: '400'
               schema:
                 type: array
@@ -13210,7 +13209,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13254,7 +13253,7 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 01a0223e-8b6b-7c2e-8f4e-235e35e4a5ed
+                uid: 01a02740-7bb4-70a9-b4ee-873df97f0656
                 occurrence: '03'
                 date_of_occurrence: '2014-03-08'
                 discharge_id: 4
@@ -13268,8 +13267,8 @@ paths:
                 our_occurrence: '2001'
                 bank_billet_account_id: null
                 bank_number: '756'
-                created_at: '2026-08-21T09:55:19+07:00'
-                updated_at: '2026-08-21T09:55:19+07:00'
+                created_at: '2026-08-22T07:45:32+05:30'
+                updated_at: '2026-08-22T07:45:32+05:30'
                 kind: '400'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_discharge_object'
@@ -13282,7 +13281,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13348,7 +13347,7 @@ paths:
                 paid_agency: '00001'
                 paid_agency_number: '0000'
                 paid_agency_digit: '1'
-                created_at: '2026-08-21T09:55:19+07:00'
+                created_at: '2026-08-22T07:45:32+05:30'
                 credit_at: null
                 direct: false
                 created_via_api: false
@@ -13356,14 +13355,14 @@ paths:
                 paid_by_pix: false
                 kind: 0
                 financial_provider_external_id: null
-                uid: 01a0223e-8c77-7364-a82a-6a572cbdcee8
+                uid: 01a02740-7c8c-73c7-9df9-42a85114f71b
                 pix_id: null
                 document_number: null
                 our_number: '40086'
                 customer_person_name: José da Silva
-                expire_at: '2026-08-24'
+                expire_at: '2026-08-25'
                 amount: 50
-                updated_at: '2026-08-21T09:55:19+07:00'
+                updated_at: '2026-08-22T07:45:32+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_payment_object'
         '401':
@@ -13375,7 +13374,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13480,14 +13479,14 @@ paths:
                   bank_billet_id: 91
                   bank_billet_account_id: 116
                   discharge_id: null
-                  paid_at: '2026-08-23'
+                  paid_at: '2026-08-24'
                   paid_amount: 50
                   bank_rate: 1.5
                   paid_bank: '001'
                   paid_agency: '0001'
                   paid_agency_number: '0001'
                   paid_agency_digit: null
-                  created_at: '2026-08-21T09:55:19+07:00'
+                  created_at: '2026-08-22T07:45:32+05:30'
                   credit_at: null
                   direct: null
                   created_via_api: false
@@ -13495,14 +13494,14 @@ paths:
                   paid_by_pix: false
                   kind: 1
                   financial_provider_external_id: null
-                  uid: 01a0223e-8d83-7768-aab6-788b58b20812
+                  uid: 01a02740-7d86-7eff-9519-06077368a4ff
                   pix_id: null
                   document_number: null
                   our_number: '40087'
                   customer_person_name: José da Silva
-                  expire_at: '2026-08-24'
+                  expire_at: '2026-08-25'
                   amount: 50
-                  updated_at: '2026-08-21T09:55:19+07:00'
+                  updated_at: '2026-08-22T07:45:32+05:30'
               schema:
                 type: array
                 items:
@@ -13516,7 +13515,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13563,14 +13562,14 @@ paths:
                 bank_billet_id: 92
                 bank_billet_account_id: 117
                 discharge_id: null
-                paid_at: '2026-08-23'
+                paid_at: '2026-08-24'
                 paid_amount: 50
                 bank_rate: 1.5
                 paid_bank: '001'
                 paid_agency: '0001'
                 paid_agency_number: '0001'
                 paid_agency_digit: null
-                created_at: '2026-08-21T09:55:20+07:00'
+                created_at: '2026-08-22T07:45:33+05:30'
                 credit_at: null
                 direct: null
                 created_via_api: false
@@ -13578,14 +13577,14 @@ paths:
                 paid_by_pix: false
                 kind: 1
                 financial_provider_external_id: null
-                uid: 01a0223e-8e26-732a-a2d8-43175002bbb9
+                uid: 01a02740-7e1c-7854-b388-91c2910f32d6
                 pix_id: null
                 document_number: null
                 our_number: '40088'
                 customer_person_name: José da Silva
-                expire_at: '2026-08-24'
+                expire_at: '2026-08-25'
                 amount: 50
-                updated_at: '2026-08-21T09:55:20+07:00'
+                updated_at: '2026-08-22T07:45:33+05:30'
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_payment_object'
         '401':
@@ -13597,7 +13596,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13657,7 +13656,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13747,40 +13746,40 @@ paths:
             application/json:
               example:
                 - id: 3
-                  uid: 01a0223e-9055-7d5b-9836-372c3d83782f
+                  uid: 01a02740-8005-77ac-b2a6-99e2efa49e8c
                   bank_billet_id: 95
                   bank_billet_account_id: 120
-                  created_at: '2026-08-21T09:55:20+07:00'
+                  created_at: '2026-08-22T07:45:33+05:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-08-21T09:55:20+07:00'
+                  updated_at: '2026-08-22T07:45:33+05:30'
                   retry_blocked: false
                 - id: 2
-                  uid: 01a0223e-9020-75d1-9ead-6b2aea71702b
+                  uid: 01a02740-7fd8-7cfa-a2ff-8eee0b08c6ea
                   bank_billet_id: 94
                   bank_billet_account_id: 119
-                  created_at: '2026-08-21T09:55:20+07:00'
+                  created_at: '2026-08-22T07:45:33+05:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-08-21T09:55:20+07:00'
+                  updated_at: '2026-08-22T07:45:33+05:30'
                   retry_blocked: false
                 - id: 1
-                  uid: 01a0223e-8feb-738c-800f-889f2686e5af
+                  uid: 01a02740-7fab-706a-bdc4-9adbf3d1e955
                   bank_billet_id: 93
                   bank_billet_account_id: 118
-                  created_at: '2026-08-21T09:55:20+07:00'
+                  created_at: '2026-08-22T07:45:33+05:30'
                   error_message: null
                   failed_at: null
                   fails_count: 0
                   registered_at: null
                   status: '1'
-                  updated_at: '2026-08-21T09:55:20+07:00'
+                  updated_at: '2026-08-22T07:45:33+05:30'
                   retry_blocked: false
               schema:
                 type: array
@@ -13795,7 +13794,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13839,16 +13838,16 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 01a0223e-9102-7dfc-b400-dec4c8b2892f
+                uid: 01a02740-80a7-75e9-a204-fbb576e4a321
                 bank_billet_id: 96
                 bank_billet_account_id: 121
-                created_at: '2026-08-21T09:55:20+07:00'
+                created_at: '2026-08-22T07:45:33+05:30'
                 error_message: null
                 failed_at: null
                 fails_count: 0
                 registered_at: null
                 status: '1'
-                updated_at: '2026-08-21T09:55:20+07:00'
+                updated_at: '2026-08-22T07:45:33+05:30'
                 retry_blocked: false
               schema:
                 $ref: '#/components/schemas/v1_bank_billet_registration_object'
@@ -13861,7 +13860,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -13967,7 +13966,7 @@ paths:
             application/json:
               example:
                 - id: 4
-                  uid: 01a0223e-9243-7198-bc8f-af5c1e173518
+                  uid: 01a02740-81be-76df-98d9-5697321576b1
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13975,10 +13974,10 @@ paths:
                   bank_billet_account_id: 124
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:34+05:30'
+                  updated_at: '2026-08-22T07:45:34+05:30'
                 - id: 3
-                  uid: 01a0223e-9206-7f82-bcb3-9a3e9e2d7243
+                  uid: 01a02740-818b-742d-9998-a125acadcd56
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13986,10 +13985,10 @@ paths:
                   bank_billet_account_id: 123
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:34+05:30'
+                  updated_at: '2026-08-22T07:45:34+05:30'
                 - id: 2
-                  uid: 01a0223e-91db-757a-961b-a849005e69ab
+                  uid: 01a02740-8164-74fa-b920-90e15bc59b06
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -13997,8 +13996,8 @@ paths:
                   bank_billet_account_id: 122
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:33+05:30'
+                  updated_at: '2026-08-22T07:45:33+05:30'
               schema:
                 type: array
                 items:
@@ -14012,7 +14011,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14106,7 +14105,7 @@ paths:
             application/json:
               example:
                 - id: 7
-                  uid: 01a0223e-9339-7a1f-bd28-9049b1273cc4
+                  uid: 01a02740-82a0-7aff-8977-fdba3c4e9840
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -14114,10 +14113,10 @@ paths:
                   bank_billet_account_id: 127
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:34+05:30'
+                  updated_at: '2026-08-22T07:45:34+05:30'
                 - id: 6
-                  uid: 01a0223e-9310-7818-a503-7f3035eb116f
+                  uid: 01a02740-827a-7036-8870-4f1bee15fdf0
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -14125,10 +14124,10 @@ paths:
                   bank_billet_account_id: 126
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:34+05:30'
+                  updated_at: '2026-08-22T07:45:34+05:30'
                 - id: 5
-                  uid: 01a0223e-92ea-7d01-8bab-b7f692db0d7d
+                  uid: 01a02740-8253-78df-be47-0cc94b02a03c
                   our_code: '1001'
                   occurrence: '01'
                   remittance_id: null
@@ -14136,8 +14135,8 @@ paths:
                   bank_billet_account_id: 125
                   processed_at: null
                   occurrence_detail: Entrada de Título
-                  created_at: '2026-08-21T09:55:21+07:00'
-                  updated_at: '2026-08-21T09:55:21+07:00'
+                  created_at: '2026-08-22T07:45:34+05:30'
+                  updated_at: '2026-08-22T07:45:34+05:30'
               schema:
                 type: array
                 items:
@@ -14151,7 +14150,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14213,7 +14212,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14273,7 +14272,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14328,7 +14327,7 @@ paths:
             application/json:
               example:
                 id: 9
-                uid: 01a0223e-95c3-7635-bcb9-5fcd5571ce70
+                uid: 01a02740-8509-74a1-a977-3362e9d954ab
                 our_code: '1001'
                 occurrence: '01'
                 remittance_id: null
@@ -14336,8 +14335,8 @@ paths:
                 bank_billet_account_id: 131
                 processed_at: null
                 occurrence_detail: Entrada de Título
-                created_at: '2026-08-21T09:55:22+07:00'
-                updated_at: '2026-08-21T09:55:22+07:00'
+                created_at: '2026-08-22T07:45:34+05:30'
+                updated_at: '2026-08-22T07:45:34+05:30'
         '401':
           description: Falha de autenticação. Token inválido
           content:
@@ -14347,7 +14346,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14403,15 +14402,15 @@ paths:
             application/json:
               example:
                 id: 6
-                uid: 01a0223e-96ca-77d2-85e7-fcc60283df48
+                uid: 01a02740-85ff-7299-ab80-eb4daf3e733c
                 filename: null
                 processed_at: null
                 created_via_api: true
                 status: unprocessed
                 bank_billet_account_id: null
                 created_via_integration: null
-                created_at: '2026-08-21T09:55:22+07:00'
-                updated_at: '2026-08-21T09:55:22+07:00'
+                created_at: '2026-08-22T07:45:35+05:30'
+                updated_at: '2026-08-22T07:45:35+05:30'
                 external_id: EXT-DIS-123456
                 custom_data:
                   foo: bar
@@ -14433,7 +14432,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14532,15 +14531,15 @@ paths:
             application/json:
               example:
                 - id: 13
-                  uid: 01a0223e-9899-7bc7-8e8d-ac436e4c74ba
+                  uid: 01a02740-87b7-75a4-98c4-fb4e8672fa7e
                   filename: null
                   processed_at: null
                   created_via_api: false
                   status: unprocessed
                   bank_billet_account_id: 133
                   created_via_integration: null
-                  created_at: '2026-08-21T09:55:22+07:00'
-                  updated_at: '2026-08-21T09:55:22+07:00'
+                  created_at: '2026-08-22T07:45:35+05:30'
+                  updated_at: '2026-08-22T07:45:35+05:30'
                   external_id: null
                   custom_data: null
                   tags:
@@ -14562,7 +14561,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14606,15 +14605,15 @@ paths:
             application/json:
               example:
                 id: 16
-                uid: 01a0223e-9967-7b74-bb36-2acdb891f4e9
+                uid: 01a02740-888e-7b73-a77a-bfba15dd3695
                 filename: null
                 processed_at: null
                 created_via_api: false
                 status: unprocessed
                 bank_billet_account_id: 134
                 created_via_integration: null
-                created_at: '2026-08-21T09:55:22+07:00'
-                updated_at: '2026-08-21T09:55:22+07:00'
+                created_at: '2026-08-22T07:45:35+05:30'
+                updated_at: '2026-08-22T07:45:35+05:30'
                 external_id: null
                 custom_data: null
                 tags: []
@@ -14631,7 +14630,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14695,7 +14694,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14756,7 +14755,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -14817,7 +14816,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
             application/octet-stream:
               schema:
                 $ref: '#/components/schemas/v1_error'
@@ -14900,7 +14899,7 @@ paths:
             application/json:
               example:
                 - id: 2
-                  uid: 01a0223e-9c6a-7581-aac3-3997ed4da58b
+                  uid: 01a02740-8b77-7dd4-9757-3993b57bd803
                   created_rows: 0
                   enqueued_at: null
                   started_at: null
@@ -14920,10 +14919,10 @@ paths:
                   custom_data: null
                   tags: []
                   tag_list: null
-                  created_at: '2026-08-21T09:55:23+07:00'
-                  updated_at: '2026-08-21T09:55:23+07:00'
+                  created_at: '2026-08-22T07:45:36+05:30'
+                  updated_at: '2026-08-22T07:45:36+05:30'
                 - id: 1
-                  uid: 01a0223e-9c53-7caf-abce-cad090dd4a62
+                  uid: 01a02740-8b60-7941-9e57-d57a4f439133
                   created_rows: 0
                   enqueued_at: null
                   started_at: null
@@ -14943,8 +14942,8 @@ paths:
                   custom_data: null
                   tags: []
                   tag_list: null
-                  created_at: '2026-08-21T09:55:23+07:00'
-                  updated_at: '2026-08-21T09:55:23+07:00'
+                  created_at: '2026-08-22T07:45:36+05:30'
+                  updated_at: '2026-08-22T07:45:36+05:30'
               schema:
                 type: array
                 items:
@@ -15009,7 +15008,7 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 01a0223e-9cb5-7b1a-9670-ae34dd67e694
+                uid: 01a02740-8bbf-7196-bdb9-c147fa911b01
                 created_rows: 0
                 enqueued_at: null
                 started_at: null
@@ -15029,8 +15028,8 @@ paths:
                 custom_data: null
                 tags: []
                 tag_list: null
-                created_at: '2026-08-21T09:55:23+07:00'
-                updated_at: '2026-08-21T09:55:23+07:00'
+                created_at: '2026-08-22T07:45:36+05:30'
+                updated_at: '2026-08-22T07:45:36+05:30'
               schema:
                 $ref: '#/components/schemas/v1_import'
         '401':
@@ -15042,7 +15041,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
       requestBody:
@@ -15099,7 +15098,7 @@ paths:
             application/json:
               example:
                 id: 4
-                uid: 01a0223e-9d04-7a3a-8d59-e2c17cd8fc5b
+                uid: 01a02740-8c0b-7173-8b77-a670d5f64613
                 created_rows: 0
                 enqueued_at: null
                 started_at: null
@@ -15119,8 +15118,8 @@ paths:
                 custom_data: null
                 tags: []
                 tag_list: null
-                created_at: '2026-08-21T09:55:23+07:00'
-                updated_at: '2026-08-21T09:55:23+07:00'
+                created_at: '2026-08-22T07:45:36+05:30'
+                updated_at: '2026-08-22T07:45:36+05:30'
               schema:
                 $ref: '#/components/schemas/v1_import'
         '404':
@@ -15168,13 +15167,13 @@ paths:
             application/json:
               example:
                 id: 3
-                uid: 01a0223e-9e4e-749d-a957-28256b140e9c
-                filename: 2608211.REM
+                uid: 01a02740-8d22-76b6-b52b-a0d27579efec
+                filename: 2608221.REM
                 created_via_api: true
                 status: unprocessed
                 bank_billet_account_id: 136
-                created_at: '2026-08-21T09:55:24+07:00'
-                updated_at: '2026-08-21T09:55:24+07:00'
+                created_at: '2026-08-22T07:45:36+05:30'
+                updated_at: '2026-08-22T07:45:36+05:30'
                 processed_at: null
                 url: null
                 bank_billet_ids:
@@ -15193,7 +15192,7 @@ paths:
                 tag_list: 'tag1, tag2, tag3'
                 bank_billet_remittances:
                   - id: 11
-                    uid: 01a0223e-9e31-7e1c-97c6-c06feed84703
+                    uid: 01a02740-8d0a-79d6-95b0-ff2eedc72120
                     our_code: '1001'
                     occurrence: '01'
                     remittance_id: 3
@@ -15201,8 +15200,8 @@ paths:
                     bank_billet_account_id: 136
                     processed_at: null
                     occurrence_detail: Entrada de Título
-                    created_at: '2026-08-21T09:55:24+07:00'
-                    updated_at: '2026-08-21T09:55:24+07:00'
+                    created_at: '2026-08-22T07:45:36+05:30'
+                    updated_at: '2026-08-22T07:45:36+05:30'
               schema:
                 $ref: '#/components/schemas/v1_remittance_object'
         '401':
@@ -15214,7 +15213,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15336,13 +15335,13 @@ paths:
             application/json:
               example:
                 - id: 7
-                  uid: 01a0223e-a04b-7776-99ca-e9f71e682117
-                  filename: 2608211.REM
+                  uid: 01a02740-8ed7-7edc-bff7-1250ae4128b5
+                  filename: 2608221.REM
                   created_via_api: false
                   status: unprocessed
                   bank_billet_account_id: 141
-                  created_at: '2026-08-21T09:55:24+07:00'
-                  updated_at: '2026-08-21T09:55:24+07:00'
+                  created_at: '2026-08-22T07:45:37+05:30'
+                  updated_at: '2026-08-22T07:45:37+05:30'
                   processed_at: null
                   url: null
                   bank_billet_ids:
@@ -15359,7 +15358,7 @@ paths:
                   tag_list: 'tag1, tag2, tag3'
                   bank_billet_remittances:
                     - id: 15
-                      uid: 01a0223e-a04d-7e12-b9f3-83660bb3f7cf
+                      uid: 01a02740-8ed8-75cc-8063-9f29f028c071
                       our_code: '1001'
                       occurrence: '01'
                       remittance_id: 7
@@ -15367,8 +15366,8 @@ paths:
                       bank_billet_account_id: 141
                       processed_at: null
                       occurrence_detail: Entrada de Título
-                      created_at: '2026-08-21T09:55:24+07:00'
-                      updated_at: '2026-08-21T09:55:24+07:00'
+                      created_at: '2026-08-22T07:45:37+05:30'
+                      updated_at: '2026-08-22T07:45:37+05:30'
               schema:
                 type: array
                 items:
@@ -15382,7 +15381,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15426,13 +15425,13 @@ paths:
             application/json:
               example:
                 id: 10
-                uid: 01a0223e-a171-7a4c-a288-cd0649b1a09f
-                filename: 2608211.REM
+                uid: 01a02740-8ff8-748b-9eaa-7cbbecc6cea4
+                filename: 2608221.REM
                 created_via_api: false
                 status: unprocessed
                 bank_billet_account_id: 145
-                created_at: '2026-08-21T09:55:25+07:00'
-                updated_at: '2026-08-21T09:55:25+07:00'
+                created_at: '2026-08-22T07:45:37+05:30'
+                updated_at: '2026-08-22T07:45:37+05:30'
                 processed_at: null
                 url: null
                 bank_billet_ids:
@@ -15446,7 +15445,7 @@ paths:
                 tag_list: ''
                 bank_billet_remittances:
                   - id: 18
-                    uid: 01a0223e-a172-7f5a-b693-77f42ef4a777
+                    uid: 01a02740-8ff9-7e69-bd52-997d734eb54e
                     our_code: '1001'
                     occurrence: '01'
                     remittance_id: 10
@@ -15454,8 +15453,8 @@ paths:
                     bank_billet_account_id: 145
                     processed_at: null
                     occurrence_detail: Entrada de Título
-                    created_at: '2026-08-21T09:55:25+07:00'
-                    updated_at: '2026-08-21T09:55:25+07:00'
+                    created_at: '2026-08-22T07:45:37+05:30'
+                    updated_at: '2026-08-22T07:45:37+05:30'
               schema:
                 $ref: '#/components/schemas/v1_remittance_object'
         '401':
@@ -15467,7 +15466,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15527,7 +15526,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15594,7 +15593,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
             text/plain:
               schema:
                 $ref: '#/components/schemas/v1_error'
@@ -15658,13 +15657,13 @@ paths:
             application/json:
               example:
                 - id: 14
-                  uid: 01a0223e-a4fd-7ba1-bf55-77aeba341efc
-                  filename: 2608211.REM
+                  uid: 01a02740-933b-7dd2-bf07-20118af574a0
+                  filename: 2608221.REM
                   created_via_api: true
                   status: unprocessed
                   bank_billet_account_id: 152
-                  created_at: '2026-08-21T09:55:25+07:00'
-                  updated_at: '2026-08-21T09:55:25+07:00'
+                  created_at: '2026-08-22T07:45:38+05:30'
+                  updated_at: '2026-08-22T07:45:38+05:30'
                   processed_at: null
                   url: null
                   bank_billet_ids:
@@ -15679,7 +15678,7 @@ paths:
                   tag_list: null
                   bank_billet_remittances:
                     - id: 22
-                      uid: 01a0223e-a4da-7a64-874a-c20301a4e0e4
+                      uid: 01a02740-931f-71e9-b1f7-708927d4de3d
                       our_code: '1001'
                       occurrence: '01'
                       remittance_id: 14
@@ -15687,10 +15686,10 @@ paths:
                       bank_billet_account_id: 152
                       processed_at: null
                       occurrence_detail: Entrada de Título
-                      created_at: '2026-08-21T09:55:25+07:00'
-                      updated_at: '2026-08-21T09:55:25+07:00'
+                      created_at: '2026-08-22T07:45:38+05:30'
+                      updated_at: '2026-08-22T07:45:38+05:30'
                     - id: 23
-                      uid: 01a0223e-a4dd-77b2-8d2e-cc180ee04ecb
+                      uid: 01a02740-9322-7202-8874-e8bac2956694
                       our_code: '1002'
                       occurrence: '02'
                       remittance_id: 14
@@ -15698,8 +15697,8 @@ paths:
                       bank_billet_account_id: 152
                       processed_at: null
                       occurrence_detail: Pedido de Baixa
-                      created_at: '2026-08-21T09:55:25+07:00'
-                      updated_at: '2026-08-21T09:55:25+07:00'
+                      created_at: '2026-08-22T07:45:38+05:30'
+                      updated_at: '2026-08-22T07:45:38+05:30'
               schema:
                 type: array
                 items:
@@ -15713,7 +15712,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15874,7 +15873,7 @@ paths:
                 errors:
                   - title: 'Token de API inválido (Servidor: development)'
                     code: unauthorized
-                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso'
+                    detail: 'O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token'
               schema:
                 $ref: '#/components/schemas/v1_error'
         '403':
@@ -15921,7 +15920,7 @@ components:
                 description: 'Código do erro. Ex: `unprocessable_content`.'
               detail:
                 type: string
-                description: 'Descrição do erro em detalhe. Ex: `"O Token de API é diferente para cada Servidor/URL, mais em https://developers.kobana.com.br/reference/token-de-acesso"`.'
+                description: 'Descrição do erro em detalhe. Ex: `"O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token"`.'
     v1_split_accounts_object:
       type: object
       properties:
@@ -16606,24 +16605,24 @@ components:
           type: string
           maxLength: 2
           nullable: true
-          description: 'Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         revoke_code:
           type: string
           nullable: true
-          description: 'Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         first_instruction:
           type: string
           maxLength: 2
           nullable: true
-          description: 'Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         second_instruction:
           type: string
           maxLength: 2
           nullable: true
-          description: 'Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         watermark:
           type: boolean
@@ -17675,22 +17674,22 @@ components:
         sue_code:
           type: string
           nullable: true
-          description: 'Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         revoke_code:
           type: string
           nullable: true
-          description: 'Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         first_instruction:
           type: string
           nullable: true
-          description: 'Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         second_instruction:
           type: string
           nullable: true
-          description: 'Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         watermark:
           type: boolean
@@ -18127,7 +18126,7 @@ components:
         sue_code:
           type: string
           nullable: true
-          description: 'Código de Protesto(Somente por CNAB 240). Consulte os possíveis valores <a href="https://developers.kobana.com.br/reference/bancos-suportados" target="_blank">para cada banco</a>.'
+          description: 'Código de Protesto(Somente por CNAB 240). Consulte os possíveis valores <a href="https://docs.banking.kobana.com.br/pt/api/bancos/" target="_blank">para cada banco</a>.'
           example: null
         instructions:
           type: string
