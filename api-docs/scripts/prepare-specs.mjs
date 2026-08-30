@@ -113,6 +113,47 @@ function assignOperationIds(doc) {
   }
 }
 
+let schemesRenamed = 0;
+
+/**
+ * Makes every `security` requirement point at a scheme that actually exists.
+ *
+ * The upstream specs declare the scheme under a version-prefixed name
+ * (`v1_bearerAuth`, `v2_bearerAuth` — the prefix exists so the merged
+ * all-versions document can hold both) but every operation still requires the
+ * unprefixed `bearerAuth`. Nothing resolves, so the theme's request card built
+ * no Authorization section at all: no field to paste an API token into, and
+ * "Send" always fired unauthenticated.
+ *
+ * Renaming the scheme (rather than rewriting 300+ operation requirements) also
+ * gives the card a cleaner label, and only happens when the match is
+ * unambiguous — anything else is left alone for the spec's owners to fix.
+ */
+function normalizeSecuritySchemes(doc) {
+  const schemes = doc.components?.securitySchemes;
+  if (!schemes) return;
+
+  const required = new Set();
+  const collect = (security) => {
+    for (const requirement of security ?? []) {
+      for (const name of Object.keys(requirement)) required.add(name);
+    }
+  };
+  collect(doc.security);
+  for (const item of Object.values(doc.paths ?? {})) {
+    for (const method of METHODS) collect(item?.[method]?.security);
+  }
+
+  for (const name of required) {
+    if (schemes[name]) continue;
+    const candidates = Object.keys(schemes).filter((k) => k.replace(/^v\d+_/, '') === name);
+    if (candidates.length !== 1) continue;
+    schemes[name] = schemes[candidates[0]];
+    delete schemes[candidates[0]];
+    schemesRenamed++;
+  }
+}
+
 for (const [from, to] of NORMALIZE) {
   const src = resolve(REPO, from);
   if (!existsSync(src)) {
@@ -122,6 +163,7 @@ for (const [from, to] of NORMALIZE) {
   }
   const doc = JSON.parse(readFileSync(src, 'utf8'));
   assignOperationIds(doc);
+  normalizeSecuritySchemes(doc);
   write(resolve(SITE, to), `${JSON.stringify(doc, null, 1)}\n`);
 
   // The id depends only on method+path, never on translated text, so it's
@@ -133,13 +175,20 @@ for (const [from, to] of NORMALIZE) {
   for (const lang of ['en', 'es']) {
     const i18nPath = resolve(SITE, `openapi/i18n/kobana-api-${version}.${lang}.json`);
     if (!existsSync(i18nPath)) continue;
-    const i18nDoc = JSON.parse(readFileSync(i18nPath, 'utf8'));
+    const raw = readFileSync(i18nPath, 'utf8');
+    const i18nDoc = JSON.parse(raw);
     assignOperationIds(i18nDoc);
-    write(i18nPath, `${JSON.stringify(i18nDoc, null, 1)}\n`);
+    normalizeSecuritySchemes(i18nDoc);
+    // These files are committed, so they're rewritten with whatever
+    // indentation they already carry: a reflow would bury a two-line change
+    // under a 150k-line diff.
+    const indent = raw.match(/\n( +)"/)?.[1].length ?? 1;
+    write(i18nPath, `${JSON.stringify(i18nDoc, null, indent)}\n`);
   }
 }
 
 console.log(
   `prepare-specs: ${copied}/${VERBATIM.length} copied to static/, ` +
-    `${assigned} operationId(s) assigned (${disambiguated} disambiguated)`,
+    `${assigned} operationId(s) assigned (${disambiguated} disambiguated), ` +
+    `${schemesRenamed} security scheme(s) renamed`,
 );
