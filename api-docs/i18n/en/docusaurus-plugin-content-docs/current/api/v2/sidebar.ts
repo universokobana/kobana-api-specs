@@ -119,7 +119,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-financial-accounts-commands-2",
-              key: "api/v2/get-financial-accounts-commands-2",
               label: "View a Command",
               className: "api-method get",
               key: "financial-accounts-en-docusaurus-plugin-content-docs-current-api-v-2-get-financial-accounts-commands-2",
@@ -369,7 +368,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-charge-pix-commands-2",
-              key: "api/v2/get-charge-pix-commands-2",
               label: "View a Command",
               className: "api-method get",
               key: "charges-pix-en-docusaurus-plugin-content-docs-current-api-v-2-get-charge-pix-commands-2",
@@ -1413,7 +1411,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-edi-edi-boxes",
-              key: "api/v2/get-edi-edi-boxes",
               label: "List Mailboxes",
               className: "api-method get",
               key: "edi-mailboxes-en-docusaurus-plugin-content-docs-current-api-v-2-get-edi-edi-boxes",
@@ -1421,7 +1418,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/post-edi-edi-boxes",
-              key: "api/v2/post-edi-edi-boxes",
               label: "Create Mailbox",
               className: "api-method post",
               key: "edi-mailboxes-en-docusaurus-plugin-content-docs-current-api-v-2-post-edi-edi-boxes",
@@ -1429,7 +1425,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-edi-edi-boxes-2",
-              key: "api/v2/get-edi-edi-boxes-2",
               label: "View Mailbox",
               className: "api-method get",
               key: "edi-mailboxes-en-docusaurus-plugin-content-docs-current-api-v-2-get-edi-edi-boxes-2",
@@ -1437,7 +1432,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/put-edi-edi-boxes",
-              key: "api/v2/put-edi-edi-boxes",
               label: "Update Mailbox",
               className: "api-method put",
               key: "edi-mailboxes-en-docusaurus-plugin-content-docs-current-api-v-2-put-edi-edi-boxes",
@@ -1465,7 +1459,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-mailbox-entries",
-              key: "api/v2/get-mailbox-entries",
               label: "List Mailboxes",
               className: "api-method get",
               key: "mailbox-mailboxes-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-get-mailbox-entries",
@@ -1473,7 +1466,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/post-mailbox-entries",
-              key: "api/v2/post-mailbox-entries",
               label: "Create Mailbox",
               className: "api-method post",
               key: "mailbox-mailboxes-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-post-mailbox-entries",
@@ -1481,7 +1473,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/get-mailbox-entries-2",
-              key: "api/v2/get-mailbox-entries-2",
               label: "View Mailbox",
               className: "api-method get",
               key: "mailbox-mailboxes-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-get-mailbox-entries-2",
@@ -1489,7 +1480,6 @@ const sidebar: SidebarsConfig = {
             {
               type: "doc",
               id: "api/v2/patch-mailbox-entries",
-              key: "api/v2/patch-mailbox-entries",
               label: "Update Mailbox",
               className: "api-method patch",
               key: "mailbox-mailboxes-mailbox-en-docusaurus-plugin-content-docs-current-api-v-2-patch-mailbox-entries",

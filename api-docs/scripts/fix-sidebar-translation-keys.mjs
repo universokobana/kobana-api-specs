@@ -38,6 +38,20 @@ const SIDEBAR_FILES = [
 let totalCategoryKeys = 0;
 let totalDocKeys = 0;
 
+/**
+ * Whether the doc item whose `id:` sits at `lines[i]` already declares a
+ * `key:`. Doc items are flat literals, so the item ends at the first closing
+ * brace after the id.
+ */
+function declaresKey(lines, i) {
+  for (let j = i + 1; j < lines.length; j++) {
+    const line = lines[j].trim();
+    if (line.startsWith('}')) return false;
+    if (line.startsWith('key:')) return true;
+  }
+  return false;
+}
+
 for (const rel of SIDEBAR_FILES) {
   const path = resolve(ROOT, rel);
   if (!existsSync(path)) continue;
@@ -63,6 +77,11 @@ for (const rel of SIDEBAR_FILES) {
   // this file (e.g. "Listar CNABs" is both GET /v1/discharges and
   // GET /v1/remittances — see prepare-specs.mjs). Uses the doc id, which
   // prepare-specs.mjs already made unique.
+  //
+  // Only where the plugin didn't already write one: under `groupPathsBy:
+  // "tagGroup"` (the v2 sidebar) it emits its own `key` after `className`,
+  // and a second one here made the object literal declare `key` twice —
+  // valid JS, last-one-wins, but `tsc` rejects it (TS1117).
   const labelCounts = new Map();
   for (let i = 0; i < out.length; i++) {
     const labelMatch = out[i].match(/^\s*label: "(.*)",$/);
@@ -80,7 +99,7 @@ for (const rel of SIDEBAR_FILES) {
       labelMatch &&
       out[i - 1]?.includes('type: "doc"') &&
       (labelCounts.get(labelMatch[1]) ?? 0) > 1 &&
-      !out[i + 2]?.trim().startsWith('key:')
+      !declaresKey(out, i)
     ) {
       const [, indent, id] = idMatch;
       final.push(`${indent}key: "${id}",`);
