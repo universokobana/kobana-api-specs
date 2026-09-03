@@ -375,9 +375,9 @@ Além dos eventos listados acima, o sistema gera eventos específicos por tipo d
 
 | Código | Descrição |
 | --- | --- |
-| payment.\{type\}.\{operation\}.\{status\} | Eventos de pagamento por tipo. Type: pix, bank\_billet, darf, tax, utility, gru. Operation: register, approve, reschedule, cancel. Status: requested, confirmed, failed, error. Exemplo: payment.pix.cancel.confirmed |
+| payment.\{type\}.\{operation\}.\{status\} | Eventos de pagamento por tipo. Type: pix, bank\_billet, darf, tax, utility, gru. Operation: register, approve, reprove, reschedule, cancel. Status: requested, confirmed, failed, error. Exemplo: payment.pix.cancel.confirmed |
 | payment.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de pagamento por tipo. Type: pix\_batch, bank\_billet\_batch, darf\_batch, tax\_batch, utility\_batch, gru\_batch. Operation: register, approve, reprove. Também: awaiting\_approval |
-| transfer.\{type\}.\{operation\}.\{status\} | Eventos de transferência por tipo. Type: ted, pix, internal. Operation: register, reschedule, approve, cancel. Status: requested, confirmed, failed, error. Exemplo: transfer.ted.register.confirmed |
+| transfer.\{type\}.\{operation\}.\{status\} | Eventos de transferência por tipo. Type: ted, pix, internal. Operation: register, reschedule, approve, reprove, cancel. Status: requested, confirmed, failed, error. Exemplo: transfer.ted.register.confirmed |
 | transfer.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de transferência por tipo. Type: pix\_batch, ted\_batch, internal\_batch. Operation: register, approve, reprove. Também: awaiting\_approval |
 
 ### Evento Ping
