@@ -84,6 +84,13 @@ Eventos de comando (operações assíncronas junto ao banco) seguem `resource[.t
 | charge.automatic\_pix.account.db.created | Conta de Pix Automático criada. |
 | charge.automatic\_pix.account.db.deleted | Conta de Pix Automático excluída. |
 | charge.automatic\_pix.account.db.updated | Conta de Pix Automático atualizada. |
+| charge.automatic\_pix.location.db.created | Location de Pix Automático criada. O `financial_provider_external_id` ainda está vazio. |
+| charge.automatic\_pix.location.db.deleted | Location de Pix Automático excluída. |
+| charge.automatic\_pix.location.db.updated | Location de Pix Automático atualizada. |
+| charge.automatic\_pix.location.register.confirmed | Registro da Location de Pix Automático confirmado. O `financial_provider_external_id` já está preenchido e a Location pode ser usada na recorrência. |
+| charge.automatic\_pix.location.register.error | Ocorreu um erro no registro da Location de Pix Automático. O registro continua em andamento. |
+| charge.automatic\_pix.location.register.failed | Falha no registro da Location de Pix Automático. |
+| charge.automatic\_pix.location.register.requested | Registro da Location de Pix Automático solicitado. |
 | charge.automatic\_pix.pix.cancel.confirmed | Cancelamento da Cobrança de Pix Automático confirmado. |
 | charge.automatic\_pix.pix.cancel.error | Ocorreu um erro no cancelamento da Cobrança de Pix Automático. |
 | charge.automatic\_pix.pix.cancel.failed | Falha no cancelamento da Cobrança de Pix Automático. |
@@ -379,6 +386,19 @@ Além dos eventos listados acima, o sistema gera eventos específicos por tipo d
 | payment.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de pagamento por tipo. Type: pix\_batch, bank\_billet\_batch, darf\_batch, tax\_batch, utility\_batch, gru\_batch. Operation: register, approve, reprove. Também: awaiting\_approval |
 | transfer.\{type\}.\{operation\}.\{status\} | Eventos de transferência por tipo. Type: ted, pix, internal. Operation: register, reschedule, approve, reprove, cancel. Status: requested, confirmed, failed, error. Exemplo: transfer.ted.register.confirmed |
 | transfer.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de transferência por tipo. Type: pix\_batch, ted\_batch, internal\_batch. Operation: register, approve, reprove. Também: awaiting\_approval |
+
+### Registro da Location do Pix Automático
+
+`POST /v2/charge/automatic_pix/locations` responde `201` antes de registrar a Location no banco: a resposta traz `financial_provider_external_id: null`, e o campo só é preenchido quando o registro confirma. Até lá, a recorrência que usa essa Location é recusada com o erro `Localização deve conter financial_provider_external_id preenchido`.
+
+1. Crie a Location com `POST /v2/charge/automatic_pix/locations`.
+2. Aguarde o evento `charge.automatic_pix.location.register.confirmed` dessa Location. O `object` do evento é o comando de registro: o `uid` da Location está em `object.resource_uid`, e a Location completa em `object.charge_automatic_pix_location`.
+3. Crie a recorrência com `POST /v2/charge/automatic_pix/recurrences`, informando o `location_uid`.
+
+Aguarde o evento com prazo. Normalmente o registro leva segundos. Se o evento não chegar em alguns minutos, consulte `GET /v2/charge/automatic_pix/locations/{uid}` e, com `financial_provider_external_id` preenchido, siga para o passo 3. Em alguns casos nenhum evento final chega, nem `register.confirmed` nem `register.failed`: conexão bancária ausente ou inativa, conta de Pix Automático desabilitada, conta sem assinatura ativa ou regra de registro automático de Location desabilitada.
+
+- `register.error` indica que uma tentativa falhou e o registro será tentado de novo. Não é falha definitiva.
+- `register.failed` nem sempre é definitivo: em parte das recusas o registro é tentado de novo e um `register.confirmed` pode chegar depois. Se nenhum `register.confirmed` chegar em até 5 horas depois do `register.failed`, trate a falha como definitiva.
 
 ### Evento Ping
 
