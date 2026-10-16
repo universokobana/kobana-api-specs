@@ -84,6 +84,13 @@ Eventos de comando (operaciones asincrónicas con el banco) siguen `resource[.ty
 | charge.automatic\_pix.account.db.created | Cuenta de Pix Automático creada. |
 | charge.automatic\_pix.account.db.deleted | Cuenta de Pix Automático eliminada. |
 | charge.automatic\_pix.account.db.updated | Cuenta de Pix Automático actualizada. |
+| charge.automatic\_pix.location.db.created | Location de Pix Automático creada. El `financial_provider_external_id` todavía está vacío. |
+| charge.automatic\_pix.location.db.deleted | Location de Pix Automático eliminada. |
+| charge.automatic\_pix.location.db.updated | Location de Pix Automático actualizada. |
+| charge.automatic\_pix.location.register.confirmed | Registro de la Location de Pix Automático confirmado. El `financial_provider_external_id` ya está completo y la Location puede usarse en la recurrencia. |
+| charge.automatic\_pix.location.register.error | Se produjo un error en el registro de la Location de Pix Automático. El registro sigue en curso. |
+| charge.automatic\_pix.location.register.failed | Falla en el registro de la Location de Pix Automático. |
+| charge.automatic\_pix.location.register.requested | Registro de la Location de Pix Automático solicitado. |
 | charge.automatic\_pix.pix.cancel.confirmed | Cancelación de la Cobranza de Pix Automático confirmada. |
 | charge.automatic\_pix.pix.cancel.error | Se produjo un error en la cancelación de la Cobranza de Pix Automático. |
 | charge.automatic\_pix.pix.cancel.failed | Falla en la cancelación de la Cobranza de Pix Automático. |
@@ -379,6 +386,19 @@ Además de los eventos enumerados anteriormente, el sistema genera eventos espec
 | payment.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de pago por tipo. Type: pix\_batch, bank\_billet\_batch, darf\_batch, tax\_batch, utility\_batch, gru\_batch. Operation: register, approve, reprove. También: awaiting\_approval |
 | transfer.\{type\}.\{operation\}.\{status\} | Eventos de transferencia por tipo. Type: ted, pix, internal. Operation: register, reschedule, approve, cancel. Status: requested, confirmed, failed, error. Ejemplo: transfer.ted.register.confirmed |
 | transfer.\{type\}\_batch.\{operation\}.\{status\} | Eventos de lote de transferencia por tipo. Type: pix\_batch, ted\_batch, internal\_batch. Operation: register, approve, reprove. También: awaiting\_approval |
+
+### Registro de la Location de Pix Automático
+
+`POST /v2/charge/automatic_pix/locations` responde `201` antes de registrar la Location en el banco: la respuesta trae `financial_provider_external_id: null`, y el campo solo se completa cuando el registro se confirma. Hasta entonces, la recurrencia que usa esa Location es rechazada con el error `Localização deve conter financial_provider_external_id preenchido`.
+
+1. Cree la Location con `POST /v2/charge/automatic_pix/locations`.
+2. Espere el evento `charge.automatic_pix.location.register.confirmed` de esa Location. El `object` del evento es el comando de registro: el `uid` de la Location está en `object.resource_uid`, y la Location completa en `object.charge_automatic_pix_location`.
+3. Cree la recurrencia con `POST /v2/charge/automatic_pix/recurrences`, informando el `location_uid`.
+
+Espere el evento con un plazo. Normalmente el registro tarda segundos. Si el evento no llega en algunos minutos, consulte `GET /v2/charge/automatic_pix/locations/{uid}` y, con `financial_provider_external_id` completo, siga al paso 3. En algunos casos no llega ningún evento final, ni `register.confirmed` ni `register.failed`: conexión bancaria ausente o inactiva, cuenta de Pix Automático deshabilitada, cuenta sin suscripción activa o regla de registro automático de Location deshabilitada.
+
+- `register.error` indica que un intento falló y el registro se intentará de nuevo. No es una falla definitiva.
+- `register.failed` no siempre es definitivo: en parte de los rechazos el registro se intenta de nuevo y un `register.confirmed` puede llegar después. Si ningún `register.confirmed` llega en hasta 5 horas después del `register.failed`, trate la falla como definitiva.
 
 ### Evento Ping
 
