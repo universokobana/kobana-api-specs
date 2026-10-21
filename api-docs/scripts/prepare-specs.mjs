@@ -154,6 +154,66 @@ function normalizeSecuritySchemes(doc) {
   }
 }
 
+let mergedFromSource = 0;
+let prunedFromTranslation = 0;
+
+/**
+ * Copies into a committed en/es translation whatever the freshly synced pt
+ * spec has and the translation doesn't yet: paths, and component entries
+ * (schemas, parameters, security schemes, ...) those paths may `$ref`.
+ *
+ * Translations are refreshed by a separate, AI-driven pipeline, so right
+ * after an upstream sync they lag behind. Without this, a new endpoint
+ * exists in pt only; the en/es locales then fall back to the pt page files
+ * with no sidebar entry and the build dies ("cant find current sidebar").
+ * Missing items arrive in Portuguese until the translation is refreshed —
+ * the same fallback apply-openapi-translations.mjs uses for untranslated
+ * strings. Existing translated entries are never overwritten. Operations
+ * the source no longer has are dropped from the translation: a stale one
+ * would still take an operationId and shift the `-2`/`-3` suffixes of the
+ * live operations that share its resource slug.
+ */
+function mergeMissingFromSource(i18nDoc, srcDoc) {
+  // Rebuilt in the pt spec's path order: assignOperationIds() disambiguates
+  // colliding ids by iteration order, so the translation must walk paths in
+  // the same order as the pt doc or the `-2`/`-3` suffixes diverge between
+  // locales (and the shared sidebar then points at ids that don't exist).
+  const own = i18nDoc.paths ?? {};
+  const paths = {};
+  for (const [path, item] of Object.entries(srcDoc.paths ?? {})) {
+    if (!own[path]) {
+      paths[path] = structuredClone(item);
+      mergedFromSource++;
+      continue;
+    }
+    paths[path] = own[path];
+    for (const method of METHODS) {
+      if (item[method] && !paths[path][method]) {
+        paths[path][method] = structuredClone(item[method]);
+        mergedFromSource++;
+      } else if (!item[method] && paths[path][method]) {
+        delete paths[path][method];
+        prunedFromTranslation++;
+      }
+    }
+  }
+  for (const [path, item] of Object.entries(own)) {
+    if (paths[path]) continue;
+    prunedFromTranslation += METHODS.filter((m) => item?.[m]).length;
+  }
+  i18nDoc.paths = paths;
+  for (const [section, entries] of Object.entries(srcDoc.components ?? {})) {
+    i18nDoc.components ??= {};
+    i18nDoc.components[section] ??= {};
+    for (const [name, value] of Object.entries(entries)) {
+      if (!(name in i18nDoc.components[section])) {
+        i18nDoc.components[section][name] = structuredClone(value);
+        mergedFromSource++;
+      }
+    }
+  }
+}
+
 for (const [from, to] of NORMALIZE) {
   const src = resolve(REPO, from);
   if (!existsSync(src)) {
@@ -177,6 +237,7 @@ for (const [from, to] of NORMALIZE) {
     if (!existsSync(i18nPath)) continue;
     const raw = readFileSync(i18nPath, 'utf8');
     const i18nDoc = JSON.parse(raw);
+    mergeMissingFromSource(i18nDoc, doc);
     assignOperationIds(i18nDoc);
     normalizeSecuritySchemes(i18nDoc);
     // These files are committed, so they're rewritten with whatever
@@ -190,5 +251,7 @@ for (const [from, to] of NORMALIZE) {
 console.log(
   `prepare-specs: ${copied}/${VERBATIM.length} copied to static/, ` +
     `${assigned} operationId(s) assigned (${disambiguated} disambiguated), ` +
-    `${schemesRenamed} security scheme(s) renamed`,
+    `${schemesRenamed} security scheme(s) renamed, ` +
+    `${mergedFromSource} missing item(s) merged into en/es from pt, ` +
+    `${prunedFromTranslation} stale operation(s) pruned from en/es`,
 );

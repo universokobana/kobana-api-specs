@@ -308,6 +308,12 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
+          id: "api/v1/put-customers-people-sync",
+          label: "Habilitar ou desabilitar o espelho Cliente <-> Pessoa",
+          className: "api-method put",
+        },
+        {
+          type: "doc",
           id: "api/v1/get-customers-cnpj-cpf",
           label: "Search Customer by CNPJ/CPF",
           className: "api-method get",

@@ -5799,6 +5799,137 @@
     "operationId": "put-customers"
    }
   },
+  "/v1/customers/people_sync": {
+   "put": {
+    "summary": "Habilitar ou desabilitar o espelho Cliente <-> Pessoa",
+    "tags": [
+     "Clientes"
+    ],
+    "security": [
+     {
+      "bearerAuth": []
+     }
+    ],
+    "description": "Liga ou desliga, para a conta, o espelho automático entre Clientes e Pessoas (cada Cliente ganha uma Pessoa equivalente e alterações se propagam nos dois sentidos). Só altera a configuração: Clientes já existentes não ganham Pessoa até o backfill rodar. Numa subconta, `enabled` na resposta reflete também a herança da conta principal.",
+    "parameters": [
+     {
+      "name": "User-Agent",
+      "in": "header",
+      "required": false,
+      "description": "Informar um e-mail válido para contatos.",
+      "example": "Kevin Mitnick <kmitnick@kobana.com.br>",
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Configuração atualizada",
+      "content": {
+       "application/json": {
+        "example": {
+         "enabled": false
+        },
+        "schema": {
+         "type": "object",
+         "required": [
+          "enabled"
+         ],
+         "properties": {
+          "enabled": {
+           "type": "boolean",
+           "description": "Estado efetivo do espelho para a conta.",
+           "example": true
+          }
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Falha de autenticação. Token inválido",
+      "content": {
+       "application/json": {
+        "example": {
+         "status": 401,
+         "errors": [
+          {
+           "title": "Token de API inválido (Servidor: development)",
+           "code": "unauthorized",
+           "detail": "O Token de API é diferente para cada Servidor/URL, mais em https://docs.banking.kobana.com.br/pt/api/overview/authentication/access-token"
+          }
+         ]
+        },
+        "schema": {
+         "$ref": "#/components/schemas/v1_error"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Falha de permissão. Você não tem o Scope obrigatório para essa chamada.",
+      "content": {
+       "application/json": {
+        "example": {
+         "status": 403,
+         "errors": [
+          {
+           "title": "Para acessar esse recurso você precisa de pelo menos um destes escopos: \"write\".",
+           "code": "forbidden"
+          }
+         ]
+        },
+        "schema": {
+         "$ref": "#/components/schemas/v1_error"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Parâmetro enabled ausente ou inválido",
+      "content": {
+       "application/json": {
+        "example": {
+         "status": 422,
+         "errors": [
+          {
+           "title": "O parâmetro enabled é obrigatório e deve ser true ou false",
+           "code": "bad_request"
+          }
+         ]
+        },
+        "schema": {
+         "$ref": "#/components/schemas/v1_error"
+        }
+       }
+      }
+     }
+    },
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "required": [
+         "enabled"
+        ],
+        "properties": {
+         "enabled": {
+          "type": "boolean",
+          "description": "true liga o espelho; false desliga.",
+          "example": true
+         }
+        }
+       }
+      }
+     },
+     "required": true,
+     "description": "Estado desejado do espelho"
+    },
+    "operationId": "put-customers-people-sync"
+   }
+  },
   "/v1/customers/cnpj_cpf": {
    "get": {
     "summary": "Search Customer by CNPJ/CPF",
@@ -28539,6 +28670,239 @@
    "bearerAuth": {
     "type": "http",
     "scheme": "bearer"
+   },
+   "v1_oAuth2": {
+    "type": "oauth2",
+    "description": "OAuth2 com suporte a PKCE (Proof Key for Code Exchange). Clientes públicos (apps mobile, SPAs) devem usar PKCE obrigatoriamente. Clientes confidenciais (com client_secret) podem usar PKCE opcionalmente.",
+    "flows": {
+     "authorizationCode": {
+      "authorizationUrl": "https://{apiHost}/oauth/authorize",
+      "tokenUrl": "https://{apiHost}/oauth/token",
+      "scopes": {
+       "all": "Acesso completo a todos os recursos disponíveis",
+       "login": "Autenticar com o usuário",
+       "read": "Consegue ler os dados, não consegue executar operações.",
+       "write": "Consegue executar operações relativas aos recursos liberados.",
+       "delete": "Excluir registros dos recursos liberados",
+       "import": "Importar dados em lote nos recursos liberados",
+       "export": "Exportar em lote os dados dos recursos liberados",
+       "inbox/agent_runs": "Ver as execuções dos agentes",
+       "inbox/agents": "Ver os agentes configurados",
+       "inbox/all": "Ver todos os dados do Inbox Autônomo",
+       "inbox/emails": "Ler os e-mails recebidos",
+       "inbox/inboxes": "Ver as caixas de entrada",
+       "inbox/secrets": "Ver os segredos das integrações",
+       "inbox/system_events": "Ver os eventos de sistema",
+       "inbox/usage": "Ver o consumo e os limites de uso",
+       "inbox/webhooks": "Ver os webhooks configurados",
+       "inbox/workflow_runs": "Ver as execuções de workflow",
+       "inbox/workspaces": "Ver os workspaces",
+       "hub/administrators": "Ver os administradores",
+       "hub/agents": "Ver os agentes",
+       "hub/agreement_types": "Ver os tipos de contrato",
+       "hub/agreements": "Ver os contratos",
+       "hub/all": "Ver todos os dados do Risco Sacado",
+       "hub/anticipations": "Ver as antecipações",
+       "hub/assignors": "Ver os cedentes",
+       "hub/authorizations": "Ver as autorizações",
+       "hub/certificates": "Ver os certificados digitais",
+       "hub/companies": "Ver as empresas",
+       "hub/consultants": "Ver os consultores",
+       "hub/custodians": "Ver os custodiantes",
+       "hub/documents": "Ver os documentos",
+       "hub/drawees": "Ver os sacados",
+       "hub/expenses": "Ver as despesas",
+       "hub/fiscal_invoices": "Ver as notas fiscais",
+       "hub/funds": "Ver os fundos",
+       "hub/legal_representatives": "Ver os representantes legais",
+       "hub/managers": "Ver os gestores",
+       "hub/members": "Ver os membros",
+       "hub/receivables": "Ver os recebíveis",
+       "hub/roles": "Ver os papéis de acesso",
+       "hub/shareholders": "Ver os sócios",
+       "hub/witnesses": "Ver as testemunhas",
+       "finance/accounts": "Ver as contas financeiras",
+       "finance/all": "Ver todos os dados do Financeiro Inteligente",
+       "finance/attachments": "Ver os anexos",
+       "finance/automatic_rules": "Ver as regras automáticas",
+       "finance/banks": "Ver os bancos cadastrados",
+       "finance/cash_flow": "Ver o fluxo de caixa",
+       "finance/categories": "Ver as categorias",
+       "finance/companies": "Ver as empresas",
+       "finance/cost_centers": "Ver os centros de custo",
+       "finance/custom_classifiers": "Ver os classificadores personalizados",
+       "finance/fiscal_documents": "Ver os documentos fiscais",
+       "finance/payable_dispatches": "Ver os envios de pagamento ao banco",
+       "finance/payables": "Ver as contas a pagar",
+       "finance/people": "Ver as pessoas (clientes e fornecedores)",
+       "finance/receipts": "Ver os recibos",
+       "finance/receivable_charges": "Ver as cobranças emitidas",
+       "finance/receivables": "Ver as contas a receber",
+       "finance/reconciliations": "Ver as conciliações",
+       "finance/taxes": "Ver os impostos",
+       "finance/transactions": "Ver as transações",
+       "billing/all": "Ver todos os dados do Faturamento Automático",
+       "billing/billing_accounts": "Ver as contas de faturamento",
+       "billing/certificates": "Ver os certificados digitais",
+       "billing/companies": "Ver as empresas",
+       "billing/coupons": "Ver os cupons de desconto",
+       "billing/credits": "Ver os créditos concedidos",
+       "billing/customers": "Ver os clientes",
+       "billing/dashboard_users": "Ver os usuários do painel",
+       "billing/invoices": "Ver as faturas",
+       "billing/nfes": "Ver as notas fiscais",
+       "billing/organization": "Ver os dados da organização",
+       "billing/payment_methods": "Ver as formas de pagamento",
+       "billing/payments": "Ver os pagamentos recebidos",
+       "billing/plan_changes": "Ver as trocas de plano",
+       "billing/plan_groups": "Ver os grupos de planos",
+       "billing/plans": "Ver os planos",
+       "billing/portal_users": "Ver os usuários do portal do cliente",
+       "billing/product_groups": "Ver os grupos de produtos",
+       "billing/products": "Ver os produtos",
+       "billing/proposal_templates": "Ver os modelos de proposta",
+       "billing/proposals": "Ver as propostas",
+       "billing/service_items": "Ver os itens de serviço",
+       "billing/subscription_changes": "Ver as alterações de assinatura",
+       "billing/subscription_item_changes": "Ver as alterações de itens da assinatura",
+       "billing/subscriptions": "Ver as assinaturas",
+       "billing/tax_periods": "Ver os períodos de apuração de impostos",
+       "billing/tax_rules": "Ver as regras de impostos",
+       "billing/team_roles": "Ver os papéis da equipe",
+       "billing/usage": "Ver o consumo medido",
+       "billing/withholdings": "Ver as retenções de impostos",
+       "dunning/agreements": "Ver os acordos de pagamento",
+       "dunning/all": "Ver todos os dados do Régua de Cobrança",
+       "dunning/audit_logs": "Ver os registros de auditoria",
+       "dunning/charges": "Ver as cobranças",
+       "dunning/classifications": "Ver as classificações",
+       "dunning/collection_rules": "Ver as réguas de cobrança",
+       "dunning/disputes": "Ver as contestações",
+       "dunning/email_layouts": "Ver os layouts de e-mail",
+       "dunning/exports": "Ver as exportações",
+       "dunning/imports": "Ver as importações",
+       "dunning/interactions": "Ver as interações com o devedor",
+       "dunning/metrics": "Ver as métricas de cobrança",
+       "dunning/negativations": "Ver as negativações",
+       "dunning/negotiation_campaigns": "Ver as campanhas de negociação",
+       "dunning/notification_channels": "Ver os canais de notificação",
+       "dunning/notification_preferences": "Ver as preferências de notificação",
+       "dunning/notifications": "Ver as notificações enviadas",
+       "dunning/people": "Ver as pessoas",
+       "dunning/protests": "Ver os protestos",
+       "dunning/tasks": "Ver as tarefas",
+       "dunning/templates": "Ver os modelos de mensagem",
+       "dunning/webhook_endpoints": "Ver os endpoints de webhook",
+       "kadu/activities": "Ver as atividades",
+       "kadu/all": "Ver todos os dados do Kadu",
+       "kadu/executions": "Ver as execuções do agente",
+       "kadu/memberships": "Ver os vínculos de membros",
+       "kadu/memories": "Ver as memórias do agente",
+       "kadu/organizations": "Ver as organizações",
+       "kadu/roles": "Ver os papéis de acesso",
+       "kadu/system_events": "Ver os eventos de sistema",
+       "kadu/tasks": "Ver as tarefas",
+       "kadu/todos": "Ver os itens de tarefa",
+       "kadu/users": "Ver os usuários",
+       "kadu/webhook_deliveries": "Ver as entregas de webhook",
+       "kadu/webhooks": "Ver os webhooks configurados",
+       "kadu/workspaces": "Ver os workspaces",
+       "kia/accounts": "Ver as contas",
+       "kia/all": "Ver todos os dados do Kia",
+       "kia/conversations": "Ver as conversas",
+       "kia/extractions": "Ver as extrações de documentos",
+       "kia/files": "Ver os arquivos enviados",
+       "kia/memberships": "Ver os vínculos de membros",
+       "kia/models": "Ver os modelos de IA disponíveis",
+       "kia/roles": "Ver os papéis de acesso",
+       "kia/usage": "Ver o consumo e os limites de uso",
+       "kia/workspaces": "Ver os workspaces",
+       "openid": "Autenticar via OpenID Connect (Conta Kobana)",
+       "email": "Ver o endereço de e-mail",
+       "phone": "Ver o telefone utilizado no cadastro",
+       "profile.basic": "Ver seu nome, foto e data de nascimento",
+       "profile.legal": "Ver os dados legais (nome civil e CPF)",
+       "profile.identity": "Ver a identidade de gênero",
+       "profile.communication": "Ver os idiomas preferidos de comunicação",
+       "profile.preferences": "Ver o fuso horário",
+       "profile.accessibility": "Ver os recursos de acessibilidade e deficiências informadas",
+       "organization.basic": "Ver os dados básicos da conta (tipo, nome, e-mail)",
+       "address": "Ver o endereço completo",
+       "banking": "Ver os dados bancários (agência e conta)",
+       "business": "Ver os dados da empresa (razão social e cnpj)",
+       "balance": "Ver o saldo na conta do usuário",
+       "checkout": "Ver a URL de checkout para pagamentos",
+       "subscription": "Ver o plano contratado",
+       "acbr.accounts": "Gerenciar contas contábeis e integrações fiscais",
+       "admin.subaccounts": "Gerenciar subcontas da conta principal",
+       "admin.users": "Gerenciar usuários e permissões",
+       "automation.email_accounts": "Gerenciar contas de e-mail para automação",
+       "automation.email_deliveries": "Visualizar e gerenciar envios de e-mail",
+       "automation.sms_accounts": "Gerenciar contas de SMS",
+       "automation.sms_deliveries": "Visualizar e gerenciar envios de SMS",
+       "automation.webhook_deliveries": "Visualizar e gerenciar entregas de webhooks",
+       "automation.webhooks": "Gerenciar webhooks e notificações automatizadas",
+       "billing.transactions": "Visualizar transações de cobrança e faturamento",
+       "charge.bank_billet_accounts": "Gerenciar contas de boletos bancários",
+       "charge.bank_billet_payments": "Visualizar e registrar pagamentos de boletos",
+       "charge.bank_billet_registrations": "Gerenciar registros de boletos nos bancos",
+       "charge.bank_billets": "Gerenciar boletos bancários",
+       "charge.automatic_pix.accounts": "Gerenciar contas de Pix automático",
+       "charge.automatic_pix.locations": "Gerenciar localizações de Pix automático",
+       "charge.automatic_pix.pix": "Gerenciar cobranças Pix automáticas",
+       "charge.automatic_pix.recurrences": "Gerenciar recorrências de Pix automático",
+       "charge.automatic_pix.requests": "Gerenciar solicitações de Pix automático",
+       "charge.pix": "Gerenciar cobranças Pix",
+       "charge.pix_accounts": "Gerenciar contas Pix",
+       "charge.customer_subscriptions": "Gerenciar assinaturas de clientes",
+       "charge.installments": "Gerenciar parcelamentos",
+       "charge.payments": "Visualizar e gerenciar pagamentos recebidos",
+       "core.providers": "Gerenciar provedores do sistema (bancos e integrações)",
+       "crm.customers": "Gerenciar clientes e informações comerciais",
+       "crm.people": "Gerenciar pessoas e contatos",
+       "data.bank_billet_queries": "Consultar informações de boletos bancários",
+       "financial.accounts": "Gerenciar contas financeiras",
+       "financial.balances": "Visualizar saldos e movimentações financeiras",
+       "financial.providers": "Gerenciar provedores financeiros e integrações bancárias",
+       "financial.statement_transactions": "Visualizar transações e extratos financeiros",
+       "integration.certificates": "Gerenciar certificados digitais para integrações",
+       "integration.commands": "Consultar comandos da conta",
+       "integration.connections": "Gerenciar conexões com bancos e provedores",
+       "integration.discharges": "Gerenciar arquivos de retorno bancário (baixas)",
+       "integration.edi_boxes": "Gerenciar caixas postais EDI para troca de arquivos",
+       "integration.remittances": "Gerenciar arquivos de remessa bancária",
+       "mailbox.entries": "Gerenciar caixas postais para recebimento de arquivos",
+       "mailbox.files": "Visualizar e gerenciar arquivos nas caixas postais",
+       "partner.bank_contracts": "Gerenciar contratos bancários com parceiros",
+       "payment.accounts": "Gerenciar as contas usadas para pagamento",
+       "payment.bank_billets": "Efetuar pagamentos de boletos bancários",
+       "payment.batches": "Gerenciar lotes de pagamentos",
+       "payment.darfs": "Efetuar pagamentos de DARFs (tributos federais)",
+       "payment.dda.bank_billets": "Visualizar e gerenciar boletos DDA disponíveis para pagamento",
+       "payment.dda_accounts": "Gerenciar contas DDA (Débito Direto Autorizado)",
+       "payment.payments": "Gerenciar todos os tipos de pagamentos através da API",
+       "payment.pix": "Efetuar pagamentos via Pix",
+       "payment.taxes": "Efetuar pagamentos de impostos e taxas",
+       "payment.utilities": "Efetuar pagamentos de contas de consumo (água, luz, etc)",
+       "security.access_tokens": "Gerenciar tokens de acesso e autenticação",
+       "sysadmin.provider_requests.get": "Executar requisições GET contra provedores (uso interno)",
+       "sysadmin.provider_requests.head": "Executar requisições HEAD contra provedores (uso interno)",
+       "sysadmin.provider_requests.post": "Executar requisições POST contra provedores (uso interno)",
+       "sysadmin.provider_requests.put": "Executar requisições PUT contra provedores (uso interno)",
+       "sysadmin.provider_requests.patch": "Executar requisições PATCH contra provedores (uso interno)",
+       "sysadmin.provider_requests.delete": "Executar requisições DELETE contra provedores (uso interno)",
+       "system.events": "Visualizar eventos e logs do sistema",
+       "system.imports": "Gerenciar importações de dados",
+       "system.reports": "Gerar e visualizar relatórios do sistema",
+       "transfer.accounts": "Gerenciar as contas usadas para transferência",
+       "transfer.batches": "Gerenciar lotes de transferências",
+       "transfer.internal": "Realizar transferências internas entre contas",
+       "transfer.pix": "Realizar transferências via Pix",
+       "transfer.ted": "Realizar transferências TED (Transferência Eletrônica Disponível)",
+       "transfer.transfers": "Gerenciar todos os tipos de transferências (Pix, TED, Internas) via endpoint unificado"
+      }
+     }
+    }
    }
   },
   "parameters": {

@@ -3,12 +3,17 @@
  * Post-processes the `*.info.mdx` pages produced by
  * docusaurus-plugin-openapi-docs, once per API version.
  *
- * Two things the generator cannot know:
+ * Three things the generator cannot know:
  *
  *  1. The page should own the version root (`/api/v1`, `/api/v2`) rather than
  *     sit at `/api/v1/kobana-api-v-1-0`. Everything that links to "the API
  *     reference" — the navbar, the footer, the home page — points at the root.
  *  2. Its sidebar label is a hardcoded English "Introduction".
+ *
+ *  3. Server-variable placeholders in security scheme URLs (e.g. the OAuth2
+ *     `https://{apiHost}/oauth/token`) are emitted as bare JSX text, which MDX
+ *     parses as an expression (`apiHost is not defined`). They are escaped as
+ *     string literals.
  *
  * Run after `docusaurus gen-api-docs all`.
  */
@@ -53,6 +58,7 @@ for (const { label, dir: dirFor, locale } of DIRS) {
       out = out.replace(/^(id:\s*[^\n]+)$/m, `$1\nslug: /api/${version}`);
     }
     out = out.replace(/^sidebar_label:.*$/m, `sidebar_label: ${SIDEBAR_LABEL[locale]}`);
+    out = out.replace(/\{(apiHost)\}/g, "{'{'}$1{'}'}");
     if (out === src) continue;
     writeFileSync(path, out);
     changed++;

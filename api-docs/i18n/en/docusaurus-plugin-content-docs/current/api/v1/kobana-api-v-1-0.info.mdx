@@ -116,6 +116,483 @@ Kobana API Documentation
           </tbody>
         </table>
       </div>
+    </TabItem><TabItem
+      label={"OAuth 2.0: v1_oAuth2"}
+      value={"v1_oAuth2"}
+    >
+      
+      
+      OAuth2 com suporte a PKCE (Proof Key for Code Exchange). Clientes públicos (apps mobile, SPAs) devem usar PKCE obrigatoriamente. Clientes confidenciais (com client_secret) podem usar PKCE opcionalmente.
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                oauth2
+              </td>
+            </tr><tr>
+              <th>
+                OAuth Flow (authorizationCode):
+              </th><td>
+                <div>
+                  Token URL: https://{'{'}apiHost{'}'}/oauth/token
+                </div><div>
+                  Authorization URL: https://{'{'}apiHost{'}'}/oauth/authorize
+                </div><span>
+                  Scopes:
+                </span><ul>
+                  <li>
+                    all: Acesso completo a todos os recursos disponíveis
+                  </li><li>
+                    login: Autenticar com o usuário
+                  </li><li>
+                    read: Consegue ler os dados, não consegue executar operações.
+                  </li><li>
+                    write: Consegue executar operações relativas aos recursos liberados.
+                  </li><li>
+                    delete: Excluir registros dos recursos liberados
+                  </li><li>
+                    import: Importar dados em lote nos recursos liberados
+                  </li><li>
+                    export: Exportar em lote os dados dos recursos liberados
+                  </li><li>
+                    inbox/agent_runs: Ver as execuções dos agentes
+                  </li><li>
+                    inbox/agents: Ver os agentes configurados
+                  </li><li>
+                    inbox/all: Ver todos os dados do Inbox Autônomo
+                  </li><li>
+                    inbox/emails: Ler os e-mails recebidos
+                  </li><li>
+                    inbox/inboxes: Ver as caixas de entrada
+                  </li><li>
+                    inbox/secrets: Ver os segredos das integrações
+                  </li><li>
+                    inbox/system_events: Ver os eventos de sistema
+                  </li><li>
+                    inbox/usage: Ver o consumo e os limites de uso
+                  </li><li>
+                    inbox/webhooks: Ver os webhooks configurados
+                  </li><li>
+                    inbox/workflow_runs: Ver as execuções de workflow
+                  </li><li>
+                    inbox/workspaces: Ver os workspaces
+                  </li><li>
+                    hub/administrators: Ver os administradores
+                  </li><li>
+                    hub/agents: Ver os agentes
+                  </li><li>
+                    hub/agreement_types: Ver os tipos de contrato
+                  </li><li>
+                    hub/agreements: Ver os contratos
+                  </li><li>
+                    hub/all: Ver todos os dados do Risco Sacado
+                  </li><li>
+                    hub/anticipations: Ver as antecipações
+                  </li><li>
+                    hub/assignors: Ver os cedentes
+                  </li><li>
+                    hub/authorizations: Ver as autorizações
+                  </li><li>
+                    hub/certificates: Ver os certificados digitais
+                  </li><li>
+                    hub/companies: Ver as empresas
+                  </li><li>
+                    hub/consultants: Ver os consultores
+                  </li><li>
+                    hub/custodians: Ver os custodiantes
+                  </li><li>
+                    hub/documents: Ver os documentos
+                  </li><li>
+                    hub/drawees: Ver os sacados
+                  </li><li>
+                    hub/expenses: Ver as despesas
+                  </li><li>
+                    hub/fiscal_invoices: Ver as notas fiscais
+                  </li><li>
+                    hub/funds: Ver os fundos
+                  </li><li>
+                    hub/legal_representatives: Ver os representantes legais
+                  </li><li>
+                    hub/managers: Ver os gestores
+                  </li><li>
+                    hub/members: Ver os membros
+                  </li><li>
+                    hub/receivables: Ver os recebíveis
+                  </li><li>
+                    hub/roles: Ver os papéis de acesso
+                  </li><li>
+                    hub/shareholders: Ver os sócios
+                  </li><li>
+                    hub/witnesses: Ver as testemunhas
+                  </li><li>
+                    finance/accounts: Ver as contas financeiras
+                  </li><li>
+                    finance/all: Ver todos os dados do Financeiro Inteligente
+                  </li><li>
+                    finance/attachments: Ver os anexos
+                  </li><li>
+                    finance/automatic_rules: Ver as regras automáticas
+                  </li><li>
+                    finance/banks: Ver os bancos cadastrados
+                  </li><li>
+                    finance/cash_flow: Ver o fluxo de caixa
+                  </li><li>
+                    finance/categories: Ver as categorias
+                  </li><li>
+                    finance/companies: Ver as empresas
+                  </li><li>
+                    finance/cost_centers: Ver os centros de custo
+                  </li><li>
+                    finance/custom_classifiers: Ver os classificadores personalizados
+                  </li><li>
+                    finance/fiscal_documents: Ver os documentos fiscais
+                  </li><li>
+                    finance/payable_dispatches: Ver os envios de pagamento ao banco
+                  </li><li>
+                    finance/payables: Ver as contas a pagar
+                  </li><li>
+                    finance/people: Ver as pessoas (clientes e fornecedores)
+                  </li><li>
+                    finance/receipts: Ver os recibos
+                  </li><li>
+                    finance/receivable_charges: Ver as cobranças emitidas
+                  </li><li>
+                    finance/receivables: Ver as contas a receber
+                  </li><li>
+                    finance/reconciliations: Ver as conciliações
+                  </li><li>
+                    finance/taxes: Ver os impostos
+                  </li><li>
+                    finance/transactions: Ver as transações
+                  </li><li>
+                    billing/all: Ver todos os dados do Faturamento Automático
+                  </li><li>
+                    billing/billing_accounts: Ver as contas de faturamento
+                  </li><li>
+                    billing/certificates: Ver os certificados digitais
+                  </li><li>
+                    billing/companies: Ver as empresas
+                  </li><li>
+                    billing/coupons: Ver os cupons de desconto
+                  </li><li>
+                    billing/credits: Ver os créditos concedidos
+                  </li><li>
+                    billing/customers: Ver os clientes
+                  </li><li>
+                    billing/dashboard_users: Ver os usuários do painel
+                  </li><li>
+                    billing/invoices: Ver as faturas
+                  </li><li>
+                    billing/nfes: Ver as notas fiscais
+                  </li><li>
+                    billing/organization: Ver os dados da organização
+                  </li><li>
+                    billing/payment_methods: Ver as formas de pagamento
+                  </li><li>
+                    billing/payments: Ver os pagamentos recebidos
+                  </li><li>
+                    billing/plan_changes: Ver as trocas de plano
+                  </li><li>
+                    billing/plan_groups: Ver os grupos de planos
+                  </li><li>
+                    billing/plans: Ver os planos
+                  </li><li>
+                    billing/portal_users: Ver os usuários do portal do cliente
+                  </li><li>
+                    billing/product_groups: Ver os grupos de produtos
+                  </li><li>
+                    billing/products: Ver os produtos
+                  </li><li>
+                    billing/proposal_templates: Ver os modelos de proposta
+                  </li><li>
+                    billing/proposals: Ver as propostas
+                  </li><li>
+                    billing/service_items: Ver os itens de serviço
+                  </li><li>
+                    billing/subscription_changes: Ver as alterações de assinatura
+                  </li><li>
+                    billing/subscription_item_changes: Ver as alterações de itens da assinatura
+                  </li><li>
+                    billing/subscriptions: Ver as assinaturas
+                  </li><li>
+                    billing/tax_periods: Ver os períodos de apuração de impostos
+                  </li><li>
+                    billing/tax_rules: Ver as regras de impostos
+                  </li><li>
+                    billing/team_roles: Ver os papéis da equipe
+                  </li><li>
+                    billing/usage: Ver o consumo medido
+                  </li><li>
+                    billing/withholdings: Ver as retenções de impostos
+                  </li><li>
+                    dunning/agreements: Ver os acordos de pagamento
+                  </li><li>
+                    dunning/all: Ver todos os dados do Régua de Cobrança
+                  </li><li>
+                    dunning/audit_logs: Ver os registros de auditoria
+                  </li><li>
+                    dunning/charges: Ver as cobranças
+                  </li><li>
+                    dunning/classifications: Ver as classificações
+                  </li><li>
+                    dunning/collection_rules: Ver as réguas de cobrança
+                  </li><li>
+                    dunning/disputes: Ver as contestações
+                  </li><li>
+                    dunning/email_layouts: Ver os layouts de e-mail
+                  </li><li>
+                    dunning/exports: Ver as exportações
+                  </li><li>
+                    dunning/imports: Ver as importações
+                  </li><li>
+                    dunning/interactions: Ver as interações com o devedor
+                  </li><li>
+                    dunning/metrics: Ver as métricas de cobrança
+                  </li><li>
+                    dunning/negativations: Ver as negativações
+                  </li><li>
+                    dunning/negotiation_campaigns: Ver as campanhas de negociação
+                  </li><li>
+                    dunning/notification_channels: Ver os canais de notificação
+                  </li><li>
+                    dunning/notification_preferences: Ver as preferências de notificação
+                  </li><li>
+                    dunning/notifications: Ver as notificações enviadas
+                  </li><li>
+                    dunning/people: Ver as pessoas
+                  </li><li>
+                    dunning/protests: Ver os protestos
+                  </li><li>
+                    dunning/tasks: Ver as tarefas
+                  </li><li>
+                    dunning/templates: Ver os modelos de mensagem
+                  </li><li>
+                    dunning/webhook_endpoints: Ver os endpoints de webhook
+                  </li><li>
+                    kadu/activities: Ver as atividades
+                  </li><li>
+                    kadu/all: Ver todos os dados do Kadu
+                  </li><li>
+                    kadu/executions: Ver as execuções do agente
+                  </li><li>
+                    kadu/memberships: Ver os vínculos de membros
+                  </li><li>
+                    kadu/memories: Ver as memórias do agente
+                  </li><li>
+                    kadu/organizations: Ver as organizações
+                  </li><li>
+                    kadu/roles: Ver os papéis de acesso
+                  </li><li>
+                    kadu/system_events: Ver os eventos de sistema
+                  </li><li>
+                    kadu/tasks: Ver as tarefas
+                  </li><li>
+                    kadu/todos: Ver os itens de tarefa
+                  </li><li>
+                    kadu/users: Ver os usuários
+                  </li><li>
+                    kadu/webhook_deliveries: Ver as entregas de webhook
+                  </li><li>
+                    kadu/webhooks: Ver os webhooks configurados
+                  </li><li>
+                    kadu/workspaces: Ver os workspaces
+                  </li><li>
+                    kia/accounts: Ver as contas
+                  </li><li>
+                    kia/all: Ver todos os dados do Kia
+                  </li><li>
+                    kia/conversations: Ver as conversas
+                  </li><li>
+                    kia/extractions: Ver as extrações de documentos
+                  </li><li>
+                    kia/files: Ver os arquivos enviados
+                  </li><li>
+                    kia/memberships: Ver os vínculos de membros
+                  </li><li>
+                    kia/models: Ver os modelos de IA disponíveis
+                  </li><li>
+                    kia/roles: Ver os papéis de acesso
+                  </li><li>
+                    kia/usage: Ver o consumo e os limites de uso
+                  </li><li>
+                    kia/workspaces: Ver os workspaces
+                  </li><li>
+                    openid: Autenticar via OpenID Connect (Conta Kobana)
+                  </li><li>
+                    email: Ver o endereço de e-mail
+                  </li><li>
+                    phone: Ver o telefone utilizado no cadastro
+                  </li><li>
+                    profile.basic: Ver seu nome, foto e data de nascimento
+                  </li><li>
+                    profile.legal: Ver os dados legais (nome civil e CPF)
+                  </li><li>
+                    profile.identity: Ver a identidade de gênero
+                  </li><li>
+                    profile.communication: Ver os idiomas preferidos de comunicação
+                  </li><li>
+                    profile.preferences: Ver o fuso horário
+                  </li><li>
+                    profile.accessibility: Ver os recursos de acessibilidade e deficiências informadas
+                  </li><li>
+                    organization.basic: Ver os dados básicos da conta (tipo, nome, e-mail)
+                  </li><li>
+                    address: Ver o endereço completo
+                  </li><li>
+                    banking: Ver os dados bancários (agência e conta)
+                  </li><li>
+                    business: Ver os dados da empresa (razão social e cnpj)
+                  </li><li>
+                    balance: Ver o saldo na conta do usuário
+                  </li><li>
+                    checkout: Ver a URL de checkout para pagamentos
+                  </li><li>
+                    subscription: Ver o plano contratado
+                  </li><li>
+                    acbr.accounts: Gerenciar contas contábeis e integrações fiscais
+                  </li><li>
+                    admin.subaccounts: Gerenciar subcontas da conta principal
+                  </li><li>
+                    admin.users: Gerenciar usuários e permissões
+                  </li><li>
+                    automation.email_accounts: Gerenciar contas de e-mail para automação
+                  </li><li>
+                    automation.email_deliveries: Visualizar e gerenciar envios de e-mail
+                  </li><li>
+                    automation.sms_accounts: Gerenciar contas de SMS
+                  </li><li>
+                    automation.sms_deliveries: Visualizar e gerenciar envios de SMS
+                  </li><li>
+                    automation.webhook_deliveries: Visualizar e gerenciar entregas de webhooks
+                  </li><li>
+                    automation.webhooks: Gerenciar webhooks e notificações automatizadas
+                  </li><li>
+                    billing.transactions: Visualizar transações de cobrança e faturamento
+                  </li><li>
+                    charge.bank_billet_accounts: Gerenciar contas de boletos bancários
+                  </li><li>
+                    charge.bank_billet_payments: Visualizar e registrar pagamentos de boletos
+                  </li><li>
+                    charge.bank_billet_registrations: Gerenciar registros de boletos nos bancos
+                  </li><li>
+                    charge.bank_billets: Gerenciar boletos bancários
+                  </li><li>
+                    charge.automatic_pix.accounts: Gerenciar contas de Pix automático
+                  </li><li>
+                    charge.automatic_pix.locations: Gerenciar localizações de Pix automático
+                  </li><li>
+                    charge.automatic_pix.pix: Gerenciar cobranças Pix automáticas
+                  </li><li>
+                    charge.automatic_pix.recurrences: Gerenciar recorrências de Pix automático
+                  </li><li>
+                    charge.automatic_pix.requests: Gerenciar solicitações de Pix automático
+                  </li><li>
+                    charge.pix: Gerenciar cobranças Pix
+                  </li><li>
+                    charge.pix_accounts: Gerenciar contas Pix
+                  </li><li>
+                    charge.customer_subscriptions: Gerenciar assinaturas de clientes
+                  </li><li>
+                    charge.installments: Gerenciar parcelamentos
+                  </li><li>
+                    charge.payments: Visualizar e gerenciar pagamentos recebidos
+                  </li><li>
+                    core.providers: Gerenciar provedores do sistema (bancos e integrações)
+                  </li><li>
+                    crm.customers: Gerenciar clientes e informações comerciais
+                  </li><li>
+                    crm.people: Gerenciar pessoas e contatos
+                  </li><li>
+                    data.bank_billet_queries: Consultar informações de boletos bancários
+                  </li><li>
+                    financial.accounts: Gerenciar contas financeiras
+                  </li><li>
+                    financial.balances: Visualizar saldos e movimentações financeiras
+                  </li><li>
+                    financial.providers: Gerenciar provedores financeiros e integrações bancárias
+                  </li><li>
+                    financial.statement_transactions: Visualizar transações e extratos financeiros
+                  </li><li>
+                    integration.certificates: Gerenciar certificados digitais para integrações
+                  </li><li>
+                    integration.commands: Consultar comandos da conta
+                  </li><li>
+                    integration.connections: Gerenciar conexões com bancos e provedores
+                  </li><li>
+                    integration.discharges: Gerenciar arquivos de retorno bancário (baixas)
+                  </li><li>
+                    integration.edi_boxes: Gerenciar caixas postais EDI para troca de arquivos
+                  </li><li>
+                    integration.remittances: Gerenciar arquivos de remessa bancária
+                  </li><li>
+                    mailbox.entries: Gerenciar caixas postais para recebimento de arquivos
+                  </li><li>
+                    mailbox.files: Visualizar e gerenciar arquivos nas caixas postais
+                  </li><li>
+                    partner.bank_contracts: Gerenciar contratos bancários com parceiros
+                  </li><li>
+                    payment.accounts: Gerenciar as contas usadas para pagamento
+                  </li><li>
+                    payment.bank_billets: Efetuar pagamentos de boletos bancários
+                  </li><li>
+                    payment.batches: Gerenciar lotes de pagamentos
+                  </li><li>
+                    payment.darfs: Efetuar pagamentos de DARFs (tributos federais)
+                  </li><li>
+                    payment.dda.bank_billets: Visualizar e gerenciar boletos DDA disponíveis para pagamento
+                  </li><li>
+                    payment.dda_accounts: Gerenciar contas DDA (Débito Direto Autorizado)
+                  </li><li>
+                    payment.payments: Gerenciar todos os tipos de pagamentos através da API
+                  </li><li>
+                    payment.pix: Efetuar pagamentos via Pix
+                  </li><li>
+                    payment.taxes: Efetuar pagamentos de impostos e taxas
+                  </li><li>
+                    payment.utilities: Efetuar pagamentos de contas de consumo (água, luz, etc)
+                  </li><li>
+                    security.access_tokens: Gerenciar tokens de acesso e autenticação
+                  </li><li>
+                    sysadmin.provider_requests.get: Executar requisições GET contra provedores (uso interno)
+                  </li><li>
+                    sysadmin.provider_requests.head: Executar requisições HEAD contra provedores (uso interno)
+                  </li><li>
+                    sysadmin.provider_requests.post: Executar requisições POST contra provedores (uso interno)
+                  </li><li>
+                    sysadmin.provider_requests.put: Executar requisições PUT contra provedores (uso interno)
+                  </li><li>
+                    sysadmin.provider_requests.patch: Executar requisições PATCH contra provedores (uso interno)
+                  </li><li>
+                    sysadmin.provider_requests.delete: Executar requisições DELETE contra provedores (uso interno)
+                  </li><li>
+                    system.events: Visualizar eventos e logs do sistema
+                  </li><li>
+                    system.imports: Gerenciar importações de dados
+                  </li><li>
+                    system.reports: Gerar e visualizar relatórios do sistema
+                  </li><li>
+                    transfer.accounts: Gerenciar as contas usadas para transferência
+                  </li><li>
+                    transfer.batches: Gerenciar lotes de transferências
+                  </li><li>
+                    transfer.internal: Realizar transferências internas entre contas
+                  </li><li>
+                    transfer.pix: Realizar transferências via Pix
+                  </li><li>
+                    transfer.ted: Realizar transferências TED (Transferência Eletrônica Disponível)
+                  </li><li>
+                    transfer.transfers: Gerenciar todos os tipos de transferências (Pix, TED, Internas) via endpoint unificado
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </TabItem>
   </SchemaTabs>
 </div><div
