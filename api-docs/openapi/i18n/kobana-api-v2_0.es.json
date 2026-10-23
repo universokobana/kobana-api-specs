@@ -12656,6 +12656,449 @@
         "operationId": "put-financial-accounts"
       }
     },
+    "/v2/financial/companies": {
+      "get": {
+        "summary": "Listar Empresas",
+        "tags": [
+          "Companies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Lista as empresas (CNPJs) da conta, as mais recentes primeiro.",
+        "parameters": [
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": false,
+            "description": "Informar um e-mail válido para contatos.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cnpj",
+            "in": "query",
+            "required": false,
+            "description": "Filtra pelo CNPJ (com ou sem máscara).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "description": "Filtra por empresas ativas ou inativas.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "external_id",
+            "in": "query",
+            "required": false,
+            "description": "Filtra pelo ID no seu sistema.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Número da Página",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "description": "Quantidade de registros por página",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "maximum": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empresas encontradas",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "data": [
+                    {
+                      "uid": "01a166b7-ade0-738b-9418-ad75c858218d",
+                      "name": "Kobana Tecnologia Ltda",
+                      "trade_name": null,
+                      "cnpj": "05813794000126",
+                      "establishment": "headquarters",
+                      "active": true,
+                      "municipal_registration": null,
+                      "tax_regime": null,
+                      "addresses": [],
+                      "emails": [
+                        {
+                          "label": "financeiro",
+                          "address": "financeiro@kobana.com.br"
+                        }
+                      ],
+                      "phones": [],
+                      "financial_account_uids": [],
+                      "external_id": "ERP-1",
+                      "tags": [],
+                      "custom_data": {},
+                      "created_via_api": false,
+                      "created_at": "2026-10-23T12:34:36+09:30",
+                      "updated_at": "2026-10-23T12:34:36+09:30"
+                    }
+                  ],
+                  "pagination": {
+                    "prev_url": null,
+                    "next_url": null,
+                    "page": 1
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/v2_company"
+                      }
+                    },
+                    "pagination": {
+                      "$ref": "#/components/schemas/v2_pagination"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-financial-companies"
+      },
+      "post": {
+        "summary": "Criar uma Empresa",
+        "tags": [
+          "Companies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Cria uma empresa (CNPJ) na conta. Contatos no formato de Pessoa: listas de endereços, e-mails e telefones.",
+        "parameters": [
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": false,
+            "description": "Informar um e-mail válido para contatos.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Empresa criada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 201,
+                  "data": {
+                    "uid": "01a166b7-ae25-7fd9-85a3-1b2a5b61c0ec",
+                    "name": "Kobana Tecnologia Ltda",
+                    "trade_name": null,
+                    "cnpj": "05813794000126",
+                    "establishment": "headquarters",
+                    "active": true,
+                    "municipal_registration": null,
+                    "tax_regime": "LucroPresumido",
+                    "addresses": [
+                      {
+                        "street": "Calçada das Margaridas",
+                        "number": "163",
+                        "complement": null,
+                        "neighborhood": null,
+                        "state": "SP",
+                        "city_name": "Barueri",
+                        "zip_code": "06453038"
+                      }
+                    ],
+                    "emails": [],
+                    "phones": [
+                      {
+                        "kind": "landline",
+                        "country_code": "55",
+                        "local_code": "11",
+                        "number": "30030386"
+                      }
+                    ],
+                    "financial_account_uids": [],
+                    "external_id": null,
+                    "tags": [
+                      "matriz"
+                    ],
+                    "custom_data": {},
+                    "created_via_api": true,
+                    "created_at": "2026-10-23T12:34:36+09:30",
+                    "updated_at": "2026-10-23T12:34:36+09:30"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/v2_company"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Falha na validação",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 422,
+                  "errors": [
+                    {
+                      "code": "validation_error",
+                      "param": "name",
+                      "detail": "Name não pode ficar em branco"
+                    },
+                    {
+                      "code": "validation_error",
+                      "param": "cnpj",
+                      "detail": "Cnpj não é um CNPJ válido"
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/v2_error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v2_company_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "operationId": "post-financial-companies"
+      }
+    },
+    "/v2/financial/companies/{uid}": {
+      "parameters": [
+        {
+          "name": "uid",
+          "in": "path",
+          "required": true,
+          "description": "UID da Empresa",
+          "example": "01a15d20-7806-75e9-acc3-e11ac0bb4d90",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Consultar uma Empresa",
+        "tags": [
+          "Companies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empresa encontrada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "data": {
+                    "uid": "01a166b7-ae9b-725a-ac3c-7be6acfa6e0f",
+                    "name": "Kobana Tecnologia Ltda",
+                    "trade_name": null,
+                    "cnpj": "05813794000126",
+                    "establishment": "headquarters",
+                    "active": true,
+                    "municipal_registration": null,
+                    "tax_regime": null,
+                    "addresses": [],
+                    "emails": [
+                      {
+                        "label": "financeiro",
+                        "address": "financeiro@kobana.com.br"
+                      }
+                    ],
+                    "phones": [],
+                    "financial_account_uids": [
+                      "01a166b7-ae7d-7697-9253-16ceba1f4f69"
+                    ],
+                    "external_id": "ERP-1",
+                    "tags": [],
+                    "custom_data": {},
+                    "created_via_api": false,
+                    "created_at": "2026-10-23T12:34:36+09:30",
+                    "updated_at": "2026-10-23T12:34:36+09:30"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/v2_company"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Empresa não encontrada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 404,
+                  "errors": [
+                    {
+                      "title": "Não foi possível encontrar o registro",
+                      "code": "not_found",
+                      "detail": "Este registro não existe, ou foi deletado."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/v2_error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-financial-companies-2"
+      },
+      "put": {
+        "summary": "Atualizar uma Empresa",
+        "tags": [
+          "Companies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Atualiza a empresa. As contas financeiras dela passam a ter o titular com os dados da empresa.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Empresa atualizada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 200,
+                  "data": {
+                    "uid": "01a166b7-af61-7e90-95d0-84ff46cb3b21",
+                    "name": "Kobana Nova",
+                    "trade_name": null,
+                    "cnpj": "05813794000126",
+                    "establishment": "headquarters",
+                    "active": false,
+                    "municipal_registration": null,
+                    "tax_regime": null,
+                    "addresses": [],
+                    "emails": [
+                      {
+                        "label": "financeiro",
+                        "address": "financeiro@kobana.com.br"
+                      }
+                    ],
+                    "phones": [],
+                    "financial_account_uids": [
+                      "01a166b7-af3d-720e-80be-fe7cd864b494"
+                    ],
+                    "external_id": "ERP-1",
+                    "tags": [],
+                    "custom_data": {},
+                    "created_via_api": false,
+                    "created_at": "2026-10-23T12:34:36+09:30",
+                    "updated_at": "2026-10-23T12:34:36+09:30"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/v2_company"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/v2_company_update"
+              }
+            }
+          },
+          "required": true
+        },
+        "operationId": "put-financial-companies"
+      },
+      "delete": {
+        "summary": "Excluir uma Empresa",
+        "tags": [
+          "Companies"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Exclui a empresa. As contas financeiras dela continuam, sem empresa.",
+        "responses": {
+          "204": {
+            "description": "Empresa excluída"
+          }
+        },
+        "operationId": "delete-financial-companies"
+      }
+    },
     "/v2/financial/providers": {
       "get": {
         "summary": "Listar Proveedores",
@@ -79961,6 +80404,371 @@
             }
           }
         }
+      },
+      "v2_company": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "example": "01a15d20-7806-75e9-acc3-e11ac0bb4d90",
+            "description": "UID da Empresa."
+          },
+          "name": {
+            "type": "string",
+            "example": "Kobana Tecnologia Ltda",
+            "description": "Razão social."
+          },
+          "trade_name": {
+            "type": "string",
+            "nullable": true,
+            "example": "Kobana",
+            "description": "Nome fantasia."
+          },
+          "cnpj": {
+            "type": "string",
+            "example": "05813794000126",
+            "description": "CNPJ sem máscara, em maiúsculas (aceita o CNPJ alfanumérico)."
+          },
+          "establishment": {
+            "type": "string",
+            "enum": [
+              "headquarters",
+              "branch"
+            ],
+            "readOnly": true,
+            "description": "Matriz ou filial, deduzido do CNPJ.\n`headquarters`: Matriz\n`branch`: Filial"
+          },
+          "active": {
+            "type": "boolean",
+            "example": true,
+            "description": "Empresa ativa. Só uma empresa ativa por CNPJ na conta."
+          },
+          "municipal_registration": {
+            "type": "string",
+            "nullable": true,
+            "description": "Inscrição municipal."
+          },
+          "tax_regime": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "SimplesNacional",
+              "SimplesNacionalExcessoSublimite",
+              "MicroempreendedorIndividual",
+              "LucroPresumido",
+              "LucroReal",
+              "Isento",
+              null
+            ],
+            "description": "Regime tributário."
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_address"
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_email"
+            }
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_phone"
+            }
+          },
+          "financial_account_uids": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "UIDs das Contas Financeiras da empresa (o `company_uid` da conta)."
+          },
+          "external_id": {
+            "type": "string",
+            "nullable": true,
+            "example": "ERP-123",
+            "description": "ID no seu sistema. Único por conta."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_data": {
+            "type": "object",
+            "description": "Dados personalizados."
+          },
+          "created_via_api": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        }
+      },
+      "v2_company_create": {
+        "type": "object",
+        "required": [
+          "name",
+          "cnpj"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Kobana Tecnologia Ltda",
+            "description": "Razão social."
+          },
+          "trade_name": {
+            "type": "string",
+            "nullable": true,
+            "example": "Kobana",
+            "description": "Nome fantasia."
+          },
+          "cnpj": {
+            "type": "string",
+            "example": "05813794000126",
+            "description": "CNPJ sem máscara, em maiúsculas (aceita o CNPJ alfanumérico)."
+          },
+          "active": {
+            "type": "boolean",
+            "example": true,
+            "description": "Empresa ativa. Só uma empresa ativa por CNPJ na conta."
+          },
+          "municipal_registration": {
+            "type": "string",
+            "nullable": true,
+            "description": "Inscrição municipal."
+          },
+          "tax_regime": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "SimplesNacional",
+              "SimplesNacionalExcessoSublimite",
+              "MicroempreendedorIndividual",
+              "LucroPresumido",
+              "LucroReal",
+              "Isento",
+              null
+            ],
+            "description": "Regime tributário."
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_address"
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_email"
+            }
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_phone"
+            }
+          },
+          "external_id": {
+            "type": "string",
+            "nullable": true,
+            "example": "ERP-123",
+            "description": "ID no seu sistema. Único por conta."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_data": {
+            "type": "object",
+            "description": "Dados personalizados."
+          }
+        }
+      },
+      "v2_company_update": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Kobana Tecnologia Ltda",
+            "description": "Razão social."
+          },
+          "trade_name": {
+            "type": "string",
+            "nullable": true,
+            "example": "Kobana",
+            "description": "Nome fantasia."
+          },
+          "cnpj": {
+            "type": "string",
+            "example": "05813794000126",
+            "description": "CNPJ sem máscara, em maiúsculas (aceita o CNPJ alfanumérico)."
+          },
+          "active": {
+            "type": "boolean",
+            "example": true,
+            "description": "Empresa ativa. Só uma empresa ativa por CNPJ na conta."
+          },
+          "municipal_registration": {
+            "type": "string",
+            "nullable": true,
+            "description": "Inscrição municipal."
+          },
+          "tax_regime": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "SimplesNacional",
+              "SimplesNacionalExcessoSublimite",
+              "MicroempreendedorIndividual",
+              "LucroPresumido",
+              "LucroReal",
+              "Isento",
+              null
+            ],
+            "description": "Regime tributário."
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_address"
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_email"
+            }
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v2_company_phone"
+            }
+          },
+          "external_id": {
+            "type": "string",
+            "nullable": true,
+            "example": "ERP-123",
+            "description": "ID no seu sistema. Único por conta."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_data": {
+            "type": "object",
+            "description": "Dados personalizados."
+          }
+        }
+      },
+      "v2_company_address": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "example": "Calçada das Margaridas"
+          },
+          "number": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "example": "163"
+          },
+          "complement": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 60,
+            "example": "Sala 02"
+          },
+          "neighborhood": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 80,
+            "example": "Alphaville"
+          },
+          "city_name": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 60,
+            "example": "Barueri"
+          },
+          "state": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "example": "SP"
+          },
+          "zip_code": {
+            "type": "string",
+            "nullable": true,
+            "example": "06453038"
+          }
+        }
+      },
+      "v2_company_email": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "nullable": true,
+            "example": "financeiro"
+          },
+          "address": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 80,
+            "example": "financeiro@kobana.com.br"
+          }
+        }
+      },
+      "v2_company_phone": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "mobile",
+              "landline"
+            ],
+            "example": "landline"
+          },
+          "country_code": {
+            "type": "string",
+            "example": "55"
+          },
+          "local_code": {
+            "type": "string",
+            "example": "11"
+          },
+          "number": {
+            "type": "string",
+            "example": "30030386"
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -80219,6 +81027,10 @@
       "description": "Manage people"
     },
     {
+      "name": "Companies",
+      "description": "Manage companies"
+    },
+    {
       "name": "Balances",
       "description": "Manage balances"
     },
@@ -80407,6 +81219,7 @@
     {
       "name": "Financial",
       "tags": [
+        "Companies",
         "Balances",
         "Accounts",
         "Providers",

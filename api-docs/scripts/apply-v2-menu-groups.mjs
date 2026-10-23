@@ -95,6 +95,7 @@ const TAG_RENAME = {
   'Consulta de Boletos': 'Bank Billet Query',
   'Consulta de Pix QR Code': 'Pix QR Code Query',
   Pessoas: 'People',
+  Empresas: 'Companies',
   Saldos: 'Balances',
   Contas: 'Accounts',
   Provedores: 'Providers',
@@ -144,6 +145,7 @@ const TAG_INFO = {
   'Bank Billet Query': { description: 'Query bank billets' },
   'Pix QR Code Query': { description: 'Query Pix QR Code' },
   People: { description: 'Manage people' },
+  Companies: { description: 'Manage companies' },
   Balances: { description: 'Manage balances' },
   Accounts: { description: 'Manage financial accounts' },
   Providers: { description: 'List financial providers' },
@@ -194,7 +196,7 @@ const TAG_INFO = {
 
 const GROUPS = [
   ['General', ['Bank Billet Query', 'Pix QR Code Query', 'People']],
-  ['Financial', ['Balances', 'Accounts', 'Providers', 'Statement']],
+  ['Financial', ['Companies', 'Balances', 'Accounts', 'Providers', 'Statement']],
   [
     'Charges',
     [

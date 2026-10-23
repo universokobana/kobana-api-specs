@@ -109,6 +109,52 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "category",
+          label: "Companies",
+          key: "financial-companies",
+          link: {
+            type: "doc",
+            id: "api/v2/companies",
+          },
+          items: [
+            {
+              type: "doc",
+              id: "api/v2/get-financial-companies",
+              label: "Listar Empresas",
+              className: "api-method get",
+              key: "financial-companies-es-docusaurus-plugin-content-docs-current-api-v-2-get-financial-companies",
+            },
+            {
+              type: "doc",
+              id: "api/v2/post-financial-companies",
+              label: "Criar uma Empresa",
+              className: "api-method post",
+              key: "financial-companies-es-docusaurus-plugin-content-docs-current-api-v-2-post-financial-companies",
+            },
+            {
+              type: "doc",
+              id: "api/v2/get-financial-companies-2",
+              label: "Consultar uma Empresa",
+              className: "api-method get",
+              key: "financial-companies-es-docusaurus-plugin-content-docs-current-api-v-2-get-financial-companies-2",
+            },
+            {
+              type: "doc",
+              id: "api/v2/put-financial-companies",
+              label: "Atualizar uma Empresa",
+              className: "api-method put",
+              key: "financial-companies-es-docusaurus-plugin-content-docs-current-api-v-2-put-financial-companies",
+            },
+            {
+              type: "doc",
+              id: "api/v2/delete-financial-companies",
+              label: "Excluir uma Empresa",
+              className: "api-method delete",
+              key: "financial-companies-es-docusaurus-plugin-content-docs-current-api-v-2-delete-financial-companies",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Balances",
           key: "financial-balances",
           link: {
