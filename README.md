@@ -21,10 +21,39 @@ kobana-api-specs/
 │   └── v1_0/         # Versão 1.0 da API
 │   └── v2_0/         # Versão 2.0 da API
 ├── swagger/          # Especificações Swagger/OpenAPI
-│   └── v1_0/         # Versão 1.0 da API
-│   └── v2_0/         # Versão 2.0 da API
+│   └── v1_0/         # Versão 1.0 da API (pt, .en.json e .es.json)
+│   └── v2_0/         # Versão 2.0 da API (pt, .en.json e .es.json)
+├── i18n/             # Memória de tradução dos specs (português → en/es)
+├── scripts/          # translate-specs.mjs, que escreve os specs en/es
 ├── api-docs/         # Site da documentação (Docusaurus) — docs.banking.kobana.com.br
 └── README.md         # Este arquivo
+```
+
+## 🌎 Specs em inglês e espanhol
+
+Cada spec tem um arquivo por idioma:
+
+| Idioma | Arquivo |
+| --- | --- |
+| Português | `swagger/v2_0/kobana-api-v2_0-openapi-3_1.json` |
+| Inglês | `swagger/v2_0/kobana-api-v2_0-openapi-3_1.en.json` |
+| Espanhol | `swagger/v2_0/kobana-api-v2_0-openapi-3_1.es.json` |
+
+O mesmo vale para a v1. O spec em português é gerado no kobana-app e enviado para
+cá pelo `swagger:push`. Os de inglês e espanhol são o mesmo documento com cada
+`summary` e `description` traduzido pela memória em `i18n/en.json` e `i18n/es.json`
+(texto em português → tradução); nada mais muda, então os três descrevem as mesmas
+operações. A documentação de cada idioma em docs.banking.kobana.com.br e o
+`kobana` CLI são gerados a partir do arquivo daquele idioma.
+
+Quando o spec em português muda, o workflow
+[`.github/workflows/translate-specs.yml`](./.github/workflows/translate-specs.yml)
+regera os arquivos `en`/`es`, traduz com o Claude Code CLI o texto que a memória
+ainda não tem e commita no `main`. Para corrigir uma tradução, edite a memória e
+rode:
+
+```bash
+node scripts/translate-specs.mjs
 ```
 
 ## 📚 Site da documentação

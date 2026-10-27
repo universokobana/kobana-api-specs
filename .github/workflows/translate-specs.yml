@@ -1,0 +1,120 @@
+name: Traduzir specs (en/es)
+
+# Cada spec em português (swagger/v*/kobana-api-v*-openapi-3_1.json, enviado
+# pelo `swagger:push` do kobana-app) tem um arquivo por idioma ao lado:
+# `.en.json` e `.es.json`. Eles são escritos por scripts/translate-specs.mjs a
+# partir da memória de tradução em i18n/{en,es}.json. Quando o spec em
+# português muda, este workflow regera os dois arquivos, pede ao Claude Code
+# CLI a tradução do texto que a memória ainda não conhece e commita o
+# resultado direto no main. As docs (kobana-app/user-docs) e o kobana-cli
+# leem esses arquivos.
+on:
+  push:
+    branches: [main]
+    paths:
+      # O glob não casa com os arquivos .en.json/.es.json, que este próprio
+      # workflow escreve.
+      - 'swagger/v*/kobana-api-v*-openapi-3_1.json'
+      - 'i18n/**'
+      - 'scripts/translate-specs.mjs'
+  workflow_dispatch:
+    inputs:
+      model:
+        description: 'Modelo a usar no Claude Code CLI (vazio = default do CLI)'
+        required: false
+        default: ''
+
+concurrency:
+  group: translate-specs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Write the translated specs and list the gaps
+        id: gaps
+        run: |
+          set -euo pipefail
+          node scripts/translate-specs.mjs --missing "$RUNNER_TEMP/missing.json"
+          COUNT=$(jq '[.[] | length] | add' "$RUNNER_TEMP/missing.json")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "textos sem tradução: $COUNT"
+
+      - name: Translate the gaps (claude-code)
+        if: steps.gaps.outputs.count != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: ${{ inputs.model }}
+        run: |
+          set -euo pipefail
+          npm install -g @anthropic-ai/claude-code
+          MODEL_ARGS=()
+          if [ -n "${MODEL}" ]; then MODEL_ARGS=(--model "$MODEL"); fi
+
+          # Fora do workspace, para não entrar no commit.
+          IN="$RUNNER_TEMP/missing.json"
+          OUT="$RUNNER_TEMP/translations.json"
+          claude -p "Traduza textos de uma spec OpenAPI da API da Kobana (gateway bancário brasileiro).
+
+          Entrada: $IN — JSON { \"en\": [textos em português], \"es\": [textos em português] }.
+          Saída: escreva $OUT como JSON { \"en\": { \"<texto original>\": \"<tradução em inglês>\" }, \"es\": { \"<texto original>\": \"<tradução em espanhol>\" } },
+          com uma entrada para cada texto de entrada e a chave idêntica, byte a byte, ao original (espaços, quebras de linha e tabs inclusive).
+
+          Regras:
+          - Siga a terminologia e o tom das memórias existentes, i18n/en.json e i18n/es.json (português → tradução); consulte com grep.
+          - Mantenha Markdown, tabelas, code spans, exemplos JSON, URLs, nomes de campos e parâmetros, valores de enum e códigos HTTP como estão; traduza só a prosa.
+          - Preserve os espaços no início e no fim e a estrutura de linhas de cada texto.
+          - Termos sem equivalente ficam como estão: Boleto, Pix, BolePix, CNAB, CPF, CNPJ, TED, TXID, DDA.
+          - Texto já em inglês, ou que não muda no idioma de destino, mapeia para ele mesmo.
+          - Os textos podem ter aspas, barras e quebras de linha: gere o JSON com um script Node (JSON.stringify), não à mão.
+          - Ao final, confira com node que $OUT é JSON válido e que tem exatamente as chaves da entrada em cada idioma.
+          - Não edite nenhum arquivo do repositório." \
+            "${MODEL_ARGS[@]}" \
+            --max-turns 80 \
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
+            --dangerously-skip-permissions
+
+          node scripts/translate-specs.mjs --merge "$OUT" --missing "$RUNNER_TEMP/missing.json"
+          echo "ainda sem tradução: $(jq '[.[] | length] | add' "$RUNNER_TEMP/missing.json")"
+
+      - name: Commit and push
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- swagger i18n)" ]; then
+            echo "specs traduzidos já em dia — nada a commitar"
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -- 'swagger/*.en.json' 'swagger/*.es.json' i18n
+          git commit -m "i18n: atualiza os specs em inglês e espanhol" \
+            -m "Gerado por scripts/translate-specs.mjs a partir de $(git rev-parse --short HEAD)."
+
+          # Commits feitos com o GITHUB_TOKEN não redisparam workflows.
+          for attempt in 1 2 3 4; do
+            git fetch origin "$TARGET_BRANCH"
+            if ! git rebase "origin/$TARGET_BRANCH"; then
+              git rebase --abort || true
+              echo "::error::conflito ao rebasear em $TARGET_BRANCH — rode o workflow de novo"
+              exit 1
+            fi
+            if git push origin "HEAD:refs/heads/$TARGET_BRANCH"; then
+              echo "specs traduzidos atualizados em $TARGET_BRANCH: $(git rev-parse --short HEAD)"
+              exit 0
+            fi
+            [ "$attempt" = 4 ] && { echo "::error::push falhou após 4 tentativas"; exit 1; }
+            sleep $((2 ** attempt))
+          done
