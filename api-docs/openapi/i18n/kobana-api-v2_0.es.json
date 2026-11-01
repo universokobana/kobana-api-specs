@@ -9850,6 +9850,134 @@
         "operationId": "post-financial-accounts-balances"
       }
     },
+    "/v2/financial/accounts/{financial_account_uid}/balances/sync": {
+      "post": {
+        "summary": "Sincronizar Saldo",
+        "tags": [
+          "Balances"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Solicita à instituição financeira o saldo atual de uma conta financeira. Requer conexão ativa.\n> **Processamento Assíncrono:** Este endpoint cria um comando de sincronização de saldo para a Conta Financeira.\n\nAo receber a requisição, a nossa API cria um Comando, que é processado em segundo plano. Quando o banco\nresponde com o saldo, o comando é confirmado e um novo saldo é registrado na Conta Financeira. Você recebe\nna resposta desta requisição o comando criado e pode consultá-lo a qualquer momento em\n[Listar Comandos de uma Conta Financeira](ref:get_v2-financial-accounts-account-id-commands) e\n[Visualizar um Comando](ref:get_v2-financial-accounts-account-id-commands-id). O saldo registrado aparece em\n[Listar saldos](ref:get_v2-financial-accounts-financial-account-uid-balances).\n\nPara que seja possível executar a Sincronização de Saldo, deve haver uma Conexão ativa (ou seja, validada e\nhabilitada) associada à Conta Financeira, e o provedor financeiro dela precisa oferecer consulta de saldo\nvia API. Caso contrário, a resposta é `422` com `param: financial_account`.\n\n## Eventos de Webhook\n\nQuando a requisição é realizada, um evento `financial.account.balance_sync.requested` é disparado.\nDepois da resposta da instituição financeira, o evento `financial.account.balance_sync.confirmed` é disparado.\n",
+        "parameters": [
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": false,
+            "description": "Informar um e-mail válido para contatos.",
+            "example": "Kevin Mitnick <kmitnick@kobana.com.br>",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "description": "Chave de idempotência para evitar replay de processamento.",
+            "example": "4wE7HVG5rW3R7Xg1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "financial_account_uid",
+            "in": "path",
+            "description": "UUID da Conta Financeira",
+            "required": true,
+            "example": "018c9160-5c85-725f-b56e-4af36f2564be",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Comando criado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 201,
+                  "data": {
+                    "id": 118,
+                    "uid": "01a19824-3d5b-7e55-a9c0-b4800e91425b",
+                    "status": "pending",
+                    "operation": "balance_sync",
+                    "resource_type": "Financial::Account",
+                    "resource_uid": "01a19824-3d31-7a97-9aca-212c5d97de5c",
+                    "financial_provider_slug": "sicoob",
+                    "params": null,
+                    "payload": null,
+                    "created_at": "2026-11-01T22:24:34+05:00",
+                    "updated_at": "2026-11-01T22:24:34+05:00",
+                    "message": null,
+                    "error_message": null,
+                    "warning_message": null,
+                    "confirmation_via": null
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "description": "Status HTTP. Ex: `400`."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/v2_financial_account_command"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Conta não encontrada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 404,
+                  "errors": [
+                    {
+                      "title": "Não foi possível encontrar o registro",
+                      "code": "not_found",
+                      "detail": "Este registro não existe, ou foi deletado."
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/v2_error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Conta sem conexão ativa ou provedor sem consulta de saldo via API",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": 422,
+                  "errors": [
+                    {
+                      "code": "validation_error",
+                      "param": "financial_account",
+                      "detail": "Financial account não possui conexão associada"
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/v2_error"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-financial-accounts-balances-sync"
+      }
+    },
     "/v2/financial/accounts/{financial_account_uid}/balances/{balance_uid}": {
       "get": {
         "summary": "Ver un Saldo",

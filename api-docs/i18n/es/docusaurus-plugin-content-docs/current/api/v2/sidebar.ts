@@ -171,6 +171,13 @@ const sidebar: SidebarsConfig = {
             },
             {
               type: "doc",
+              id: "api/v2/post-financial-accounts-balances-sync",
+              label: "Sincronizar Saldo",
+              className: "api-method post",
+              key: "financial-balances-es-docusaurus-plugin-content-docs-current-api-v-2-post-financial-accounts-balances-sync",
+            },
+            {
+              type: "doc",
               id: "api/v2/get-financial-accounts-balances-2",
               label: "Ver un Saldo",
               className: "api-method get",
